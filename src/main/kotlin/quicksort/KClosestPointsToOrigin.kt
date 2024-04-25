@@ -1,0 +1,5 @@
+package quicksort
+
+class KClosestPointsToOrigin {
+
+}
