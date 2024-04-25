@@ -113,6 +113,35 @@ class CheapestFlightsWithinKStops {
         return minCost
     }
 
+    // Solve using Dijkstra
+    data class State(val node: Int, val cost: Int, val stops: Int)
+
+    fun dijkstraWithMaxKStops(graph: MutableMap<Int, MutableList<Node>>, src: Int, k: Int): Map<Int, Int> {
+        val pq = PriorityQueue<State>(compareBy { it.cost })
+        pq.offer(State(src, 0, 0))
+
+        val minCostAtStops = mutableMapOf<Int, IntArray>().apply {
+            graph.keys.forEach { this[it] = IntArray(k + 1) { Int.MAX_VALUE } }
+        }
+        minCostAtStops[src] = IntArray(k + 1) { 0 }
+
+        while (pq.isNotEmpty()) {
+            val (node, cost, stops) = pq.poll()
+
+            if (stops > k) continue
+
+            graph[node]?.forEach { neighbor ->
+                val nextCost = cost + neighbor.price
+                if (stops < k && nextCost < minCostAtStops.getOrDefault(neighbor.dest, IntArray(k + 1) { Int.MAX_VALUE })[stops + 1]) {
+                    minCostAtStops[neighbor.dest]?.set(stops + 1, nextCost)
+                    pq.offer(State(neighbor.dest, nextCost, stops + 1))
+                }
+            }
+        }
+
+        return minCostAtStops.mapValues { (_, costs) -> costs.filter { it != Int.MAX_VALUE }.minOrNull() ?: Int.MAX_VALUE }
+    }
+
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
