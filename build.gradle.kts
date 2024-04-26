@@ -14,6 +14,12 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
+    implementation("com.squareup.okhttp3:okhttp:4.9.0")
+    // Kotlin coroutines Core library for Kotlin/JVM
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
+
+    // Optional: Kotlin coroutines Android library for Android projects
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
 }
 
 tasks.test {
