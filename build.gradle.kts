@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version "1.7.10"
     application
+    id("org.jetbrains.kotlinx.binary-compatibility-validator") version "0.15.0-Beta.2"
 }
 
 group = "me.arpanpathak"
@@ -20,6 +21,7 @@ dependencies {
 
     // Optional: Kotlin coroutines Android library for Android projects
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
+    implementation("com.google.code.gson:gson:2.10.1")
 }
 
 tasks.test {

@@ -10,7 +10,14 @@ class MinCostToConnectAllPointsKruskal {
         private val parent = (0 until size).associateWith { it }.toMutableMap()
         private val rank = (0 until size).associateWith { 0 }.toMutableMap()
 
-        fun find(x: Int): Int = parent[x]!!.takeIf { it == x } ?: find(parent[x]!!).also { parent[x] = it }
+        // fun find(x: Int): Int = parent[x]!!.takeIf { it == x } ?: find(parent[x]!!).also { parent[x] = it }
+
+        fun find(x: Int): Int {
+            if (parent[x] != x) {
+                parent[x] = find(parent[x] ?: x) // use elvis operator to handle null
+            }
+            return parent[x] ?: x // handle null, although it should never be null
+        }
 
         fun union(x: Int, y: Int) {
             val rootX = find(x)
@@ -37,7 +44,10 @@ class MinCostToConnectAllPointsKruskal {
 
         val uf = UnionFind(points.size)
         return edges.asSequence().filter { uf.find(it.point1) != uf.find(it.point2) }
-            .onEach { uf.union(it.point1, it.point2) }
+            .onEach {
+                uf.union(it.point1, it.point2)
+
+            }
             .sumOf { it.weight }
     }
 }

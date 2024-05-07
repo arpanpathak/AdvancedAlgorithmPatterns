@@ -7,6 +7,9 @@ import kotlin.system.measureTimeMillis
 fun generateRandomMatrix(size: Int): Array<IntArray> =
     Array(size) { IntArray(size) { Random.nextInt(100) } }
 
+/**
+ * @param a
+ */
 fun matrixMultiplySequential(a: Array<IntArray>, b: Array<IntArray>): Array<IntArray> {
     val result = Array(a.size) { IntArray(b[0].size) }
     for (i in a.indices) {
