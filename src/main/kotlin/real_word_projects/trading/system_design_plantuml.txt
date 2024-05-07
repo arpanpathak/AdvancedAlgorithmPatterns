@@ -1,0 +1,34 @@
+@startuml
+
+actor "Trader" as Trader
+
+package "Cloud Infrastructure" {
+    [Your Trading Bot] as Bot
+    [API Keys Vault] as Vault
+    database "Scheduled Task Manager" as Scheduler
+    [Real-Time Data Stream] as Stream
+}
+
+node "Alpaca API" {
+    [Trading API]
+    [Market Data API]
+}
+
+Trader -> Bot : 1. Initialize\nTrading Bot
+
+Bot --> Vault : 2. Retrieve\nAPI Keys
+Bot --> Scheduler : 3. Configure\nTrade Schedules
+Bot --> Stream : 4. Subscribe\nto Real-Time Prices
+
+Scheduler --> Bot : 5. Trigger\nScheduled Strategy
+Stream --> Bot : 6. Send\nReal-Time Prices
+
+Bot --> [Trading API] : 7. Place Orders\nBased on Strategies
+
+Vault --> [Trading API] : 8. Authenticate\nusing Secure Keys
+
+[Market Data API] -up- [Trading API] : 9. Fetch Data
+
+[Market Data API] --> Stream : 10. Provide\nReal-Time Data
+
+@enduml

@@ -105,3 +105,9 @@ This repository contains a collection of algorithm implementations in Kotlin, or
 ---
 
 Each file listed above includes a Kotlin implementation of an algorithm, designed to solve specific problems efficiently. Feel free to explore the files, test the implementations, and contribute to the repository.
+
+--
+
+## Algorithmic Trading System Coding
+
+![Trading System Diagram](https://www.planttext.com/api/plantuml/png/RLDTQm8n47pFhrXylwFVNmz5RIcKKYfL2gNdmvgiP_1CIZu4M_hVktVfdHRrvK9sPdPcWdqVq8MugeH06Qo3tiIX8jS3z92EGdoYN699qBkhR5JmQEOEVN1HXkYe1zy2-FVnRgDhADgKCBHXMalmDqq7eqTuees7DunLcZMdPgemu0mzRnZB1QbOaO89-YKye-75oKqxSadmbR3A9df5SCzi60T7k6fqqr7y266iOir1nG4Gs47djRN9TzDqyunkII5fDRTCJ_aXkwrZm0qSvvnT1usL_gB2x6GLeaPaZ6n2CVOaXrSAJjEQaMtu3jLbOUHf3dVMp7N9PIPHwkOxZ2OKmyzo6CUPbqxF61uiR8iOEIsP8hRgMUVzFEUtqIMNMPXjoQoAWSgD-9FVuYzu3HbLc7tvrjA_5fbocSEeGadmuhWsNvWXFwa2QzerkcQdWWxnht8OnB0W4xHaU66YhwTZajnCwa_ilHDayJFRaxhEuO62N3IuWwpTIe-FsBcpQwreDs_Yzhc5-l_n2m00)
