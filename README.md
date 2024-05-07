@@ -21,6 +21,7 @@ This repository contains a collection of algorithm implementations in Kotlin, or
 - [Real World Projects](#real-world-projects)
 - [String Manipulation](#string-manipulation)
 - [Tree](#tree)
+- [Trie](#trie)
 - [Build Tools](#build-tools)
 
 ## Array
@@ -95,6 +96,8 @@ This repository contains a collection of algorithm implementations in Kotlin, or
 - `SkylineProblem.kt`
 ### Minimum Spanning Tree (MST)
 - Count Node Equals Average Solutions
+### Trie
+- `LongestCommonPrefix.kt`
 
 ## Build Tools
 - `build.gradle.kts`
