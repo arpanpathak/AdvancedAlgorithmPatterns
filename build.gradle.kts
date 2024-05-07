@@ -22,7 +22,7 @@ dependencies {
     // Optional: Kotlin coroutines Android library for Android projects
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
     implementation("com.google.code.gson:gson:2.10.1")
-    implementation("net.jacobpeterson:alpaca-java:6.1")
+    implementation("net.jacobpeterson:alpaca-java:8.3.1")
 }
 
 tasks.test {
