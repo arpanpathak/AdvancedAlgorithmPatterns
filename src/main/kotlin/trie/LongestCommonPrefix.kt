@@ -46,6 +46,8 @@ class LongestCommonPrefix {
             prefix.append(nextNode.char)
             currentNode = nextNode
         }
+
+        printTrie(trieRoot, "_")
         return prefix.toString()
     }
 
