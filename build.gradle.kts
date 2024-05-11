@@ -16,6 +16,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     implementation("com.squareup.okhttp3:okhttp:4.9.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
     // Kotlin coroutines Core library for Kotlin/JVM
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
 
