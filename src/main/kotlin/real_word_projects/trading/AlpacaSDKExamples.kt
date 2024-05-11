@@ -1,29 +1,55 @@
 package real_word_projects.trading
 
+import commons.FileWriter.appendJsonToFile
+import kotlinx.coroutines.async
+import kotlinx.coroutines.runBlocking
 import net.jacobpeterson.alpaca.AlpacaAPI
 import net.jacobpeterson.alpaca.model.endpoint.account.Account
+import net.jacobpeterson.alpaca.model.endpoint.order.Order
+import net.jacobpeterson.alpaca.model.endpoint.order.enums.OrderSide
+import net.jacobpeterson.alpaca.model.endpoint.order.enums.OrderTimeInForce
 import net.jacobpeterson.alpaca.model.properties.DataAPIType
 import net.jacobpeterson.alpaca.model.properties.EndpointAPIType
 
-fun main() {
-    // Initialize AlpacaAPI with your API key and secret
+fun main() = runBlocking {
     val alpacaAPI = AlpacaAPI(
-        "<Your-Paper-APIKey>",
-        "<Your-Paper-APISecret>",
+        "API_Key_ID",
+        "API_Secret",
         EndpointAPIType.PAPER,
         DataAPIType.IEX
     )
 
-    // Using runCatching to handle potential exceptions
-    runCatching {
-        val account: Account = alpacaAPI.account().get()
+    try {
+        val account = async { fetchAccount(alpacaAPI) }
+        val order = async { placeOrder(alpacaAPI) }
 
-        println("Account ID: ${account.id}")
-        println("Account Status: ${account.status}")
-        println("Portfolio value: \$${account.portfolioValue}")
-        println("Portfolio currency: ${account.currency}")
+        val combinedData = mergeData(account.await(), order.await())
+        println("Combined Data: $combinedData")
 
-    }.onFailure {
-        it.printStackTrace()
+        appendJsonToFile("trading_data.json", combinedData)
+    } catch (e: Exception) {
+        e.printStackTrace()
     }
+}
+
+suspend fun fetchAccount(api: AlpacaAPI): Account {
+    return api.account().get()  // Simulated API call
+}
+
+suspend fun placeOrder(api: AlpacaAPI): Order {
+    return api.orders().requestLimitOrder(
+        "GOOGL",
+        100,
+        OrderSide.BUY,
+        OrderTimeInForce.DAY,
+        170.00,
+        false
+    )  // Assuming toString gives a meaningful representation
+}
+
+fun mergeData(account: Account, order: Order): Map<String, Any> {
+    return mapOf(
+        "Account" to account,
+        "Order" to order
+    )
 }

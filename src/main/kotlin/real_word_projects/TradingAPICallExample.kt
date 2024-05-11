@@ -4,14 +4,18 @@ import com.google.gson.GsonBuilder
 import com.google.gson.JsonParser
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.Response
 
 // Generic Async REST API call wrapper. This enables non-blocking Network I/O API calls with ease using DSL
 class RequestBuilder {
     var url: String = ""
     var method: String = "GET"
+    private var body: RequestBody? = null
     private val headers = mutableMapOf<String, String>()
 
     fun headers(vararg headers: Pair<String, String>) {
@@ -20,9 +24,13 @@ class RequestBuilder {
         }
     }
 
+    fun body(content: String, contentType: String = "application/json") {
+        body = content.toRequestBody(contentType.toMediaType())
+    }
+
     fun build(): Request = Request.Builder()
         .url(url)
-        .method(method, null)
+        .method(method, body)
         .apply {
             headers.forEach { addHeader(it.key, it.value) }
         }
@@ -50,8 +58,8 @@ suspend fun main() {
 
     // Define your Stock Platform API Keys
     // This is just for demonstration purpose. Use secured vault to store API keys
-    val API_KEY = "<Your-API-Key>"
-    val API_SECRET = "Your-API-Secret"
+    val API_KEY = "<Your-Paper-API-Key>"
+    val API_SECRET = "<Your-Paper-API-Secret>"
     val API_PLATFORM_ACCOUNT_URL = "https://paper-api.alpaca.markets/v2/account"
 
     val response = client.executeAsync {
