@@ -1,7 +1,5 @@
 package greedy
 
-import jdk.internal.org.jline.utils.Colors.s
-
 class CarFleet {
     data class Car (val position: Double, val eta: Double)
 
