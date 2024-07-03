@@ -1,4 +1,4 @@
-package array
+package array.twopointer
 
 class TwoSum_II {
     fun twoSum(numbers: IntArray, target: Int): IntArray {
