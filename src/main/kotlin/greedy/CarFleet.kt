@@ -13,7 +13,7 @@ class CarFleet {
         }
 
         // Sort by starting position in descending order. The cars close to target will reach faster.
-        // The car which is closest to target will always leed the fleet. So sorting in descending order of position ( or ascending order of ETA )
+        // The car which is closest to target will always lead the fleet. So sorting in descending order of position ( or ascending order of ETA )
         cars.sortBy {  -it.position }
 
         var currentSlowestEta = 0.0
