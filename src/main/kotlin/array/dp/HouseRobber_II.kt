@@ -1,4 +1,4 @@
-package stock_market.dp
+package array.dp
 
 class HouseRobber_II {
     fun rob(nums: IntArray): Int {
