@@ -63,7 +63,6 @@ class Racecar {
     fun racecar_bfs(target: Int): Int {
         val queue: Queue<State> = LinkedList()
         val visited = mutableSetOf<State>()
-
         queue.add(State(0, 1)) // Start at position 0 with speed 1
         visited.add(State(0, 1))
 

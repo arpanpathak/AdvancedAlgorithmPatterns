@@ -4,19 +4,19 @@ import kotlin.math.abs
 
 class MinCostToConnectAllPointsKruskal {
     data class Edge(val point1: Int, val point2: Int, val weight: Int)
-    val manhattanDistance = { p1: IntArray, p2: IntArray -> abs(p1[0] - p2[0]) + abs(p1[1] - p2[1])  }
+
+    data class UnionFindNode(var parent: Int, var rank: Int)
+
+    val manhattanDistance = { p1: IntArray, p2: IntArray -> abs(p1[0] - p2[0]) + abs(p1[1] - p2[1]) }
 
     class UnionFind(size: Int) {
-        private val parent = (0 until size).associateWith { it }.toMutableMap()
-        private val rank = (0 until size).associateWith { 0 }.toMutableMap()
-
-        // fun find(x: Int): Int = parent[x]!!.takeIf { it == x } ?: find(parent[x]!!).also { parent[x] = it }
+        private val nodes = Array(size) { UnionFindNode(it, 0) }
 
         fun find(x: Int): Int {
-            if (parent[x] != x) {
-                parent[x] = find(parent[x] ?: x) // use elvis operator to handle null
+            if (nodes[x].parent != x) {
+                nodes[x].parent = find(nodes[x].parent)
             }
-            return parent[x] ?: x // handle null, although it should never be null
+            return nodes[x].parent
         }
 
         fun union(x: Int, y: Int) {
@@ -24,11 +24,11 @@ class MinCostToConnectAllPointsKruskal {
             val rootY = find(y)
             if (rootX != rootY) {
                 when {
-                    rank[rootX]!! > rank[rootY]!! -> parent[rootY] = rootX
-                    rank[rootX]!! < rank[rootY]!! -> parent[rootX] = rootY
+                    nodes[rootX].rank > nodes[rootY].rank -> nodes[rootY].parent = rootX
+                    nodes[rootX].rank < nodes[rootY].rank -> nodes[rootX].parent = rootY
                     else -> {
-                        parent[rootY] = rootX
-                        rank[rootX] = rank[rootX]!! + 1
+                        nodes[rootY].parent = rootX
+                        nodes[rootX].rank += 1
                     }
                 }
             }
@@ -36,18 +36,22 @@ class MinCostToConnectAllPointsKruskal {
     }
 
     fun minCostConnectPoints(points: Array<IntArray>): Int {
-        val edges = points.indices.flatMap { i ->
-            (i + 1 until points.size).map { j ->
-                Edge(i, j, manhattanDistance(points[i], points[j]))
+        val edges = mutableListOf<Edge>()
+        for (i in points.indices) {
+            for (j in i + 1 until points.size) {
+                edges.add(Edge(i, j, manhattanDistance(points[i], points[j])))
             }
-        }.sortedBy { it.weight }
+        }
+        edges.sortBy { it.weight }
 
         val uf = UnionFind(points.size)
-        return edges.asSequence().filter { uf.find(it.point1) != uf.find(it.point2) }
-            .onEach {
-                uf.union(it.point1, it.point2)
-
+        var cost = 0
+        for (edge in edges) {
+            if (uf.find(edge.point1) != uf.find(edge.point2)) {
+                uf.union(edge.point1, edge.point2)
+                cost += edge.weight
             }
-            .sumOf { it.weight }
+        }
+        return cost
     }
 }
