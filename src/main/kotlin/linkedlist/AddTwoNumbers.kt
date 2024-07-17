@@ -4,7 +4,7 @@ class ListNode(var `val`: Int) {
     var next: ListNode? = null
 }
 
-class LinkedList {
+class AddTwoNumbers {
     fun addTwoNumbers(l1: ListNode?, l2: ListNode?): ListNode? {
         var carry = 0
         val head = ListNode(0)
