@@ -1,0 +1,5 @@
+package linkedlist
+
+class OddOrEvenLinkedList {
+
+}
