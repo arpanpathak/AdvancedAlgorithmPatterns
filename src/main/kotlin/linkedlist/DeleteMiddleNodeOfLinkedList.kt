@@ -27,4 +27,21 @@ class DeleteMiddleNodeOfLinkedList {
 
         return head
     }
+
+    fun deleteMiddleTwoPointer(head: ListNode?): ListNode? {
+        var (slow, fast, prev) = listOf(head, head, null)
+
+        if (head?.next == null)
+            return null
+
+        while (fast?.next != null ) {
+            prev = slow
+            slow = slow?.next
+            fast = fast?.next?.next
+        }
+
+        prev?.next = slow?.next
+
+        return head
+    }
 }
