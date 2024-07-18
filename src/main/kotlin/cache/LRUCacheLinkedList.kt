@@ -1,64 +1,33 @@
 package cache
 
-class LRUCacheLinkedList(private val capacity: Int) {
+import java.util.*
+import kotlin.collections.HashMap
 
-    private val cache: MutableMap<Int, Node> = HashMap()
-    private var head: Node? = null
-    private var tail: Node? = null
+class LRUCacheLinkedList(private val capacity: Int) {
+    private val cache = mutableMapOf<Int, Int>()
+    private val order: LinkedList<Int> = LinkedList()
+    private val size: Int = capacity
 
     fun get(key: Int): Int {
-        val node = cache[key] ?: return -1
-        removeNode(node)
-        addNodeToFront(node)
-        return node.value
+        return if (cache.containsKey(key)) {
+            // Move the accessed key to the end of the list (most recently used)
+            order.remove(key)
+            order.addLast(key)
+            cache[key]!!
+        } else {
+            -1
+        }
     }
 
     fun put(key: Int, value: Int) {
-        if (cache.containsKey(key)) {
-            val existingNode = cache[key]!!
-            existingNode.value = value
-            removeNode(existingNode)
-            addNodeToFront(existingNode)
-        } else {
-            if (cache.size >= capacity) {
-                removeNode(tail!!)
-            }
-            val newNode = Node(key, value)
-            cache[key] = newNode
-            addNodeToFront(newNode)
+        if (cache.size >= size) {
+            // Evict the least recently used element
+            val oldest = order.removeFirst()
+            cache.remove(oldest)
         }
+
+        // Insert the new element
+        cache[key] = value
+        order.addLast(key)
     }
-
-    private fun addNodeToFront(node: Node) {
-        node.prev?.next = node.next
-        node.next?.prev = node.prev
-
-        node.prev = null
-        node.next = head
-
-        head?.prev = node
-        head = node
-
-        if (tail == null) {
-            tail = node
-        }
-    }
-
-    private fun removeNode(node: Node) {
-        node.prev?.next = node.next
-        node.next?.prev = node.prev
-
-        if (node === head) {
-            head = node.next
-        }
-        if (node === tail) {
-            tail = node.prev
-        }
-
-        node.prev = null
-        node.next = null
-
-        cache.remove(node.key)
-    }
-
-    private data class Node(val key: Int, var value: Int, var prev: Node?
+}
