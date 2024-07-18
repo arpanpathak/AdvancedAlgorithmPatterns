@@ -18,7 +18,7 @@ class LRUCache(private val capacity: Int) {
             cache.remove(key)
         } else if (cache.size == this.capacity) {
             // Eviction policy
-            cache.remove(cache.keys.iterator().next()) // Remove the least recently used element
+            cache.remove(cache.keys.first()) // Remove the least recently used element
         }
         cache[key] = value // Insert the new element
     }
