@@ -5,18 +5,12 @@ class CountGoodNodeInBInaryTree {
         return dfs(root, Int.MIN_VALUE)
     }
 
-    fun dfs(root: TreeNode?, prevMax: Int): Int {
-        if (root == null)
-            return 0
+    private fun dfs(node: TreeNode?, maxSoFar: Int): Int {
+        node ?: return 0
+        
+        val newMax = maxOf(maxSoFar, node.`val`)
+        val good = if (node.`val` >= maxSoFar) 1 else 0
 
-        var count = 0
-        val currentMax = maxOf(prevMax, root.`val`)
-
-        if (root.`val` >= prevMax )
-            count = 1
-
-        count += dfs(root.left, currentMax) + dfs(root.right, currentMax)
-        return count
-
+        return good + dfs(node.left, newMax) + dfs(node.right, newMax)
     }
 }
