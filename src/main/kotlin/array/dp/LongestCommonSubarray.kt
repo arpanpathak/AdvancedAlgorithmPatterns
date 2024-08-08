@@ -4,24 +4,24 @@ class LongestCommonSubarray {
     val memo = mutableMapOf<String, Int>()
 
     fun findLength(nums1: IntArray, nums2: IntArray): Int {
-        return dp(nums1, nums2, nums1.lastIndex, nums2.lastIndex)
+        return dp(nums1, nums2, nums1.lastIndex, nums2.lastIndex, Int.MIN_VALUE)
 
     }
 
-//    fun dp(nums1: IntArray, nums2: IntArray, i: Int, j: Int, max: Int): Int {
-//        if (i == 0 || j == 0)
-//            return max
-//        val key ="$i.$j"
-//        if (memo.containsKey(key))
-//            return memo[key]!!
-//
-//        var maxSoFar = max
-//
-//        if (nums1[i] == nums1[j])
-//            maxSoFar = dp(nums1, nums2, i + 1, j + 1, max + 1)
-//
-//        var
-//    }
+    fun dp(nums1: IntArray, nums2: IntArray, i: Int, j: Int, max: Int): Int {
+        if (i == 0 || j == 0)
+            return max
+        val key ="$i.$j"
+        if (memo.containsKey(key))
+            return memo[key]!!
+
+        var maxSoFar = max
+
+        if (nums1[i] == nums1[j])
+            maxSoFar = dp(nums1, nums2, i + 1, j + 1, max + 1)
+
+        return maxSoFar
+    }
 
     fun findLength_tabular(nums1: IntArray, nums2: IntArray): Int {
         val m = nums1.size

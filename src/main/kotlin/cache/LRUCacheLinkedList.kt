@@ -1,7 +1,6 @@
 package cache
 
 import java.util.*
-import kotlin.collections.HashMap
 
 class LRUCacheLinkedList(private val capacity: Int) {
     private val cache = mutableMapOf<Int, Int>()

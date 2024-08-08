@@ -39,7 +39,7 @@ open class GuessGame {
         TODO("Not yet implemented")
     }
 
-    fun guess(mid: Int): Any {
+    fun guess(mid: Int): Int {
         return 0
     }
 }
