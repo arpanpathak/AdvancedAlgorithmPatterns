@@ -10,15 +10,14 @@ class ValidWordAbbreviation {
                 if (abbr[j] == '0') return false  // Leading zero check
 
                 var count = 0
+
                 while (j < abbr.length && abbr[j].isDigit()) {
-                    count = count * 10 + (abbr[j] - '0')
-                    j++
+                    count = count * 10 + (abbr[j++] - '0')
                 }
+
                 i += count
             } else {
-                if (word[i] != abbr[j]) return false
-                i++
-                j++
+                if (word[i++] != abbr[j++]) return false
             }
         }
 
