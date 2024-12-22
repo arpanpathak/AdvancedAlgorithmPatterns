@@ -1,5 +1,6 @@
 package tree.bfs
 
+import tree.TreeNode
 import java.util.*
 
 class AverageOfLevelsInBinaryTree {
