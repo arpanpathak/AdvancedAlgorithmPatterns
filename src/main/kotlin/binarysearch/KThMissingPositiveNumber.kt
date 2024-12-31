@@ -1,7 +1,5 @@
 package binarysearch
 
-import jdk.vm.ci.code.CodeUtil.K
-
 class KThMissingPositiveNumber {
     fun findKthPositive(arr: IntArray, k: Int): Int {
         var (left, right) = 0 to arr.size
