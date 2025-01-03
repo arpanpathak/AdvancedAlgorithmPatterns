@@ -1,4 +1,4 @@
-package tree.mst
+package tree
 
 import tree.TreeNode
 import java.util.*
