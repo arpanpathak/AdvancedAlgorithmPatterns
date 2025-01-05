@@ -5,31 +5,26 @@ class SpiralMatrix {
         if (matrix.isEmpty()) return emptyList()
 
         val result = mutableListOf<Int>()
-        var top = 0
-        var bottom = matrix.size - 1
-        var left = 0
-        var right = matrix[0].size - 1
+        var (top, bottom, left, right) = listOf(0, matrix.size - 1, 0, matrix[0].size - 1)
+        var count = 0
+        val totalElements = matrix.size * matrix[0].size
 
-        while (top <= bottom && left <= right) {
+        while (count < totalElements) {
             // Traverse top row
-            for (j in left..right) result.add(matrix[top][j])
+            for (j in left..right) if (count++ < totalElements) result.add(matrix[top][j])
             top++
 
             // Traverse right column
-            for (i in top..bottom) result.add(matrix[i][right])
+            for (i in top..bottom) if (count++ < totalElements) result.add(matrix[i][right])
             right--
 
             // Traverse bottom row
-            if (top <= bottom) {
-                for (j in right downTo left) result.add(matrix[bottom][j])
-                bottom--
-            }
+            for (j in right downTo left) if (count++ < totalElements) result.add(matrix[bottom][j])
+            bottom--
 
             // Traverse left column
-            if (left <= right) {
-                for (i in bottom downTo top) result.add(matrix[i][left])
-                left++
-            }
+            for (i in bottom downTo top) if (count++ < totalElements) result.add(matrix[i][left])
+            left++
         }
 
         return result
