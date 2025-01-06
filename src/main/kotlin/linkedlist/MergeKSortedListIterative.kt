@@ -26,10 +26,10 @@ class MergeKSortedListIterative {
 
         while (ptr1 != null && ptr2 != null) {
             if (ptr1.`val` < ptr2.`val`) {
-                ptr.next = ListNode(ptr1.`val`)
+                ptr.next = ptr1
                 ptr1 = ptr1.next
             } else {
-                ptr.next = ListNode(ptr2.`val`)
+                ptr.next = ptr2
                 ptr2 = ptr2.next
             }
             ptr = ptr.next!!
