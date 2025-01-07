@@ -1,5 +1,9 @@
 package linkedlist
 
+class Node(var `val`: Int) {
+    var next: Node? = null
+}
+
 class InsertIntoASortedCircularLinkedList {
     fun insert(head: Node?, insertVal: Int): Node? {
         val newNode = Node(insertVal)
