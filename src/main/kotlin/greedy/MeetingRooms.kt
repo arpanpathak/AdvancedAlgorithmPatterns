@@ -1,0 +1,4 @@
+package greedy
+
+class MeetingRooms {
+}
