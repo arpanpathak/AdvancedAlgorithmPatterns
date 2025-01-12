@@ -1,5 +1,7 @@
 package string.pattern_matching
 
+import oracle.net.aso.m
+
 class `FindTheIndexofTheFirstOccurrenceIna String` {
     fun strStr(haystack: String, needle: String): Int {
         // If the needle is empty, return 0
@@ -35,24 +37,15 @@ class `FindTheIndexofTheFirstOccurrenceIna String` {
     // Function to build the LPS (Longest Prefix Suffix) array for the needle
     fun buildLPS(needle: String): IntArray {
         val lps = IntArray(needle.length)
-        var len = 0  // Length of the previous longest prefix suffix
-        var i = 1  // Start from the second character in the needle
-        
-        while (i < needle.length) {
+        var (i, j) = 0 to 1
+
+        while (j < needle.length) {
             when {
-                needle[i] == needle[len] -> {
-                    len++
-                    lps[i] = len
-                    i++
-                }
-                len > 0 -> len = lps[len - 1]  // Use previously computed LPS values to skip
-                else -> {
-                    lps[i] = 0
-                    i++
-                }
+                needle[j] == needle[i] -> lps[j++] = ++i
+                i != 0 -> i = lps[i - 1]
+                else -> lps[j++] = 0
             }
         }
-
         return lps
     }
 }
