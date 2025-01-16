@@ -10,24 +10,17 @@ class FindKClosestElements {
     //            ^
     // arr = [ 1, 2, 3, 4, 5, 6 ], k = 3, x = 4
     fun findClosestElements(arr: IntArray, k: Int, x: Int): List<Int> {
-        var left = 0
-        var right = arr.size - k
-        val result = ArrayList<Int>()
+        var (left, right) = 0 to arr.size - k
 
-        while (left < right) {
+        while ( left < right ) {
             val mid = left + (right - left) / 2
-            if (x - arr[mid] > arr[mid + k] - x) {
-                left = mid + 1
-            } else {
-                right = mid
+            when {
+                x - arr[mid] >  arr[mid + k] - x -> left = mid + 1
+                else -> right = mid
             }
         }
 
-        for (i in left until left + k) {
-            result.add(arr[i])
-        }
-
-        return result
+        return arr.toList().subList(left, left + k)
     }
 
     fun findClosestElementsHeap(arr: IntArray, k: Int, x: Int): List<Int> {
