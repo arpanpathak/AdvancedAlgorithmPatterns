@@ -3,7 +3,6 @@ package array
 import java.util.*
 
 class ShortestPathInBinaryMatrix {
-    // Represent a state in the BFS, which includes the row, col, and distance
     data class State(val row: Int, val col: Int, val dist: Int)
 
     fun shortestPathBinaryMatrix(grid: Array<IntArray>): Int {
@@ -20,10 +19,7 @@ class ShortestPathInBinaryMatrix {
         )
 
         val queue = LinkedList<State>()
-        val visited = mutableSetOf<State>()
-
         queue.add(State(0, 0, 1))  // Start at (0,0) with distance 1
-        visited.add(State(0, 0, 0))  // Mark start position as visited
 
         while (queue.isNotEmpty()) {
             val (row, col, dist) = queue.poll()
@@ -33,17 +29,15 @@ class ShortestPathInBinaryMatrix {
 
             // Explore all 8 possible directions
             for ((dr, dc) in directions) {
-                val newRow = row + dr
-                val newCol = col + dc
+                val (newRow, newCol) = row + dr to col + dc
 
-                // Skip invalid positions
-                if (newRow < 0 || newRow >= n || newCol < 0 || newCol >= m || grid[newRow][newCol] == 1 || visited.contains(State(newRow, newCol, 0))) {
+                // Skip invalid positions or visited cells
+                if (newRow !in 0 until n || newCol !in 0 until m || grid[newRow][newCol] != 0)
                     continue
-                }
 
-                // Add new position to the queue and mark it as visited
+                // Mark the cell as visited and add it to the queue
+                grid[newRow][newCol] = 2
                 queue.add(State(newRow, newCol, dist + 1))
-                visited.add(State(newRow, newCol, 0))  // Only care about (row, col) for visited
             }
         }
 
