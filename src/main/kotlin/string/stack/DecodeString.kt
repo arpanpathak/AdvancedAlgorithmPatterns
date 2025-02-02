@@ -31,4 +31,29 @@ class DecodeString {
 
         return result.toString()
     }
+
+    // Short code
+    fun decodeString1(s: String): String {
+        var index = 0
+        fun decode(): String {
+            val result = StringBuilder()
+            var num = 0
+            while (index < s.length) {
+                when (val char = s[index]) {
+                    in '0'..'9' -> num = num * 10 + (char - '0')
+                    '[' -> {
+                        index++
+                        val decodedString = decode()
+                        result.append(decodedString.repeat(num))
+                        num = 0
+                    }
+                    ']' -> return result.toString()
+                    else -> result.append(char)
+                }
+                index++
+            }
+            return result.toString()
+        }
+        return decode()
+    }
 }
