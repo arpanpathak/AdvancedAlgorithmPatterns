@@ -13,4 +13,25 @@ class pow {
         }
         return if (n >=0) pow(x, n.toLong()) else 1 / pow(x, n.toLong())
     }
+
+    fun myPowIterative(x: Double, n: Int): Double {
+        var base = x
+        var exponent = n.toLong()
+        var result = 1.0
+
+        if (exponent < 0) {
+            base = 1 / base
+            exponent = -exponent
+        }
+
+        while (exponent > 0) {
+            if (exponent % 2 == 1L) {
+                result *= base
+            }
+            base *= base
+            exponent /= 2
+        }
+
+        return result
+    }
 }
