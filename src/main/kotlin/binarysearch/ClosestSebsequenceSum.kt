@@ -2,7 +2,7 @@ package binarysearch
 
 import kotlin.math.abs
 
-class ClosestSeusequenceSum {
+class ClosestSebsequenceSum {
     fun minAbsDifference(nums: IntArray, goal: Int): Int {
         val leftSums = mutableListOf<Int>()
         val rightSums = mutableListOf<Int>()
