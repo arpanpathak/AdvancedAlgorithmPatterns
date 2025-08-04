@@ -1,4 +1,4 @@
-package grid.`a*`
+package grid.a_star
 
 import java.util.*
 
