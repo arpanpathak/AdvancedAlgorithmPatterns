@@ -10,9 +10,7 @@ class CloneGraph {
         if (node == null) return null
         map[node]?.let { return it }
 
-        val clonedNode = Node(node?.`val`!!)
-        map[node] = clonedNode
-
+        val clonedNode = Node(node.`val`).also { map[node] = it }
         node.neighbors.forEach{ clonedNode.neighbors.add(cloneGraph(it)) }
 
         return clonedNode
