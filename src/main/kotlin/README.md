@@ -8,7 +8,9 @@
 - all_files.txt
 - **array/**
   - **Combinatorics/**
+    - ClosestSubsequenceSum.kt
     - Combinations.kt
+    - NextGreaterElement_III.kt
     - NextPermutation.kt
     - Permutation_II.kt
     - Permutation_II_Backtracking.kt
@@ -16,34 +18,47 @@
     - Subsets.kt
   - DiagonalTraverse.kt
   - DiagonalTraverse_II.kt
+  - InsertInterval.kt
   - MergeIntervals.kt
   - MergeSortedArray.kt
   - MissingRanges.kt
   - MoveZeroes.kt
   - RemoveElement.kt
   - RotateImage.kt
+  - SearchA2dMatrix_II.kt
   - ShortestPathInBinaryMatrix.kt
+  - SignOfTheProductOfAnArray.kt
   - SpiralMatrix.kt
+  - SpiralMatrix_II.kt
   - ToeplitzMatrix.kt
   - TransposeMatrix.kt
   - **backtracking/**
     - CombinationSum.kt
     - CombinationSum3.kt
     - CombinationSum_II.kt
+  - **cycle/**
+    - FindTheDuplicateNumber.kt
   - **dfs/**
     - NestedListWeightedSum.kt
   - **dp/**
+    - BurstBaloons.kt
     - CoinChange.kt
     - CoinChange_II.kt
     - CoinChange_II_BottomUp.kt
     - HouseRobber.kt
     - HouseRobber_II.kt
+    - KadensAlgorithm.kt
     - LongestCommonSubarray.kt
+    - LongestIncreasingSequenceInAMatrix.kt
     - LongestIncreasingSubsequence.kt
     - MaximalSquare.kt
+    - MaximumSumOfNonAdjacentElements.kt
     - MaximumSumSubArray.kt
     - MinCostClimbingStaris.kt
     - MinimumNumberofIncrementsSubarraysFormaTargetArray.kt
+    - MinimumPathSum.kt
+    - PartitionArrayIntoTwoArrayToMinimuzeSumDifference.kt
+    - SplitArrayLargestSum.kt
     - TargetSum.kt
   - **greedy/**
     - CanPlaceFlowers.kt
@@ -53,16 +68,21 @@
     - MaximumDistanceInArray.kt
     - MaximumSwap.kt
     - MergeOverlappingIntervals.kt
+    - MinimumNumberofSwapstoMaketheStringBalanced.kt
     - NonOverlappingIntervals.kt
   - **hashtable/**
     - ContainsDuplicate_II.kt
+    - DivideArrayIntoEqualPairs.kt
     - EqualRowAndColumnPairs.kt
     - FindDifferenceOfTwoArrays.kt
     - FindMissingPositive.kt
+    - FirstMissingPositive.kt
     - IntegerToEnglishWords.kt
     - LongestConsecutiveSequence.kt
     - MaxNUmWithKSumPairs.kt
     - RankTransformOfAnArray.kt
+    - SetMismatch.kt
+    - SnapshotArray.kt
     - UniqueNumberOfOccurences.kt
     - ValidSudoku.kt
   - **prefixsum/**
@@ -72,6 +92,7 @@
     - FindPivotIndex.kt
     - Minimum NumberofOperationstoMoveAllBallstoEachBox.kt
     - NumberOfZeroFilledSubArrays.kt
+    - ProductOfArrayExceptSelf.kt
     - SubArrayProductLessThanK.kt
     - SubArraySumEqualsToK.kt
     - SubArraySumsDivisibleByK.kt
@@ -81,7 +102,10 @@
   - **sorting/**
     - SortColors.kt
     - SquaresOfASortedArray.kt
+  - **sweepline/**
+    - MaximumPopulationYear.kt
   - **twopointer/**
+    - 4Sum.kt
     - IntervalListIntersection.kt
     - RemoveDuplicateElementsFromSortedArray.kt
     - RemoveDuplicateElementsFromSortedArray_II.kt
@@ -99,11 +123,16 @@
   - ExpressionAndAddOperatorsOptimized.kt
   - NQueen.kt
   - NQueen_II.kt
+  - PalindromePartitioning.kt
   - PartitionToKEqualSumSubsets.kt
+  - RestoreIPAddresses.kt
   - Strobogrammatic_Number_II.kt
+  - SudokuSolver.kt
+  - SudokuSolverSet.kt
 - **binarysearch/**
   - ApartmentHunting.kt
   - CapacityToShipPackageWithinDDays.kt
+  - ClosestSebsequenceSum.kt
   - FindFirstAndLastPosition.kt
   - FindKClosestElements.kt
   - FindMinimumInRotatedSortedArray.kt
@@ -111,10 +140,12 @@
   - FindPeakElementBetterSolution.kt
   - FirstBadVersion.kt
   - GuessNumberHigherOrLower.kt
+  - HouseRobber_IV.kt
   - KThMissingPositiveNumber.kt
   - KokoEatingBanana.kt
   - MedianOfTwoSortedARrays.kt
   - RandomPickWithWeight.kt
+  - SearchA2dMatrix.kt
   - SearchInRotatedArray_II.kt
   - SearchInRotatedSortedArray.kt
   - SearchInsertionPosition.kt
@@ -122,14 +153,23 @@
   - ValleyElement.kt
 - **bitset/**
   - FirstLetterToAppearTwice.kt
+  - LongestNiceSubarray.kt
   - MaximumXorOfTwoNumsInArray.kt
+  - Number of Steps to ReduceaANumberInBinaryRepresentationtoOne.kt
   - NumberOfOneBits.kt
+  - ReverseBits.kt
+  - SingleNumber.kt
   - SingleNumber3.kt
+  - SmallestNumberWithAllSetBits.kt
+  - SumOfAllSubsetXorTotal.kt
 - **branch_and_bound/**
 - **cache/**
   - LFUCache.kt
   - LRUCache.kt
+  - LRUCacheBetter.kt
   - LRUCacheLinkedList.kt
+  - LRUCleanAf.kt
+  - LruCacheBruceLee.kt
 - **combinatorics/**
 - **commons/**
   - APIEndPoints.kt
@@ -137,17 +177,39 @@
   - FileWriter.kt
 - **disjointset/**
   - AccountMerge.kt
+  - NumberOfIsland_II.kt
   - UnionFind.kt
 - **divide_and_conquer/**
+- **dynamic_programming/**
+  - ClosestSubsequenceSum.kt
+  - FrogJump.kt
+  - MaximumProductSubarray.kt
+  - MaximumProfitInJobScheduling.kt
+  - PartitionEqualSubsetSum.kt
+  - SuperEggDropping.kt
 - **facebook/**
   - FindMinimumTicketPrice.kt
   - SecondGreatestNumber.kt
+- **geo/**
+  - **kdtree/**
+    - KDTreeExample.kt
+  - **quadtree/**
+    - ConstructQuadTree.kt
+    - QuadTree.kt
+    - QuadTreeUsagePlaceFinding.kt
+- **google/**
+  - LargestSquareAreaInMatrix.kt
 - **graph/**
   - BusRoutes.kt
+  - ChromaticNumber.kt
   - CloneGraph.kt
   - DiameterOfBinaryTree.kt
   - HouseRobber3.kt
+  - MaximumPathQualityOfAGraph.kt
+  - ReorderRoutesToMakeAllPathsLeadToCityZero.kt
   - WordLadder.kt
+  - WordLadder_II.kt
+  - WordLadder_II_clean.kt
   - **articulation_point/**
     - CriticalConnectionsInANetwork.kt
     - CriticalConnectionsInANetworkShortCode.kt
@@ -158,30 +220,51 @@
   - **cycle/**
     - CourseSchedule.kt
     - CourseSchedule_II.kt
+    - ParallelCourses.kt
   - **dag/**
   - **dp/**
+    - BellmanFordAlgorithm.kt
     - CheapestFlightsWithinKStops.kt
+    - FloydWarshallAlgorithm.kt
   - **greedy/**
     - CheapestFlightWithKStops.kt
     - CheapestFlightsWithKStops.kt
     - DonaldTrumpAlgorithm.kt
+    - TheMaze_III.kt
   - **mst/**
+    - FindRedundentConnections.kt
+    - OptimizeWaterDistributionInAVillage.kt
     - PrimsAlgorithm.kt
   - **scc/**
+    - Kosaraju.kt
   - **topological_sort/**
     - AlienDictionary.kt
     - AlienDictionary_BFS.kt
+    - ApplySubstitutions.kt
     - CourseSchedule_II.kt
     - CourseSchedule_II_BFS.kt
+  - **tsp/**
+    - ShortestPathVisitingAllNodes.kt
 - **greedy/**
   - CarFleet.kt
+  - DestroyingAsteroids.kt
   - JumpGame.kt
   - JumpGame_II.kt
   - MInimumCostHomecomingOfARobot.kt
+  - MaxChuncksToMakeSorted_II.kt
+  - MaxProfiAssigningWork.kt
+  - MaximumValueOfAnOrderedTriplet_II.kt
   - MeetingRooms.kt
   - MeetingRooms_II.kt
+  - MeetingRooms_II_greedy.kt
+  - MinimumDeletionsToMakeStringBalanced.kt
+  - MinimumReplacementToSortTheArray.kt
+  - MinimumTimeToMakeRopeColorful.kt
   - RescheduleMeetingsforMaximumFreeTime_I.kt
+  - TaskScheduler.kt
 - **grid/**
+  - FloodFill.kt
+  - IslandPerimeter.kt
   - MakingALargeIsland.kt
   - MakingALargeIsland_AnotherApproach.kt
   - MaxAreaOfIsland.kt
@@ -190,6 +273,9 @@
   - RottingOranges.kt
   - ShortestBridge.kt
   - ShortestDistanceFromAllBuildings.kt
+  - WallsAndGates.kt
+  - **a_star/**
+    - ShortestPathInGridWithObstaclesElimination.kt
   - **dynamic_programming/**
     - CherryPickup.kt
     - Test.kt
@@ -202,7 +288,12 @@
 - **hashtable/**
   - CountNumberOfBadPairs.kt
   - DesignANumberContainerSystem.kt
+  - DesignFileSystem.kt
+  - DesignHashMap.kt
+  - FirstUniqueCharacter.kt
+  - HIndex.kt
   - IntegerToRoman.kt
+  - MaximumFrequencyStack.kt
   - RomanToInteger.kt
   - WorkBreak_II.kt
   - WorlBreak_I_DP.kt
@@ -211,8 +302,11 @@
   - FindKClosestElements.kt
   - FindScoreOfAnArrayAfterMarkingAllElements.kt
   - FindingMKAverage.kt
+  - IPO.kt
+  - LongestHappyString.kt
   - MedianFromRunningStream.kt
   - MeetingRoom_III.kt
+  - SingleThreadedCPU.kt
   - SlidingWindowMedian.kt
   - TopKFrequentElements.kt
 - **linkedlist/**
@@ -221,28 +315,47 @@
   - DeleteMiddleNodeOfLinkedList.kt
   - InsertIntoASortedCircularLinkedList.kt
   - InsertIntoASortedCircularList.kt
+  - IntersectionOfTwoLinkedList.kt
   - LinkedListCycle.kt
+  - LinkedListCycle_II.kt
+  - MaximumTwinSumOfALinkedList.kt
   - MergeKSortedList.kt
   - MergeKSortedListIterative.kt
   - MergeTwoSortedLIst.kt
+  - MiddleNode.kt
   - OddEvenLinkedList.kt
   - OddOrEvenLinkedList.kt
+  - PalindromeLinkedList.kt
   - RemoveNthNodeFromEndOfList.kt
   - ReverseLinkedList.kt
+  - ReverseLinkedListIterative.kt
   - ReverseNodesInKGroups.kt
+  - RotateList.kt
+  - SwapNodesInPairs.kt
 - **math/**
   - AddStrings.kt
   - DesignTicTacToe.kt
   - DetectSquares.kt
   - DivideTwoIntegers.kt
+  - HappyNumber.kt
+  - MinimumMovesToEqualArrayElements.kt
   - MultiplyStrings.kt
+  - PlusOne.kt
+  - PowerOfTwo.kt
   - ReverseInteger.kt
+  - SlidingPuzzle.kt
   - Sqrt.kt
   - StringtoIntegerAtoi.kt
+  - **binary/**
+    - AddBinary.kt
   - **dp/**
     - PascalsTriangle.kt
   - **geometry/**
+    - ConvexHull.kt
     - ErectTheFence_ConvexHull.kt
+    - MaxPointsOnALine.kt
+    - RectangleArea.kt
+    - RectangleOverlap.kt
     - **binarysearch/**
       - SeperateSquares_I.kt
   - pow.kt
@@ -250,6 +363,7 @@
     - BasicCalculator.kt
     - BasicCalculator_I.kt
     - BasicCalculator_II.kt
+    - BasicCalculator_III.kt
     - BasicCalculator_II_ShortCode.kt
 - **microsoft/**
   - Demo.kt
@@ -262,11 +376,13 @@
       - **core/**
         - DecisionTree.kt
       - **ensemble/**
+- **nlp/**
 - **numbers/**
   - PalindromeNumber.kt
 - **probability/**
   - InsertDeleteGetRandomAtO1.kt
   - LinkedListRandomNode.kt
+  - PathWithMaximumProbability.kt
   - ReservoirSampling.kt
 - **queues/**
   - **dequeue/**
@@ -279,13 +395,19 @@
 - **quicksort/**
   - KClosestPointsToOrigin.kt
   - KThLargestElementInArray.kt
+  - KthLargestElementInArrayTailRec.kt
   - TopKFrequentElements.kt
 - **real_word_projects/**
   - HttpApiCall.kt
   - InterfaceExample.kt
   - ParallelFibonacci.kt
+  - ScaleTransactions.kt
   - SystemInterviewHack.kt
   - TradingAPICallExample.kt
+  - **advertisement/**
+    - DataModels.kt
+  - **consistent_hashing/**
+    - ConsistentHashing.kt
   - **database/**
     - AiTest.kt
   - **dynamic_programming/**
@@ -302,11 +424,15 @@
     - system_design_plantuml.txt
     - trading_data.json
 - **simulation/**
+  - CarPooling.kt
   - CountCollisionsOnARoad.kt
+  - FindWinnerOnATicTacToeGame.kt
   - Racecar.kt
   - RobotBoundedInCircle.kt
   - TextJustification.kt
 - **sliding_window/**
+  - LongestContinuousSubarrayWithAbsoluteDifferenceLessThanOrEqualToLimit.kt
+  - LongestRepeatingCharacterReplacement.kt
   - LongestSubArraysOfOneAfterDeletingOneElement.kt
   - LongestSubstringWithoutRepeatingCharacter.kt
   - MaxConsecutiveOnes_III.kt
@@ -314,30 +440,43 @@
   - MaximumErasureValue.kt
   - MaximumSumOfDistinctSubarraysWithLengthK.kt
   - MinimumSizeSubarraySum.kt
+  - MinimumSwapsToGroupAllOnesTogether.kt
   - PartitionLabels.kt
+  - ProgrammerString.kt
   - SlidingWindowMaximum.kt
 - **sorting/**
   - EmployeeFreeTime.kt
+  - HIndex.kt
   - LargestNumber.kt
+  - MergeSort.kt
   - RankTeamsByVote.kt
+  - RussianDollEnvelope.kt
 - **speed_dating/**
   - ComputerScienceEngineerDating.kt
 - **stack/**
   - AestroidCollisions.kt
   - BuildingsWithAnOceanView.kt
   - DailyTemperatures.kt
+  - DesignAStackWithIncrementOperations.kt
   - EvaluateReversePolishNotation.kt
   - ExclusiveTimeOfFunctions.kt
   - FlattenNestedListIterator.kt
   - LargestRectangleInHistogram.kt
+  - LongestValidParanthesis.kt
   - MinStack.kt
   - MinimumAddtoMakeParenthesesValid.kt
+  - MinimumDeletionsToMakeStringBalanced.kt
   - MinimumRemoveToMakeValidParentheses.kt
   - NextGreaterElement_I.kt
   - NextGreaterElement_II.kt
+  - NumberOfVisiblePeopleInAQueue.kt
   - OneThreeTwoPattern.kt
   - OnlineStockSpan.kt
+  - RemoveDuplicateLetters.kt
   - RemoveStarsFromString.kt
+  - SmallestSubsequenceOfDistinctCharacters.kt
+  - SumOfSubArrayMinimum.kt
+  - SumOfSubArrayRanges.kt
   - ValidParentheses.kt
 - **stock_market/**
   - **dp/**
@@ -350,42 +489,64 @@
 - **stream/**
   - MovingAverageOfARunningStream.kt
 - **string/**
+  - ApplySubstitutions.kt
   - CheckifaParenthesesStringCanBeValid.kt
   - CountAndSay.kt
+  - CountNumberOfWordsWhichAreSubSequence.kt
   - CountWordsWithAGivenPrefix.kt
+  - ExcelSheetToColumnNumber.kt
   - FindUniqueBinaryString.kt
   - GoatLatin.kt
   - GreatestCommonDivisorOfStrings.kt
   - GroupAnagrams.kt
   - IsSubsequence.kt
+  - IsomorphicString.kt
+  - LengthOfLastWord.kt
   - LongestCommonPrefix.kt
+  - LongestPalidnromicSubstring.kt
+  - MaximumLengthofaConcatenatedStringwithUniqueCharacters.kt
   - MaximumValueOfAStringIsAnArray.kt
   - MergeStringAlternatively.kt
+  - MinimumDeletionToMakeCharacterFrequenciesUnique.kt
   - ReverseVowelOfString.kt
   - ReverseWordsInString.kt
   - StringCompression.kt
+  - StringCompression_II.kt
   - ValidAnagram.kt
   - ValidNumber.kt
   - ValidPalindrome.kt
   - ValidPalindrome_II.kt
   - ValidWordAbbreviation.kt
+  - ValidateIPAddress.kt
   - **backtracking/**
     - GenerateParantheses.kt
   - **dynamic_programming/**
+    - DeleteOperationsForTwoStrings.kt
     - EditDistance.kt
+    - InterleavingString.kt
     - LongestCommonSubsequence.kt
     - LongestCommonSubstring.kt
+    - LongestPalindromicSubsequence.kt
+    - LongestPalindromicSubsequence_BottomUp.kt
+    - LongestStringChain.kt
     - RegularExpressionMatching.kt
     - ShortestCommonSupersequence.kt
     - ValidPalindrome_III.kt
     - ValidPalindrome_III_SpaceOptimized.kt
+  - **greedy/**
+    - BreakAPalindrome.kt
+    - ShortestWayToFormAString.kt
   - **hashtable/**
     - DetermineIfStringsAreClose.kt
     - GroupShiftedStrings.kt
+    - PermutationsInString.kt
     - UniqueLength3PalindromicSubsequence.kt
+    - UniqueSubstringWithEqualDigitFrequency.kt
   - **pattern_matching/**
     - FindTheIndexofTheFirstOccurrenceIna String.kt
+    - FindTheIndexofTheFirstOccurrenceIna String_RabinKarp.kt
   - **sliding_window/**
+    - FindAllAnagrams.kt
     - MaximumNumberofVowelsinSubstringofGivenLength.kt
     - MinimumWindowSubstring.kt
   - **sorting/**
@@ -400,18 +561,24 @@
   - trading_data.json
 - **tree/**
   - AllNodesDistanceKinBinaryTree.kt
+  - BInaryTreeInOrderTraversalIterative.kt
   - BalancedBinaryTree.kt
   - BinaryTreeLevelOrderTraversal.kt
+  - BinaryTreeMaximumPathSum.kt
   - BinaryTreeRightSideView.kt
   - BinaryTreeVerticalOrderTraversal.kt
   - BinaryTreeVerticalOrderTraversal_WithoutSorting.kt
   - BinaryTreeZigZagLevelOrderTraversal.kt
   - BoundaryOfBinaryTree.kt
+  - ConstructBinaryTreeFromInorderAndPostOrderTraversal.kt
   - ConstructBinaryTreeFromPreorderAndInOrderTraversal.kt
   - ConstructBinaryTreeFromString.kt
   - CountGoodNodeInBInaryTree.kt
   - CountNodeEqualsAverage.kt
+  - DiameterOfNArrayTree.kt
   - LeafSimilar.kt
+  - LongestPathWithDifferentAdjacentCharacters.kt
+  - LongestUnivaluePath.kt
   - LowestCommonAncestor.kt
   - LowestCommonAncestor_III.kt
   - MaximumDepthOfBinaryTree.kt
@@ -421,10 +588,16 @@
   - PathSum.kt
   - PathSumIII.kt
   - PathSum_II.kt
+  - PopulateNextRightPointersInEachNode_II.kt
+  - PopulateNextRightPointersInEachNode_II_Constant.kt
   - PopulatingNextRightPointerInEachNode.kt
   - RecoverATreeFromPreOrderTraversal.kt
+  - SerializeAndDeserializeABinaryTree.kt
+  - SerializeAndDeserializeNArrayTree.kt
+  - SlidingWindowMedianTreeSet.kt
   - StepByStepDirectionsFromANodeToAnother.kt
   - SumRootToLeafNumbers.kt
+  - VerticalOrderTraversalOfABinaryTree.kt
   - **bfs/**
     - AverageOfLevelsInBinaryTree.kt
     - BinaryTreeLevelOrderTraversal_II.kt
@@ -435,19 +608,25 @@
     - ClosestBinarySearchTreeValue.kt
     - ConvertBInarySearchTreeToSortedDoublyLinkedList.kt
     - DeleteNodeinABST.kt
+    - InorderSuccessor.kt
     - LongestIncreasingSubsequence.kt
+    - RecoverBinarySearchTree.kt
     - SkylineProblem.kt
   - **fenwick/**
+    - CountOfSmallerNumberAfterSelf.kt
     - FenwickTree.kt
     - RangeSumQueryMutable.kt
   - **mst/**
     - MinCostToConnectAllPointsKruskal.kt
     - MinCostToConnectAllPointsPrims.kt
+  - **segment/**
+    - SegmentTree.kt
 - **trie/**
   - AutoCompleteSystem.kt
   - AutoCompleteSystemWithHeap.kt
   - CountWordsWithAGivenPrefix_Trie.kt
   - CountWordsWithAGivenPrefix_Trie_FP.kt
+  - DesignAddAndSearchWordDataStructure.kt
   - EqualRowAndColumnPairs.kt
   - LongestCommonPrefix.kt
   - SearchSuggestionSystem.kt
