@@ -1,53 +1,95 @@
-import java.time.Duration
-import java.time.Instant
-import kotlin.random.Random
+import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.*
 
-enum class EventType { PROMOTED_TO_CUSTOMER, SURVIVED_THE_DAY }
+// Decoupled Configuration
+data class LifeConfig(
+    val initialVisaDays: Int = 60,
+    val initialPtoDays: Int = 17,
+    val initialSolvedCount: Int = 545,
+    val simulationSpeedMs: Long = 50
+)
 
-const val DAYS_TO_SURVIVE = 60L
-const val MANDATORY_DAILY_SLEEPING_HOURS = 8L
+// Dynamics: Maps company names to their required "Muscle Strength"
+val targetThresholds = mapOf(
+    "Google" to 600,
+    "Meta" to 580,
+    "Stripe" to 590,
+    "Startup" to 450
+)
 
-var windowStart = Instant.now()
-var windowEnd = windowStart.plus(Duration.ofDays(DAYS_TO_SURVIVE)) // 60 days window
+data class LifeState(
+    val visaDays: Int,
+    val ptoDays: Int,
+    val prepLevel: Int,
+    val activeOffers: List<String> = emptyList(),
+    val isFlightBooked: Boolean = false
+)
 
-fun autoPilot() {
-    while (true) {
-        // Generate a random event using when
-        val randomEvent = generateRandomEvent()
+class HustleEngine(private val config: LifeConfig) {
+    private val _state = MutableStateFlow(
+        LifeState(config.initialVisaDays, config.initialPtoDays, config.initialSolvedCount)
+    )
+    val state = _state.asStateFlow()
 
-        // Call the dailyTriggerOfAnxiety function with the random event
-        dailyTriggerOfAnxiety(randomEvent)
-
-        // Sleep for 8 hours
-        val sleepDuration = Duration.ofHours(MANDATORY_DAILY_SLEEPING_HOURS).toMillis()
-        Thread.sleep(sleepDuration) // Sleep for 8 hours before checking again
-    }
-}
-
-fun dailyTriggerOfAnxiety(uncertainEvent: EventType) {
-    val now = Instant.now()
-    println("Uncertain event happened : $uncertainEvent")
-
-    when (uncertainEvent) {
-        EventType.PROMOTED_TO_CUSTOMER -> {
-            windowStart = now
-            windowEnd = windowStart.plus(Duration.ofDays(60)) // Reset window to 60 days
+    suspend fun runStrategicHustle() = coroutineScope {
+        // PTO Grind: Use days to increment Prep Level
+        val grindJob = launch {
+            while (state.value.ptoDays > 0 && state.value.activeOffers.isEmpty()) {
+                delay(config.simulationSpeedMs)
+                _state.update { it.copy(ptoDays = it.ptoDays - 1, prepLevel = it.prepLevel + 1) }
+            }
         }
-        EventType.SURVIVED_THE_DAY -> {
-            windowStart = windowStart.plus(Duration.ofDays(1)) // Slide window by one day
-            windowEnd = windowEnd.plus(Duration.ofDays(1))
+
+        // Window Bleed: Visa days only decrease when PTO is 0
+        val visaJob = launch {
+            while (state.value.visaDays > 0 && state.value.activeOffers.isEmpty()) {
+                if (state.value.ptoDays == 0) {
+                    delay(config.simulationSpeedMs)
+                    _state.update { it.copy(visaDays = it.visaDays - 1) }
+                } else yield()
+            }
+            if (state.value.activeOffers.isEmpty()) _state.update { it.copy(isFlightBooked = true) }
+        }
+
+        // Concurrent Interview Tracks
+        targetThresholds.map { (company, threshold) ->
+            async {
+                delay(config.simulationSpeedMs * 5) // Simulate interview duration
+                if (state.value.prepLevel >= threshold) {
+                    _state.update { it.copy(activeOffers = it.activeOffers + company) }
+                }
+            }
+        }.awaitAll()
+
+        grindJob.cancel()
+        visaJob.cancel()
+    }
+}
+
+fun main() = runBlocking {
+    val engine = HustleEngine(LifeConfig())
+
+    launch {
+        engine.state.collect { s ->
+            val status = when {
+                s.activeOffers.isNotEmpty() -> "SUCCESS: Offers from ${s.activeOffers.joinToString()}"
+                s.isFlightBooked -> "TERMINAL: Window exhausted. Booking flight."
+                else -> "HUSTLING: Visa ${s.visaDays} | PTO ${s.ptoDays} | Prep ${s.prepLevel}"
+            }
+            println(status)
         }
     }
-}
 
-fun generateRandomEvent(): EventType {
-    return when (Random.nextBoolean()) {
-        true -> EventType.PROMOTED_TO_CUSTOMER
-        false -> EventType.SURVIVED_THE_DAY
-    }
+    engine.runStrategicHustle()
 }
-
-// Start the autopilot
-fun main() {
-    autoPilot()
-}
+/**
+ * Sample Hustling Output
+ *
+ * HUSTLING: Visa 60 | PTO 17 | Prep 545
+   HUSTLING: Visa 60 | PTO 16 | Prep 546
+   HUSTLING: Visa 60 | PTO 15 | Prep 547
+   HUSTLING: Visa 60 | PTO 14 | Prep 548
+   HUSTLING: Visa 60 | PTO 13 | Prep 549
+   HUSTLING: Visa 60 | PTO 12 | Prep 550
+   SUCCESS: Offers from Startup
+ */
