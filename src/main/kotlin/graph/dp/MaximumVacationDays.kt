@@ -12,6 +12,7 @@ class MaximumVacationDays {
             when (week) {
                 numWeeks -> 0
                 else -> (0 until numCities)
+                    // next -> city == next means decided to stay in the same city for next week. Please stay
                     .filter { next -> city == next || flights[city][next] == 1 }
                     .maxOf { next -> days[next][week] + solve(next, week + 1) }
             }
