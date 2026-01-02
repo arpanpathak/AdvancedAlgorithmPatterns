@@ -10,11 +10,10 @@ class FrogJumpTopDown {
         fun solve(pos: Int, k: Int): Boolean =
             cache.getOrPut(State(pos, k)) {
                 pos == stones.last() || (k - 1..k + 1).any { nextJump ->
-                    nextJump > 0 &&
-                    (pos + nextJump) in stoneSet && solve(pos + nextJump, nextJump)
+                    nextJump > 0 && (pos + nextJump) in stoneSet && solve(pos + nextJump, nextJump)
                 }
             }
 
-        return stones.getOrNull(1) == 1 && solve(1, 1)
+        return solve(0, 0)
     }
 }
