@@ -29,4 +29,18 @@ class RussianDollEnvelope {
         // The size of the TreeSet represents the length of the longest increasing subsequence
         return treeSet.size
     }
+
+    fun maxEnvelopesRussianVersion(envelopes: Array<IntArray>): Int {
+        // Sort by ascending order of width and descending order of height
+        envelopes.sortWith(compareBy<IntArray> { it[0] }.thenByDescending { it[1] })
+
+        val treeSet = TreeSet<Int>()
+
+        envelopes.forEach { (_, height) ->
+            treeSet.ceiling(height)?.let { treeSet.remove(it) }
+            treeSet.add(height)
+        }
+
+        return treeSet.size
+    }
 }
