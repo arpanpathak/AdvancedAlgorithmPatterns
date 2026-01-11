@@ -1,6 +1,6 @@
 package graph
 
-object IsBipartileBFSFunctional {
+object IsBipartileFunctional {
     enum class Color { UNCOLORED, RED, BLUE }
 
     fun isBipartite(graph: List<List<Int>>): Boolean {
@@ -11,7 +11,7 @@ object IsBipartileBFSFunctional {
             val nextC = if (c == Color.RED) Color.BLUE else Color.RED
 
             // Returns true (isBipartite) only if NO neighbor triggers the failure condition
-            return !graph[u].any { v ->
+            return graph[u].none { v ->
                 colors[v] == c || (colors[v] == Color.UNCOLORED && !canAssignColor(v, nextC))
             }
         }
