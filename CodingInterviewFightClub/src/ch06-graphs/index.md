@@ -25,6 +25,8 @@
 | 6.12 | Network Delay Time | pure Dijkstra | $O(E log V)$ | [→](network-delay-time.md) |
 | 6.13 | Word Ladder II | BFS distances + DFS paths | $O(26Ln)$ | [→](word-ladder-ii.md) |
 | 6.14 | Rotting Oranges | multi-source BFS | $O(mn)$ | [→](rotting-oranges.md) |
+| 6.15 | Accounts Merge | Union-Find over emails | $O(Eα)$ | [→](accounts-merge.md) |
+| 6.16 | Surrounded Regions | border BFS marking | $O(mn)$ | [→](surrounded-regions.md) |
 ## The rest of the graph/ directory
 
 `src/main/kotlin/graph/` is enormous: `topological_sort/` (Course Schedule I/II, Parallel Courses), `scc/` (Kosaraju), `mst/` (Kruskal & Prim on points), `flow_network/` (Edmonds-Karp max flow), `tsp/` (Travelling Salesman via Held-Karp), `euler/` (Cracking The Safe), `articulation_point/`, `cycle/`, `components/`, `dag/`, `dp/`, `greedy/`, plus standalone classics — Word Ladder II, Clone Graph, Bipartite (BFS/DFS variants), Bus Routes, Evaluate Division, Reorder Routes, Minimum Genetic Mutations, Maximum Path Quality, N-Coloring, Chromatic Number, Graph Diameter, House Robber III, and more.

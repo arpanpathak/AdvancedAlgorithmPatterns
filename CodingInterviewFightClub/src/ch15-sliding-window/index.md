@@ -20,6 +20,7 @@
 
 | 15.8 | Permutation In String | fixed-size anagram window | $O(n)$ | [→](permutation-in-string.md) |
 | 15.9 | Maximum Erasure Value | all-unique window + sum | $O(n)$ | [→](maximum-erasure-value.md) |
+| 15.10 | Longest Subarray Of 1s After Deleting One | zero-count window | $O(n)$ | [→](longest-subarray-of-ones-after-deleting-one.md) |
 ## The rest of the sliding_window/ directory
 
 `src/main/kotlin/sliding_window/` also holds: Maximum Erasure Value, Maximum Sum Of Distinct Subarrays With Length K, Longest Continuous Subarray With Absolute Difference ≤ Limit, Longest Subarrays Of Ones After Deleting One Element, Minimum Swaps To Group All Ones Together, Partition Labels, and Programmer String. The repo's `string/sliding_window/` subfolder carries the string-flavored variants.

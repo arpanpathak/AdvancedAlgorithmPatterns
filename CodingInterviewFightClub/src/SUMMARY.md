@@ -56,6 +56,7 @@
   - [2.19 Longest Increasing Subsequence](ch02-dynamic-programming/longest-increasing-subsequence.md)
   - [2.20 Burst Balloons](ch02-dynamic-programming/burst-balloons.md)
   - [2.21 Target Sum](ch02-dynamic-programming/target-sum.md)
+  - [2.22 Interleaving String](ch02-dynamic-programming/interleaving-string.md)
 
 - [3. Arrays, Two Pointers & Matrices](ch03-arrays/index.md)
   - [3.0 Pattern Primer: Two Pointers & The Sorted-Array Dance](ch03-arrays/pattern-primer.md)
@@ -74,6 +75,8 @@
   - [3.13 Rotate Array](ch03-arrays/rotate-array.md)
   - [3.14 Squares Of A Sorted Array](ch03-arrays/squares-of-a-sorted-array.md)
   - [3.15 Find Pivot Index](ch03-arrays/find-pivot-index.md)
+  - [3.16 Shuffle An Array](ch03-arrays/shuffle-an-array.md)
+  - [3.17 Convex Hull (Erect The Fence)](ch03-arrays/convex-hull.md)
   - [2.12 Closest Subsequence Sum](ch02-dynamic-programming/closest-subsequence-sum.md)
 
 - [4. Linked Lists](ch04-linked-lists/index.md)
@@ -100,6 +103,10 @@
   - [5.8 Binary Tree Right Side View](ch05-trees/binary-tree-right-side-view.md)
   - [5.9 Path Sum III](ch05-trees/path-sum-iii.md)
   - [5.10 Diameter Of Binary Tree](ch05-trees/diameter-of-binary-tree.md)
+  - [5.11 Recover Binary Search Tree](ch05-trees/recover-binary-search-tree.md)
+  - [5.12 All Nodes Distance K In Binary Tree](ch05-trees/all-nodes-distance-k.md)
+  - [5.13 Binary Tree ZigZag Level Order](ch05-trees/zigzag-level-order.md)
+  - [5.14 Count Good Nodes In Binary Tree](ch05-trees/count-good-nodes.md)
 
 - [6. Graphs](ch06-graphs/index.md)
   - [6.0 Pattern Primer: The Seven Engines](ch06-graphs/pattern-primer.md)
@@ -117,6 +124,8 @@
   - [6.12 Network Delay Time](ch06-graphs/network-delay-time.md)
   - [6.13 Word Ladder II](ch06-graphs/word-ladder-ii.md)
   - [6.14 Rotting Oranges](ch06-graphs/rotting-oranges.md)
+  - [6.15 Accounts Merge](ch06-graphs/accounts-merge.md)
+  - [6.16 Surrounded Regions](ch06-graphs/surrounded-regions.md)
 
 - [7. Heaps & Priority Queues](ch07-heaps/index.md)
   - [7.0 Pattern Primer: The Lazy Sorted Structure](ch07-heaps/pattern-primer.md)
@@ -143,6 +152,8 @@
   - [8.8 Decode String](ch08-stacks/decode-string.md)
   - [8.9 Longest Valid Parentheses](ch08-stacks/longest-valid-parentheses.md)
   - [8.10 Basic Calculator II](ch08-stacks/basic-calculator-ii.md)
+  - [8.11 Basic Calculator](ch08-stacks/basic-calculator.md)
+  - [8.12 Basic Calculator III](ch08-stacks/basic-calculator-iii.md)
 
 - [9. Strings](ch09-strings/index.md)
   - [9.0 Pattern Primer: The Three Lenses](ch09-strings/pattern-primer.md)
@@ -176,6 +187,7 @@
   - [10.12 Rank Transform Of An Array](ch10-hash-tables/rank-transform-of-an-array.md)
   - [10.13 Unique Number Of Occurrences](ch10-hash-tables/unique-number-of-occurrences.md)
   - [10.14 Integer To English Words](ch10-hash-tables/integer-to-english-words.md)
+  - [10.15 Max Points On A Line](ch10-hash-tables/max-points-on-a-line.md)
 
 - [11. Greedy](ch11-greedy/index.md)
   - [11.0 Pattern Primer: The Local Choice, Defended](ch11-greedy/pattern-primer.md)
@@ -205,6 +217,8 @@
   - [12.9 Partition To K Equal Sum Subsets](ch12-backtracking/partition-to-k-equal-sum-subsets.md)
   - [12.10 Next Permutation](ch12-backtracking/next-permutation.md)
   - [12.11 Permutations II](ch12-backtracking/permutations-ii.md)
+  - [12.12 Combinations](ch12-backtracking/combinations.md)
+  - [12.13 Combination Sum III](ch12-backtracking/combination-sum-iii.md)
 
 - [13. Tries](ch13-tries/index.md)
   - [13.0 Pattern Primer: The Prefix Structure](ch13-tries/pattern-primer.md)
@@ -225,6 +239,8 @@
   - [14.5 H-Index](ch14-sorting/h-index.md)
   - [14.6 Russian Doll Envelopes](ch14-sorting/russian-doll-envelopes.md)
   - [14.7 Top K Frequent Elements (QuickSelect)](ch14-sorting/top-k-frequent-elements-quickselect.md)
+  - [14.8 Segment Tree & Fenwick](ch14-sorting/segment-tree-and-fenwick.md)
+  - [14.9 Count Of Smaller Numbers After Self](ch14-sorting/count-of-smaller-numbers-after-self.md)
   - [14.8 Sort Colors](ch14-sorting/sort-colors.md)
 
 - [15. Sliding Window](ch15-sliding-window/index.md)
@@ -238,6 +254,7 @@
   - [15.7 Max Consecutive Ones III](ch15-sliding-window/max-consecutive-ones-iii.md)
   - [15.8 Permutation In String](ch15-sliding-window/permutation-in-string.md)
   - [15.9 Maximum Erasure Value](ch15-sliding-window/maximum-erasure-value.md)
+  - [15.10 Longest Subarray Of 1s After Deleting One](ch15-sliding-window/longest-subarray-of-ones-after-deleting-one.md)
 
 - [16. Bit Manipulation](ch16-bit-manipulation/index.md)
   - [16.0 Pattern Primer: The Bit Identities](ch16-bit-manipulation/pattern-primer.md)
@@ -277,6 +294,7 @@
   - [18.7 Insert Delete GetRandom O(1)](ch18-design-caches/insert-delete-getrandom.md)
   - [18.8 Weighted Reservoir Sampling](ch18-design-caches/weighted-reservoir-sampling.md)
   - [18.9 LRU Cache — The Repo's Seven Implementations](ch18-design-caches/lru-cache-variants.md)
+  - [18.11 My Calendar](ch18-design-caches/my-calendar.md)
 
 ## Appendix
 

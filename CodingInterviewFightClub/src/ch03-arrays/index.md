@@ -26,6 +26,8 @@
 | 3.13 | Rotate Array | triple reverse | $O(n)$ | [→](rotate-array.md) |
 | 3.14 | Squares Of A Sorted Array | two pointers from the ends | $O(n)$ | [→](squares-of-a-sorted-array.md) |
 | 3.15 | Find Pivot Index | running prefix vs total | $O(n)$ | [→](find-pivot-index.md) |
+| 3.16 | Shuffle An Array | Fisher–Yates in place | $O(n)$ | [→](shuffle-an-array.md) |
+| 3.17 | Convex Hull (Erect The Fence) | Andrew's monotone chain | $O(n log n)$ | [→](convex-hull.md) |
 ## The rest of the array/ directory
 
 `src/main/kotlin/array/` holds 100+ more problems. The full index lives in the repository; every subdirectory is a pattern family:
