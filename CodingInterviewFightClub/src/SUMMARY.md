@@ -124,3 +124,13 @@
   - [10.5 First Unique Character](ch10-hash-tables/first-unique-character.md)
   - [10.6 Design HashMap](ch10-hash-tables/design-hash-map.md)
   - [10.7 Roman To Integer](ch10-hash-tables/roman-to-integer.md)
+
+- [11. Greedy](ch11-greedy/index.md)
+  - [11.0 Pattern Primer: The Local Choice, Defended](ch11-greedy/pattern-primer.md)
+  - [11.1 Jump Game](ch11-greedy/jump-game.md)
+  - [11.2 Jump Game II](ch11-greedy/jump-game-ii.md)
+  - [11.3 Meeting Rooms](ch11-greedy/meeting-rooms.md)
+  - [11.4 Meeting Rooms II](ch11-greedy/meeting-rooms-ii.md)
+  - [11.5 Car Fleet](ch11-greedy/car-fleet.md)
+  - [11.6 Task Scheduler](ch11-greedy/task-scheduler.md)
+  - [11.7 Minimum Number Of Refueling Stops](ch11-greedy/minimum-number-of-refueling-stops.md)
