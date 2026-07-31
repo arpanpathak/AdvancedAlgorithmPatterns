@@ -154,3 +154,13 @@
   - [13.5 Search Suggestion System](ch13-tries/search-suggestion-system.md)
   - [13.6 Word Squares](ch13-tries/word-squares.md)
   - [13.7 Design Auto Complete System](ch13-tries/design-autocomplete-system.md)
+
+- [14. Sorting & QuickSelect](ch14-sorting/index.md)
+  - [14.0 Pattern Primer: Sort as Preprocessing](ch14-sorting/pattern-primer.md)
+  - [14.1 Merge Sort](ch14-sorting/merge-sort.md)
+  - [14.2 Kth Largest Element](ch14-sorting/kth-largest-element.md)
+  - [14.3 K Closest Points To Origin](ch14-sorting/k-closest-points-to-origin.md)
+  - [14.4 Largest Number](ch14-sorting/largest-number.md)
+  - [14.5 H-Index](ch14-sorting/h-index.md)
+  - [14.6 Russian Doll Envelopes](ch14-sorting/russian-doll-envelopes.md)
+  - [14.7 Top K Frequent Elements (QuickSelect)](ch14-sorting/top-k-frequent-elements-quickselect.md)
