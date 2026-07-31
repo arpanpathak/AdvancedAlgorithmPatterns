@@ -84,3 +84,13 @@
   - [6.5 Cheapest Flights With K Stops](ch06-graphs/cheapest-flights-with-k-stops.md)
   - [6.6 Min Cost To Connect All Points](ch06-graphs/min-cost-to-connect-all-points.md)
   - [6.7 Strongly Connected Components](ch06-graphs/strongly-connected-components.md)
+
+- [7. Heaps & Priority Queues](ch07-heaps/index.md)
+  - [7.0 Pattern Primer: The Lazy Sorted Structure](ch07-heaps/pattern-primer.md)
+  - [7.1 Top K Frequent Elements](ch07-heaps/top-k-frequent-elements.md)
+  - [7.2 Find Median From Data Stream](ch07-heaps/find-median-from-data-stream.md)
+  - [7.3 Sliding Window Median](ch07-heaps/sliding-window-median.md)
+  - [7.4 Trapping Rain Water II](ch07-heaps/trapping-rain-water-ii.md)
+  - [7.5 IPO (Maximize Capital)](ch07-heaps/ipo.md)
+  - [7.6 Meeting Rooms III](ch07-heaps/meeting-rooms-iii.md)
+  - [7.7 Single Threaded CPU](ch07-heaps/single-threaded-cpu.md)
