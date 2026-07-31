@@ -149,10 +149,14 @@
           run.push(next);
           next = next.nextElementSibling;
         }
-        if (run.length > 1) {
+        // Only group runs that contain at least one NAMED language (kotlin, java,
+        // cpp, python, rust, ...). Adjacent unlabeled ASCII diagrams / dry runs
+        // must not become "text | text" tabs — wrap them individually instead.
+        var hasNamedLanguage = run.some(function (p) { return langOf(p) !== 'text'; });
+        if (run.length > 1 && hasNamedLanguage) {
           buildTabs(run);
         } else {
-          wrapLone(run[0]);
+          run.forEach(wrapLone);
         }
         i += run.length;
       } catch (e) {

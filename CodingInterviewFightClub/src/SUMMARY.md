@@ -57,3 +57,11 @@
   - [3.6 Rotate Image](ch03-arrays/rotate-image.md)
   - [3.7 Spiral Matrix](ch03-arrays/spiral-matrix.md)
   - [2.12 Closest Subsequence Sum](ch02-dynamic-programming/closest-subsequence-sum.md)
+
+- [4. Linked Lists](ch04-linked-lists/index.md)
+  - [4.0 Pattern Primer: Pointer Choreography](ch04-linked-lists/pattern-primer.md)
+  - [4.1 Reverse Linked List](ch04-linked-lists/reverse-linked-list.md)
+  - [4.2 Linked List Cycle](ch04-linked-lists/linked-list-cycle.md)
+  - [4.3 Merge Two Sorted Lists](ch04-linked-lists/merge-two-sorted-lists.md)
+  - [4.4 Remove Nth Node From End](ch04-linked-lists/remove-nth-node-from-end.md)
+  - [4.5 Linked List Cycle II](ch04-linked-lists/linked-list-cycle-ii.md)
