@@ -168,6 +168,37 @@ impl Solution {
 }
 ```
 
+### 2. `MaximalRectangle.kt` — the histogram-stack upgrade
+
+The classic "largest rectangle in a binary matrix" via **per-row histograms + the [8.5](../ch08-stacks/largest-rectangle-in-histogram.md) stack**:
+
+```kotlin
+class MaximalRectangle {
+    fun largestRectangleArea(heights: IntArray): Int {
+        val stack = Stack<Int>()
+        var (maxArea, i) = listOf(0, 0)
+
+        while (i <= heights.size) {
+            val currentHeight = if (i == heights.size) 0 else heights[i]   // sentinel 0 flushes
+
+            when {
+                stack.isEmpty() || heights[stack.last()] <= currentHeight -> stack.add(i++)
+                else -> {
+                    val height = heights[stack.pop()]
+                    val width = if (stack.isEmpty()) i else i - stack.peek() - 1
+                    maxArea = maxOf(maxArea, height * width)
+                }
+            }
+        }
+        return maxArea
+    }
+    // ... plus the per-row histogram accumulation: heights[j] = if (matrix[i][j] == '1') heights[j] + 1 else 0
+}
+```
+
+**What's cool:** the `i == heights.size ? 0` sentinel flushes the stack without a post-loop; the `when` is the monotonic-stack three-way decision ([8.5](../ch08-stacks/largest-rectangle-in-histogram.md) compressed); and the row-major histogram update turns the matrix problem into repeated 1-D problems.
+
+
 ## Dry run
 
 **Input:** `matrix = [["1","1"],["1","1"]]`.

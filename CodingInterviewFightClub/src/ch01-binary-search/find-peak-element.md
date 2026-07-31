@@ -140,6 +140,38 @@ impl Solution {
 }
 ```
 
+### 4. `FindPeakElementBetterSolution.kt` — boundary-safe peak
+
+[1.6](../ch01-binary-search/find-peak-element.md) documents the standard binary-search peak; this file's "better" claim is **explicit boundary handling** — neighbors default to `Int.MIN_VALUE` at the edges:
+
+```kotlin
+class FindPeakElementBetterSolution {
+    fun findPeakElement(nums: IntArray): Int? {
+        if (nums.isEmpty()) return null
+
+        var (left, right) = 0 to nums.size - 1
+
+        while (left < right) {
+            val mid = left + (right - left) / 2
+
+            // Safely handle boundaries
+            val leftNeighbor = if (mid > 0) nums[mid - 1] else Int.MIN_VALUE
+            val rightNeighbor = if (mid < nums.size - 1) nums[mid + 1] else Int.MIN_VALUE
+
+            when {
+                nums[mid] > leftNeighbor && nums[mid] > rightNeighbor -> return mid   // peak
+                nums[mid] < rightNeighbor -> left = mid + 1                            // go right
+                else -> right = mid                                                    // go left
+            }
+        }
+        return left
+    }
+}
+```
+
+**What's cool:** the `Int.MIN_VALUE` neighbors make the boundary cells valid peaks (a single-element array's only element is a peak); the `when` reads as the three-way decision; and `Int?` return explicitly signals "empty input". The three-branch structure also avoids [1.7](../ch01-binary-search/find-peak-element-safe.md)'s separate "safe boundaries" page — this file *is* that page's idea in one method.
+
+
 ## Dry run
 
 **Input:** `nums = [1, 2, 3, 1]`

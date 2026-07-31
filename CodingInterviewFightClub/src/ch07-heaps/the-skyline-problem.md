@@ -240,6 +240,47 @@ impl Solution {
 }
 ```
 
+### 1. `RectangleArea_II.kt` — coordinate compression, functionally
+
+The "area of the union of axis-aligned rectangles" hard problem — the `flatMap`-to-`distinct`-to-`sorted` X-coordinate extraction is the compression's whole setup in one chain:
+
+```kotlin
+class RectangleArea_II {
+    fun rectangleArea(rectangles: Array<IntArray>): Int {
+        val MOD = 1_000_000_007L
+
+        // 1. Collect all unique X coordinates to define the vertical strips
+        val xCoords = rectangles.flatMap { listOf(it[0], it[2]) }.distinct().sorted()
+
+        var totalArea = 0L
+
+        // 2. Iterate each vertical strip [xCoords[i], xCoords[i+1]]
+        for (i in 0 until xCoords.size - 1) {
+            val width = (xCoords[i + 1] - xCoords[i]).toLong()
+            if (width == 0L) continue
+
+            // 3. Find the rectangles covering this strip
+            val activeYIntervals = rectangles
+                .filter { it[0] <= xCoords[i] && it[2] >= xCoords[i + 1] }
+                .map { it[1] to it[3] }
+                .sortedBy { it.first }
+
+            // 4. Union the Y intervals (the 1-D sub-problem)
+            var currentYHeight = 0L
+            var lastY = -1
+            for ((yStart, yEnd) in activeYIntervals) {
+                // ... standard interval union: add only the uncovered part
+            }
+            totalArea = (totalArea + width * currentYHeight) % MOD
+        }
+        return totalArea.toInt()
+    }
+}
+```
+
+**What's cool:** `flatMap { listOf(it[0], it[2]) }` flattens each rectangle into its two X-edges; `distinct().sorted()` dedupes and orders — the compressed axis in two lines. The strip loop then re-filters the rectangles per strip (`filter` on coverage) and reduces to the **1-D interval-union sub-problem** — the [11.9](../ch11-greedy/non-overlapping-intervals.md) sort-and-merge machinery. Compression + sweep, told functionally.
+
+
 ## Dry run
 
 **Input:** `buildings = [[2,9,10],[3,7,15],[5,12,12],[15,20,10],[19,24,8]]`.

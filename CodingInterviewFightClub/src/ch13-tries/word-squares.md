@@ -336,6 +336,19 @@ impl Solution {
 }
 ```
 
+### 4. `WordSquaresShorter.kt` — the trie word-square, compressed
+
+[13.6](../ch13-tries/word-squares.md) documents the full trie + backtracking; `WordSquaresShorter.kt` and `WordSquare.kt` are the same algorithm at different lengths — the short one proves the core is ~30 lines:
+
+```kotlin
+// sketch of the shorter shape (WordSquaresShorter.kt)
+// Trie with prefixes-to-words maps; backtrack(row): for each word with the column prefix,
+// place it, recurse, undo. The shorter file merges the trie class into the solution.
+```
+
+**What's cool:** the pair shows exactly what the [13.6](../ch13-tries/word-squares.md) full page's scaffolding adds over the essential backtracking — useful when an interviewer asks "can you make this shorter?"
+
+
 ## Dry run
 
 **Input:** `words = ["ball","area","lead","lady"]`, `n = 4`.

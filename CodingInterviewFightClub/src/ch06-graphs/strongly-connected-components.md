@@ -354,6 +354,25 @@ class Graph<T> {
 
 The `lowLink` is the [17.10](../ch17-advanced-graphs/critical-connections-in-a-network.md) bridge logic's cousin — where the bridge test compares parent vs child `low`, Tarjan-SCC compares a node's `lowLink` to its own discovery `id` and pops a whole component when they're equal. Kosaraju ([Approach 1](#approach-1--kosaraju-the-repos-version-optimal)) needs two passes but no recursion bookkeeping; Tarjan needs one pass but a live stack.
 
+### 6. `graph/scc/Kosaraju.kt` — SCCs with `buildList`
+
+The [6.7](../ch06-graphs/strongly-connected-components.md) algorithm, with the component collection expressed via `buildList`:
+
+```kotlin
+// Learnt new construct called build list...
+return buildList {
+    while (visitOrderStack.isNotEmpty()) {
+        val vertex = visitOrderStack.removeLast()
+        if (vertex !in visited) {
+            add(buildList { dfsOnReversed(vertex, visited, this) })   // one component per add
+        }
+    }
+}
+```
+
+**What's cool:** the nested `buildList` — the outer builds the component list, the inner builds one SCC via the DFS — is the "collect the result functionally" idiom; the `dfsOnReversed(vertex, visited, this)` writes into the receiver directly. The repo even comments the discovery ("Learnt new construct called build list") — a delightful artifact of the learning process.
+
+
 ## Dry run
 
 **Input:** the repo's test — edges `0->2, 2->1, 1->0, 2->3, 3->4`.

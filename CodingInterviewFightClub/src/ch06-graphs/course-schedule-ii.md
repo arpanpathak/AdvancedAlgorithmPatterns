@@ -224,6 +224,66 @@ impl Solution {
 }
 ```
 
+### The full `AlienDictionary_BFS.kt` — the BFS twin of [6.8](../ch06-graphs/alien-dictionary.md)
+
+```kotlin
+class AlienDictionary_BFS {
+    fun alienOrder(words: Array<String>): String {
+        val graph = mutableMapOf<Char, HashSet<Char>>()
+        val inDegree = mutableMapOf<Char, Int>()
+
+        // Every letter is a node with in-degree 0 to start
+        words.forEach { word ->
+            word.forEach { char ->
+                inDegree.putIfAbsent(char, 0)
+                graph.putIfAbsent(char, hashSetOf())
+            }
+        }
+
+        // Adjacent word pairs reveal one edge each
+        for (i in 0 until words.size - 1) {
+            val currentWord = words[i]
+            val nextWord = words[i + 1]
+            val minLength = minOf(currentWord.length, nextWord.length)
+
+            for (j in 0 until minLength) {
+                val currentChar = currentWord[j]
+                val nextChar = nextWord[j]
+                if (currentChar != nextChar) {
+                    if (graph[currentChar]!!.add(nextChar)) {   // new edge?
+                        inDegree[nextChar] = inDegree[nextChar]!! + 1
+                    }
+                    break
+                }
+                // Prefix contradiction: "abc" can't come before "ab"
+                if (j == minLength - 1 && currentWord.length > nextWord.length) return ""
+            }
+        }
+
+        // Kahn's with the filter-seeded queue
+        val queue = ArrayDeque<Char>().apply {
+            addAll(inDegree.filter { it.value == 0 }.keys)
+        }
+        val result = StringBuilder()
+
+        while (queue.isNotEmpty()) {
+            val char = queue.removeFirst()
+            result.append(char)
+            graph[char]?.forEach { neighbor ->
+                inDegree[neighbor] = inDegree[neighbor]!! - 1
+                if (inDegree[neighbor] == 0) queue.add(neighbor)
+            }
+        }
+
+        // Cycle check: all letters emitted?
+        return if (result.length == inDegree.size) result.toString() else ""
+    }
+}
+```
+
+vs [6.8](../ch06-graphs/alien-dictionary.md)'s three-state DFS — this is the **Kahn's BFS twin**: same edges, opposite traversal, and the cycle test is `result.length == inDegree.size` instead of a `VISITING` flag. The filter-seed is the one-line signature of the BFS family.
+
+
 ## Dry run
 
 **Input:** `numCourses = 4`, `prerequisites = [[1,0],[2,0],[3,1],[3,2]]`

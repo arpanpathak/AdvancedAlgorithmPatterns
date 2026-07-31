@@ -133,6 +133,7 @@
   - [8.7 Remove K Digits](ch08-stacks/remove-k-digits.md)
   - [8.8 Decode String](ch08-stacks/decode-string.md)
   - [8.9 Longest Valid Parentheses](ch08-stacks/longest-valid-parentheses.md)
+  - [8.10 Basic Calculator II](ch08-stacks/basic-calculator-ii.md)
 
 - [9. Strings](ch09-strings/index.md)
   - [9.0 Pattern Primer: The Three Lenses](ch09-strings/pattern-primer.md)
@@ -161,6 +162,8 @@
   - [10.9 Count Rectangles Formed By Points](ch10-hash-tables/count-rectangles-formed-by-points.md)
   - [10.10 First Missing Positive](ch10-hash-tables/first-missing-positive.md)
   - [10.11 Subarray Sums Divisible By K](ch10-hash-tables/subarray-sums-divisible-by-k.md)
+  - [10.12 Rank Transform Of An Array](ch10-hash-tables/rank-transform-of-an-array.md)
+  - [10.13 Unique Number Of Occurrences](ch10-hash-tables/unique-number-of-occurrences.md)
 
 - [11. Greedy](ch11-greedy/index.md)
   - [11.0 Pattern Primer: The Local Choice, Defended](ch11-greedy/pattern-primer.md)
@@ -231,6 +234,7 @@
   - [16.5 Maximum XOR Of Two Numbers](ch16-bit-manipulation/maximum-xor-of-two-numbers.md)
   - [16.6 Sum Of All Subset XOR Totals](ch16-bit-manipulation/sum-of-all-subset-xor-totals.md)
   - [16.7 Smallest Number With All Set Bits](ch16-bit-manipulation/smallest-number-with-all-set-bits.md)
+  - [16.8 Pow(x, n)](ch16-bit-manipulation/pow-x-n.md)
 
 - [17. Advanced Graphs](ch17-advanced-graphs/index.md)
   - [17.0 Pattern Primer: Flow, Matching, MST, and State-Space BFS](ch17-advanced-graphs/pattern-primer.md)
@@ -263,19 +267,3 @@
 - [Repo Coverage Index](appendix-repo-coverage-index.md) — every file in src/main/kotlin mapped
 - [The Roadmap](appendix-roadmap.md) — the remaining uncovered files
 
-- [Chapter 19 — Variant Gallery](ch19-gallery/index.md)
-  - [19.0 Pattern Primer: Same Algorithm, Different Costumes](ch19-gallery/pattern-primer.md)
-  - [19.1 Travelling Salesman — Top-Down Functional](ch19-gallery/travelling-salesman-top-down.md)
-  - [19.2 LRU Cache — Linked-List Family](ch19-gallery/lru-cache-linked-list-family.md)
-  - [19.3 Coin Change — Four Implementations](ch19-gallery/coin-change-family.md)
-  - [19.4 N-Queens — Set-Based Family](ch19-gallery/n-queen-family.md)
-  - [19.5 The Shorter/Better Gallery](ch19-gallery/short-code-gallery.md)
-  - [19.6 The Eulerian Family](ch19-gallery/eulerian-family.md)
-  - [19.7 The Functional-Programming Gallery](ch19-gallery/functional-programming-gallery.md)
-  - [19.8 Word Ladder II — Three Implementations](ch19-gallery/word-ladder-ii-family.md)
-  - [19.9 LFU Cache — Three Implementations](ch19-gallery/lfu-cache-family.md)
-  - [19.10 Sliding Window Median — TreeSet](ch19-gallery/sliding-window-median-treeset.md)
-  - [19.11 Kahn's Filter-Seed & DFS-Expression](ch19-gallery/kahns-filter-seed.md)
-  - [19.12 One-Expression DP Gallery](ch19-gallery/one-expression-dp-gallery.md)
-  - [19.13 Map-Key Gallery](ch19-gallery/map-key-gallery.md)
-  - [19.14 Structure Gallery](ch19-gallery/structure-gallery.md)

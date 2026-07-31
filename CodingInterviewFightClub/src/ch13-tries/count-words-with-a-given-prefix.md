@@ -211,6 +211,22 @@ impl Solution {
 }
 ```
 
+### 3. `CountWordsWithAGivenPrefix_Trie_FP.kt` — the trie, functionally
+
+[13.4](../ch13-tries/count-words-with-a-given-prefix.md) documents the imperative trie; this file builds the **same trie with `fold`/`getOrPut`** — insertion as a single `fold` expression:
+
+```kotlin
+// sketch of the FP trie (CountWordsWithAGivenPrefix_Trie_FP.kt)
+// class TrieNode(val children: MutableMap<Char, TrieNode> = mutableMapOf(), var count: Int = 0)
+// insert(word): word.fold(root) { node, c -> node.children.getOrPut(c) { TrieNode() } }
+//     .also { it.count++ }            — the whole insertion is a fold + also
+// countPrefix(prefix): prefix.fold(root) { node, c -> node.children[c] ?: return 0 }
+//     .let { it.count }
+```
+
+**What's cool:** `fold` over the word *is* the descent — each character steps down a level, `getOrPut` creates missing nodes; `?:"` returns early on a missing prefix. The imperative version (loop + if-null-create) and this are the same walk; the FP version states it as a single expression chain.
+
+
 ## Dry run
 
 **Input:** `words = ["pay","attention","practice","attend"]`, `prefix = "at"`.

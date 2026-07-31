@@ -209,6 +209,43 @@ impl Solution {
 }
 ```
 
+### 1. `FrogJumpTopDown.kt` — the whole DP in a `getOrPut` + `any`
+
+[2.8](../ch02-dynamic-programming/frog-jump.md) documents the canonical version (set of reachable jumps per stone). This file compresses it to a two-line recurrence:
+
+```kotlin
+class FrogJumpTopDown {
+    data class State(val pos: Int, val k: Int)
+
+    fun canCross(stones: IntArray): Boolean {
+        val stoneSet = stones.toSet()
+        val cache = mutableMapOf<State, Boolean>()
+
+        fun isValidJump(pos: Int, nextJump: Int) =
+            nextJump > 0 && (pos + nextJump) in stoneSet
+
+        fun solve(pos: Int, k: Int): Boolean =
+            cache.getOrPut(State(pos, k)) {
+                pos == stones.last() || (k - 1..k + 1).any { nextJump ->
+                    isValidJump(pos, nextJump) && solve(pos + nextJump, nextJump)
+                }
+            }
+
+        return solve(0, 0)
+    }
+}
+```
+
+**What's cool:**
+
+- **`(k - 1..k + 1).any { ... }`** — the three candidate jump lengths (`k-1, k, k+1`) are a *range expression*, not a loop. `any` short-circuits on the first successful jump.
+- **`isValidJump` as a named lambda-expression** — `nextJump > 0 && (pos + nextJump) in stoneSet`; the stone-set membership IS the boundary check (no bounds arithmetic).
+- **`pos == stones.last()`** — the base case is a boolean OR'd into the recurrence, not a separate branch.
+- **`data class State`** — `(pos, k)` hashed by the map; the [17.4](../ch17-advanced-graphs/travelling-salesman-held-karp.md) state-value idiom.
+
+The imperative version's two loops (outer stones, inner jumps) are gone — the recurrence is the whole file.
+
+
 ## Dry run
 
 **Input:** `stones = [0, 1, 3, 5, 6, 8, 12, 17]`. Bottom-up propagation:

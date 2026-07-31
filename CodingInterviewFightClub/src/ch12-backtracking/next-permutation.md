@@ -191,6 +191,29 @@ impl Solution {
 }
 ```
 
+### 1. `NextPermutationShorter.kt` — the generic extension
+
+[12.10](../ch12-backtracking/next-permutation.md) documents the array version; this file generalizes it to **any `MutableList<T : Comparable<T>>`** as an extension function — and condenses the pivot-scan to a `firstOrNull`:
+
+```kotlin
+fun <T : Comparable<T>> MutableList<T>.nextPermutation(): Boolean {
+    val pivotIndex = (size - 2 downTo 0).firstOrNull { this[it] < this[it + 1] } ?: run {
+        this.reverse()          // already maximal: wrap
+        return false
+    }
+
+    val swapIndex = (size - 1 downTo pivotIndex + 1).first { this[pivotIndex] < this[it] }
+
+    this[pivotIndex] = this[swapIndex].also { this[swapIndex] = this[pivotIndex] }
+    this.subList(pivotIndex + 1, size).reverse()
+
+    return true
+}
+```
+
+**What's cool:** `firstOrNull` + `run` folds the "no pivot → reverse and return false" case into the declaration; the `also`-swap is the idiomatic Kotlin swap; and the extension means *any* `MutableList` gets the method — `["a","b","c"]` sorts lexicographically through the same Narayana-Pandita machine as `[1,2,3]`. This is the generic form an interviewer's "make it reusable" follow-up wants.
+
+
 ## Dry run
 
 **Input:** `nums = [1,2,3]`.

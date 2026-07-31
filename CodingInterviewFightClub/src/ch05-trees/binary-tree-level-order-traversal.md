@@ -183,6 +183,36 @@ impl Solution {
 }
 ```
 
+### 3. `BinaryTreeVerticalOrderTraversal.kt` — the `data class` BFS state
+
+The vertical-order BFS carries `(node, column)` — and the repo even shows the *functional DFS sketch* commented out, with `TreeMap` + `getOrPut`:
+
+```kotlin
+// The commented-out functional DFS (the "what if" sketch):
+//   fun dfs(node: TreeNode?, verticalIndex: Int = 0) {
+//       if (node == null) return
+//       val bucket = result.getOrPut(verticalIndex) { LinkedList() }
+//       bucket.add(node.`val`)
+//       dfs(node.left, verticalIndex - 1)
+//       dfs(node.right, verticalIndex + 1)
+//   }
+//   return result.map { it.value }
+
+// The BFS version uses an explicit state carrier:
+data class VerticalIndex(val node: TreeNode, val verticalIndex: Int)
+
+fun verticalOrder(root: TreeNode?): List<List<Int>> {
+    if (root == null) return emptyList()
+    val result = TreeMap<Int, ArrayList<Int>>()
+    val queue: Queue<VerticalIndex> = LinkedList()
+    queue.offer(VerticalIndex(root, 0))
+    // ... BFS with (node, column) pairs; TreeMap keeps columns sorted
+}
+```
+
+**What's cool:** the commented DFS is the *teaching artifact* — it shows the natural (but order-incorrect) recursion before the BFS that fixes level order; `getOrPut(verticalIndex) { LinkedList() }` is the bucket-create idiom; and the `data class` state carrier is the [6.x](../ch06-graphs/pattern-primer.md) "BFS with payload" pattern.
+
+
 ## Dry run
 
 **Input:** the tree above.

@@ -148,6 +148,27 @@ impl Solution {
 }
 ```
 
+### 1. `GroupAnagrams.kt` — the `List<Int>` key
+
+[9.2](../ch09-strings/group-anagrams.md) uses a frequency-String key (`"1#2#0#..."`). This file uses the **frequency list itself** as the key — `count.toList()` — relying on `List<Int>`'s structural equality:
+
+```kotlin
+class GroupAnagrams {
+    fun groupAnagrams(strs: Array<String>): List<List<String>> {
+        val anagramMap = mutableMapOf<List<Int>, MutableList<String>>()  // List<Int> as the key!
+        for (word in strs) {
+            val count = IntArray(26)
+            word.forEach { count[it - 'a']++ }
+            anagramMap.getOrPut(count.toList()) { mutableListOf() }.add(word)
+        }
+        return anagramMap.values.toList()
+    }
+}
+```
+
+**What's cool:** no string serialization — the `IntArray` is converted to a `List<Int>` whose `equals`/`hashCode` are structural (contents, not identity). `getOrPut(count.toList()) { ... }` folds create-and-add into one call. The [9.2](../ch09-strings/group-anagrams.md) String-key is debuggable (printable); this key is zero-encoding.
+
+
 ## Dry run
 
 **Input:** `strs = ["eat","tea","tan","ate","nat","bat"]`.

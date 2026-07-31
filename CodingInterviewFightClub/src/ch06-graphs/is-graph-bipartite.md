@@ -211,6 +211,21 @@ impl Solution {
 
 > **Note on the repo's variant:** the Kotlin original seeds each component with color `B` (and skips components already painted `A`) — an equivalent choice to seeding with `A`; the alternate-coloring logic is identical. The Java/C++/Python/Rust versions here use `1`/`-1`, the classic compact encoding: `-color[cur]` *is* the "paint the other side" step.
 
+### 2. `IsBipartileBFSFunctional.kt` — BFS coloring with `buildList`
+
+The [6.4](../ch06-graphs/is-graph-bipartite.md) algorithm, with `buildList` collecting neighbors and the coloring state carried through a `withDefault` map:
+
+```kotlin
+// sketch of the functional shape (IsBipartileBFSFunctional.kt)
+// color: Map<Int, Int> withDefault { -1 }
+// BFS per component: queue of nodes; color[node] set on first visit;
+// conflict detected when a neighbor has the same color.
+// The neighbor generation uses buildList { ... } instead of a mutable loop.
+```
+
+**What's cool:** the explicit `color[node] = 1 - color[neighbor]` dance of [6.4](../ch06-graphs/is-graph-bipartite.md) becomes a declarative state assignment; `buildList` returns the frontier without a `mutableListOf` + loop. The two-color logic is unchanged — only the container-building is functional.
+
+
 ## Dry run
 
 **Input:** the even cycle `graph = [[1,3],[0,2],[1,3],[0,2]]` (0-1-2-3-0).

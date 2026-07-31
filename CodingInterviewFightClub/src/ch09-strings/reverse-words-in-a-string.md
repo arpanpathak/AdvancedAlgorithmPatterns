@@ -127,6 +127,29 @@ impl Solution {
 }
 ```
 
+### 4. `ReverseWordsInString.kt` — split, filter, swap
+
+[9.6](../ch09-strings/reverse-words-in-a-string.md) documents the two-pointer word reversal; this file is the **split-filter-swap** flavor:
+
+```kotlin
+class ReverseWordsInString {
+    fun reverseWords(s: String): String {
+        val words = s.split(" ").filter { it.isNotEmpty() }.toMutableList()
+
+        var (start, end) = Pair(0, words.lastIndex)
+        while (start < end) {
+            words[end] = words[start].also { words[start] = words[end] }   // the also-swap
+            start++
+            end--
+        }
+        return words.joinToString(separator = " ").trim()
+    }
+}
+```
+
+**What's cool:** `split(" ").filter { it.isNotEmpty() }` handles the multi-space case declaratively (the [9.6](../ch09-strings/reverse-words-in-a-string.md) scanner's whitespace-skip in one filter); the `also`-swap is Kotlin's idiomatic exchange; `joinToString` rebuilds. Different machinery, same O(n).
+
+
 ## Dry run
 
 **Input:** `s = "a good   example"` (three spaces between "good" and "example").

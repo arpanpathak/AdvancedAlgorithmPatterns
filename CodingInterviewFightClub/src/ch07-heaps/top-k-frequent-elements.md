@@ -180,6 +180,67 @@ impl Solution {
 
 > **Rust note:** `BinaryHeap` is a max-heap, so the tuple is wrapped in `Reverse` to make `(count, num)` behave as a min-heap keyed on frequency — the same "negate to invert" reflex as the Kotlin `compareBy { -it }` idiom elsewhere in this chapter.
 
+### 2. `heap/TopKFrequentElements.kt` — the `getOrPut` count one-liner
+
+The [7.1](../ch07-heaps/top-k-frequent-elements.md) heap algorithm, with the frequency build compressed:
+
+```kotlin
+class TopKFrequentElements {
+    fun topKFrequent(nums: IntArray, k: Int): IntArray {
+        val freqMap = mutableMapOf<Int, Int>()
+        nums.forEach { freqMap[it] = freqMap.getOrPut(it) { 0 } + 1 }
+
+        // Min-heap keeping the k most frequent
+        val minHeap = PriorityQueue<Int> { a, b -> freqMap[a]!! - freqMap[b]!! }
+
+        for (num in freqMap.keys) {
+            minHeap.offer(num)
+            if (minHeap.size > k) minHeap.poll()   // evict the least frequent
+        }
+        return minHeap.toIntArray()
+    }
+}
+```
+
+**What's cool:** `freqMap[it] = freqMap.getOrPut(it) { 0 } + 1` — the whole "increment or initialize" in one expression (same idiom as `UniqueNumberOfOccurences.kt`'s `map[num] = map.getOrPut(num) { 1 } + 1`). The min-heap with a **frequency comparator** is the [7.1](../ch07-heaps/top-k-frequent-elements.md) keep-top-k shape.
+
+### 3. `quicksort/TopKFrequentElements.kt` — the quickselect twin
+
+The same problem via **randomized partition on the unique keys** — the [14.7](../ch14-sorting/top-k-frequent-elements-quickselect.md) engine:
+
+```kotlin
+class TopKFrequentElements {
+    private val map = HashMap<Int, Int>()
+
+    fun topKFrequent(nums: IntArray, k: Int): IntArray {
+        nums.forEach { map[it] = map.getOrPut(it) { 0 } + 1 }
+
+        val uniqueNums = map.keys.toIntArray()
+        var start = 0
+        var end = uniqueNums.size - 1
+
+        while (start < end) {
+            val partitionIndex = partition(uniqueNums, start, end)
+            when {
+                partitionIndex < k - 1 -> start = partitionIndex + 1
+                partitionIndex > k - 1 -> end = partitionIndex - 1
+                else -> break
+            }
+        }
+        return uniqueNums.copyOfRange(0, k)
+    }
+
+    // Randomized quick partition on FREQUENCY, not value...
+    private fun partition(nums: IntArray, start: Int, end: Int): Int {
+        val randomIndex = Random.nextInt(start, end + 1)
+        // ...swap, partition by map[nums[i]] vs map[pivot]...
+    }
+}
+```
+
+**What's cool:** the map is built once; then the **frequencies** are the partition key (not the values) — `map[nums[i]]` in the partition's comparison. Heap gives O(n log k); quickselect gives O(n) average ([14.7](../ch14-sorting/top-k-frequent-elements-quickselect.md) compares them).
+
+
 ## Dry run
 
 **Input:** `nums = [1,1,1,2,2,3]`, `k = 2`.

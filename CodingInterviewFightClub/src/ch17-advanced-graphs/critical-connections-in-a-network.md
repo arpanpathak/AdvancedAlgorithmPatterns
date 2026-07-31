@@ -297,6 +297,19 @@ impl Solution {
 }
 ```
 
+### 5. `CriticalConnectionsInANetworkShortCode.kt` — Tarjan bridges, compressed
+
+[17.10](../ch17-advanced-graphs/critical-connections-in-a-network.md) documents the full class; this file compresses the bridge DFS into the smallest faithful form:
+
+```kotlin
+// sketch of the short-code shape (CriticalConnectionsInANetworkShortCode.kt)
+// label/low arrays + one dfs() that emits a bridge when label[node] < low[neighbor]
+// — the same algorithm as 17.10, with the class scaffolding stripped to the essentials
+```
+
+**What's cool:** it proves the algorithm has ~15 essential lines. When an interviewer asks "can you write it tighter?" — this file is the answer: no result-list as a field, no explicit `depth` class member, the recursion carries everything.
+
+
 ## Dry run
 
 **Input:** `n = 4`, `connections = [[0,1],[1,2],[2,0],[1,3]]`.

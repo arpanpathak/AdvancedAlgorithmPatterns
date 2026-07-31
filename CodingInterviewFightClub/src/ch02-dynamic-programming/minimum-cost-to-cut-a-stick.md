@@ -232,6 +232,39 @@ impl Solution {
 }
 ```
 
+### 2. `StoneGame.kt` — the zero-sum relative score
+
+The "Current Player's Score − Opponent's Score" trick lets the DP avoid tracking turns:
+
+```kotlin
+fun stoneGame(piles: IntArray): Boolean {
+    // Cache stores (i to j) -> Max relative score difference for that range
+    val cache = mutableMapOf<Pair<Int, Int>, Int>()
+
+    /**
+     * Returns (Current Player's Score - Opponent's Score) for the range [i, j].
+     * This "Relative Score" approach avoids needing to track whose turn it is.
+     */
+    fun pick(i: Int, j: Int): Int = cache.getOrPut(i to j) {
+        when (i) {
+            j -> piles[i]                        // one pile left: take it all
+
+            // Subtract the opponent's result: the recursive call returns the
+            // advantage for the NEXT player.
+            else -> maxOf(
+                piles[i] - pick(i + 1, j),       // take left, subtract opponent's net gain
+                piles[j] - pick(i, j - 1)        // take right, subtract opponent's net gain
+            )
+        }
+    }
+
+    return pick(0, piles.lastIndex) >= 0
+}
+```
+
+**What's cool:** `piles[i] - pick(i+1, j)` — the *relative* score means the recursion never asks "whose turn?"; the sign flips encode it. The `when (i) { j -> ... }` base case is the single-pile boundary. This is the [2.x](../ch02-dynamic-programming/pattern-primer.md) interval-DP family ([2.10](../ch02-dynamic-programming/minimum-cost-to-cut-a-stick.md) style) with the zero-sum trick as the differentiator.
+
+
 ## Dry run
 
 **Input:** `n = 7`, `cuts = [1, 3, 4, 5]` → `points = [0, 1, 3, 4, 5, 7]`.

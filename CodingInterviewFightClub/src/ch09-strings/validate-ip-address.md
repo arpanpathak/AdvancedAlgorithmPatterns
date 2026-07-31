@@ -270,6 +270,36 @@ impl Solution {
 }
 ```
 
+### 3. `ValidateIPAddressBetterImplementation.kt` — the declarative validator
+
+[9.7](../ch09-strings/validate-ip-address.md) documents a scanner-based validator; this file is the *all-at-once* version — one `when`, two `all {}` predicates:
+
+```kotlin
+class ValidateIPAddressBetterImplementation {
+    fun validIPAddress(queryIP: String): String = when {
+        isValidIPv4(queryIP) -> "IPv4"
+        isValidIPv6(queryIP) -> "IPv6"
+        else -> "Neither"
+    }
+
+    private fun isValidIPv4(ip: String): Boolean {
+        val segments = ip.split('.')
+        if (segments.size != 4) return false
+
+        return segments.all {
+            it.isNotEmpty() &&                       // no empty segments
+                    it.length <= 3 &&                // no 4-digit numbers
+                    it.all(Char::isDigit) &&
+                    (it.length == 1 || it.first() != '0') &&   // no leading zeros
+                    (it.toIntOrNull() in 0..255)     // range check
+        }
+    }
+}
+```
+
+**What's cool:** the five IPv4 rules are five clauses of one `all {}` — each rule is a line, and the `when` at the top makes the method read as its own spec. The IPv6 side mirrors with `split(':')`, `count(':' ) == 7`, hex digits, and length ≤ 4. The [9.7](../ch09-strings/validate-ip-address.md) page shows the step-by-step validation; this is the "rules as predicates" upgrade.
+
+
 ## Dry run
 
 **Input:** a spread of cases.
