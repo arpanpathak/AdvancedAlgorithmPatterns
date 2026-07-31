@@ -262,3 +262,16 @@
 
 - [Repo Coverage Index](appendix-repo-coverage-index.md) — every file in src/main/kotlin mapped
 - [The Roadmap](appendix-roadmap.md) — the remaining uncovered files
+
+- [Chapter 19 — Variant Gallery](ch19-gallery/index.md)
+  - [19.0 Pattern Primer: Same Algorithm, Different Costumes](ch19-gallery/pattern-primer.md)
+  - [19.1 Travelling Salesman — Top-Down Functional](ch19-gallery/travelling-salesman-top-down.md)
+  - [19.2 LRU Cache — Linked-List Family](ch19-gallery/lru-cache-linked-list-family.md)
+  - [19.3 Coin Change — Four Implementations](ch19-gallery/coin-change-family.md)
+  - [19.4 N-Queens — Set-Based Family](ch19-gallery/n-queen-family.md)
+  - [19.5 The Shorter/Better Gallery](ch19-gallery/short-code-gallery.md)
+  - [19.6 The Eulerian Family](ch19-gallery/eulerian-family.md)
+  - [19.7 The Functional-Programming Gallery](ch19-gallery/functional-programming-gallery.md)
+  - [19.8 Word Ladder II — Three Implementations](ch19-gallery/word-ladder-ii-family.md)
+  - [19.9 LFU Cache — Three Implementations](ch19-gallery/lfu-cache-family.md)
+  - [19.10 Sliding Window Median — TreeSet](ch19-gallery/sliding-window-median-treeset.md)
