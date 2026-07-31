@@ -134,3 +134,13 @@
   - [11.5 Car Fleet](ch11-greedy/car-fleet.md)
   - [11.6 Task Scheduler](ch11-greedy/task-scheduler.md)
   - [11.7 Minimum Number Of Refueling Stops](ch11-greedy/minimum-number-of-refueling-stops.md)
+
+- [12. Backtracking](ch12-backtracking/index.md)
+  - [12.0 Pattern Primer: DFS With an Undo Button](ch12-backtracking/pattern-primer.md)
+  - [12.1 Subsets](ch12-backtracking/subsets.md)
+  - [12.2 Permutations](ch12-backtracking/permutations.md)
+  - [12.3 Generate Parentheses](ch12-backtracking/generate-parentheses.md)
+  - [12.4 N-Queens](ch12-backtracking/n-queens.md)
+  - [12.5 Palindrome Partitioning](ch12-backtracking/palindrome-partitioning.md)
+  - [12.6 Restore IP Addresses](ch12-backtracking/restore-ip-addresses.md)
+  - [12.7 Sudoku Solver](ch12-backtracking/sudoku-solver.md)
