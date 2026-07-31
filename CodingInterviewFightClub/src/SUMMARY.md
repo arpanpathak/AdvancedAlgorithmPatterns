@@ -61,6 +61,9 @@
   - [2.22 Interleaving String](ch02-dynamic-programming/interleaving-string.md)
   - [2.23 Regular Expression Matching](ch02-dynamic-programming/regular-expression-matching.md)
   - [2.24 Delete Operations For Two Strings](ch02-dynamic-programming/delete-operations-for-two-strings.md)
+  - [2.25 Cherry Pickup](ch02-dynamic-programming/cherry-pickup.md)
+  - [2.26 Racecar](ch02-dynamic-programming/racecar.md)
+  - [2.27 Minimum Number Of Taps To Water The Garden](ch02-dynamic-programming/minimum-number-of-taps.md)
 
 - [3. Arrays, Two Pointers & Matrices](ch03-arrays/index.md)
   - [3.0 Pattern Primer: Two Pointers & The Sorted-Array Dance](ch03-arrays/pattern-primer.md)
@@ -85,6 +88,8 @@
   - [3.19 Pascal's Triangle](ch03-arrays/pascals-triangle.md)
   - [3.20 Robot Bounded In Circle](ch03-arrays/robot-bounded-in-circle.md)
   - [3.21 Increasing Triplet Subsequence](ch03-arrays/increasing-triplet-subsequence.md)
+  - [3.22 Diagonal Traverse](ch03-arrays/diagonal-traverse.md)
+  - [3.23 Find The Highest Altitude](ch03-arrays/find-the-highest-altitude.md)
   - [2.12 Closest Subsequence Sum](ch02-dynamic-programming/closest-subsequence-sum.md)
 
 - [4. Linked Lists](ch04-linked-lists/index.md)
@@ -101,6 +106,8 @@
   - [4.10 Copy List With Random Pointer](ch04-linked-lists/copy-list-with-random-pointer.md)
   - [4.11 Swap Nodes In Pairs](ch04-linked-lists/swap-nodes-in-pairs.md)
   - [4.12 Reverse Nodes In K Groups](ch04-linked-lists/reverse-nodes-in-k-groups.md)
+  - [4.13 Insert Into A Sorted Circular Linked List](ch04-linked-lists/insert-into-a-sorted-circular-linked-list.md)
+  - [4.14 Maximum Twin Sum Of A Linked List](ch04-linked-lists/maximum-twin-sum.md)
 
 - [5. Trees](ch05-trees/index.md)
   - [5.0 Pattern Primer: The Recursive Data Structure](ch05-trees/pattern-primer.md)
@@ -119,6 +126,13 @@
   - [5.13 Binary Tree ZigZag Level Order](ch05-trees/zigzag-level-order.md)
   - [5.14 Count Good Nodes In Binary Tree](ch05-trees/count-good-nodes.md)
   - [5.15 Populating Next Right Pointers In Each Node](ch05-trees/populating-next-right-pointers.md)
+  - [5.16 Delete Node In A BST](ch05-trees/delete-node-in-a-bst.md)
+  - [5.17 Find Largest Value In Each Tree Row](ch05-trees/find-largest-value-in-each-tree-row.md)
+  - [5.18 Sum Root To Leaf Numbers](ch05-trees/sum-root-to-leaf-numbers.md)
+  - [5.19 Recover A Tree From Preorder](ch05-trees/recover-a-tree-from-preorder.md)
+  - [5.20 Range Sum Of BST](ch05-trees/range-sum-of-bst.md)
+  - [5.21 Longest Univalue Path](ch05-trees/longest-univalue-path.md)
+  - [5.22 Leaf-Similar Trees](ch05-trees/leaf-similar-trees.md)
 
 - [6. Graphs](ch06-graphs/index.md)
   - [6.0 Pattern Primer: The Seven Engines](ch06-graphs/pattern-primer.md)
@@ -140,6 +154,11 @@
   - [6.16 Surrounded Regions](ch06-graphs/surrounded-regions.md)
   - [6.17 Max Area Of Island](ch06-graphs/max-area-of-island.md)
   - [6.18 Pacific Atlantic Water Flow](ch06-graphs/pacific-atlantic-water-flow.md)
+  - [6.19 Find Length Of Longest Cycle](ch06-graphs/find-length-of-longest-cycle.md)
+  - [6.20 Making A Large Island](ch06-graphs/making-a-large-island.md)
+  - [6.21 Number Of Islands II](ch06-graphs/number-of-islands-ii.md)
+  - [6.22 Island Perimeter](ch06-graphs/island-perimeter.md)
+  - [6.23 N-Coloring Greedy](ch06-graphs/n-coloring-greedy.md)
 
 - [7. Heaps & Priority Queues](ch07-heaps/index.md)
   - [7.0 Pattern Primer: The Lazy Sorted Structure](ch07-heaps/pattern-primer.md)
@@ -154,6 +173,7 @@
   - [7.9 Design Hit Counter](ch07-heaps/design-hit-counter.md)
   - [7.10 Longest Happy String](ch07-heaps/longest-happy-string.md)
   - [7.11 Merge K Sorted Lists](ch07-heaps/merge-k-sorted-lists.md)
+  - [7.12 Find Score Of An Array After Marking All Elements](ch07-heaps/find-score-of-an-array-after-marking.md)
 
 - [8. Stacks & Queues](ch08-stacks/index.md)
   - [8.0 Pattern Primer: LIFO, FIFO, and the Monotonic Stack](ch08-stacks/pattern-primer.md)
@@ -171,6 +191,11 @@
   - [8.12 Basic Calculator III](ch08-stacks/basic-calculator-iii.md)
   - [8.13 Asteroid Collision](ch08-stacks/asteroid-collision.md)
   - [8.14 Online Stock Span](ch08-stacks/online-stock-span.md)
+  - [8.15 Exclusive Time Of Functions](ch08-stacks/exclusive-time-of-functions.md)
+  - [8.16 Remove All Adjacent Duplicates](ch08-stacks/remove-all-adjacent-duplicates.md)
+  - [8.17 Minimum Add To Make Parentheses Valid](ch08-stacks/minimum-add-to-make-parentheses-valid.md)
+  - [8.18 Minimum Remove To Make Valid](ch08-stacks/minimum-remove-to-make-valid-parentheses.md)
+  - [8.19 Remove Duplicate Letters](ch08-stacks/remove-duplicate-letters.md)
 
 - [9. Strings](ch09-strings/index.md)
   - [9.0 Pattern Primer: The Three Lenses](ch09-strings/pattern-primer.md)
@@ -189,6 +214,8 @@
   - [9.13 Add Strings](ch09-strings/add-strings.md)
   - [9.14 String To Integer (atoi)](ch09-strings/string-to-integer-atoi.md)
   - [9.15 Text Justification](ch09-strings/text-justification.md)
+  - [9.16 Length Of Last Word](ch09-strings/length-of-last-word.md)
+  - [9.17 Merge Strings Alternately](ch09-strings/merge-strings-alternately.md)
 
 - [10. Hash Tables & Sets](ch10-hash-tables/index.md)
   - [10.0 Pattern Primer: O(1) Lookup, Three Moves](ch10-hash-tables/pattern-primer.md)
@@ -209,6 +236,11 @@
   - [10.15 Max Points On A Line](ch10-hash-tables/max-points-on-a-line.md)
   - [10.16 Design HashMap](ch10-hash-tables/design-hashmap.md)
   - [10.17 Group Shifted Strings](ch10-hash-tables/group-shifted-strings.md)
+  - [10.18 Equal Row And Column Pairs](ch10-hash-tables/equal-row-and-column-pairs.md)
+  - [10.19 Determine If Two Strings Are Close](ch10-hash-tables/determine-if-two-strings-are-close.md)
+  - [10.20 Unique Length-3 Palindromic Subsequences](ch10-hash-tables/unique-length-3-palindromic-subsequences.md)
+  - [10.21 Max Number Of K-Sum Pairs](ch10-hash-tables/max-number-of-k-sum-pairs.md)
+  - [10.22 Find Winner On A TicTacToe Game](ch10-hash-tables/find-winner-on-a-tic-tac-toe-game.md)
 
 - [11. Greedy](ch11-greedy/index.md)
   - [11.0 Pattern Primer: The Local Choice, Defended](ch11-greedy/pattern-primer.md)
@@ -225,6 +257,8 @@
   - [11.11 Minimum Number Of Arrows To Burst Balloons](ch11-greedy/minimum-number-of-arrows-to-burst-balloons.md)
   - [11.12 Can Place Flowers](ch11-greedy/can-place-flowers.md)
   - [11.13 Destroying Asteroids](ch11-greedy/destroying-asteroids.md)
+  - [11.14 Employee Free Time](ch11-greedy/employee-free-time.md)
+  - [11.15 Max Profit Assigning Work](ch11-greedy/max-profit-assigning-work.md)
 
 - [12. Backtracking](ch12-backtracking/index.md)
   - [12.0 Pattern Primer: DFS With an Undo Button](ch12-backtracking/pattern-primer.md)
@@ -278,6 +312,7 @@
   - [15.9 Maximum Erasure Value](ch15-sliding-window/maximum-erasure-value.md)
   - [15.10 Longest Subarray Of 1s After Deleting One](ch15-sliding-window/longest-subarray-of-ones-after-deleting-one.md)
   - [15.11 Find All Anagrams In A String](ch15-sliding-window/find-all-anagrams.md)
+  - [15.12 Maximum Number Of Vowels In A Substring](ch15-sliding-window/maximum-number-of-vowels-in-a-substring.md)
 
 - [16. Bit Manipulation](ch16-bit-manipulation/index.md)
   - [16.0 Pattern Primer: The Bit Identities](ch16-bit-manipulation/pattern-primer.md)
@@ -290,6 +325,7 @@
   - [16.7 Smallest Number With All Set Bits](ch16-bit-manipulation/smallest-number-with-all-set-bits.md)
   - [16.8 Pow(x, n)](ch16-bit-manipulation/pow-x-n.md)
   - [16.9 Divide Two Integers](ch16-bit-manipulation/divide-two-integers.md)
+  - [16.10 Number Of Steps To Reduce A Number In Binary](ch16-bit-manipulation/number-of-steps-to-reduce-a-number-in-binary.md)
 
 - [17. Advanced Graphs](ch17-advanced-graphs/index.md)
   - [17.0 Pattern Primer: Flow, Matching, MST, and State-Space BFS](ch17-advanced-graphs/pattern-primer.md)
@@ -307,6 +343,7 @@
   - [17.12 Bus Routes](ch17-advanced-graphs/bus-routes.md)
   - [17.13 Minimum Genetic Mutations](ch17-advanced-graphs/minimum-genetic-mutations.md)
   - [17.14 Find Articulation Points](ch17-advanced-graphs/find-articulation-points.md)
+  - [17.15 Longest Path With Different Adjacent Characters](ch17-advanced-graphs/longest-path-with-different-adjacent-characters.md)
 
 - [18. Design & Caches](ch18-design-caches/index.md)
   - [18.0 Pattern Primer: Composing Structures](ch18-design-caches/pattern-primer.md)
@@ -321,6 +358,14 @@
   - [18.9 LRU Cache — The Repo's Seven Implementations](ch18-design-caches/lru-cache-variants.md)
   - [18.11 My Calendar](ch18-design-caches/my-calendar.md)
   - [18.12 BST Iterator](ch18-design-caches/bst-iterator.md)
+  - [18.13 Moving Average](ch18-design-caches/moving-average.md)
+  - [18.14 Number Of Recent Calls](ch18-design-caches/number-of-recent-calls.md)
+  - [18.15 Product Of Last K Numbers](ch18-design-caches/product-of-last-k-numbers.md)
+  - [18.16 Design Circular Queue](ch18-design-caches/design-circular-queue.md)
+  - [18.17 Maximum Frequency Stack](ch18-design-caches/maximum-frequency-stack.md)
+  - [18.18 Range Sum Query 2D Immutable](ch18-design-caches/range-sum-query-2d-immutable.md)
+  - [18.19 Convert BST To Sorted Doubly Linked List](ch18-design-caches/convert-bst-to-sorted-doubly-linked-list.md)
+  - [18.20 Design TicTacToe](ch18-design-caches/design-tic-tac-toe.md)
 
 ## Appendix
 

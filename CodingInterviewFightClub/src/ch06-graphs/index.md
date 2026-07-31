@@ -29,6 +29,11 @@
 | 6.16 | Surrounded Regions | border BFS marking | $O(mn)$ | [→](surrounded-regions.md) |
 | 6.17 | Max Area Of Island | sink-and-count DFS | $O(mn)$ | [→](max-area-of-island.md) |
 | 6.18 | Pacific Atlantic Water Flow | reverse-flow BFS | $O(mn)$ | [→](pacific-atlantic-water-flow.md) |
+| 6.19 | Find Length Of Longest Cycle | 3-color DFS + distances | $O(n)$ | [→](find-length-of-longest-cycle.md) |
+| 6.20 | Making A Large Island | island IDs + neighbor sum | $O(n^2)$ | [→](making-a-large-island.md) |
+| 6.21 | Number Of Islands II | online Union-Find | $O(kα)$ | [→](number-of-islands-ii.md) |
+| 6.22 | Island Perimeter | exposed-edge count | $O(mn)$ | [→](island-perimeter.md) |
+| 6.23 | N-Coloring Greedy | greedy vertex coloring | $O(V+E)$ | [→](n-coloring-greedy.md) |
 ## The rest of the graph/ directory
 
 `src/main/kotlin/graph/` is enormous: `topological_sort/` (Course Schedule I/II, Parallel Courses), `scc/` (Kosaraju), `mst/` (Kruskal & Prim on points), `flow_network/` (Edmonds-Karp max flow), `tsp/` (Travelling Salesman via Held-Karp), `euler/` (Cracking The Safe), `articulation_point/`, `cycle/`, `components/`, `dag/`, `dp/`, `greedy/`, plus standalone classics — Word Ladder II, Clone Graph, Bipartite (BFS/DFS variants), Bus Routes, Evaluate Division, Reorder Routes, Minimum Genetic Mutations, Maximum Path Quality, N-Coloring, Chromatic Number, Graph Diameter, House Robber III, and more.

@@ -35,6 +35,9 @@
 | 2.22 | Interleaving String | (i, j) matching memo | $O(mn)$ | [→](interleaving-string.md) |
 | 2.23 | Regular Expression Matching | (i, j) memo with `*` | $O(mn)$ | [→](regular-expression-matching.md) |
 | 2.24 | Delete Operations For Two Strings | LCS → deletions | $O(mn)$ | [→](delete-operations-for-two-strings.md) |
+| 2.25 | Cherry Pickup | two-walker DP | $O(n^3)$ | [→](cherry-pickup.md) |
+| 2.26 | Racecar | (pos, speed) DFS | $O(win·sp)$ | [→](racecar.md) |
+| 2.27 | Min Taps To Water Garden | interval covering greedy | $O(n)$ | [→](minimum-number-of-taps.md) |
 ## Reading order
 
 2.2 and 2.3 first — they're the *ur-examples* of the state-shape `dp[i][j]`. Then 2.1 (same table, different recurrence), then the knapsack family (2.4–2.6) which is the most frequently re-appearing pattern in real interviews, then the interval DPs (2.10, 2.11), then the gyms (2.8, 2.9, 2.13). End with 2.12 which is the *anti-DP* — it proves you know when **not** to reach for a DP table.

@@ -25,6 +25,11 @@
 | 8.12 | Basic Calculator III | recursive descent | $O(n)$ | [→](basic-calculator-iii.md) |
 | 8.13 | Asteroid Collision | survivor stack | $O(n)$ | [→](asteroid-collision.md) |
 | 8.14 | Online Stock Span | monotonic stack + span | $O(1)$ amortized | [→](online-stock-span.md) |
+| 8.15 | Exclusive Time Of Functions | interval accounting stack | $O(L)$ | [→](exclusive-time-of-functions.md) |
+| 8.16 | Remove All Adjacent Duplicates | stack-as-builder | $O(n)$ | [→](remove-all-adjacent-duplicates.md) |
+| 8.17 | Minimum Add To Make Valid | unmatched counters | $O(n)$ | [→](minimum-add-to-make-parentheses-valid.md) |
+| 8.18 | Minimum Remove To Make Valid | mark-then-filter | $O(n)$ | [→](minimum-remove-to-make-valid-parentheses.md) |
+| 8.19 | Remove Duplicate Letters | monotonic + lastIndex | $O(n)$ | [→](remove-duplicate-letters.md) |
 ## The rest of the stack/ directory
 
 `src/main/kotlin/stack/` is deep: more monotonic-stack classics (Next Greater Element I, Sum Of Subarray Minimums/Ranges, Online Stock Span, Buildings With An Ocean View, Number Of Visible People In A Queue), string-stack hybrids (Minimum Remove To Make Valid Parentheses, Remove Duplicate Letters, Smallest Subsequence Of Distinct Characters, Remove Stars From String, Longest Valid Parentheses), and design puzzles (MinStack variants, Flatten Nested List Iterator, Design A Stack With Increment Operations, Exclusive Time Of Functions). The repo also has `queues/` with FIFO implementations used by the BFS pages in earlier chapters.

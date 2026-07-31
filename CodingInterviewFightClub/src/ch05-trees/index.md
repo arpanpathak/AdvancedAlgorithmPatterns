@@ -26,6 +26,13 @@
 | 5.13 | Binary Tree ZigZag | level fence + addFirst | $O(n)$ | [→](zigzag-level-order.md) |
 | 5.14 | Count Good Nodes | running-max DFS | $O(n)$ | [→](count-good-nodes.md) |
 | 5.15 | Populating Next Right Pointers | O(1)-space level threading | $O(n)$ | [→](populating-next-right-pointers.md) |
+| 5.16 | Delete Node In A BST | successor splice | $O(h)$ | [→](delete-node-in-a-bst.md) |
+| 5.17 | Find Largest Value Per Row | BFS level max | $O(n)$ | [→](find-largest-value-in-each-tree-row.md) |
+| 5.18 | Sum Root To Leaf Numbers | carry-down DFS | $O(n)$ | [→](sum-root-to-leaf-numbers.md) |
+| 5.19 | Recover A Tree From Preorder | depth-guided rebuild | $O(n)$ | [→](recover-a-tree-from-preorder.md) |
+| 5.20 | Range Sum Of BST | pruned traversal | $O(h+k)$ | [→](range-sum-of-bst.md) |
+| 5.21 | Longest Univalue Path | post-order chains | $O(n)$ | [→](longest-univalue-path.md) |
+| 5.22 | Leaf-Similar Trees | leaf-sequence compare | $O(n)$ | [→](leaf-similar-trees.md) |
 ## The rest of the tree/ directory
 
 `src/main/kotlin/tree/` is a forest: `bst/` (Recover BST, BST Iterator, Inorder Successor, Delete Node, Unique BSTs, My Calendar…), `bfs/` (Level Order II, Right Side View, Largest Value Per Row, Completeness, Averages…), `segment/` (Segment Tree, Dynamic Segment Tree, Iterative Segment Tree…), `fenwick/` (Fenwick Tree, Range Sum Query 2D Mutable…), `mst/` (Prim's & Kruskal's on points), `interval/`, plus standalone classics (Diameter, Path Sum II/III, Zigzag, Vertical Order, Boundary, Symmetric, Construct from Pre+In / In+Post, Populate Next Right, All Nodes Distance K, Serialize N-ary, Maximum Product of Split, Count Good Nodes, etc.).

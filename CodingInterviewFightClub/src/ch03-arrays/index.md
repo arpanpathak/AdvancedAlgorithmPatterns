@@ -32,6 +32,8 @@
 | 3.19 | Pascal's Triangle | build rows from the previous | $O(n^2)$ | [→](pascals-triangle.md) |
 | 3.20 | Robot Bounded In Circle | direction-state simulation | $O(n)$ | [→](robot-bounded-in-circle.md) |
 | 3.21 | Increasing Triplet Subsequence | two running minima | $O(n)$ | [→](increasing-triplet-subsequence.md) |
+| 3.22 | Diagonal Traverse | direction-flipping walker | $O(mn)$ | [→](diagonal-traverse.md) |
+| 3.23 | Find The Highest Altitude | running prefix max | $O(n)$ | [→](find-the-highest-altitude.md) |
 ## The rest of the array/ directory
 
 `src/main/kotlin/array/` holds 100+ more problems. The full index lives in the repository; every subdirectory is a pattern family:

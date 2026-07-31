@@ -26,6 +26,8 @@
 | 9.13 | Add Strings | digit-wise carry | $O(n)$ | [→](add-strings.md) |
 | 9.14 | String To Integer (atoi) | phase scanner + overflow pre-check | $O(n)$ | [→](string-to-integer-atoi.md) |
 | 9.15 | Text Justification | greedy pack + space split | $O(nw)$ | [→](text-justification.md) |
+| 9.16 | Length Of Last Word | backward scan | $O(n)$ | [→](length-of-last-word.md) |
+| 9.17 | Merge Strings Alternately | max-length loop | $O(n+m)$ | [→](merge-strings-alternately.md) |
 ## The rest of the string/ directory
 
 `src/main/kotlin/string/` is huge: more counting/pattern problems (Detect Capital, Isomorphic variants, IsSubsequence, Count Words With A Given Prefix), parsing & validation (Valid Number, Validate IP Address (better implementation), Excel Sheet To Column Number, Count And Say, Goat Latin, String Compression), DP-heavy classics in `dynamic_programming/` (Edit Distance, Regular Expression Matching, Interleaving String, Palindrome Partitioning II, Longest Palindromic Subsequence), `sliding_window/` (Longest Substring Without Repeating Characters and friends), `pattern_matching/`, and `backtracking/` (Generate Parentheses, Word Break II, Word Square).

@@ -22,6 +22,14 @@
 | 18.9 | LRU Cache — The Repo's Seven Implementations | variant consolidation | $O(1)$ | [→](lru-cache-variants.md) |
 | 18.11 | My Calendar | TreeMap floor/ceiling | $O(log n)$ | [→](my-calendar.md) |
 | 18.12 | BST Iterator | left-spine stack | $O(1)$ amortized | [→](bst-iterator.md) |
+| 18.13 | Moving Average | windowed queue + sum | $O(1)$ | [→](moving-average.md) |
+| 18.14 | Number Of Recent Calls | expiry queue | $O(1)$ amortized | [→](number-of-recent-calls.md) |
+| 18.15 | Product Of Last K Numbers | prefix products + zero-reset | $O(1)$ | [→](product-of-last-k-numbers.md) |
+| 18.16 | Design Circular Queue | ring buffer | $O(1)$ | [→](design-circular-queue.md) |
+| 18.17 | Maximum Frequency Stack | frequency stacks | $O(1)$ | [→](maximum-frequency-stack.md) |
+| 18.18 | Range Sum Query 2D Immutable | 2-D prefix sums | $O(1)$ query | [→](range-sum-query-2d-immutable.md) |
+| 18.19 | Convert BST To DLL | inorder threading | $O(n)$ | [→](convert-bst-to-sorted-doubly-linked-list.md) |
+| 18.20 | Design TicTacToe | signed line counters | $O(1)$ | [→](design-tic-tac-toe.md) |
 ## The rest of the design-related directories
 
 `cache/` holds many LRU/LFU flavors (`LRUCacheLinkedList.kt`, `LRUCacheBetter.kt`, the `LruCacheNobodyDoesItBetter.kt` family, `LFUCacheGigaCHAD.kt`, ...) — this chapter documents the canonical structures. `design/` adds `SelfDoubtSimulation.kt`; `stack/` holds the nested-list iterator and increment-stack; `probability/` holds the O(1) random-access set.

@@ -28,6 +28,11 @@
 | 10.15 | Max Points On A Line | slope frequency map | $O(n^2)$ | [→](max-points-on-a-line.md) |
 | 10.16 | Design HashMap | open addressing | $O(1)$ | [→](design-hashmap.md) |
 | 10.17 | Group Shifted Strings | gap-sequence keys | $O(nL)$ | [→](group-shifted-strings.md) |
+| 10.18 | Equal Row And Column Pairs | sequence-vector keys | $O(n^2)$ | [→](equal-row-and-column-pairs.md) |
+| 10.19 | Determine If Two Strings Are Close | char-set + freq-multiset | $O(n)$ | [→](determine-if-two-strings-are-close.md) |
+| 10.20 | Unique Length-3 Palindromes | first/last + middle sets | $O(n)$ | [→](unique-length-3-palindromic-subsequences.md) |
+| 10.21 | Max Number Of K-Sum Pairs | complement count map | $O(n)$ | [→](max-number-of-k-sum-pairs.md) |
+| 10.22 | Find Winner TicTacToe | line-check per move | $O(1)$ | [→](find-winner-on-a-tic-tac-toe-game.md) |
 ## The rest of the hashtable/ directories
 
 `src/main/kotlin/hashtable/` adds: Integer To Roman, H-Index, Intersection Of Two Arrays, Maximum Frequency Stack, Design A Number Container System, Design File System, Count Number Of Bad Pairs, Word Break variants. `src/main/kotlin/array/hashtable/` adds: First Missing Positive, Degree Of An Array, Valid Sudoku variants, Set Mismatch, Rank Transform Of An Array, Unique Number Of Occurrences, Integer To English Words, Equal Row And Column Pairs, and more. The LRU/LFU cache designs live in `src/main/kotlin/cache/` and are the "map + structure" capstone of this chapter's design problems.
