@@ -26,6 +26,7 @@
 | 17.13 | Minimum Genetic Mutations | 4-neighbor BFS, bank as visited | $O(n)$ | [→](minimum-genetic-mutations.md) |
 | 17.14 | Find Articulation Points | Tarjan low-link | $O(V+E)$ | [→](find-articulation-points.md) |
 | 17.15 | Longest Path Different Adjacent | char-constrained tree DP | $O(n)$ | [→](longest-path-with-different-adjacent-characters.md) |
+| 17.17 | Floyd-Warshall | all-pairs DP | $O(n^3)$ | [→](floyd-warshall.md) |
 ## The rest of the graph/ directories
 
 `flow_network/` also holds several Edmonds-Karp variants and `BipartileMatching.kt` (the same Kuhn's algorithm as 17.2). `tsp/` adds `ShortestPathVisitingAllNodes.kt` (17.5), the brute-force and top-down TSP versions, and `TravellingSalesmanRecursiveDP.kt`. `tree/mst/` adds the Kruskal version of 17.3 ([6.6](../ch06-graphs/min-cost-to-connect-all-points.md) already covers it). `graph/` also has articulation points, SCC, topological sorts, chromatic number, and more.

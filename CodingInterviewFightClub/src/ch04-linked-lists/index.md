@@ -25,6 +25,8 @@
 | 4.12 | Reverse Nodes In K Groups | block reversal | $O(n)$ | [→](reverse-nodes-in-k-groups.md) |
 | 4.13 | Insert Into A Sorted Circular List | circular boundary insert | $O(n)$ | [→](insert-into-a-sorted-circular-linked-list.md) |
 | 4.14 | Maximum Twin Sum | middle + reverse + pair | $O(n)$ | [→](maximum-twin-sum.md) |
+| 4.15 | Odd Even Linked List | dual-thread relink | $O(n)$ | [→](odd-even-linked-list.md) |
+| 4.16 | Rotate List | circularize + cut | $O(n)$ | [→](rotate-list.md) |
 ## The rest of the linkedlist/ directory
 
 `src/main/kotlin/linkedlist/` holds 20+ more: Palindrome, Middle Node, Odd-Even, Swap Nodes in Pairs, Reverse Nodes in K Groups, Rotate List, Merge K Sorted Lists (heap + iterative), Add Two Numbers, Copy List with Random Pointer, Intersection of Two Linked Lists, Insert Into a Sorted Circular List, Maximum Twin Sum, and more. New pages land in the table above as they're written; the rest are cataloged in the repository's own tree.

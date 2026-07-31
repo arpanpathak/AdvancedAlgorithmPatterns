@@ -30,6 +30,9 @@
 | 8.17 | Minimum Add To Make Valid | unmatched counters | $O(n)$ | [→](minimum-add-to-make-parentheses-valid.md) |
 | 8.18 | Minimum Remove To Make Valid | mark-then-filter | $O(n)$ | [→](minimum-remove-to-make-valid-parentheses.md) |
 | 8.19 | Remove Duplicate Letters | monotonic + lastIndex | $O(n)$ | [→](remove-duplicate-letters.md) |
+| 8.20 | One Three Two Pattern | decreasing stack + third | $O(n)$ | [→](one-three-two-pattern.md) |
+| 8.21 | Maximal Rectangle | histogram stack per row | $O(mn)$ | [→](maximal-rectangle.md) |
+| 8.22 | Check If Parentheses String Valid | balance-range sweep | $O(n)$ | [→](check-if-a-parentheses-string-can-be-valid.md) |
 ## The rest of the stack/ directory
 
 `src/main/kotlin/stack/` is deep: more monotonic-stack classics (Next Greater Element I, Sum Of Subarray Minimums/Ranges, Online Stock Span, Buildings With An Ocean View, Number Of Visible People In A Queue), string-stack hybrids (Minimum Remove To Make Valid Parentheses, Remove Duplicate Letters, Smallest Subsequence Of Distinct Characters, Remove Stars From String, Longest Valid Parentheses), and design puzzles (MinStack variants, Flatten Nested List Iterator, Design A Stack With Increment Operations, Exclusive Time Of Functions). The repo also has `queues/` with FIFO implementations used by the BFS pages in earlier chapters.

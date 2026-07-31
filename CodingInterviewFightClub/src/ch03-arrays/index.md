@@ -34,6 +34,15 @@
 | 3.21 | Increasing Triplet Subsequence | two running minima | $O(n)$ | [→](increasing-triplet-subsequence.md) |
 | 3.22 | Diagonal Traverse | direction-flipping walker | $O(mn)$ | [→](diagonal-traverse.md) |
 | 3.23 | Find The Highest Altitude | running prefix max | $O(n)$ | [→](find-the-highest-altitude.md) |
+| 3.24 | Interval List Intersections | two-pointer overlap | $O(n+m)$ | [→](interval-list-intersections.md) |
+| 3.25 | Plus One | digit carry | $O(n)$ | [→](plus-one.md) |
+| 3.26 | Reverse Integer | overflow pre-check | $O(log x)$ | [→](reverse-integer.md) |
+| 3.27 | Toeplitz Matrix | diagonal neighbor check | $O(mn)$ | [→](toeplitz-matrix.md) |
+| 3.28 | Transpose Matrix | index swap | $O(mn)$ | [→](transpose-matrix.md) |
+| 3.29 | Missing Ranges | gap scanning | $O(n)$ | [→](missing-ranges.md) |
+| 3.30 | Rectangle Area | inclusion-exclusion | $O(1)$ | [→](rectangle-area.md) |
+| 3.31 | Rectangle Overlap | axis-separation | $O(1)$ | [→](rectangle-overlap.md) |
+| 3.32 | Zero Array Transformation | difference array | $O(n+q)$ | [→](zero-array-transformation.md) |
 ## The rest of the array/ directory
 
 `src/main/kotlin/array/` holds 100+ more problems. The full index lives in the repository; every subdirectory is a pattern family:

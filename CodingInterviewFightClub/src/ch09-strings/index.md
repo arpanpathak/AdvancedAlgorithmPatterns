@@ -28,6 +28,12 @@
 | 9.15 | Text Justification | greedy pack + space split | $O(nw)$ | [→](text-justification.md) |
 | 9.16 | Length Of Last Word | backward scan | $O(n)$ | [→](length-of-last-word.md) |
 | 9.17 | Merge Strings Alternately | max-length loop | $O(n+m)$ | [→](merge-strings-alternately.md) |
+| 9.18 | Goat Latin | word transform | $O(n)$ | [→](goat-latin.md) |
+| 9.19 | Detect Capital | capital-count rules | $O(n)$ | [→](detect-capital.md) |
+| 9.20 | Is Subsequence | two-pointer match | $O(|t|)$ | [→](is-subsequence.md) |
+| 9.21 | String Compression | in-place run-length | $O(n)$ | [→](string-compression.md) |
+| 9.22 | Custom Sort String | rank-map sort | $O(n log n)$ | [→](custom-sort-string.md) |
+| 9.23 | Rank Teams By Votes | position-frequency sort | $O(vn)$ | [→](rank-teams-by-votes.md) |
 ## The rest of the string/ directory
 
 `src/main/kotlin/string/` is huge: more counting/pattern problems (Detect Capital, Isomorphic variants, IsSubsequence, Count Words With A Given Prefix), parsing & validation (Valid Number, Validate IP Address (better implementation), Excel Sheet To Column Number, Count And Say, Goat Latin, String Compression), DP-heavy classics in `dynamic_programming/` (Edit Distance, Regular Expression Matching, Interleaving String, Palindrome Partitioning II, Longest Palindromic Subsequence), `sliding_window/` (Longest Substring Without Repeating Characters and friends), `pattern_matching/`, and `backtracking/` (Generate Parentheses, Word Break II, Word Square).

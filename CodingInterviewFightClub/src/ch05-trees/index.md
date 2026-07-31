@@ -33,6 +33,8 @@
 | 5.20 | Range Sum Of BST | pruned traversal | $O(h+k)$ | [→](range-sum-of-bst.md) |
 | 5.21 | Longest Univalue Path | post-order chains | $O(n)$ | [→](longest-univalue-path.md) |
 | 5.22 | Leaf-Similar Trees | leaf-sequence compare | $O(n)$ | [→](leaf-similar-trees.md) |
+| 5.24 | Inorder Successor In BST | successor-memory walk | $O(h)$ | [→](inorder-successor.md) |
+| 5.25 | House Robber III | two-state tree DP | $O(n)$ | [→](house-robber-iii.md) |
 ## The rest of the tree/ directory
 
 `src/main/kotlin/tree/` is a forest: `bst/` (Recover BST, BST Iterator, Inorder Successor, Delete Node, Unique BSTs, My Calendar…), `bfs/` (Level Order II, Right Side View, Largest Value Per Row, Completeness, Averages…), `segment/` (Segment Tree, Dynamic Segment Tree, Iterative Segment Tree…), `fenwick/` (Fenwick Tree, Range Sum Query 2D Mutable…), `mst/` (Prim's & Kruskal's on points), `interval/`, plus standalone classics (Diameter, Path Sum II/III, Zigzag, Vertical Order, Boundary, Symmetric, Construct from Pre+In / In+Post, Populate Next Right, All Nodes Distance K, Serialize N-ary, Maximum Product of Split, Count Good Nodes, etc.).

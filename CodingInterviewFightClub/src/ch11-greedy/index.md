@@ -26,6 +26,11 @@
 | 11.13 | Destroying Asteroids | sort + accumulate | $O(n log n)$ | [→](destroying-asteroids.md) |
 | 11.14 | Employee Free Time | flatten + merge + gaps | $O(N log N)$ | [→](employee-free-time.md) |
 | 11.15 | Max Profit Assigning Work | sorted sweep | $O((T+W) log)$ | [→](max-profit-assigning-work.md) |
+| 11.21 | Car Pooling | sweep-line occupancy | $O(t+L)$ | [→](car-pooling.md) |
+| 11.22 | Meeting Scheduler | two-pointer overlap | $O(s log s)$ | [→](meeting-scheduler.md) |
+| 11.23 | Count Collisions On A Road | boundary exclusion | $O(n)$ | [→](count-collisions-on-a-road.md) |
+| 11.24 | Partition Labels | last-occurrence partition | $O(n)$ | [→](partition-labels.md) |
+| 11.25 | Break A Palindrome | first-non-a flip | $O(n)$ | [→](break-a-palindrome.md) |
 ## The rest of the greedy/ directory
 
 `src/main/kotlin/greedy/` also holds: Destroying Asteroids (greedy by size), Jump Game variants, Maximum Profit Assigning Work (sorted pointers), Minimum Time To Make Rope Colorful (keep the max per run), Minimum Deletions To Make String Balanced, Minimum Replacement To Sort The Array, Reschedule Meetings For Maximum Free Time, Maximum Value Of An Ordered Triplet II, Max Chunks To Make Sorted II, MInimum Cost Homecoming Of A Robot, and Task Scheduler neighbors. The interval-family problems connect to `src/main/kotlin/interval/` and the scheduling problems to [7.5](../ch07-heaps/ipo.md)/[7.6](../ch07-heaps/meeting-rooms-iii.md) from the heap chapter.
