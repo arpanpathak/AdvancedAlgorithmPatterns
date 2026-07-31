@@ -14,7 +14,7 @@ preferred-dark-theme = "navy"
 mathjax-support = true
 git-repository-url = "https://github.com/arpanpathak/AdvancedAlgorithmPatterns"
 edit-url-template = "https://github.com/arpanpathak/AdvancedAlgorithmPatterns/edit/main/src/{path}"
-additional-css = ["theme/css/nightowl.css"]
+additional-css = ["../CodingInterviewFightClub/theme/css/nightowl.css"]
 additional-js = ["theme/js/book.js"]
 no-section-label = true
 

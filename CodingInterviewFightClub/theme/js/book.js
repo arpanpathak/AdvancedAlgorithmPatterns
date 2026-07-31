@@ -2,6 +2,9 @@
    Coding Interview Fight Club — interactive book JS
    1. Groups adjacent code blocks into language tabs (Kotlin/Java/C++/Python/Rust)
    2. Adds a copy-to-clipboard button to every code block
+
+   IMPORTANT: never detach a <pre> from the document before the container is
+   in place — a thrown DOM error would blank the page's code entirely.
    ========================================================================== */
 (function () {
   'use strict';
@@ -33,27 +36,48 @@
     return el && el.tagName === 'PRE' && el.querySelector('code');
   }
 
-  /* Build tabs from a run of adjacent <pre> siblings. */
+  /* Build tabs from a run of adjacent <pre> siblings.
+     All languages are VISIBLE by default (stacked); the tab buttons filter.
+     This way even a JS failure never hides code. */
   function buildTabs(run) {
     var parent = run[0].parentNode;
     var container = document.createElement('div');
     container.className = 'code-tabs';
 
+    var langs = run.map(langOf);
+
     var nav = document.createElement('div');
     nav.className = 'code-tabs-nav';
-    run.forEach(function (pre, idx) {
+
+    var allBtn = document.createElement('button');
+    allBtn.type = 'button';
+    allBtn.className = 'code-tab-btn active';
+    allBtn.textContent = 'All';
+    nav.appendChild(allBtn);
+
+    var uniqueLangs = langs.filter(function (l, i) { return langs.indexOf(l) === i; });
+    uniqueLangs.forEach(function (l) {
       var btn = document.createElement('button');
       btn.type = 'button';
-      btn.className = 'code-tab-btn' + (idx === 0 ? ' active' : '');
-      btn.textContent = langOf(pre);
+      btn.className = 'code-tab-btn';
+      btn.textContent = l;
       btn.addEventListener('click', function () {
-        var buttons = nav.querySelectorAll('.code-tab-btn');
-        buttons.forEach(function (b) { b.classList.remove('active'); });
-        btn.classList.add('active');
-        run.forEach(function (p, k) { p.style.display = k === idx ? 'block' : 'none'; });
+        setActive(btn);
+        run.forEach(function (p, k) { p.style.display = langs[k] === l ? 'block' : 'none'; });
       });
       nav.appendChild(btn);
     });
+
+    function setActive(btn) {
+      nav.querySelectorAll('.code-tab-btn').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+    }
+
+    allBtn.addEventListener('click', function () {
+      setActive(allBtn);
+      run.forEach(function (p) { p.style.display = 'block'; });
+    });
+
     container.appendChild(nav);
 
     var body = document.createElement('div');
@@ -68,13 +92,14 @@
     });
     body.appendChild(copy);
 
-    run.forEach(function (pre, idx) {
-      pre.style.display = idx === 0 ? 'block' : 'none';
+    /* Order matters: put the container in the DOM FIRST (while run[0] is still
+       attached to parent), then move the pre blocks into it. */
+    parent.replaceChild(container, run[0]);
+    run.forEach(function (pre) {
+      pre.style.display = 'block';      // ALL visible by default
       body.appendChild(pre);
     });
     container.appendChild(body);
-
-    parent.replaceChild(container, run[0]);
   }
 
   /* Wrap a lone code block with a copy button. */
@@ -106,19 +131,24 @@
     var pres = Array.prototype.slice.call(document.querySelectorAll('pre'));
     var i = 0;
     while (i < pres.length) {
-      if (!isCodePre(pres[i])) { i++; continue; }
-      var run = [pres[i]];
-      var next = pres[i].nextElementSibling;
-      while (isCodePre(next)) {
-        run.push(next);
-        next = next.nextElementSibling;
+      try {
+        if (!isCodePre(pres[i])) { i++; continue; }
+        var run = [pres[i]];
+        var next = pres[i].nextElementSibling;
+        while (isCodePre(next)) {
+          run.push(next);
+          next = next.nextElementSibling;
+        }
+        if (run.length > 1) {
+          buildTabs(run);
+        } else {
+          wrapLone(run[0]);
+        }
+        i += run.length;
+      } catch (e) {
+        /* Never let one bad block blank the page: leave remaining blocks as-is. */
+        i++;
       }
-      if (run.length > 1) {
-        buildTabs(run);
-      } else {
-        wrapLone(run[0]);
-      }
-      i += run.length;
     }
   }
 
@@ -126,5 +156,31 @@
     document.addEventListener('DOMContentLoaded', initTabs);
   } else {
     initTabs();
+  }
+})();
+
+/* ---- MathJax guarantee ----
+   mdBook injects MathJax async; the config script in head.hbs can race it.
+   After the page settles, force a fresh PreProcess + Typeset pass so every
+   $...$ / $$...$$ equation renders. tex2jax skips pre/code by default, so
+   code blocks are never touched. */
+(function () {
+  function forceMathJax() {
+    if (window.MathJax && MathJax.Hub) {
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']],
+          processEscapes: true
+        }
+      });
+      MathJax.Hub.Queue(['PreProcess', MathJax.Hub]);
+      MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
+    }
+  }
+  if (document.readyState === 'complete') {
+    forceMathJax();
+  } else {
+    window.addEventListener('load', forceMathJax);
   }
 })();
