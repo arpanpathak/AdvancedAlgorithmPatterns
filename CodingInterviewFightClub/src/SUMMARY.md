@@ -194,3 +194,13 @@
   - [17.5 Shortest Path Visiting All Nodes](ch17-advanced-graphs/shortest-path-visiting-all-nodes.md)
   - [17.6 Reorder Routes To City Zero](ch17-advanced-graphs/reorder-routes-to-make-all-paths-lead-to-city-zero.md)
   - [17.7 Evaluate Division](ch17-advanced-graphs/evaluate-division.md)
+
+- [18. Design & Caches](ch18-design-caches/index.md)
+  - [18.0 Pattern Primer: Composing Structures](ch18-design-caches/pattern-primer.md)
+  - [18.1 LRU Cache](ch18-design-caches/lru-cache.md)
+  - [18.2 LFU Cache](ch18-design-caches/lfu-cache.md)
+  - [18.3 Thread-Safe Sharded LRU](ch18-design-caches/thread-safe-lru-cache.md)
+  - [18.4 Peeking Iterator](ch18-design-caches/peeking-iterator.md)
+  - [18.5 Flatten Nested List Iterator](ch18-design-caches/flatten-nested-list-iterator.md)
+  - [18.6 Design A Stack With Increment Operations](ch18-design-caches/design-a-stack-with-increment-operations.md)
+  - [18.7 Insert Delete GetRandom O(1)](ch18-design-caches/insert-delete-getrandom.md)
