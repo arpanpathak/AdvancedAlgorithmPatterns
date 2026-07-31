@@ -184,3 +184,13 @@
   - [16.5 Maximum XOR Of Two Numbers](ch16-bit-manipulation/maximum-xor-of-two-numbers.md)
   - [16.6 Sum Of All Subset XOR Totals](ch16-bit-manipulation/sum-of-all-subset-xor-totals.md)
   - [16.7 Smallest Number With All Set Bits](ch16-bit-manipulation/smallest-number-with-all-set-bits.md)
+
+- [17. Advanced Graphs](ch17-advanced-graphs/index.md)
+  - [17.0 Pattern Primer: Flow, Matching, MST, and State-Space BFS](ch17-advanced-graphs/pattern-primer.md)
+  - [17.1 Max Flow (Edmonds-Karp)](ch17-advanced-graphs/max-flow-edmonds-karp.md)
+  - [17.2 Maximum Bipartite Matching](ch17-advanced-graphs/maximum-bipartite-matching.md)
+  - [17.3 Min Cost To Connect All Points (Prim's)](ch17-advanced-graphs/min-cost-to-connect-all-points-prims.md)
+  - [17.4 Travelling Salesman (Held-Karp)](ch17-advanced-graphs/travelling-salesman-held-karp.md)
+  - [17.5 Shortest Path Visiting All Nodes](ch17-advanced-graphs/shortest-path-visiting-all-nodes.md)
+  - [17.6 Reorder Routes To City Zero](ch17-advanced-graphs/reorder-routes-to-make-all-paths-lead-to-city-zero.md)
+  - [17.7 Evaluate Division](ch17-advanced-graphs/evaluate-division.md)
