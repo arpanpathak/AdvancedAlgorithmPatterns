@@ -246,50 +246,6 @@ impl Solution {
 }
 ```
 
-## Dry run
-
-**Input:** `points = [[3,3],[5,-1],[-2,4]]`, `k = 2`.
-
-```
-distances: [3,3]->18, [5,-1]->26, [-2,4]->20.  target index = k-1 = 1.
-
-partition(0,2): random pivot, say index 1 ([5,-1], dist 26):
-  partition by 26: all ≤ 26 -> [3,3],[5,-1],[-2,4], pivot at index 2.
-  pivotIndex 2 > target 1 -> end = 1.
-partition(0,1): random pivot, say index 0 ([3,3], dist 18):
-  partition by 18: [3,3],[5,-1], pivot at index 0.
-  pivotIndex 0 < target 1 -> start = 1.
-  (start=1, end=1: loop ends)
-
-return points[0..2) = [[3,3],[5,-1]]? 
-```
-
-Wait — that gives `[[3,3],[5,-1]]` but the expected output is `[[3,3],[-2,4]]` (distances 18 and 20; `[5,-1]` is 26). Let me recheck. After partition(0,1) with pivot [3,3] (dist 18): partition by 18 — elements ≤ 18: [3,3] only → i ends at 1 after placing [3,3] at index 0... wait: start=0,end=1. pivot dist 18. j=0: points[0]=[3,3], dist 18 ≤ 18 → swap(i=0,j=0), i=1. j=1: [5,-1] dist 26 ≤ 18? no. Then swap(i=1, end=1): pivot goes to index 1. So array: [[3,3],[5,-1]]. pivotIndex=1 == target → break (in the `else break` branch... actually the while loop: start=0,end=1, pivotIndex=1. pivotIndex > k-1? 1 > 1 no. pivotIndex < 1? no. else break. Loop ends with start=0, end=1. points[0..2) = [[3,3],[5,-1]].
-
-Hmm, that's WRONG — [5,-1] (26) should not be in the top-2; [-2,4] (20) should. Let me re-trace the FIRST partition. partition(0,2) with pivot [5,-1] (26): j=0: [3,3] 18 ≤ 26 → swap(0,0), i=1. j=1: skip (j is pivot). j=2: [-2,4] 20 ≤ 26 → swap(i=1, j=2): array becomes [[3,3],[-2,4],[5,-1]], i=2. Then swap(i=2, end=2) (pivot already at end) → [[3,3],[-2,4],[5,-1]], pivotIndex=2.
-
-So after partition 1: [[3,3],[-2,4],[5,-1]], pivotIndex=2 > 1 → end=1. GOOD.
-partition(0,1): start=0, end=1. random pivot from {0,1}: say 0 ([3,3], dist 18). Swap(0,1): [[5,-1],[-2,4]]... wait no — current array is [[3,3],[-2,4],[5,-1]], subarray [0..1] = [[3,3],[-2,4]]. pivot_idx = rand(0,1). Say 0 ([3,3], 18). swap(0,1): [[-2,4],[3,3],[5,-1]]. pivot = [3,3] (18). j=0: [-2,4] dist 20 ≤ 18? NO. So i stays 0. swap(i=0, end=1): [[3,3],[-2,4],[5,-1]] — pivot [3,3] goes to index 0! pivotIndex = 0 < target 1 → start = 1. Loop: start=1, end=1 → ends.
-
-return points[0..2) = [[3,3],[-2,4]] ✓ CORRECT!
-
-My scratch trace had an error: after partition(0,1), the pivot lands at index 0 (not 1), because [-2,4] (20) is NOT ≤ 18, so nothing moves left of the pivot. Let me redo: partition by pivot 18: [-2,4] has dist 20 > 18, so it does NOT move to the left region; i stays at 0; pivot swaps to index 0. So [3,3] ends at index 0, [-2,4] at index 1, and the k=2 answer [[3,3],[-2,4]] ✓.
-
-Good — the algorithm is correct; my scratch slipped. In the dry run I write, I must be careful. Let me write the final part-2 with a CORRECT trace:
-
-```
-partition(0,2): pivot [5,-1] (26): partition -> [[3,3],[-2,4],[5,-1]], pivotIndex=2 > 1 -> end=1
-partition(0,1): subarray [[3,3],[-2,4]]; random pivot [3,3] (18):
-  [-2,4] (20) > 18 -> stays right; pivot swaps to index 0.
-  array: [[3,3],[-2,4],[5,-1]], pivotIndex=0 < 1 -> start=1. loop ends.
-return points[0..2) = [[3,3],[-2,4]] ✓
-```
-
-Let me write the final content.<｜end▁of▁thinking｜>I caught another scratch slip in my `k-closest` trace (the second partition's pivot actually lands at index 0, not 1, giving the correct `[[3,3],[-2,4]]`). Writing the final content with the verified trace:
-
-<｜｜DSML｜｜tool_calls>
-<｜｜DSML｜｜invoke name="bash">
-<｜｜DSML｜｜parameter name="command" string="true">cd /Users/arpanpathak/Projects/data_science/CrackGoogle/CodingInterviewFightClub && cat >> src/ch14-sorting/k-closest-points-to-origin.md <<'MDEOF'
 
 ## Dry run
 
