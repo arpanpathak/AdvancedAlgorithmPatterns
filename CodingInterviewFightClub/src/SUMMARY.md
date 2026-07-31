@@ -65,3 +65,12 @@
   - [4.3 Merge Two Sorted Lists](ch04-linked-lists/merge-two-sorted-lists.md)
   - [4.4 Remove Nth Node From End](ch04-linked-lists/remove-nth-node-from-end.md)
   - [4.5 Linked List Cycle II](ch04-linked-lists/linked-list-cycle-ii.md)
+
+- [5. Trees](ch05-trees/index.md)
+  - [5.0 Pattern Primer: The Recursive Data Structure](ch05-trees/pattern-primer.md)
+  - [5.1 Maximum Depth Of Binary Tree](ch05-trees/maximum-depth-of-binary-tree.md)
+  - [5.2 Binary Tree Level Order Traversal](ch05-trees/binary-tree-level-order-traversal.md)
+  - [5.3 Lowest Common Ancestor](ch05-trees/lowest-common-ancestor.md)
+  - [5.4 Binary Tree Maximum Path Sum](ch05-trees/binary-tree-maximum-path-sum.md)
+  - [5.5 Serialize And Deserialize Binary Tree](ch05-trees/serialize-and-deserialize-binary-tree.md)
+  - [5.6 Binary Tree Inorder Traversal (Iterative)](ch05-trees/binary-tree-inorder-traversal-iterative.md)
