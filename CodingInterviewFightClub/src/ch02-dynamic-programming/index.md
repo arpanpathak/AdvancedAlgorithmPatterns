@@ -30,6 +30,8 @@
 | 2.17 | House Robber | include/exclude two-variable DP | $O(n)$ | [→](house-robber.md) |
 | 2.18 | Maximum Subarray | Kadane best-ending-here | $O(n)$ | [→](maximum-subarray.md) |
 | 2.19 | Longest Increasing Subsequence | dp over all previous | $O(n^2)$ | [→](longest-increasing-subsequence.md) |
+| 2.20 | Burst Balloons | interval DP + sentinels | $O(n^3)$ | [→](burst-balloons.md) |
+| 2.21 | Target Sum | (index, sum) memo | $O(nS)$ | [→](target-sum.md) |
 ## Reading order
 
 2.2 and 2.3 first — they're the *ur-examples* of the state-shape `dp[i][j]`. Then 2.1 (same table, different recurrence), then the knapsack family (2.4–2.6) which is the most frequently re-appearing pattern in real interviews, then the interval DPs (2.10, 2.11), then the gyms (2.8, 2.9, 2.13). End with 2.12 which is the *anti-DP* — it proves you know when **not** to reach for a DP table.

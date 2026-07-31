@@ -23,6 +23,9 @@
 | 3.10 | Product Of Array Except Self | prefix/suffix products | $O(n)$ | [→](product-of-array-except-self.md) |
 | 3.11 | Merge Sorted Array | reverse two-pointer merge | $O(m+n)$ | [→](merge-sorted-array.md) |
 | 3.12 | Set Matrix Zeroes | first-row/col markers | $O(mn)$ | [→](set-matrix-zeroes.md) |
+| 3.13 | Rotate Array | triple reverse | $O(n)$ | [→](rotate-array.md) |
+| 3.14 | Squares Of A Sorted Array | two pointers from the ends | $O(n)$ | [→](squares-of-a-sorted-array.md) |
+| 3.15 | Find Pivot Index | running prefix vs total | $O(n)$ | [→](find-pivot-index.md) |
 ## The rest of the array/ directory
 
 `src/main/kotlin/array/` holds 100+ more problems. The full index lives in the repository; every subdirectory is a pattern family:

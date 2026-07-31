@@ -18,6 +18,7 @@
 | 13.6 | Word Squares | trie-indexed backtracking | exponential | [→](word-squares.md) |
 | 13.7 | Design Auto Complete System | hotness-ranked suggestions | $O(L + k)$ / input | [→](design-autocomplete-system.md) |
 
+| 13.8 | Word Break II | prefix backtracking | $O(\text{sentences})$ | [→](word-break-ii.md) |
 ## The rest of the trie/ directory
 
 `src/main/kotlin/trie/` also holds: `AutoCompleteSystemWithHeap.kt` (the heap-ranked variant of 13.7), `CountWordsWithAGivenPrefix_Trie_FP.kt` (the functional flavor of 13.4), `LongestCommonPrefix.kt` (the trie answer to [9.5](../ch09-strings/longest-common-prefix.md) — the longest single-child path from the root), `EqualRowAndColumnPairs.kt`, and `WordSquaresShorter.kt`. Tries also appear in `src/main/kotlin/string/` (Count Words With A Given Prefix) and `src/main/kotlin/design/`.

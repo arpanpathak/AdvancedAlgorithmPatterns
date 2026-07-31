@@ -22,6 +22,8 @@
 | 9.9 | Number Of Matching Subsequences | 26 buckets of word-states | $O(n + W)$ | [→](number-of-matching-subsequences.md) |
 | 9.10 | Find The Index Of The First Occurrence (KMP) | LPS array | $O(n+m)$ | [→](find-the-index-of-the-first-occurrence-kmp.md) |
 | 9.11 | Valid Palindrome | two pointers with skip | $O(n)$ | [→](valid-palindrome.md) |
+| 9.12 | Count And Say | run-length iteration | $O(\text{term})$ | [→](count-and-say.md) |
+| 9.13 | Add Strings | digit-wise carry | $O(n)$ | [→](add-strings.md) |
 ## The rest of the string/ directory
 
 `src/main/kotlin/string/` is huge: more counting/pattern problems (Detect Capital, Isomorphic variants, IsSubsequence, Count Words With A Given Prefix), parsing & validation (Valid Number, Validate IP Address (better implementation), Excel Sheet To Column Number, Count And Say, Goat Latin, String Compression), DP-heavy classics in `dynamic_programming/` (Edit Distance, Regular Expression Matching, Interleaving String, Palindrome Partitioning II, Longest Palindromic Subsequence), `sliding_window/` (Longest Substring Without Repeating Characters and friends), `pattern_matching/`, and `backtracking/` (Generate Parentheses, Word Break II, Word Square).

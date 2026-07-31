@@ -22,6 +22,8 @@
 | 17.9 | Reconstruct Itinerary | Hierholzer (Eulerian path) | $O(E log E)$ | [→](reconstruct-itinerary.md) |
 | 17.10 | Critical Connections In A Network | Tarjan bridges | $O(V+E)$ | [→](critical-connections-in-a-network.md) |
 | 17.11 | Walls And Gates | multi-source BFS distances | $O(mn)$ | [→](walls-and-gates.md) |
+| 17.12 | Bus Routes | stop→bus two-layer BFS | $O(BS)$ | [→](bus-routes.md) |
+| 17.13 | Minimum Genetic Mutations | 4-neighbor BFS, bank as visited | $O(n)$ | [→](minimum-genetic-mutations.md) |
 ## The rest of the graph/ directories
 
 `flow_network/` also holds several Edmonds-Karp variants and `BipartileMatching.kt` (the same Kuhn's algorithm as 17.2). `tsp/` adds `ShortestPathVisitingAllNodes.kt` (17.5), the brute-force and top-down TSP versions, and `TravellingSalesmanRecursiveDP.kt`. `tree/mst/` adds the Kruskal version of 17.3 ([6.6](../ch06-graphs/min-cost-to-connect-all-points.md) already covers it). `graph/` also has articulation points, SCC, topological sorts, chromatic number, and more.

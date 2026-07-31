@@ -54,6 +54,8 @@
   - [2.17 House Robber](ch02-dynamic-programming/house-robber.md)
   - [2.18 Maximum Subarray](ch02-dynamic-programming/maximum-subarray.md)
   - [2.19 Longest Increasing Subsequence](ch02-dynamic-programming/longest-increasing-subsequence.md)
+  - [2.20 Burst Balloons](ch02-dynamic-programming/burst-balloons.md)
+  - [2.21 Target Sum](ch02-dynamic-programming/target-sum.md)
 
 - [3. Arrays, Two Pointers & Matrices](ch03-arrays/index.md)
   - [3.0 Pattern Primer: Two Pointers & The Sorted-Array Dance](ch03-arrays/pattern-primer.md)
@@ -69,6 +71,9 @@
   - [3.10 Product Of Array Except Self](ch03-arrays/product-of-array-except-self.md)
   - [3.11 Merge Sorted Array](ch03-arrays/merge-sorted-array.md)
   - [3.12 Set Matrix Zeroes](ch03-arrays/set-matrix-zeroes.md)
+  - [3.13 Rotate Array](ch03-arrays/rotate-array.md)
+  - [3.14 Squares Of A Sorted Array](ch03-arrays/squares-of-a-sorted-array.md)
+  - [3.15 Find Pivot Index](ch03-arrays/find-pivot-index.md)
   - [2.12 Closest Subsequence Sum](ch02-dynamic-programming/closest-subsequence-sum.md)
 
 - [4. Linked Lists](ch04-linked-lists/index.md)
@@ -80,6 +85,8 @@
   - [4.5 Linked List Cycle II](ch04-linked-lists/linked-list-cycle-ii.md)
   - [4.6 Find The Duplicate Number](ch04-linked-lists/find-the-duplicate-number.md)
   - [4.7 Add Two Numbers](ch04-linked-lists/add-two-numbers.md)
+  - [4.8 Middle Of The Linked List](ch04-linked-lists/middle-of-the-linked-list.md)
+  - [4.9 Palindrome Linked List](ch04-linked-lists/palindrome-linked-list.md)
 
 - [5. Trees](ch05-trees/index.md)
   - [5.0 Pattern Primer: The Recursive Data Structure](ch05-trees/pattern-primer.md)
@@ -121,6 +128,8 @@
   - [7.6 Meeting Rooms III](ch07-heaps/meeting-rooms-iii.md)
   - [7.7 Single Threaded CPU](ch07-heaps/single-threaded-cpu.md)
   - [7.8 The Skyline Problem](ch07-heaps/the-skyline-problem.md)
+  - [7.9 Design Hit Counter](ch07-heaps/design-hit-counter.md)
+  - [7.10 Longest Happy String](ch07-heaps/longest-happy-string.md)
 
 - [8. Stacks & Queues](ch08-stacks/index.md)
   - [8.0 Pattern Primer: LIFO, FIFO, and the Monotonic Stack](ch08-stacks/pattern-primer.md)
@@ -148,6 +157,8 @@
   - [9.9 Number Of Matching Subsequences](ch09-strings/number-of-matching-subsequences.md)
   - [9.10 Find The Index Of The First Occurrence (KMP)](ch09-strings/find-the-index-of-the-first-occurrence-kmp.md)
   - [9.11 Valid Palindrome](ch09-strings/valid-palindrome.md)
+  - [9.12 Count And Say](ch09-strings/count-and-say.md)
+  - [9.13 Add Strings](ch09-strings/add-strings.md)
 
 - [10. Hash Tables & Sets](ch10-hash-tables/index.md)
   - [10.0 Pattern Primer: O(1) Lookup, Three Moves](ch10-hash-tables/pattern-primer.md)
@@ -164,6 +175,7 @@
   - [10.11 Subarray Sums Divisible By K](ch10-hash-tables/subarray-sums-divisible-by-k.md)
   - [10.12 Rank Transform Of An Array](ch10-hash-tables/rank-transform-of-an-array.md)
   - [10.13 Unique Number Of Occurrences](ch10-hash-tables/unique-number-of-occurrences.md)
+  - [10.14 Integer To English Words](ch10-hash-tables/integer-to-english-words.md)
 
 - [11. Greedy](ch11-greedy/index.md)
   - [11.0 Pattern Primer: The Local Choice, Defended](ch11-greedy/pattern-primer.md)
@@ -178,6 +190,7 @@
   - [11.9 Non-Overlapping Intervals](ch11-greedy/non-overlapping-intervals.md)
   - [11.10 Reorganize String](ch11-greedy/reorganize-string.md)
   - [11.11 Minimum Number Of Arrows To Burst Balloons](ch11-greedy/minimum-number-of-arrows-to-burst-balloons.md)
+  - [11.12 Can Place Flowers](ch11-greedy/can-place-flowers.md)
 
 - [12. Backtracking](ch12-backtracking/index.md)
   - [12.0 Pattern Primer: DFS With an Undo Button](ch12-backtracking/pattern-primer.md)
@@ -224,6 +237,7 @@
   - [15.6 Sliding Window Maximum](ch15-sliding-window/sliding-window-maximum.md)
   - [15.7 Max Consecutive Ones III](ch15-sliding-window/max-consecutive-ones-iii.md)
   - [15.8 Permutation In String](ch15-sliding-window/permutation-in-string.md)
+  - [15.9 Maximum Erasure Value](ch15-sliding-window/maximum-erasure-value.md)
 
 - [16. Bit Manipulation](ch16-bit-manipulation/index.md)
   - [16.0 Pattern Primer: The Bit Identities](ch16-bit-manipulation/pattern-primer.md)
@@ -249,6 +263,8 @@
   - [17.9 Reconstruct Itinerary](ch17-advanced-graphs/reconstruct-itinerary.md)
   - [17.10 Critical Connections In A Network](ch17-advanced-graphs/critical-connections-in-a-network.md)
   - [17.11 Walls And Gates](ch17-advanced-graphs/walls-and-gates.md)
+  - [17.12 Bus Routes](ch17-advanced-graphs/bus-routes.md)
+  - [17.13 Minimum Genetic Mutations](ch17-advanced-graphs/minimum-genetic-mutations.md)
 
 - [18. Design & Caches](ch18-design-caches/index.md)
   - [18.0 Pattern Primer: Composing Structures](ch18-design-caches/pattern-primer.md)
