@@ -19,6 +19,7 @@
 | 18.7 | Insert Delete GetRandom O(1) | map + list swap-remove | O(1) per op | [→](insert-delete-getrandom.md) |
 
 | 18.8 | Weighted Reservoir Sampling | A-Res randomized keys | $O(N log k)$ | [→](weighted-reservoir-sampling.md) |
+| 18.9 | LRU Cache — The Repo's Seven Implementations | variant consolidation | $O(1)$ | [→](lru-cache-variants.md) |
 ## The rest of the design-related directories
 
 `cache/` holds many LRU/LFU flavors (`LRUCacheLinkedList.kt`, `LRUCacheBetter.kt`, the `LruCacheNobodyDoesItBetter.kt` family, `LFUCacheGigaCHAD.kt`, ...) — this chapter documents the canonical structures. `design/` adds `SelfDoubtSimulation.kt`; `stack/` holds the nested-list iterator and increment-stack; `probability/` holds the O(1) random-access set.

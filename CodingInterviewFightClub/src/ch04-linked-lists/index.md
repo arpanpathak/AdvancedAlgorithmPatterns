@@ -17,6 +17,7 @@
 | 4.5 | Linked List Cycle II | Floyd's with entry-point math | $O(n)$ | [→](linked-list-cycle-ii.md) |
 
 | 4.6 | Find The Duplicate Number | Floyd on an implicit graph | $O(n)$ | [→](find-the-duplicate-number.md) |
+| 4.7 | Add Two Numbers | digit-wise carry | $O(n)$ | [→](add-two-numbers.md) |
 ## The rest of the linkedlist/ directory
 
 `src/main/kotlin/linkedlist/` holds 20+ more: Palindrome, Middle Node, Odd-Even, Swap Nodes in Pairs, Reverse Nodes in K Groups, Rotate List, Merge K Sorted Lists (heap + iterative), Add Two Numbers, Copy List with Random Pointer, Intersection of Two Linked Lists, Insert Into a Sorted Circular List, Maximum Twin Sum, and more. New pages land in the table above as they're written; the rest are cataloged in the repository's own tree.

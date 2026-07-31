@@ -21,6 +21,8 @@
 | 3.8 | Trapping Rain Water | two pointers + running maxima | $O(n)$ | [→](trapping-rain-water.md) |
 | 3.9 | Container With Most Water | two pointers, move the shorter | $O(n)$ | [→](container-with-most-water.md) |
 | 3.10 | Product Of Array Except Self | prefix/suffix products | $O(n)$ | [→](product-of-array-except-self.md) |
+| 3.11 | Merge Sorted Array | reverse two-pointer merge | $O(m+n)$ | [→](merge-sorted-array.md) |
+| 3.12 | Set Matrix Zeroes | first-row/col markers | $O(mn)$ | [→](set-matrix-zeroes.md) |
 ## The rest of the array/ directory
 
 `src/main/kotlin/array/` holds 100+ more problems. The full index lives in the repository; every subdirectory is a pattern family:

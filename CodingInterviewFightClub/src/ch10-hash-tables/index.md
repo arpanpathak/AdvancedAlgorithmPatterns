@@ -20,6 +20,8 @@
 
 | 10.8 | Subarray Sum Equals K | prefix sums + frequency map | $O(n)$ | [→](subarray-sum-equals-k.md) |
 | 10.9 | Count Rectangles Formed By Points | diagonal pairing + set lookup | $O(n^2)$ | [→](count-rectangles-formed-by-points.md) |
+| 10.10 | First Missing Positive | index-as-memo marking | $O(n)$ | [→](first-missing-positive.md) |
+| 10.11 | Subarray Sums Divisible By K | remainder map (floorMod) | $O(n)$ | [→](subarray-sums-divisible-by-k.md) |
 ## The rest of the hashtable/ directories
 
 `src/main/kotlin/hashtable/` adds: Integer To Roman, H-Index, Intersection Of Two Arrays, Maximum Frequency Stack, Design A Number Container System, Design File System, Count Number Of Bad Pairs, Word Break variants. `src/main/kotlin/array/hashtable/` adds: First Missing Positive, Degree Of An Array, Valid Sudoku variants, Set Mismatch, Rank Transform Of An Array, Unique Number Of Occurrences, Integer To English Words, Equal Row And Column Pairs, and more. The LRU/LFU cache designs live in `src/main/kotlin/cache/` and are the "map + structure" capstone of this chapter's design problems.

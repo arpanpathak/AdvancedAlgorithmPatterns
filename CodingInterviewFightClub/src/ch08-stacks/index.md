@@ -19,6 +19,7 @@
 | 8.7 | Remove K Digits | monotonic stack + greedy | $O(n)$ | [→](remove-k-digits.md) |
 
 | 8.8 | Decode String | recursion with a shared index | $O(len)$ | [→](decode-string.md) |
+| 8.9 | Longest Valid Parentheses | stack of indices + base | $O(n)$ | [→](longest-valid-parentheses.md) |
 ## The rest of the stack/ directory
 
 `src/main/kotlin/stack/` is deep: more monotonic-stack classics (Next Greater Element I, Sum Of Subarray Minimums/Ranges, Online Stock Span, Buildings With An Ocean View, Number Of Visible People In A Queue), string-stack hybrids (Minimum Remove To Make Valid Parentheses, Remove Duplicate Letters, Smallest Subsequence Of Distinct Characters, Remove Stars From String, Longest Valid Parentheses), and design puzzles (MinStack variants, Flatten Nested List Iterator, Design A Stack With Increment Operations, Exclusive Time Of Functions). The repo also has `queues/` with FIFO implementations used by the BFS pages in earlier chapters.
