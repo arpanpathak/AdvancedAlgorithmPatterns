@@ -104,3 +104,13 @@
   - [8.5 Largest Rectangle In Histogram](ch08-stacks/largest-rectangle-in-histogram.md)
   - [8.6 Evaluate Reverse Polish Notation](ch08-stacks/evaluate-reverse-polish-notation.md)
   - [8.7 Remove K Digits](ch08-stacks/remove-k-digits.md)
+
+- [9. Strings](ch09-strings/index.md)
+  - [9.0 Pattern Primer: The Three Lenses](ch09-strings/pattern-primer.md)
+  - [9.1 Valid Anagram](ch09-strings/valid-anagram.md)
+  - [9.2 Group Anagrams](ch09-strings/group-anagrams.md)
+  - [9.3 Isomorphic Strings](ch09-strings/isomorphic-strings.md)
+  - [9.4 Longest Palindromic Substring](ch09-strings/longest-palindromic-substring.md)
+  - [9.5 Longest Common Prefix](ch09-strings/longest-common-prefix.md)
+  - [9.6 Reverse Words In A String](ch09-strings/reverse-words-in-a-string.md)
+  - [9.7 Validate IP Address](ch09-strings/validate-ip-address.md)
