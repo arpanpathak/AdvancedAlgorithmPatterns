@@ -114,3 +114,13 @@
   - [9.5 Longest Common Prefix](ch09-strings/longest-common-prefix.md)
   - [9.6 Reverse Words In A String](ch09-strings/reverse-words-in-a-string.md)
   - [9.7 Validate IP Address](ch09-strings/validate-ip-address.md)
+
+- [10. Hash Tables & Sets](ch10-hash-tables/index.md)
+  - [10.0 Pattern Primer: O(1) Lookup, Three Moves](ch10-hash-tables/pattern-primer.md)
+  - [10.1 Two Sum](ch10-hash-tables/two-sum.md)
+  - [10.2 Contains Duplicate II](ch10-hash-tables/contains-duplicate-ii.md)
+  - [10.3 Longest Consecutive Sequence](ch10-hash-tables/longest-consecutive-sequence.md)
+  - [10.4 Valid Sudoku](ch10-hash-tables/valid-sudoku.md)
+  - [10.5 First Unique Character](ch10-hash-tables/first-unique-character.md)
+  - [10.6 Design HashMap](ch10-hash-tables/design-hash-map.md)
+  - [10.7 Roman To Integer](ch10-hash-tables/roman-to-integer.md)
