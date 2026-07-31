@@ -24,7 +24,7 @@ class CheapestFlightsWithKStops {
         // Initialize the priority queue and cost tracking
         val minStops = Array(n) { Int.MAX_VALUE }
         val pq = PriorityQueue<State>(compareBy { it.cost })
-        pq.offer(State(0, src, 0))
+        pq.offer(State(src, 0, 0))
         minStops[src] = 0
 
         while (pq.isNotEmpty()) {

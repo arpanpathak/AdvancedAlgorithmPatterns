@@ -74,3 +74,13 @@
   - [5.4 Binary Tree Maximum Path Sum](ch05-trees/binary-tree-maximum-path-sum.md)
   - [5.5 Serialize And Deserialize Binary Tree](ch05-trees/serialize-and-deserialize-binary-tree.md)
   - [5.6 Binary Tree Inorder Traversal (Iterative)](ch05-trees/binary-tree-inorder-traversal-iterative.md)
+
+- [6. Graphs](ch06-graphs/index.md)
+  - [6.0 Pattern Primer: The Seven Engines](ch06-graphs/pattern-primer.md)
+  - [6.1 Word Ladder](ch06-graphs/word-ladder.md)
+  - [6.2 Clone Graph](ch06-graphs/clone-graph.md)
+  - [6.3 Course Schedule II](ch06-graphs/course-schedule-ii.md)
+  - [6.4 Is Graph Bipartite](ch06-graphs/is-graph-bipartite.md)
+  - [6.5 Cheapest Flights With K Stops](ch06-graphs/cheapest-flights-with-k-stops.md)
+  - [6.6 Min Cost To Connect All Points](ch06-graphs/min-cost-to-connect-all-points.md)
+  - [6.7 Strongly Connected Components](ch06-graphs/strongly-connected-components.md)

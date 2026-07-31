@@ -18,8 +18,8 @@ build/
 .DS_Store
 
 # Misc binaries
-main
-minikube-darwin-amd64
+/main
+/minikube-darwin-amd64
 
 # Scratch / local-only files (keep out of the repo)
 /Coding Interview Fight Club.md
