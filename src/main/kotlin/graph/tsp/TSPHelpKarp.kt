@@ -79,7 +79,14 @@ class TSPHeldKarpSolver(private val distanceMatrix: Array<IntArray>, private val
 
         return TSPResult(minTourCost, listOf(startCity) + path + startCity)
     }
+
+    fun buildShortestPath(cameFrom: Array<IntArray>): List<String> {
+       return buildList {
+           
+       }
+    }
 }
+
 
 fun main() {
     val cityCount = 4

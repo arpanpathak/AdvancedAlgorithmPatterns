@@ -18,3 +18,8 @@ fun subsetsWithDup(nums: IntArray): List<List<Int>> {
     backtrack(0)
     return result
 }
+
+fun main() {
+    val subsets = subsetsWithDup(intArrayOf(1, 2, 3, 4, 4, 9, -10))
+    println(subsets.joinToString(","))
+}

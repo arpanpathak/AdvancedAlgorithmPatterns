@@ -27,13 +27,4 @@ class CrackingTheSafe {
         dfs(startNode)
         return result.append(startNode).toString()
     }
-    // n = 3
-    // 000
-    // 001
-    // 010
-    // 011
-    // 100
-    // 101
-    // 110
-    // 111
 }

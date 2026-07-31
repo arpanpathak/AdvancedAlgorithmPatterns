@@ -30,7 +30,7 @@ class NextPermutation {
             return false
         }
 
-        // index is reduced by 1 in while loop. Hence incrementing to get the highest number
+        // index is reduced by wor 1 in while loop. Hence incrementing to get the highest number
         // in this increasing sequence
         index++
         var pivot = nums[index - 1]

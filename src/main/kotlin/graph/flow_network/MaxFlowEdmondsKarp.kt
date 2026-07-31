@@ -6,6 +6,19 @@ fun maxFlowEdmondsKarp(graph: Array<IntArray>, source: Int, sink: Int): Int {
     val parent = IntArray(n)
     var flow = 0
 
+    // Calculate minimum capacity along found path
+    fun calculateBottleneck(): Int {
+        var v = sink
+        var minCap = Int.MAX_VALUE
+
+        while (v != source) {
+            val u = parent[v]
+            minCap = minOf(minCap, residual[u][v])
+            v = u
+        }
+        return minCap
+    }
+
     // Find augmenting path using BFS
     fun findAugmentingPath(): Int {
         parent.fill(-1)
@@ -31,19 +44,6 @@ fun maxFlowEdmondsKarp(graph: Array<IntArray>, source: Int, sink: Int): Int {
             }
         }
         return 0  // No path found
-    }
-
-    // Calculate minimum capacity along found path
-    fun calculateBottleneck(): Int {
-        var v = sink
-        var minCap = Int.MAX_VALUE
-        
-        while (v != source) {
-            val u = parent[v]
-            minCap = minOf(minCap, residual[u][v])
-            v = u
-        }
-        return minCap
     }
 
     // Update residual capacities along augmenting path

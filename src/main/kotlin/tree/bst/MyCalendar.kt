@@ -7,11 +7,11 @@ class MyCalendar() {
         val prev = calender.floorEntry(startTime)
         val next = calender.ceilingEntry(startTime)
 
-        val hasOverlapWithPrev = prev?.let { startTime < it.value } ?: false
-        val hasOverlapWithNext = next?.let { it.key < endTime }  ?: false
+        val hasAnOverlapWithPrev = prev?.let { startTime < it.value } ?: false
+        val hasAnOverlapWithNext = next?.let { it.key < endTime }  ?: false
 
         return when {
-            hasOverlapWithPrev || hasOverlapWithNext -> false
+            hasAnOverlapWithPrev || hasAnOverlapWithNext -> false
             else -> {
                 calender[startTime] = endTime
                 true

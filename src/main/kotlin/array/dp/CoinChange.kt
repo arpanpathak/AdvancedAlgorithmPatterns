@@ -24,4 +24,19 @@ class CoinChange {
             }
         }.also { dp[amount] = it }
     }
+
+    // Cleaner Code
+    fun coinChangeCleanAf(coins: IntArray, amount: Int): Int {
+        val dp = IntArray(amount + 1) { if (it == 0) 0 else amount + 1 }
+
+        for (i in 1..amount) {
+            for (coin in coins) {
+                if (i >= coin) {
+                    dp[i] = minOf(dp[i], dp[i - coin] + 1)
+                }
+            }
+        }
+
+        return dp[amount].takeIf { it <= amount } ?: -1
+    }
 }

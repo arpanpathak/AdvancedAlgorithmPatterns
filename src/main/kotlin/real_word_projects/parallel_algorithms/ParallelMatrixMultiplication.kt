@@ -44,8 +44,34 @@ suspend fun matrixMultiplyParallel(a: Array<IntArray>, b: Array<IntArray>): Arra
     result
 }
 
+suspend fun matrixMultiplyParallel2(a: Array<IntArray>, b: Array<IntArray>): Array<IntArray> = coroutineScope {
+    val result = Array(a.size) { IntArray(b[0].size) }
+
+    // Use Dispatchers.Default for CPU-bound tasks
+    withContext(Dispatchers.Default) {
+        val rows = a.indices
+        val numWorkers = Runtime.getRuntime().availableProcessors()
+        val chunkSize = (a.size / numWorkers).coerceAtLeast(1)
+
+        rows.chunked(chunkSize).map { rowRange ->
+            async {
+                for (i in rowRange) {
+                    for (j in b[0].indices) {
+                        var sum = 0 // Local variable to avoid constant array writes
+                        for (k in b.indices) {
+                            sum += a[i][k] * b[k][j]
+                        }
+                        result[i][j] = sum
+                    }
+                }
+            }
+        }.awaitAll()
+    }
+    result
+}
+
 fun main() {
-    val size = 2000
+    val size = 1000
     val a = generateRandomMatrix(size)
     val b = generateRandomMatrix(size)
 
@@ -57,7 +83,7 @@ fun main() {
 
     val timeParallel = measureTimeMillis {
         runBlocking {
-            val result = matrixMultiplyParallel(a, b)
+            val result = matrixMultiplyParallel2(a, b)
             println("Parallel result sample: ${result[0][0]}")
         }
     }

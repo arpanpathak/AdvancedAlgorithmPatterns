@@ -1,9 +1,9 @@
-ipackage graph.flow_network
+package graph.flow_network
 
-fun maxFlowEdmondsKarp(graph: Array<IntArray>, source: Int, sink: Int): Int {
+fun maxFlowEdmondsKarps(graph: Array<IntArray>, source: Int, sink: Int): Int {
     val n = graph.size
     // The residual graph tracks capacity available for flow, including reverse edges.
-    val residual = Array(n) { graph[it].copyOf() }
+    val residual = Array(n) { index -> graph[index].copyOf() }
     val parent = IntArray(n)
     var maxFlow = 0
 

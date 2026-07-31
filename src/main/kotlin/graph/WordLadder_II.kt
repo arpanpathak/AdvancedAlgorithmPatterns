@@ -2,6 +2,8 @@ package graph
 
 class WorkLadder_II {
     fun findLadders(beginWord: String, endWord: String, wordList: List<String>): List<List<String>> {
+        val string: String = "Fucking string is here..."
+
         val wordSet = wordList.toHashSet()
         if (endWord !in wordSet) return emptyList()
 

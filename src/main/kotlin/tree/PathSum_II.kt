@@ -26,4 +26,30 @@ class PathSum_II {
         dfs(root, targetSum)
         return result
     }
+
+    fun pathSumClean(root: TreeNode?, targetSum: Int): List<List<Int>> {
+        val result = mutableListOf<List<Int>>()
+        val currentPath = mutableListOf<Int>()
+
+        fun isLeaf(node: TreeNode?) = node?.left == null && node?.right == null
+
+        fun dfs(node: TreeNode?, remainingSum: Int) {
+            node ?: return
+
+            currentPath.add(node.`val`)
+            val newSum = remainingSum - node.`val`
+
+            when {
+                newSum == 0 &&  isLeaf(node) -> result.add(currentPath.toList())
+                else ->   {
+                    dfs(node.left, newSum);
+                    dfs(node.right, newSum)
+                }
+            }
+            // Backtrack once the DFS is done
+            currentPath.removeLast()
+        }
+
+        dfs(root, targetSum).also { return result }
+    }
 }

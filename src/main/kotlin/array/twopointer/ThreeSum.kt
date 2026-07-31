@@ -19,6 +19,10 @@ class ThreeSum {
                     sum == 0 -> {
                         result.add(listOf(nums[i], nums[start], nums[end]))
 
+                        // Skip duplicates for the second and third numbers
+                        while (start < end && nums[start] == nums[start + 1]) start++
+                        while (start < end && nums[end] == nums[end - 1]) end--
+
                         start++
                         end--
                     }

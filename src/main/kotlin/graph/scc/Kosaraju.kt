@@ -11,16 +11,17 @@ class Graph<T> {
 
     fun getSCCs(): List<List<T>> {
         val visited = mutableSetOf<T>()
-        val stack = ArrayDeque<T>()
+        val visitOrderStack = ArrayDeque<T>()
 
         adj.keys.forEach { vertex ->
-            if (vertex !in visited) fillOrder(vertex, visited, stack)
+            if (vertex !in visited) fillOrder(vertex, visited, visitOrderStack)
         }
 
         visited.clear()
+        // Learnt new construct called build list...
         return buildList {
-            while (stack.isNotEmpty()) {
-                val vertex = stack.removeLast()
+            while (visitOrderStack.isNotEmpty()) {
+                val vertex = visitOrderStack.removeLast()
                 if (vertex !in visited) {
                     add(buildList { dfsOnReversed(vertex, visited, this) })
                 }

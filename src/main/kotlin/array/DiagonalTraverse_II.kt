@@ -12,20 +12,19 @@ class DiagonalTraverse_II {
 
         // Start with the first element
         queue.offer(0 to 0)
-        visited.add(0 to 0)
 
         while (queue.isNotEmpty()) {
             val (i, j) = queue.poll()
             result.add(nums[i][j])
 
             // Move to the next row (i+1, j)
-            if (i + 1 < nums.size && j < nums[i + 1].size && (i + 1 to j) !in visited) {
+            if (i + 1 < nums.size && j < nums[i + 1].size) {
                 queue.offer(i + 1 to j)
                 visited.add(i + 1 to j)
             }
 
             // Move to the next column (i, j+1)
-            if (j + 1 < nums[i].size && (i to j + 1) !in visited) {
+            if (j + 1 < nums[i].size) {
                 queue.offer(i to j + 1)
                 visited.add(i to j + 1)
             }

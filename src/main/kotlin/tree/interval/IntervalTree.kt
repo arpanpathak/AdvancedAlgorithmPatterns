@@ -1,5 +1,8 @@
 package tree.interval
 
+import java.util.*
+import java.util.Collections.addAll
+
 class IntervalTree {
     data class Interval(val start: Int, val end: Int) : Comparable<Interval> {
         override fun compareTo(other: Interval) = start.compareTo(other.start)
@@ -57,6 +60,10 @@ class IntervalTree {
     }
 }
 
+data class BasicBitch(var x: Int, var y: Int): Comparable<BasicBitch> {
+    override operator fun compareTo(other: BasicBitch) = x.compareTo(other.x)
+}
+
 fun main() {
     val tree = IntervalTree()
     tree.insert(15, 20)
@@ -66,6 +73,18 @@ fun main() {
     tree.insert(12, 15)
     tree.insert(30, 40)
 
+    val pq = PriorityQueue<BasicBitch>()
+    pq.addAll(listOf(
+        BasicBitch(6, 2),
+        BasicBitch(1, 5),
+        BasicBitch(3, 7),
+        BasicBitch(-3, 1),
+    ))
+
+
+    while (pq.isNotEmpty()) {
+        println(pq.poll())
+    }
     println("Overlapping with [14, 16]: ${tree.findOverlapping(14, 16)}")
     println("Overlapping with [21, 23]: ${tree.findOverlapping(21, 23)}")
     println("Overlapping with [25, 35]: ${tree.findOverlapping(25, 35)}")

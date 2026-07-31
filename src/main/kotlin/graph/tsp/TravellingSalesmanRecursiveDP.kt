@@ -4,6 +4,8 @@ class TravellingSalesmanRecursiveDP {
     fun solveTSP(dist: Array<IntArray>): Int {
         val n = dist.size
         val allVisited = (1 shl n) - 1
+        // Beter Refactor the code using some better state represantation ....
+        // State (val mask: Int, val currentCity: Int)
         val memo = mutableMapOf<Pair<Int, Int>, Int>()
 
         fun dp(mask: Int, u: Int): Int {
@@ -25,6 +27,11 @@ class TravellingSalesmanRecursiveDP {
         // Start at home (index 0) with home already visited (mask 1)
         return dp(1, 0)
     }
+}
+
+fun main() {
+    val testInstance = TravellingSalesmanRecursiveDP()
+
 }
 
 // Another Approach where you need to print the Path as well.
@@ -84,3 +91,5 @@ class TSPSolver(private val dist: Array<IntArray>) {
         return path
     }
 }
+
+// Dynamic Programming isn't that Hard if you know what are you doing.

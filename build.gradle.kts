@@ -24,6 +24,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
     implementation("com.google.code.gson:gson:2.10.1")
     implementation("net.jacobpeterson:alpaca-java:8.3.1")
+    implementation("com.oracle.database.jdbc:ojdbc8:21.3.0.0")
 }
 
 tasks.test {

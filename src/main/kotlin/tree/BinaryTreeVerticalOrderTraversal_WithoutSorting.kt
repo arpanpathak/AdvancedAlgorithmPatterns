@@ -1,6 +1,5 @@
 package tree
 
-import tree.TreeNode
 import java.util.*
 
 class BinaryTreeVerticalOrderTraversal_WithoutSorting {

@@ -12,7 +12,7 @@ class MinCostToConnectAllPointsKruskal {
     class UnionFind(size: Int) {
         private val nodes = Array(size) { UnionFindNode(it, 0) }
 
-        fun find(x: Int): Int {
+        tailrec fun find(x: Int): Int {
             if (nodes[x].parent != x) {
                 nodes[x].parent = find(nodes[x].parent)
             }

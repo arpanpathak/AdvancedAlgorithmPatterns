@@ -55,4 +55,5 @@ fun isMatched(target: Map<Char, Int>, window: Map<Char, Int>): Boolean {
 fun main() {
     // Test case: expected output 8 (3 + 3 + 2 = 8)
     println(findNonProgrammerStringSections("xyzprogrammexxrabcprogrammermn"))
+    println(findNonProgrammerStringSections("abprogrammmertc"))
 }

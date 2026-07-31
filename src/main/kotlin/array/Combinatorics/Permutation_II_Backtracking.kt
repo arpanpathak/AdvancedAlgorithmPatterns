@@ -15,7 +15,18 @@ class Permutation_II_Backtracking {
             for (i in nums.indices) {
                 if (seen[i]) continue
 
-                // But why ??
+                /**
+                 * THE "SYMMETRY BREAKER":
+                 * This ensures each duplicate element gets its "fair share" of the slot
+                 * in a strictly controlled order.
+                 * * If nums[i] is the same as the previous element, and the previous
+                 * element (i-1) is NOT currently 'seen' in our path, it means:
+                 * 1. We already finished exploring ALL permutations that start with nums[i-1].
+                 * 2. If we were to start a new branch with nums[i] now, it would result in
+                 * identical permutations to the ones we just finished.
+                 * * By skipping here, we ensure that for a set of duplicates like [1, 1, 1],
+                 * we only process them in the order: index 0, then index 1, then index 2.
+                 */
                 if (i != 0 && !seen[i-1] && nums[i] == nums[i-1])
                     continue
 
@@ -33,3 +44,10 @@ class Permutation_II_Backtracking {
         return res
     }
 }
+
+// 1,2,3,1
+
+// 1,1,2,3
+// 1,1,3,2
+// 1,2,3,1
+// 1,2,1,3

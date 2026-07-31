@@ -7,7 +7,7 @@ class CheapestFlightWithKStops {
 
     fun findCheapestPrice(n: Int, flights: Array<IntArray>, src: Int, dst: Int, k: Int): Int {
         val graph = flights.groupBy({ it[0] }) { Flight(it[1], it[2], 0) }
-        val pq = PriorityQueue(compareBy<Flight> { it.cost })
+        val pq = PriorityQueue<Flight>(compareBy { it.cost })
         val minStops = IntArray(n) { Int.MAX_VALUE }
 
         pq.offer(Flight(src, 0, 0))

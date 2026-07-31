@@ -23,4 +23,31 @@ class MaximalSquare {
 
         return maxSize * maxSize
     }
+
+    class MaximalSquareRecursive {
+        fun maximalSquare(matrix: Array<CharArray>): Int {
+            if (matrix.isEmpty()) return 0
+
+            val m = matrix.size
+            val n = matrix[0].size
+            val memo = Array(m) { IntArray(n) { -1 } }
+            var maxSide = 0
+
+            fun solve(i: Int, j: Int): Int {
+                if (i >= m || j >= n || matrix[i][j] == '0') return 0
+                if (memo[i][j] != -1) return memo[i][j]
+
+                val right = solve(i, j + 1)
+                val down = solve(i + 1, j)
+                val diag = solve(i + 1, j + 1)
+
+                memo[i][j] = 1 + minOf(right, down, diag)
+                maxSide = maxOf(maxSide, memo[i][j])
+                return memo[i][j]
+            }
+
+            solve(0, 0)
+            return maxSide * maxSide
+        }
+    }
 }

@@ -49,3 +49,7 @@ class `FindTheIndexofTheFirstOccurrenceIna String` {
         return lps
     }
 }
+// lps =  [0 0 0 0 0 0 0 0 0]
+        // a b c x y z c b a
+        //   ^             ^
+        //   i             1

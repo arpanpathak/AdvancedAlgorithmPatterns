@@ -6,7 +6,6 @@ class MergeKSortedListIterative {
 
         var interval = 1
         val n = lists.size
-
         while (interval < n) {
             for (i in 0 until n - interval step interval * 2) {
                 lists[i] = mergeTwoLists(lists[i], lists[i + interval])

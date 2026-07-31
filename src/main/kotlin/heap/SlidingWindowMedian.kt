@@ -5,6 +5,7 @@ import java.util.*
 class SlidingWindowMedian {
     private val minHeap = PriorityQueue<Double>() // Min-heap for the larger half
     private val maxHeap = PriorityQueue<Double> ( compareBy{-it} ) // Max-heap for the smaller half
+    private val delayedRemoval = TreeMap<Double, Int>() // TreeMap to track delayed removals
 
     private fun balanceHeaps() {
         if (maxHeap.size > minHeap.size + 1) {

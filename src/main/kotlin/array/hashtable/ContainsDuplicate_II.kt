@@ -1,7 +1,5 @@
 package array.hashtable
 
-import jdk.vm.ci.code.CodeUtil.K
-
 class ContainsDuplicate_II {
     fun containsNearbyDuplicate(nums: IntArray, k: Int): Boolean {
         val map = mutableMapOf<Int, Int>()

@@ -2,7 +2,7 @@ package stack
 
 class AestroidCollisions {
     fun asteroidCollision(asteroids: IntArray): IntArray {
-        val stack = mutableListOf<Int>()
+        val stack = ArrayDeque<Int>()
 
         for (speed in asteroids) {
             if (speed > 0 ) {

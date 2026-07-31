@@ -35,7 +35,8 @@ class DualBalancedHeap<T : Comparable<T>> {
     fun getMedian(): T? {
         return if (maxHeap.size == minHeap.size) {
             // Handling generic types requires a custom approach for averaging or choosing one of the elements.
-            maxHeap.peek() // Simplification: you may need to define how to combine two elements for real applications.
+            maxHeap.peek()
+        // Simplification: you may need to define how to combine two elements for real applications.
         } else {
             maxHeap.peek()
         }

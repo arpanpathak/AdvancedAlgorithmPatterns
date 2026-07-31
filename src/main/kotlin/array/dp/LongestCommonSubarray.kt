@@ -5,7 +5,6 @@ class LongestCommonSubarray {
 
     fun findLength(nums1: IntArray, nums2: IntArray): Int {
         return dp(nums1, nums2, nums1.lastIndex, nums2.lastIndex, Int.MIN_VALUE)
-
     }
 
     fun dp(nums1: IntArray, nums2: IntArray, i: Int, j: Int, max: Int): Int {
@@ -43,5 +42,4 @@ class LongestCommonSubarray {
 
         return maxLength
     }
-
 }

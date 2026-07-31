@@ -1,14 +1,13 @@
 package quicksort
 
+import oracle.net.aso.k
 import kotlin.random.Random
 
 class TopKFrequentElements {
     private val map = HashMap<Int, Int>()
 
     fun topKFrequent(nums: IntArray, k: Int): IntArray {
-        for (num in nums) {
-            map[num] = map.getOrDefault(num, 0) + 1
-        }
+        nums.forEach { map[it] = map.getOrPut(it) { 0 } + 1 }
 
         val uniqueNums = map.keys.toIntArray()
         var start = 0
@@ -44,8 +43,6 @@ class TopKFrequentElements {
     }
 
     private fun swap(nums: IntArray, i: Int, j: Int) {
-        val temp = nums[i]
-        nums[i] = nums[j]
-        nums[j] = temp
+       nums[i] = nums[j].also { nums[i] = it }
     }
 }

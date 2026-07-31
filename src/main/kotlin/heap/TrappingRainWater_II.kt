@@ -1,4 +1,6 @@
- private data class Cell(val height: Int, val r: Int, val c: Int)
+import java.util.*
+
+private data class Cell(val height: Int, val r: Int, val c: Int)
 
     fun trapRainWater(heightMap: Array<IntArray>): Int {
         if (heightMap.isEmpty() || heightMap[0].isEmpty()) return 0

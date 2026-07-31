@@ -47,6 +47,11 @@ class LruCacheBruceLee<K, V>(private val capacity: Int) {
         addToHead(newNode)
     }
 
+    fun removeKey(key: K): Boolean {
+
+        return false
+    }
+
     // Moves node to the front of the linked list to store most recently used item on front
     private fun addToHead(node: Node<K, V>) {
         node.prev = head
@@ -72,4 +77,5 @@ class LruCacheBruceLee<K, V>(private val capacity: Int) {
         removeNode(res)
         return res
     }
+
 }

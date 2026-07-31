@@ -27,6 +27,7 @@ class MakingALargeIsland_AnotherApproach {
             for (c in grid[0].indices) {
                 if (grid[r][c] == 0) {
                     val uniqueIslands = directions.mapNotNull { (dr, dc) ->
+                        // it != 0 also works
                         grid.getOrNull(r + dr)?.getOrNull(c + dc)?.takeIf { it > 1 }
                     }.toSet()
                     maxArea = maxOf(maxArea, 1 + uniqueIslands.sumOf { islandSizes[it]!! })
