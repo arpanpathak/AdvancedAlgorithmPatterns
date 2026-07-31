@@ -1,0 +1,32 @@
+# Chapter 3 — Arrays, Two Pointers & Matrices
+
+> **Source:** `src/main/kotlin/array/`, `src/main/kotlin/sliding_window/`, `src/main/kotlin/grid/`
+>
+> **Master idea:** arrays reward *structure*. Two pointers exploit sortedness; matrices reward treating them as layered sequences. Almost every problem here is a loop with a **clever index dance**.
+>
+> **Prerequisites:** nothing but loops — this chapter is where the fundamentals get sharpened.
+
+## Problems at a glance (this chapter's core set)
+
+| # | Problem | Pattern | Complexity | Page |
+|---|---------|---------|------------|------|
+| 3.1 | Two Sum II (sorted) | two pointers converge | $O(n)$ | [→](two-sum-ii.md) |
+| 3.2 | Three Sum | sort + two pointers | $O(n^2)$ | [→](three-sum.md) |
+| 3.3 | Move Zeroes | partition (write pointer) | $O(n)$ | [→](move-zeroes.md) |
+| 3.4 | Merge Intervals | sort + linear sweep | $O(n \log n)$ | [→](merge-intervals.md) |
+| 3.5 | Insert Interval | three-phase sweep | $O(n)$ | [→](insert-interval.md) |
+| 3.6 | Rotate Image | transpose + reverse | $O(n^2)$ | [→](rotate-image.md) |
+| 3.7 | Spiral Matrix | boundary peeling | $O(mn)$ | [→](spiral-matrix.md) |
+
+## The rest of the array/ directory
+
+`src/main/kotlin/array/` holds 100+ more problems. The full index lives in the repository; every subdirectory is a pattern family:
+
+- `twopointer/` — Two Sum II, 4Sum, Trapping Rain Water, Remove Duplicates, Rotate Array, Longest Mountain…
+- `hashtable/` — First Missing Positive, Longest Consecutive Sequence, Valid Sudoku, Degree of an Array…
+- `dp/` — House Robber, Kadane, Coin Change, Maximal Square, Stone Game… (see [Chapter 2](../ch02-dynamic-programming/index.md))
+- `greedy/` — Split Array Largest Sum, Minimum Number of Taps…
+- `prefixsum/`, `sweepline/`, `sorting/`, `random/`, `backtracking/` (see [Chapter 11](../ch11-backtracking/index.md))
+- top-level matrix files — Spiral Matrix, Diagonal Traverse, Set Matrix Zeroes, Toeplitz, Transpose…
+
+New pages are added to this chapter as they're written — the tree grows from the "Problems at a glance" table.
