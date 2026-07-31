@@ -144,3 +144,13 @@
   - [12.5 Palindrome Partitioning](ch12-backtracking/palindrome-partitioning.md)
   - [12.6 Restore IP Addresses](ch12-backtracking/restore-ip-addresses.md)
   - [12.7 Sudoku Solver](ch12-backtracking/sudoku-solver.md)
+
+- [13. Tries](ch13-tries/index.md)
+  - [13.0 Pattern Primer: The Prefix Structure](ch13-tries/pattern-primer.md)
+  - [13.1 Implement Trie (Prefix Tree)](ch13-tries/implement-trie.md)
+  - [13.2 Word Break](ch13-tries/word-break.md)
+  - [13.3 Design Add And Search Words](ch13-tries/design-add-and-search-words.md)
+  - [13.4 Count Words With A Given Prefix](ch13-tries/count-words-with-a-given-prefix.md)
+  - [13.5 Search Suggestion System](ch13-tries/search-suggestion-system.md)
+  - [13.6 Word Squares](ch13-tries/word-squares.md)
+  - [13.7 Design Auto Complete System](ch13-tries/design-autocomplete-system.md)
