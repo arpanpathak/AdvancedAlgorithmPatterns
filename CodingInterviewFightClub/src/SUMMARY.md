@@ -174,3 +174,13 @@
   - [15.5 Minimum Size Subarray Sum](ch15-sliding-window/minimum-size-subarray-sum.md)
   - [15.6 Sliding Window Maximum](ch15-sliding-window/sliding-window-maximum.md)
   - [15.7 Max Consecutive Ones III](ch15-sliding-window/max-consecutive-ones-iii.md)
+
+- [16. Bit Manipulation](ch16-bit-manipulation/index.md)
+  - [16.0 Pattern Primer: The Bit Identities](ch16-bit-manipulation/pattern-primer.md)
+  - [16.1 Number Of 1 Bits](ch16-bit-manipulation/number-of-1-bits.md)
+  - [16.2 Reverse Bits](ch16-bit-manipulation/reverse-bits.md)
+  - [16.3 Single Number](ch16-bit-manipulation/single-number.md)
+  - [16.4 Single Number III](ch16-bit-manipulation/single-number-iii.md)
+  - [16.5 Maximum XOR Of Two Numbers](ch16-bit-manipulation/maximum-xor-of-two-numbers.md)
+  - [16.6 Sum Of All Subset XOR Totals](ch16-bit-manipulation/sum-of-all-subset-xor-totals.md)
+  - [16.7 Smallest Number With All Set Bits](ch16-bit-manipulation/smallest-number-with-all-set-bits.md)
