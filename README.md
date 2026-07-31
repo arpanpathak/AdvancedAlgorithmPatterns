@@ -2,6 +2,15 @@
 
 This repository contains solutions to various algorithmic problems, organized by categories such as arrays, backtracking, binary search, graphs, and more. Each problem is solved in Kotlin, and the solutions are structured in a way that makes it easy to navigate and understand.
 
+## The Book
+
+**Coding Interview Fight Club** — a from-scratch, multi-language book that explains this entire codebase. Every problem ships with intuition, multiple approaches, code in **five languages** (Kotlin, Java, C++, typed Python, Rust) annotated with `@param` / `@return` contracts, hand-traced dry runs, and math-backed time & space complexity analysis.
+
+- **Read it online:** published to GitHub Pages from this repo (see the `mdbook.yml` workflow).
+- **Build locally:** `cd CodingInterviewFightClub && mdbook build` (requires [mdBook](https://github.com/rust-lang/mdBook)).
+- **Source of truth:** the Kotlin files under `src/main/kotlin/` — each book page links to its source file.
+- **Contributing:** every page has an "Edit on GitHub" link in the toolbar.
+
 ## Purpose
 
 The purpose of this repository is to provide a comprehensive collection of algorithmic problem solutions that can be used for learning, reference, or interview preparation. The problems are categorized by topic, and each solution is implemented in Kotlin.

@@ -1,0 +1,22 @@
+# Gradle / Kotlin
+.gradle/
+build/
+*.class
+*.jar
+.kotlin/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# mdBook build output (deployed by GitHub Actions)
+/book/
+/CodingInterviewFightClub/book/
+
+# OS
+.DS_Store
+
+# Misc binaries
+main
+minikube-darwin-amd64

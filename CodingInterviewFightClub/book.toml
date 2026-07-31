@@ -1,0 +1,27 @@
+[book]
+title = "Coding Interview Fight Club"
+authors = ["Arpan Pathak"]
+language = "en"
+description = "A complete, deeply-explained, multi-language (Kotlin, Java, C++, Python, Rust) guide to the algorithm solutions in the Algorithms_Kotlin codebase. Every problem ships with intuition, multiple approaches, 5-language code annotated with @param/@return docs, hand-traced dry runs, and math-backed time & space complexity analysis."
+
+[build]
+build-dir = "book"
+create-missing = false
+
+[output.html]
+default-theme = "navy"
+preferred-dark-theme = "navy"
+mathjax-support = true
+git-repository-url = "https://github.com/arpanpathak/Algorithms_Kotlin"
+edit-url-template = "https://github.com/arpanpathak/Algorithms_Kotlin/edit/main/src/{path}"
+additional-css = ["theme/css/nightowl.css"]
+additional-js = ["theme/js/book.js"]
+no-section-label = true
+
+[output.html.fold]
+enable = true
+level = 1
+
+[output.html.search]
+limit-results = 20
+teaser-word-count = 30
