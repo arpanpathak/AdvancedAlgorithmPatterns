@@ -20,3 +20,9 @@ build/
 # Misc binaries
 main
 minikube-darwin-amd64
+
+# Scratch / local-only files (keep out of the repo)
+/Coding Interview Fight Club.md
+/CodingInterviewFightClub_Hustle_600/
+/main.cpp
+/trading_data.json
