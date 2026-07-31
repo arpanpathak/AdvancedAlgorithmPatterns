@@ -36,9 +36,12 @@
     return el && el.tagName === 'PRE' && el.querySelector('code');
   }
 
-  /* Build tabs from a run of adjacent <pre> siblings.
-     All languages are VISIBLE by default (stacked); the tab buttons filter.
-     This way even a JS failure never hides code. */
+  /* Build language tabs from a run of adjacent <pre> siblings.
+     Only the ACTIVE language is visible (classic tabbed code). The first
+     block (Kotlin) is active by default; clicking a language shows only
+     that one; "All" reveals everything. If JS ever fails, a <noscript>
+     fallback is not needed because we only HIDE via inline styles set by
+     this script — blocks are never removed from the DOM. */
   function buildTabs(run) {
     var parent = run[0].parentNode;
     var container = document.createElement('div');
@@ -51,11 +54,16 @@
 
     var allBtn = document.createElement('button');
     allBtn.type = 'button';
-    allBtn.className = 'code-tab-btn active';
+    allBtn.className = 'code-tab-btn';
     allBtn.textContent = 'All';
+    allBtn.addEventListener('click', function () {
+      setActive(allBtn);
+      run.forEach(function (p) { p.style.display = 'block'; });
+    });
     nav.appendChild(allBtn);
 
     var uniqueLangs = langs.filter(function (l, i) { return langs.indexOf(l) === i; });
+    var langBtns = {};
     uniqueLangs.forEach(function (l) {
       var btn = document.createElement('button');
       btn.type = 'button';
@@ -65,6 +73,7 @@
         setActive(btn);
         run.forEach(function (p, k) { p.style.display = langs[k] === l ? 'block' : 'none'; });
       });
+      langBtns[l] = btn;
       nav.appendChild(btn);
     });
 
@@ -72,11 +81,6 @@
       nav.querySelectorAll('.code-tab-btn').forEach(function (b) { b.classList.remove('active'); });
       btn.classList.add('active');
     }
-
-    allBtn.addEventListener('click', function () {
-      setActive(allBtn);
-      run.forEach(function (p) { p.style.display = 'block'; });
-    });
 
     container.appendChild(nav);
 
@@ -95,11 +99,17 @@
     /* Order matters: put the container in the DOM FIRST (while run[0] is still
        attached to parent), then move the pre blocks into it. */
     parent.replaceChild(container, run[0]);
-    run.forEach(function (pre) {
-      pre.style.display = 'block';      // ALL visible by default
+    run.forEach(function (pre, idx) {
+      pre.style.display = idx === 0 ? 'block' : 'none';   // tabbed: first language active
       body.appendChild(pre);
     });
     container.appendChild(body);
+
+    // Default active tab = the first language (Kotlin).
+    var first = uniqueLangs[0] || null;
+    if (first && langBtns[first]) {
+      setActive(langBtns[first]);
+    }
   }
 
   /* Wrap a lone code block with a copy button. */
