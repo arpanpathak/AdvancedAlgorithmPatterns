@@ -15,6 +15,10 @@
 | 19.9 | LFU Cache | three-map lean + canonical buckets | $O(1)$ | [→](lfu-cache-family.md) |
 | 19.10 | Sliding Window Median | index-based TreeSet (duplicate-proof) | $O(n log k)$ | [→](sliding-window-median-treeset.md) |
 
+| 19.11 | Kahn's Filter-Seed & DFS-Expression | queue seed via `filter`, cycle check as `when` | $O(V+E)$ | [→](kahns-filter-seed.md) |
+| 19.12 | One-Expression DP Gallery | FrogJump/StoneGame/CoinChange as `getOrPut` | mixed | [→](one-expression-dp-gallery.md) |
+| 19.13 | Map-Key Gallery | `List<Int>` anagram key, getOrPut counts, quickselect | mixed | [→](map-key-gallery.md) |
+| 19.14 | Structure Gallery | coordinate compression, histogram stack, `buildList` | mixed | [→](structure-gallery.md) |
 ## The rest of the variant story
 
 The [Repo Coverage Index](../appendix-repo-coverage-index.md) maps every file in `src/main/kotlin` — the entries labeled "variant of" point here or at their main chapter page. The [Roadmap](../appendix-roadmap.md) lists what still deserves full pages.

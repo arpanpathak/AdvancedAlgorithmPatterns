@@ -275,3 +275,7 @@
   - [19.8 Word Ladder II — Three Implementations](ch19-gallery/word-ladder-ii-family.md)
   - [19.9 LFU Cache — Three Implementations](ch19-gallery/lfu-cache-family.md)
   - [19.10 Sliding Window Median — TreeSet](ch19-gallery/sliding-window-median-treeset.md)
+  - [19.11 Kahn's Filter-Seed & DFS-Expression](ch19-gallery/kahns-filter-seed.md)
+  - [19.12 One-Expression DP Gallery](ch19-gallery/one-expression-dp-gallery.md)
+  - [19.13 Map-Key Gallery](ch19-gallery/map-key-gallery.md)
+  - [19.14 Structure Gallery](ch19-gallery/structure-gallery.md)
