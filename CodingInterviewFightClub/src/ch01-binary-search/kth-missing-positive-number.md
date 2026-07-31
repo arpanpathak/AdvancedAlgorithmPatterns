@@ -1,6 +1,6 @@
 # 1.11 Kth Missing Positive Number
 
-> **Source:** [`src/main/kotlin/binarysearch/KThMissingPositiveNumber.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/binarysearch/KThMissingPositiveNumber.kt)
+> **Source:** [`src/main/kotlin/binarysearch/KThMissingPositiveNumber.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/binarysearch/KThMissingPositiveNumber.kt)
 > **Pattern:** index-space counting + lower bound · **Core page**
 
 ## The Problem

@@ -1,6 +1,6 @@
 # 2.6 Partition Equal Subset Sum
 
-> **Source:** [`src/main/kotlin/dynamic_programming/PartitionEqualSubsetSum.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/dynamic_programming/PartitionEqualSubsetSum.kt)
+> **Source:** [`src/main/kotlin/dynamic_programming/PartitionEqualSubsetSum.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/dynamic_programming/PartitionEqualSubsetSum.kt)
 > **Pattern:** subset-sum reachability (boolean knapsack) · **Core page**
 
 ## The Problem
@@ -233,7 +233,7 @@ Let me fix the dry-run section in the page I'm about to write — I haven't writ
 <｜｜DSML｜｜invoke name="write">
 <｜｜DSML｜｜parameter name="content" string="true"># 2.6 Partition Equal Subset Sum
 
-> **Source:** [`src/main/kotlin/dynamic_programming/PartitionEqualSubsetSum.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/dynamic_programming/PartitionEqualSubsetSum.kt)
+> **Source:** [`src/main/kotlin/dynamic_programming/PartitionEqualSubsetSum.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/dynamic_programming/PartitionEqualSubsetSum.kt)
 > **Pattern:** subset-sum reachability (boolean knapsack) · **Core page**
 
 ## The Problem

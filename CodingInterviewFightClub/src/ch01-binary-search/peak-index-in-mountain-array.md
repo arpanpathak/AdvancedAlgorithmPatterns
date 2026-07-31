@@ -1,6 +1,6 @@
 # 1.13 Peak Index In A Mountain Array
 
-> **Source:** [`src/main/kotlin/binarysearch/PeakIndexInMountainArray.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/binarysearch/PeakIndexInMountainArray.kt)
+> **Source:** [`src/main/kotlin/binarysearch/PeakIndexInMountainArray.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/binarysearch/PeakIndexInMountainArray.kt)
 > **Pattern:** monotone slope descent (unimodal) · **Variant page**
 
 ## The Problem

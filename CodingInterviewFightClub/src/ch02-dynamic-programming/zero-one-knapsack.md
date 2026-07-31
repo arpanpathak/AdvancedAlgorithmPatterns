@@ -1,6 +1,6 @@
 # 2.4 0/1 Knapsack
 
-> **Source:** [`src/main/kotlin/dynamic_programming/01Knapsack.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/dynamic_programming/01Knapsack.kt)
+> **Source:** [`src/main/kotlin/dynamic_programming/01Knapsack.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/dynamic_programming/01Knapsack.kt)
 > **Pattern:** capacity-state DP · **Core page — the most reusable DP in this book**
 
 ## The Problem

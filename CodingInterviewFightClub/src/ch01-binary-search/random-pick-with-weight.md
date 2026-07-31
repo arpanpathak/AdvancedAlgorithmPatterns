@@ -1,6 +1,6 @@
 # 1.14 Random Pick With Weight
 
-> **Source:** [`src/main/kotlin/binarysearch/RandomPickWithWeight.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/binarysearch/RandomPickWithWeight.kt)
+> **Source:** [`src/main/kotlin/binarysearch/RandomPickWithWeight.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/binarysearch/RandomPickWithWeight.kt)
 > **Pattern:** prefix sums + binary search · **Gym page**
 
 ## The Problem

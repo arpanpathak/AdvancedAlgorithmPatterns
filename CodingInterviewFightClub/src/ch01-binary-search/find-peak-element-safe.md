@@ -1,6 +1,6 @@
 # 1.7 Find Peak Element (Safe Boundaries)
 
-> **Source:** [`src/main/kotlin/binarysearch/FindPeakElementBetterSolution.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/binarysearch/FindPeakElementBetterSolution.kt)
+> **Source:** [`src/main/kotlin/binarysearch/FindPeakElementBetterSolution.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/binarysearch/FindPeakElementBetterSolution.kt)
 > **Pattern:** monotone slope descent, boundary-safe · **Variant page**
 
 ## The Problem

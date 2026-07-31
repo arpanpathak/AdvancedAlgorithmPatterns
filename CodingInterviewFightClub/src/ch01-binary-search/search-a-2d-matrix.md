@@ -1,6 +1,6 @@
 # 1.15 Search A 2D Matrix
 
-> **Source:** [`src/main/kotlin/binarysearch/SearchA2dMatrix.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/binarysearch/SearchA2dMatrix.kt)
+> **Source:** [`src/main/kotlin/binarysearch/SearchA2dMatrix.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/binarysearch/SearchA2dMatrix.kt)
 > **Pattern:** index unrolling · **Core page**
 
 ## The Problem

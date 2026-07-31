@@ -1,6 +1,6 @@
 # 1.18 Search Insert Position
 
-> **Source:** [`src/main/kotlin/binarysearch/SearchInsertionPosition.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/binarysearch/SearchInsertionPosition.kt)
+> **Source:** [`src/main/kotlin/binarysearch/SearchInsertionPosition.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/binarysearch/SearchInsertionPosition.kt)
 > **Pattern:** lower bound · **Core page** (this is the "hello world" of binary search)
 
 ## The Problem

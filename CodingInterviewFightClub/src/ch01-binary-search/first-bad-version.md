@@ -1,6 +1,6 @@
 # 1.8 First Bad Version
 
-> **Source:** [`src/main/kotlin/binarysearch/FirstBadVersion.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/binarysearch/FirstBadVersion.kt)
+> **Source:** [`src/main/kotlin/binarysearch/FirstBadVersion.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/binarysearch/FirstBadVersion.kt)
 > **Pattern:** lower bound via an API predicate · **Core page**
 
 ## The Problem

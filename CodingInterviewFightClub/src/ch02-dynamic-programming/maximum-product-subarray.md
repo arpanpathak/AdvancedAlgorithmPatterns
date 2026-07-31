@@ -1,6 +1,6 @@
 # 2.7 Maximum Product Subarray
 
-> **Source:** [`src/main/kotlin/dynamic_programming/MaximumProductSubarray.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/dynamic_programming/MaximumProductSubarray.kt)
+> **Source:** [`src/main/kotlin/dynamic_programming/MaximumProductSubarray.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/dynamic_programming/MaximumProductSubarray.kt)
 > **Pattern:** two-track DP (max AND min) · **Core page — the sign-flip lesson**
 
 ## The Problem

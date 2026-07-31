@@ -1,6 +1,6 @@
 # 1.19 Single Element In A Sorted Array
 
-> **Source:** [`src/main/kotlin/binarysearch/SingleElementInASortedArray.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/binarysearch/SingleElementInASortedArray.kt)
+> **Source:** [`src/main/kotlin/binarysearch/SingleElementInASortedArray.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/binarysearch/SingleElementInASortedArray.kt)
 > **Pattern:** parity-based search · **Gym page**
 
 ## The Problem

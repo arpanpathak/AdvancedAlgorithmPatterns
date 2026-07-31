@@ -1,6 +1,6 @@
 # 1.5 Find Minimum In Rotated Sorted Array
 
-> **Source:** [`src/main/kotlin/binarysearch/FindMinimumInRotatedSortedArray.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/binarysearch/FindMinimumInRotatedSortedArray.kt)
+> **Source:** [`src/main/kotlin/binarysearch/FindMinimumInRotatedSortedArray.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/binarysearch/FindMinimumInRotatedSortedArray.kt)
 > **Pattern:** rotated-array pivot · **Core page**
 
 ## The Problem

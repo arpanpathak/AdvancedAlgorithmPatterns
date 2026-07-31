@@ -1,6 +1,6 @@
 # 1.1 Koko Eating Bananas
 
-> **Source:** [`src/main/kotlin/binarysearch/KokoEatingBanana.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/binarysearch/KokoEatingBanana.kt)
+> **Source:** [`src/main/kotlin/binarysearch/KokoEatingBanana.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/binarysearch/KokoEatingBanana.kt)
 > **Pattern:** binary search on the answer · **Core page**
 
 ## The Problem

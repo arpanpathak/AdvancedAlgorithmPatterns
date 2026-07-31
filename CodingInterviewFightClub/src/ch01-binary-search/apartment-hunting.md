@@ -1,6 +1,6 @@
 # 1.21 Apartment Hunting
 
-> **Source:** [`src/main/kotlin/binarysearch/ApartmentHunting.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/binarysearch/ApartmentHunting.kt)
+> **Source:** [`src/main/kotlin/binarysearch/ApartmentHunting.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/binarysearch/ApartmentHunting.kt)
 > **Pattern:** binary search + nearest-neighbor · **Gym page**
 
 ## The Problem

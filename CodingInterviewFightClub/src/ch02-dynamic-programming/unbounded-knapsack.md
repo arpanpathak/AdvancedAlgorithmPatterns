@@ -1,6 +1,6 @@
 # 2.5 Unbounded Knapsack
 
-> **Source:** [`src/main/kotlin/dynamic_programming/UnboundedKnapsack.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/dynamic_programming/UnboundedKnapsack.kt)
+> **Source:** [`src/main/kotlin/dynamic_programming/UnboundedKnapsack.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/dynamic_programming/UnboundedKnapsack.kt)
 > **Pattern:** capacity-state DP (forward pass) · **Variant page — the one-line difference**
 
 ## The Problem

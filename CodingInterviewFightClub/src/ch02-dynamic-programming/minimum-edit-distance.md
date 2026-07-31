@@ -1,6 +1,6 @@
 # 2.2 Minimum Edit Distance
 
-> **Source:** [`src/main/kotlin/string/dynamic_programming/EditDistance.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/string/dynamic_programming/EditDistance.kt)
+> **Source:** [`src/main/kotlin/string/dynamic_programming/EditDistance.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/string/dynamic_programming/EditDistance.kt)
 > **Pattern:** 2D DP on string prefixes · **Core page**
 
 ## The Problem

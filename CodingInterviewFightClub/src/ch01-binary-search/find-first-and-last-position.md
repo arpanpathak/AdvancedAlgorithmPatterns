@@ -1,6 +1,6 @@
 # 1.3 Find First And Last Position Of Target
 
-> **Source:** [`src/main/kotlin/binarysearch/FindFirstAndLastPosition.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/binarysearch/FindFirstAndLastPosition.kt)
+> **Source:** [`src/main/kotlin/binarysearch/FindFirstAndLastPosition.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/binarysearch/FindFirstAndLastPosition.kt)
 > **Pattern:** lower bound + upper bound · **Core page**
 
 ## The Problem

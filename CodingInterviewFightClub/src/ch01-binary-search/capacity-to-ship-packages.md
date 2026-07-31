@@ -1,6 +1,6 @@
 # 1.2 Capacity To Ship Packages Within D Days
 
-> **Source:** [`src/main/kotlin/binarysearch/CapacityToShipPackageWithinDDays.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/binarysearch/CapacityToShipPackageWithinDDays.kt)
+> **Source:** [`src/main/kotlin/binarysearch/CapacityToShipPackageWithinDDays.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/binarysearch/CapacityToShipPackageWithinDDays.kt)
 > **Pattern:** binary search on the answer · **Core page**
 
 ## The Problem

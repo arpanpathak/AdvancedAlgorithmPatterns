@@ -1,6 +1,6 @@
 # 1.22 Closest Subsequence Sum
 
-> **Source:** [`src/main/kotlin/binarysearch/ClosestSebsequenceSum.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/binarysearch/ClosestSebsequenceSum.kt)
+> **Source:** [`src/main/kotlin/binarysearch/ClosestSebsequenceSum.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/binarysearch/ClosestSebsequenceSum.kt)
 > **Pattern:** meet-in-the-middle + binary search · **The gym boss**
 
 ## The Problem

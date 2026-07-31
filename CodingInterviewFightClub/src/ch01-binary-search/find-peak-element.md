@@ -1,6 +1,6 @@
 # 1.6 Find Peak Element
 
-> **Source:** [`src/main/kotlin/binarysearch/FindPeakElement.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/binarysearch/FindPeakElement.kt)
+> **Source:** [`src/main/kotlin/binarysearch/FindPeakElement.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/binarysearch/FindPeakElement.kt)
 > **Pattern:** monotone slope descent · **Core page**
 
 ## The Problem

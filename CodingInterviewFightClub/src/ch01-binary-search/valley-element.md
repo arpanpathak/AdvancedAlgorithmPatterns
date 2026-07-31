@@ -1,6 +1,6 @@
 # 1.20 Valley Element
 
-> **Source:** [`src/main/kotlin/binarysearch/ValleyElement.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/binarysearch/ValleyElement.kt)
+> **Source:** [`src/main/kotlin/binarysearch/ValleyElement.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/binarysearch/ValleyElement.kt)
 > **Pattern:** monotone slope descent (mirror) · **Variant page**
 
 ## The Problem

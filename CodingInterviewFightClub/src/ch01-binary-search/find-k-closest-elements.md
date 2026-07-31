@@ -1,6 +1,6 @@
 # 1.4 Find K Closest Elements
 
-> **Source:** [`src/main/kotlin/binarysearch/FindKClosestElements.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/binarysearch/FindKClosestElements.kt)
+> **Source:** [`src/main/kotlin/binarysearch/FindKClosestElements.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/binarysearch/FindKClosestElements.kt)
 > **Pattern:** binary search on the *start index* · **Core page** (the heap version is a famous follow-up)
 
 ## The Problem

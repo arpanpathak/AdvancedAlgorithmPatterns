@@ -1,6 +1,6 @@
 # 1.12 Median Of Two Sorted Arrays
 
-> **Source:** [`src/main/kotlin/binarysearch/MedianOfTwoSortedARrays.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/binarysearch/MedianOfTwoSortedARrays.kt)
+> **Source:** [`src/main/kotlin/binarysearch/MedianOfTwoSortedARrays.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/binarysearch/MedianOfTwoSortedARrays.kt)
 > **Pattern:** partition-based search · **The boss fight of this chapter**
 
 ## The Problem

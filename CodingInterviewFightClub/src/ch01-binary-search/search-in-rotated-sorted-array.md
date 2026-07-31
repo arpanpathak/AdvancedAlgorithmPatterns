@@ -1,6 +1,6 @@
 # 1.17 Search In Rotated Sorted Array
 
-> **Source:** [`src/main/kotlin/binarysearch/SearchInRotatedSortedArray.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/binarysearch/SearchInRotatedSortedArray.kt)
+> **Source:** [`src/main/kotlin/binarysearch/SearchInRotatedSortedArray.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/binarysearch/SearchInRotatedSortedArray.kt)
 > **Pattern:** rotated-array search · **Core page**
 
 ## The Problem

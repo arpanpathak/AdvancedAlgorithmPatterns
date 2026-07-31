@@ -1,6 +1,6 @@
 # 1.9 Guess Number Higher Or Lower
 
-> **Source:** [`src/main/kotlin/binarysearch/GuessNumberHigherOrLower.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/binarysearch/GuessNumberHigherOrLower.kt)
+> **Source:** [`src/main/kotlin/binarysearch/GuessNumberHigherOrLower.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/binarysearch/GuessNumberHigherOrLower.kt)
 > **Pattern:** exact-match ternary-response search · **Core page**
 
 ## The Problem

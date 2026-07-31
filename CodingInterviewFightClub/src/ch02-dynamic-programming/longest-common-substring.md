@@ -1,6 +1,6 @@
 # 2.1 Longest Common Substring
 
-> **Source:** [`src/main/kotlin/array/dp/LongestCommonSubarray.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/array/dp/LongestCommonSubarray.kt)
+> **Source:** [`src/main/kotlin/array/dp/LongestCommonSubarray.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/array/dp/LongestCommonSubarray.kt)
 > **Pattern:** 2D DP on string prefixes · **Core page**
 
 ## The Problem

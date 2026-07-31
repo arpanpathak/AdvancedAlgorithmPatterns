@@ -1,6 +1,6 @@
 # 1.10 House Robber IV
 
-> **Source:** [`src/main/kotlin/binarysearch/HouseRobber_IV.kt`](https://github.com/arpanpathak/Algorithms_Kotlin/blob/main/src/main/kotlin/binarysearch/HouseRobber_IV.kt)
+> **Source:** [`src/main/kotlin/binarysearch/HouseRobber_IV.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/binarysearch/HouseRobber_IV.kt)
 > **Pattern:** binary search on the answer + greedy check · **Gym page**
 
 ## The Problem
