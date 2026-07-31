@@ -19,6 +19,7 @@
 | 16.7 | Smallest Number With All Set Bits | msb → all-ones | $O(\log n)$ | [→](smallest-number-with-all-set-bits.md) |
 
 | 16.8 | Pow(x, n) | binary exponentiation | $O(log n)$ | [→](pow-x-n.md) |
+| 16.9 | Divide Two Integers | binary long division | $O(log^2)$ | [→](divide-two-integers.md) |
 ## The rest of the bitset/ directory
 
 `src/main/kotlin/bitset/` also holds: First Letter To Appear Twice, Longest Nice Subarray, Number Of Steps To Reduce A Number In Binary Representation To One, and the `string/` folder's binary-string variants. The XOR-family ideas recur in the `hash-table/` and `string/` folders.

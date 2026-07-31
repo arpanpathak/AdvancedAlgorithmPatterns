@@ -25,6 +25,7 @@
 | 5.12 | All Nodes Distance K | parent map + 3-dir DFS | $O(n)$ | [→](all-nodes-distance-k.md) |
 | 5.13 | Binary Tree ZigZag | level fence + addFirst | $O(n)$ | [→](zigzag-level-order.md) |
 | 5.14 | Count Good Nodes | running-max DFS | $O(n)$ | [→](count-good-nodes.md) |
+| 5.15 | Populating Next Right Pointers | O(1)-space level threading | $O(n)$ | [→](populating-next-right-pointers.md) |
 ## The rest of the tree/ directory
 
 `src/main/kotlin/tree/` is a forest: `bst/` (Recover BST, BST Iterator, Inorder Successor, Delete Node, Unique BSTs, My Calendar…), `bfs/` (Level Order II, Right Side View, Largest Value Per Row, Completeness, Averages…), `segment/` (Segment Tree, Dynamic Segment Tree, Iterative Segment Tree…), `fenwick/` (Fenwick Tree, Range Sum Query 2D Mutable…), `mst/` (Prim's & Kruskal's on points), `interval/`, plus standalone classics (Diameter, Path Sum II/III, Zigzag, Vertical Order, Boundary, Symmetric, Construct from Pre+In / In+Post, Populate Next Right, All Nodes Distance K, Serialize N-ary, Maximum Product of Split, Count Good Nodes, etc.).

@@ -23,6 +23,8 @@
 | 8.10 | Basic Calculator II | pending-term scan | $O(n)$ | [→](basic-calculator-ii.md) |
 | 8.11 | Basic Calculator | sign stack | $O(n)$ | [→](basic-calculator.md) |
 | 8.12 | Basic Calculator III | recursive descent | $O(n)$ | [→](basic-calculator-iii.md) |
+| 8.13 | Asteroid Collision | survivor stack | $O(n)$ | [→](asteroid-collision.md) |
+| 8.14 | Online Stock Span | monotonic stack + span | $O(1)$ amortized | [→](online-stock-span.md) |
 ## The rest of the stack/ directory
 
 `src/main/kotlin/stack/` is deep: more monotonic-stack classics (Next Greater Element I, Sum Of Subarray Minimums/Ranges, Online Stock Span, Buildings With An Ocean View, Number Of Visible People In A Queue), string-stack hybrids (Minimum Remove To Make Valid Parentheses, Remove Duplicate Letters, Smallest Subsequence Of Distinct Characters, Remove Stars From String, Longest Valid Parentheses), and design puzzles (MinStack variants, Flatten Nested List Iterator, Design A Stack With Increment Operations, Exclusive Time Of Functions). The repo also has `queues/` with FIFO implementations used by the BFS pages in earlier chapters.

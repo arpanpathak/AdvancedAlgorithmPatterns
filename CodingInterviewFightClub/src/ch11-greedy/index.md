@@ -23,6 +23,7 @@
 | 11.10 | Reorganize String | max-heap + cooldown window | $O(n log n)$ | [→](reorganize-string.md) |
 | 11.11 | Minimum Number Of Arrows To Burst Balloons | greedy by earliest end | $O(n log n)$ | [→](minimum-number-of-arrows-to-burst-balloons.md) |
 | 11.12 | Can Place Flowers | greedy plant-and-mark | $O(n)$ | [→](can-place-flowers.md) |
+| 11.13 | Destroying Asteroids | sort + accumulate | $O(n log n)$ | [→](destroying-asteroids.md) |
 ## The rest of the greedy/ directory
 
 `src/main/kotlin/greedy/` also holds: Destroying Asteroids (greedy by size), Jump Game variants, Maximum Profit Assigning Work (sorted pointers), Minimum Time To Make Rope Colorful (keep the max per run), Minimum Deletions To Make String Balanced, Minimum Replacement To Sort The Array, Reschedule Meetings For Maximum Free Time, Maximum Value Of An Ordered Triplet II, Max Chunks To Make Sorted II, MInimum Cost Homecoming Of A Robot, and Task Scheduler neighbors. The interval-family problems connect to `src/main/kotlin/interval/` and the scheduling problems to [7.5](../ch07-heaps/ipo.md)/[7.6](../ch07-heaps/meeting-rooms-iii.md) from the heap chapter.

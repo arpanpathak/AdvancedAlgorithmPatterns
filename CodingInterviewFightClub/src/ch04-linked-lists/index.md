@@ -20,6 +20,9 @@
 | 4.7 | Add Two Numbers | digit-wise carry | $O(n)$ | [→](add-two-numbers.md) |
 | 4.8 | Middle Of The Linked List | slow-fast pointers | $O(n)$ | [→](middle-of-the-linked-list.md) |
 | 4.9 | Palindrome Linked List | middle + reverse + compare | $O(n)$ | [→](palindrome-linked-list.md) |
+| 4.10 | Copy List With Random Pointer | node-map deep copy | $O(n)$ | [→](copy-list-with-random-pointer.md) |
+| 4.11 | Swap Nodes In Pairs | dummy-head rewire | $O(n)$ | [→](swap-nodes-in-pairs.md) |
+| 4.12 | Reverse Nodes In K Groups | block reversal | $O(n)$ | [→](reverse-nodes-in-k-groups.md) |
 ## The rest of the linkedlist/ directory
 
 `src/main/kotlin/linkedlist/` holds 20+ more: Palindrome, Middle Node, Odd-Even, Swap Nodes in Pairs, Reverse Nodes in K Groups, Rotate List, Merge K Sorted Lists (heap + iterative), Add Two Numbers, Copy List with Random Pointer, Intersection of Two Linked Lists, Insert Into a Sorted Circular List, Maximum Twin Sum, and more. New pages land in the table above as they're written; the rest are cataloged in the repository's own tree.

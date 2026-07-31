@@ -28,6 +28,10 @@
 | 3.15 | Find Pivot Index | running prefix vs total | $O(n)$ | [→](find-pivot-index.md) |
 | 3.16 | Shuffle An Array | Fisher–Yates in place | $O(n)$ | [→](shuffle-an-array.md) |
 | 3.17 | Convex Hull (Erect The Fence) | Andrew's monotone chain | $O(n log n)$ | [→](convex-hull.md) |
+| 3.18 | Remove Duplicates From Sorted Array | write-pointer dedupe | $O(n)$ | [→](remove-duplicates-from-sorted-array.md) |
+| 3.19 | Pascal's Triangle | build rows from the previous | $O(n^2)$ | [→](pascals-triangle.md) |
+| 3.20 | Robot Bounded In Circle | direction-state simulation | $O(n)$ | [→](robot-bounded-in-circle.md) |
+| 3.21 | Increasing Triplet Subsequence | two running minima | $O(n)$ | [→](increasing-triplet-subsequence.md) |
 ## The rest of the array/ directory
 
 `src/main/kotlin/array/` holds 100+ more problems. The full index lives in the repository; every subdirectory is a pattern family:

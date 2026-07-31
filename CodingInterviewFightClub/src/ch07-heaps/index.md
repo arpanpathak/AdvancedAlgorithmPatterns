@@ -21,6 +21,7 @@
 | 7.8 | The Skyline Problem | sweep line + height multiset | $O(n log n)$ | [→](the-skyline-problem.md) |
 | 7.9 | Design Hit Counter | FIFO queue with expiry pop | $O(1)$ amortized | [→](design-hit-counter.md) |
 | 7.10 | Longest Happy String | max-heap with 2-cap | $O(n)$ | [→](longest-happy-string.md) |
+| 7.11 | Merge K Sorted Lists | k-way heap merge | $O(n log k)$ | [→](merge-k-sorted-lists.md) |
 ## The rest of the heap/ directory
 
 `src/main/kotlin/heap/` also holds: `DualBalancedHeap.kt` (an alternate sliding-window median), `FindingMKAverage.kt` (three-heap window stats), `FindKClosestElements.kt`, `FindScoreOfAnArrayAfterMarkingAllElements.kt`, `LongestHappyString.kt` (greedy with a max-heap of character counts), and `MedianFromRunningStream.kt` variants. The general-purpose heap lives in `src/main/kotlin/` too — `sliding_window/`, `quicksort/`, and `greedy/` all import the same `PriorityQueue` idiom.

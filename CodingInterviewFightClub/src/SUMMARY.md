@@ -28,6 +28,8 @@
   - [1.15 Search A 2D Matrix](ch01-binary-search/search-a-2d-matrix.md)
   - [1.16 Search In Rotated Sorted Array II](ch01-binary-search/search-in-rotated-sorted-array-ii.md)
   - [1.17 Search In Rotated Sorted Array](ch01-binary-search/search-in-rotated-sorted-array.md)
+  - [1.19 Sqrt(x)](ch01-binary-search/sqrt-x.md)
+  - [1.20 Split Array Largest Sum](ch01-binary-search/split-array-largest-sum.md)
   - [1.18 Search Insert Position](ch01-binary-search/search-insert-position.md)
   - [1.19 Single Element In A Sorted Array](ch01-binary-search/single-element-in-a-sorted-array.md)
   - [1.20 Valley Element](ch01-binary-search/valley-element.md)
@@ -57,6 +59,8 @@
   - [2.20 Burst Balloons](ch02-dynamic-programming/burst-balloons.md)
   - [2.21 Target Sum](ch02-dynamic-programming/target-sum.md)
   - [2.22 Interleaving String](ch02-dynamic-programming/interleaving-string.md)
+  - [2.23 Regular Expression Matching](ch02-dynamic-programming/regular-expression-matching.md)
+  - [2.24 Delete Operations For Two Strings](ch02-dynamic-programming/delete-operations-for-two-strings.md)
 
 - [3. Arrays, Two Pointers & Matrices](ch03-arrays/index.md)
   - [3.0 Pattern Primer: Two Pointers & The Sorted-Array Dance](ch03-arrays/pattern-primer.md)
@@ -77,6 +81,10 @@
   - [3.15 Find Pivot Index](ch03-arrays/find-pivot-index.md)
   - [3.16 Shuffle An Array](ch03-arrays/shuffle-an-array.md)
   - [3.17 Convex Hull (Erect The Fence)](ch03-arrays/convex-hull.md)
+  - [3.18 Remove Duplicates From Sorted Array](ch03-arrays/remove-duplicates-from-sorted-array.md)
+  - [3.19 Pascal's Triangle](ch03-arrays/pascals-triangle.md)
+  - [3.20 Robot Bounded In Circle](ch03-arrays/robot-bounded-in-circle.md)
+  - [3.21 Increasing Triplet Subsequence](ch03-arrays/increasing-triplet-subsequence.md)
   - [2.12 Closest Subsequence Sum](ch02-dynamic-programming/closest-subsequence-sum.md)
 
 - [4. Linked Lists](ch04-linked-lists/index.md)
@@ -90,6 +98,9 @@
   - [4.7 Add Two Numbers](ch04-linked-lists/add-two-numbers.md)
   - [4.8 Middle Of The Linked List](ch04-linked-lists/middle-of-the-linked-list.md)
   - [4.9 Palindrome Linked List](ch04-linked-lists/palindrome-linked-list.md)
+  - [4.10 Copy List With Random Pointer](ch04-linked-lists/copy-list-with-random-pointer.md)
+  - [4.11 Swap Nodes In Pairs](ch04-linked-lists/swap-nodes-in-pairs.md)
+  - [4.12 Reverse Nodes In K Groups](ch04-linked-lists/reverse-nodes-in-k-groups.md)
 
 - [5. Trees](ch05-trees/index.md)
   - [5.0 Pattern Primer: The Recursive Data Structure](ch05-trees/pattern-primer.md)
@@ -107,6 +118,7 @@
   - [5.12 All Nodes Distance K In Binary Tree](ch05-trees/all-nodes-distance-k.md)
   - [5.13 Binary Tree ZigZag Level Order](ch05-trees/zigzag-level-order.md)
   - [5.14 Count Good Nodes In Binary Tree](ch05-trees/count-good-nodes.md)
+  - [5.15 Populating Next Right Pointers In Each Node](ch05-trees/populating-next-right-pointers.md)
 
 - [6. Graphs](ch06-graphs/index.md)
   - [6.0 Pattern Primer: The Seven Engines](ch06-graphs/pattern-primer.md)
@@ -126,6 +138,8 @@
   - [6.14 Rotting Oranges](ch06-graphs/rotting-oranges.md)
   - [6.15 Accounts Merge](ch06-graphs/accounts-merge.md)
   - [6.16 Surrounded Regions](ch06-graphs/surrounded-regions.md)
+  - [6.17 Max Area Of Island](ch06-graphs/max-area-of-island.md)
+  - [6.18 Pacific Atlantic Water Flow](ch06-graphs/pacific-atlantic-water-flow.md)
 
 - [7. Heaps & Priority Queues](ch07-heaps/index.md)
   - [7.0 Pattern Primer: The Lazy Sorted Structure](ch07-heaps/pattern-primer.md)
@@ -139,6 +153,7 @@
   - [7.8 The Skyline Problem](ch07-heaps/the-skyline-problem.md)
   - [7.9 Design Hit Counter](ch07-heaps/design-hit-counter.md)
   - [7.10 Longest Happy String](ch07-heaps/longest-happy-string.md)
+  - [7.11 Merge K Sorted Lists](ch07-heaps/merge-k-sorted-lists.md)
 
 - [8. Stacks & Queues](ch08-stacks/index.md)
   - [8.0 Pattern Primer: LIFO, FIFO, and the Monotonic Stack](ch08-stacks/pattern-primer.md)
@@ -154,6 +169,8 @@
   - [8.10 Basic Calculator II](ch08-stacks/basic-calculator-ii.md)
   - [8.11 Basic Calculator](ch08-stacks/basic-calculator.md)
   - [8.12 Basic Calculator III](ch08-stacks/basic-calculator-iii.md)
+  - [8.13 Asteroid Collision](ch08-stacks/asteroid-collision.md)
+  - [8.14 Online Stock Span](ch08-stacks/online-stock-span.md)
 
 - [9. Strings](ch09-strings/index.md)
   - [9.0 Pattern Primer: The Three Lenses](ch09-strings/pattern-primer.md)
@@ -170,6 +187,8 @@
   - [9.11 Valid Palindrome](ch09-strings/valid-palindrome.md)
   - [9.12 Count And Say](ch09-strings/count-and-say.md)
   - [9.13 Add Strings](ch09-strings/add-strings.md)
+  - [9.14 String To Integer (atoi)](ch09-strings/string-to-integer-atoi.md)
+  - [9.15 Text Justification](ch09-strings/text-justification.md)
 
 - [10. Hash Tables & Sets](ch10-hash-tables/index.md)
   - [10.0 Pattern Primer: O(1) Lookup, Three Moves](ch10-hash-tables/pattern-primer.md)
@@ -188,6 +207,8 @@
   - [10.13 Unique Number Of Occurrences](ch10-hash-tables/unique-number-of-occurrences.md)
   - [10.14 Integer To English Words](ch10-hash-tables/integer-to-english-words.md)
   - [10.15 Max Points On A Line](ch10-hash-tables/max-points-on-a-line.md)
+  - [10.16 Design HashMap](ch10-hash-tables/design-hashmap.md)
+  - [10.17 Group Shifted Strings](ch10-hash-tables/group-shifted-strings.md)
 
 - [11. Greedy](ch11-greedy/index.md)
   - [11.0 Pattern Primer: The Local Choice, Defended](ch11-greedy/pattern-primer.md)
@@ -203,6 +224,7 @@
   - [11.10 Reorganize String](ch11-greedy/reorganize-string.md)
   - [11.11 Minimum Number Of Arrows To Burst Balloons](ch11-greedy/minimum-number-of-arrows-to-burst-balloons.md)
   - [11.12 Can Place Flowers](ch11-greedy/can-place-flowers.md)
+  - [11.13 Destroying Asteroids](ch11-greedy/destroying-asteroids.md)
 
 - [12. Backtracking](ch12-backtracking/index.md)
   - [12.0 Pattern Primer: DFS With an Undo Button](ch12-backtracking/pattern-primer.md)
@@ -255,6 +277,7 @@
   - [15.8 Permutation In String](ch15-sliding-window/permutation-in-string.md)
   - [15.9 Maximum Erasure Value](ch15-sliding-window/maximum-erasure-value.md)
   - [15.10 Longest Subarray Of 1s After Deleting One](ch15-sliding-window/longest-subarray-of-ones-after-deleting-one.md)
+  - [15.11 Find All Anagrams In A String](ch15-sliding-window/find-all-anagrams.md)
 
 - [16. Bit Manipulation](ch16-bit-manipulation/index.md)
   - [16.0 Pattern Primer: The Bit Identities](ch16-bit-manipulation/pattern-primer.md)
@@ -266,6 +289,7 @@
   - [16.6 Sum Of All Subset XOR Totals](ch16-bit-manipulation/sum-of-all-subset-xor-totals.md)
   - [16.7 Smallest Number With All Set Bits](ch16-bit-manipulation/smallest-number-with-all-set-bits.md)
   - [16.8 Pow(x, n)](ch16-bit-manipulation/pow-x-n.md)
+  - [16.9 Divide Two Integers](ch16-bit-manipulation/divide-two-integers.md)
 
 - [17. Advanced Graphs](ch17-advanced-graphs/index.md)
   - [17.0 Pattern Primer: Flow, Matching, MST, and State-Space BFS](ch17-advanced-graphs/pattern-primer.md)
@@ -282,6 +306,7 @@
   - [17.11 Walls And Gates](ch17-advanced-graphs/walls-and-gates.md)
   - [17.12 Bus Routes](ch17-advanced-graphs/bus-routes.md)
   - [17.13 Minimum Genetic Mutations](ch17-advanced-graphs/minimum-genetic-mutations.md)
+  - [17.14 Find Articulation Points](ch17-advanced-graphs/find-articulation-points.md)
 
 - [18. Design & Caches](ch18-design-caches/index.md)
   - [18.0 Pattern Primer: Composing Structures](ch18-design-caches/pattern-primer.md)
@@ -295,6 +320,7 @@
   - [18.8 Weighted Reservoir Sampling](ch18-design-caches/weighted-reservoir-sampling.md)
   - [18.9 LRU Cache — The Repo's Seven Implementations](ch18-design-caches/lru-cache-variants.md)
   - [18.11 My Calendar](ch18-design-caches/my-calendar.md)
+  - [18.12 BST Iterator](ch18-design-caches/bst-iterator.md)
 
 ## Appendix
 
