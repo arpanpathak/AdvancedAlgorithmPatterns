@@ -94,3 +94,13 @@
   - [7.5 IPO (Maximize Capital)](ch07-heaps/ipo.md)
   - [7.6 Meeting Rooms III](ch07-heaps/meeting-rooms-iii.md)
   - [7.7 Single Threaded CPU](ch07-heaps/single-threaded-cpu.md)
+
+- [8. Stacks & Queues](ch08-stacks/index.md)
+  - [8.0 Pattern Primer: LIFO, FIFO, and the Monotonic Stack](ch08-stacks/pattern-primer.md)
+  - [8.1 Valid Parentheses](ch08-stacks/valid-parentheses.md)
+  - [8.2 Min Stack](ch08-stacks/min-stack.md)
+  - [8.3 Daily Temperatures](ch08-stacks/daily-temperatures.md)
+  - [8.4 Next Greater Element II](ch08-stacks/next-greater-element-ii.md)
+  - [8.5 Largest Rectangle In Histogram](ch08-stacks/largest-rectangle-in-histogram.md)
+  - [8.6 Evaluate Reverse Polish Notation](ch08-stacks/evaluate-reverse-polish-notation.md)
+  - [8.7 Remove K Digits](ch08-stacks/remove-k-digits.md)
