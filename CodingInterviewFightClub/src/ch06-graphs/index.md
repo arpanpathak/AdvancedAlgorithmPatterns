@@ -21,6 +21,7 @@
 | 6.8 | Alien Dictionary | DFS topo with cycle detection | $O(V+E)$ | [→](alien-dictionary.md) |
 | 6.9 | Redundant Connection | Union-Find cycle detection | $O(E α(n))$ | [→](redundant-connection.md) |
 | 6.10 | Flood Fill | grid DFS/BFS | $O(mn)$ | [→](flood-fill.md) |
+| 6.11 | The Earliest Moment Everyone Became Friends | DSU with a components counter | $O(E α(n))$ | [→](the-earliest-moment-everyone-became-friends.md) |
 ## The rest of the graph/ directory
 
 `src/main/kotlin/graph/` is enormous: `topological_sort/` (Course Schedule I/II, Parallel Courses), `scc/` (Kosaraju), `mst/` (Kruskal & Prim on points), `flow_network/` (Edmonds-Karp max flow), `tsp/` (Travelling Salesman via Held-Karp), `euler/` (Cracking The Safe), `articulation_point/`, `cycle/`, `components/`, `dag/`, `dp/`, `greedy/`, plus standalone classics — Word Ladder II, Clone Graph, Bipartite (BFS/DFS variants), Bus Routes, Evaluate Division, Reorder Routes, Minimum Genetic Mutations, Maximum Path Quality, N-Coloring, Chromatic Number, Graph Diameter, House Robber III, and more.

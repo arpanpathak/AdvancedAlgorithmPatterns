@@ -179,6 +179,31 @@ left=1  right=1  -> return nums[1] = 1 ✓
 
 Why the `>` comparison against `nums[right]` (not `nums[left]`)? Compare with the "find the rotation point" version that tests `nums[mid] > nums[first]`. The `right`-anchored version is safe even when the array is *not rotated at all*: in a fully sorted array `nums[mid] > nums[right]` is always false, so `right` collapses leftward onto index 0 — the minimum. The `first`-anchored version would instead collapse toward the rotation point, which is index 0 too, but it needs an extra "did we rotate?" check. Anchoring on `right` is the cleaner invariant.
 
+### Follow-up: find the MAXIMUM (the rotation peak)
+
+The notes' version asks the mirror question: **find the largest element** in a rotated sorted array. The same "two sorted runs" picture (the intuition above) gives a two-liner: if not rotated, the answer is the last element; else locate the **rotation point** (the minimum) with the loop above, and the maximum is the element *just before it* (wrapping around):
+
+```kotlin
+fun findLargestInRotated(arr: IntArray): Int {
+    require(arr.isNotEmpty()) { "Array can't be empty" }
+
+    // Not rotated: the largest element is the right-most one
+    if (arr[0] < arr[arr.lastIndex]) return arr[arr.lastIndex]
+
+    // Find the rotation point (the minimum) with the same right-anchored loop
+    var (left, right) = 0 to arr.lastIndex
+    while (left < right) {
+        val mid = left + (right - left) / 2
+        if (arr[mid] > arr[right]) left = mid + 1   // min is in the right half
+        else right = mid
+    }
+    // The max is the element just before the minimum (wrapping)
+    return arr[(left - 1 + arr.size) % arr.size]
+}
+```
+
+The `arr[0] < arr[last]` early return is the notes' "prune early" trick: in a non-rotated array, the last element is always greater than the first. Otherwise the min-index `left` from Approach 2 locates the peak by adjacency.
+
 ## Complexity
 
 **Time.** Each iteration halves the window:

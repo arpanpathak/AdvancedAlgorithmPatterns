@@ -1,5 +1,7 @@
 # Summary
 
+[Foreword](foreword.md)
+
 [Introduction](intro/introduction.md)
 
 - [How To Read This Book](intro/how-to-read.md)
@@ -46,6 +48,8 @@
   - [2.10 Minimum Cost To Cut A Stick](ch02-dynamic-programming/minimum-cost-to-cut-a-stick.md)
   - [2.11 Minimum Cost To Merge Stones](ch02-dynamic-programming/minimum-cost-to-merge-stones.md)
   - [2.13 Maximum Profit In Job Scheduling](ch02-dynamic-programming/maximum-profit-in-job-scheduling.md)
+  - [2.14 Count Ways To Pick K Coins Divisible By M](ch02-dynamic-programming/count-ways-to-pick-k-coins-divisible-by-m.md)
+  - [2.15 Maximal Square](ch02-dynamic-programming/maximal-square.md)
 
 - [3. Arrays, Two Pointers & Matrices](ch03-arrays/index.md)
   - [3.0 Pattern Primer: Two Pointers & The Sorted-Array Dance](ch03-arrays/pattern-primer.md)
@@ -94,6 +98,7 @@
   - [6.8 Alien Dictionary](ch06-graphs/alien-dictionary.md)
   - [6.9 Redundant Connection](ch06-graphs/redundant-connection.md)
   - [6.10 Flood Fill](ch06-graphs/flood-fill.md)
+  - [6.11 The Earliest Moment Everyone Became Friends](ch06-graphs/the-earliest-moment-everyone-became-friends.md)
 
 - [7. Heaps & Priority Queues](ch07-heaps/index.md)
   - [7.0 Pattern Primer: The Lazy Sorted Structure](ch07-heaps/pattern-primer.md)
@@ -104,6 +109,7 @@
   - [7.5 IPO (Maximize Capital)](ch07-heaps/ipo.md)
   - [7.6 Meeting Rooms III](ch07-heaps/meeting-rooms-iii.md)
   - [7.7 Single Threaded CPU](ch07-heaps/single-threaded-cpu.md)
+  - [7.8 The Skyline Problem](ch07-heaps/the-skyline-problem.md)
 
 - [8. Stacks & Queues](ch08-stacks/index.md)
   - [8.0 Pattern Primer: LIFO, FIFO, and the Monotonic Stack](ch08-stacks/pattern-primer.md)
@@ -126,6 +132,8 @@
   - [9.6 Reverse Words In A String](ch09-strings/reverse-words-in-a-string.md)
   - [9.7 Validate IP Address](ch09-strings/validate-ip-address.md)
   - [9.8 Find The Index Of The First Occurrence (Rabin-Karp)](ch09-strings/find-the-index-of-the-first-occurrence.md)
+  - [9.9 Number Of Matching Subsequences](ch09-strings/number-of-matching-subsequences.md)
+  - [9.10 Find The Index Of The First Occurrence (KMP)](ch09-strings/find-the-index-of-the-first-occurrence-kmp.md)
 
 - [10. Hash Tables & Sets](ch10-hash-tables/index.md)
   - [10.0 Pattern Primer: O(1) Lookup, Three Moves](ch10-hash-tables/pattern-primer.md)
@@ -137,6 +145,7 @@
   - [10.6 Design HashMap](ch10-hash-tables/design-hash-map.md)
   - [10.7 Roman To Integer](ch10-hash-tables/roman-to-integer.md)
   - [10.8 Subarray Sum Equals K](ch10-hash-tables/subarray-sum-equals-k.md)
+  - [10.9 Count Rectangles Formed By Points](ch10-hash-tables/count-rectangles-formed-by-points.md)
 
 - [11. Greedy](ch11-greedy/index.md)
   - [11.0 Pattern Primer: The Local Choice, Defended](ch11-greedy/pattern-primer.md)
@@ -148,6 +157,8 @@
   - [11.6 Task Scheduler](ch11-greedy/task-scheduler.md)
   - [11.7 Minimum Number Of Refueling Stops](ch11-greedy/minimum-number-of-refueling-stops.md)
   - [11.8 Best Time To Buy And Sell Stock II](ch11-greedy/best-time-to-buy-and-sell-stock-ii.md)
+  - [11.9 Non-Overlapping Intervals](ch11-greedy/non-overlapping-intervals.md)
+  - [11.10 Reorganize String](ch11-greedy/reorganize-string.md)
 
 - [12. Backtracking](ch12-backtracking/index.md)
   - [12.0 Pattern Primer: DFS With an Undo Button](ch12-backtracking/pattern-primer.md)
@@ -215,6 +226,7 @@
   - [17.7 Evaluate Division](ch17-advanced-graphs/evaluate-division.md)
   - [17.8 Bellman-Ford](ch17-advanced-graphs/bellman-ford.md)
   - [17.9 Reconstruct Itinerary](ch17-advanced-graphs/reconstruct-itinerary.md)
+  - [17.10 Critical Connections In A Network](ch17-advanced-graphs/critical-connections-in-a-network.md)
 
 - [18. Design & Caches](ch18-design-caches/index.md)
   - [18.0 Pattern Primer: Composing Structures](ch18-design-caches/pattern-primer.md)
@@ -225,3 +237,4 @@
   - [18.5 Flatten Nested List Iterator](ch18-design-caches/flatten-nested-list-iterator.md)
   - [18.6 Design A Stack With Increment Operations](ch18-design-caches/design-a-stack-with-increment-operations.md)
   - [18.7 Insert Delete GetRandom O(1)](ch18-design-caches/insert-delete-getrandom.md)
+  - [18.8 Weighted Reservoir Sampling](ch18-design-caches/weighted-reservoir-sampling.md)

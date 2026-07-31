@@ -240,6 +240,40 @@ impl Solution {
 }
 ```
 
+### Approach 4 — The one-row "extreme optimization"
+
+The notes' "extreme optimization" collapses the two rows into **one** — the only cell still needed from the previous row is the diagonal `dp[i-1][j-1]`, carried in a `prevDiagonal` variable that's saved *before* each cell is overwritten:
+
+```kotlin
+fun minDistance(s1: String, s2: String): Int {
+    val m = s1.length
+    val n = s2.length
+
+    // Keep the shorter string as the row width
+    if (m < n) return minDistance(s2, s1)
+
+    val dp = IntArray(n + 1)
+    for (j in 0..n) dp[j] = j                 // first row: s1 empty, j insertions
+
+    for (i in 1..m) {
+        var prevDiagonal = dp[0]              // dp[i-1][j-1] from the previous row
+        dp[0] = i                             // first column: s2 empty, i deletions
+
+        for (j in 1..n) {
+            val temp = dp[j]                  // save current before overwriting
+            dp[j] = when {
+                s1[i - 1] == s2[j - 1] -> prevDiagonal
+                else -> 1 + minOf(prevDiagonal, dp[j], dp[j - 1])
+            }
+            prevDiagonal = temp               // becomes the diagonal for the next j
+        }
+    }
+    return dp[n]
+}
+```
+
+`dp[j]` at the moment of the `minOf` is the *old* row's `dp[i-1][j]` (delete), `dp[j-1]` is this row's `dp[i][j-1]` (insert), and `prevDiagonal` is `dp[i-1][j-1]` (replace) — one array holding three rows' worth of information through careful timing. $O(n)$ space, same $O(mn)$ time.
+
 ## Dry run
 
 **Input:** `word1 = "horse"`, `word2 = "ros"`. Fill the table:

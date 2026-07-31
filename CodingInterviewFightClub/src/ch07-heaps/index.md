@@ -18,6 +18,7 @@
 | 7.6 | Meeting Rooms III | busy/available heaps | $O(m \log n)$ | [→](meeting-rooms-iii.md) |
 | 7.7 | Single Threaded CPU | event + ready queues | $O(n \log n)$ | [→](single-threaded-cpu.md) |
 
+| 7.8 | The Skyline Problem | sweep line + height multiset | $O(n log n)$ | [→](the-skyline-problem.md) |
 ## The rest of the heap/ directory
 
 `src/main/kotlin/heap/` also holds: `DualBalancedHeap.kt` (an alternate sliding-window median), `FindingMKAverage.kt` (three-heap window stats), `FindKClosestElements.kt`, `FindScoreOfAnArrayAfterMarkingAllElements.kt`, `LongestHappyString.kt` (greedy with a max-heap of character counts), and `MedianFromRunningStream.kt` variants. The general-purpose heap lives in `src/main/kotlin/` too — `sliding_window/`, `quicksort/`, and `greedy/` all import the same `PriorityQueue` idiom.

@@ -153,6 +153,28 @@ impl Solution {
 }
 ```
 
+### The sweep-line version (the notes' event-flatten alternative)
+
+The notes' *Interval Partitioning* flavor flattens every interval into `(start, +1)` and `(end, -1)` events, sorts them (ends before starts at the same time), and tracks the running overlap — the peak is the minimum room count:
+
+```kotlin
+fun minRooms(intervals: Array<IntArray>): Int {
+    // Flatten into events; the +1/-1 sign makes "end before start" at equal times automatic
+    val events = intervals.flatMap { listOf(it[0] to 1, it[1] to -1) }
+        .sortedWith(compareBy({ it.first }, { it.second }))
+
+    var maxRooms = 0
+    var current = 0
+    for ((_, type) in events) {
+        current += type
+        maxRooms = maxOf(maxRooms, current)
+    }
+    return maxRooms
+}
+```
+
+Same $O(n \log n)$ and $O(n)$ space as the min-heap ([Approach 2](#approach-2--sort--min-heap-of-end-times-the-repos-version-optimal)); the difference is *what* carries the state — a running counter instead of a heap of end times. Both are valid answers; the sweep-line is the [7.8](../ch07-heaps/the-skyline-problem.md) skyline's skeleton in miniature (events + a running aggregate), which makes it a nice segue if the interviewer pivots.
+
 ## Dry run
 
 **Input:** `intervals = [[0,30],[5,10],[15,20]]`.

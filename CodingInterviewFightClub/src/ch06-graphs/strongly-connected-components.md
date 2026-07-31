@@ -295,6 +295,65 @@ impl Solution {
 }
 ```
 
+### Approach 2 — Tarjan's SCC (single pass, no transpose)
+
+The notes' Tarjan alternative finds every SCC in **one DFS** — no reversed graph. Each node gets a discovery `id` and a `lowLink` (the smallest id reachable from its subtree); when `lowLink == id`, the node is the root of an SCC, and the recursion stack above it is popped off as that component:
+
+```kotlin
+class Graph<T> {
+    private val graph = mutableMapOf<T, MutableList<T>>()
+
+    fun addEdge(from: T, to: T) {
+        graph.getOrPut(from) { mutableListOf() }.add(to)
+    }
+
+    fun findSCC(): List<List<T>> {
+        val sccs = mutableListOf<List<T>>()
+        val ids = mutableMapOf<T, Int>()        // discovery time
+        val lowLinks = mutableMapOf<T, Int>()   // lowest reachable id
+        val stack = ArrayDeque<T>()             // DFS recursion stack
+        val inStack = mutableSetOf<T>()
+        var id = 0
+
+        fun tarjanDfs(node: T) {
+            ids[node] = id
+            lowLinks[node] = id
+            id++
+            stack.addLast(node)
+            inStack.add(node)
+
+            graph[node]?.forEach { neighbor ->
+                when {
+                    neighbor !in ids -> {        // tree edge
+                        tarjanDfs(neighbor)
+                        lowLinks[node] = minOf(lowLinks[node]!!, lowLinks[neighbor]!!)
+                    }
+                    neighbor in inStack -> {     // back edge: forms a cycle
+                        lowLinks[node] = minOf(lowLinks[node]!!, ids[neighbor]!!)
+                    }
+                }
+            }
+
+            if (lowLinks[node] == ids[node]) {   // root of an SCC: pop the stack
+                val scc = mutableListOf<T>()
+                var current: T
+                do {
+                    current = stack.removeLast()
+                    inStack.remove(current)
+                    scc.add(current)
+                } while (current != node)
+                sccs.add(scc)
+            }
+        }
+
+        graph.keys.forEach { if (it !in ids) tarjanDfs(it) }
+        return sccs
+    }
+}
+```
+
+The `lowLink` is the [17.10](../ch17-advanced-graphs/critical-connections-in-a-network.md) bridge logic's cousin — where the bridge test compares parent vs child `low`, Tarjan-SCC compares a node's `lowLink` to its own discovery `id` and pops a whole component when they're equal. Kosaraju ([Approach 1](#approach-1--kosaraju-the-repos-version-optimal)) needs two passes but no recursion bookkeeping; Tarjan needs one pass but a live stack.
+
 ## Dry run
 
 **Input:** the repo's test — edges `0->2, 2->1, 1->0, 2->3, 3->4`.

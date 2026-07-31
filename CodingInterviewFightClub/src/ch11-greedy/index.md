@@ -19,6 +19,8 @@
 | 11.7 | Minimum Number Of Refueling Stops | max-heap "time travel" | $O(n \log n)$ | [→](minimum-number-of-refueling-stops.md) |
 
 | 11.8 | Best Time To Buy And Sell Stock II | greedy on price differences | $O(n)$ | [→](best-time-to-buy-and-sell-stock-ii.md) |
+| 11.9 | Non-Overlapping Intervals | greedy by earliest finish | $O(n log n)$ | [→](non-overlapping-intervals.md) |
+| 11.10 | Reorganize String | max-heap + cooldown window | $O(n log n)$ | [→](reorganize-string.md) |
 ## The rest of the greedy/ directory
 
 `src/main/kotlin/greedy/` also holds: Destroying Asteroids (greedy by size), Jump Game variants, Maximum Profit Assigning Work (sorted pointers), Minimum Time To Make Rope Colorful (keep the max per run), Minimum Deletions To Make String Balanced, Minimum Replacement To Sort The Array, Reschedule Meetings For Maximum Free Time, Maximum Value Of An Ordered Triplet II, Max Chunks To Make Sorted II, MInimum Cost Homecoming Of A Robot, and Task Scheduler neighbors. The interval-family problems connect to `src/main/kotlin/interval/` and the scheduling problems to [7.5](../ch07-heaps/ipo.md)/[7.6](../ch07-heaps/meeting-rooms-iii.md) from the heap chapter.

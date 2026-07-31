@@ -47,6 +47,48 @@ $$
 
 Classic heap simulation: schedule the highest-frequency available task each tick, push it into a cooldown queue for `n` ticks, count every tick (including idles). Correct and general, but $O(\text{time} \cdot \log k)$ — the formula below is the closed form this simulation converges to.
 
+```kotlin
+import java.util.*
+
+// 1. The schedulable unit in the max-heap
+data class Task(val name: Char, var remainingCount: Int)
+
+// 2. A task waiting for a specific time slot to become available
+data class Cooldown(val task: Task, val availableTime: Int)
+
+fun leastInterval(tasks: CharArray, n: Int): Int {
+    // Frequency map -> max-heap of tasks, prioritized by remaining count
+    val freqMap = tasks.groupingBy { it }.eachCount()
+    val maxHeap = PriorityQueue<Task> { t1, t2 -> t2.remainingCount - t1.remainingCount }
+    maxHeap.addAll(freqMap.map { (name, count) -> Task(name, count) })
+
+    val queue: Queue<Cooldown> = LinkedList()
+    var time = 0
+
+    while (maxHeap.isNotEmpty() || queue.isNotEmpty()) {
+        time++                                 // advance time (idles count)
+
+        if (maxHeap.isNotEmpty()) {
+            val currentTask = maxHeap.poll()   // greedily pick the highest-priority task
+            currentTask.remainingCount--
+
+            if (currentTask.remainingCount > 0) {
+                // Cool down: this task can't run again until time + n
+                queue.offer(Cooldown(currentTask, time + n))
+            }
+        }
+
+        // Release tasks whose cooldown has expired
+        if (queue.isNotEmpty() && queue.peek().availableTime == time) {
+            maxHeap.add(queue.poll().task)
+        }
+    }
+    return time
+}
+```
+
+The simulation's `time++` counts **every tick, including idle ones** — that's the answer. It's correct and general (handles any cooldown `n`), but $O(\text{time} \cdot \log k)$: the closed-form formula below is what this loop converges to. The [11.10](reorganize-string.md) page is this exact engine for the `k = 1` rearrangement case.
+
 ## Approach 2 — The frequency formula (the repo's version, optimal)
 
 ```kotlin
