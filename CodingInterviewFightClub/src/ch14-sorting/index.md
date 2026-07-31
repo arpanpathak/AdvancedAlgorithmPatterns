@@ -18,6 +18,7 @@
 | 14.6 | Russian Doll Envelopes | sort + LIS | $O(n \log n)$ | [→](russian-doll-envelopes.md) |
 | 14.7 | Top K Frequent (QuickSelect) | quickselect on frequency | $O(n)$ avg | [→](top-k-frequent-elements-quickselect.md) |
 
+| 14.8 | Sort Colors | Dutch National Flag | $O(n)$ | [→](sort-colors.md) |
 ## The rest of the sorting/ and quicksort/ directories
 
 `sorting/` also holds `EmployeeFreeTime.kt` and `RankTeamsByVote.kt`; `quicksort/` adds `DualPivotQuickSelect.kt` and `GenericRanrmoizedQuickSelect.kt` (generalized quickselect). The quickselect problems cross-reference the heap versions in [Chapter 7](../ch07-heaps/index.md) — the two answers to the same "top k" question, contrasted.

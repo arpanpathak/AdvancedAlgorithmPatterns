@@ -18,6 +18,8 @@
 | 17.6 | Reorder Routes To City Zero | directed-edge DFS | $O(n)$ | [→](reorder-routes-to-make-all-paths-lead-to-city-zero.md) |
 | 17.7 | Evaluate Division | edge-labeled graph BFS | $O(Q \cdot E)$ | [→](evaluate-division.md) |
 
+| 17.8 | Bellman-Ford | V-1 relaxations + cycle check | $O(VE)$ | [→](bellman-ford.md) |
+| 17.9 | Reconstruct Itinerary | Hierholzer (Eulerian path) | $O(E log E)$ | [→](reconstruct-itinerary.md) |
 ## The rest of the graph/ directories
 
 `flow_network/` also holds several Edmonds-Karp variants and `BipartileMatching.kt` (the same Kuhn's algorithm as 17.2). `tsp/` adds `ShortestPathVisitingAllNodes.kt` (17.5), the brute-force and top-down TSP versions, and `TravellingSalesmanRecursiveDP.kt`. `tree/mst/` adds the Kruskal version of 17.3 ([6.6](../ch06-graphs/min-cost-to-connect-all-points.md) already covers it). `graph/` also has articulation points, SCC, topological sorts, chromatic number, and more.

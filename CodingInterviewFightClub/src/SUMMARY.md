@@ -56,6 +56,9 @@
   - [3.5 Insert Interval](ch03-arrays/insert-interval.md)
   - [3.6 Rotate Image](ch03-arrays/rotate-image.md)
   - [3.7 Spiral Matrix](ch03-arrays/spiral-matrix.md)
+  - [3.8 Trapping Rain Water](ch03-arrays/trapping-rain-water.md)
+  - [3.9 Container With Most Water](ch03-arrays/container-with-most-water.md)
+  - [3.10 Product Of Array Except Self](ch03-arrays/product-of-array-except-self.md)
   - [2.12 Closest Subsequence Sum](ch02-dynamic-programming/closest-subsequence-sum.md)
 
 - [4. Linked Lists](ch04-linked-lists/index.md)
@@ -65,6 +68,7 @@
   - [4.3 Merge Two Sorted Lists](ch04-linked-lists/merge-two-sorted-lists.md)
   - [4.4 Remove Nth Node From End](ch04-linked-lists/remove-nth-node-from-end.md)
   - [4.5 Linked List Cycle II](ch04-linked-lists/linked-list-cycle-ii.md)
+  - [4.6 Find The Duplicate Number](ch04-linked-lists/find-the-duplicate-number.md)
 
 - [5. Trees](ch05-trees/index.md)
   - [5.0 Pattern Primer: The Recursive Data Structure](ch05-trees/pattern-primer.md)
@@ -74,6 +78,9 @@
   - [5.4 Binary Tree Maximum Path Sum](ch05-trees/binary-tree-maximum-path-sum.md)
   - [5.5 Serialize And Deserialize Binary Tree](ch05-trees/serialize-and-deserialize-binary-tree.md)
   - [5.6 Binary Tree Inorder Traversal (Iterative)](ch05-trees/binary-tree-inorder-traversal-iterative.md)
+  - [5.7 Construct Tree From Preorder And Inorder](ch05-trees/construct-binary-tree-from-preorder-and-inorder.md)
+  - [5.8 Binary Tree Right Side View](ch05-trees/binary-tree-right-side-view.md)
+  - [5.9 Path Sum III](ch05-trees/path-sum-iii.md)
 
 - [6. Graphs](ch06-graphs/index.md)
   - [6.0 Pattern Primer: The Seven Engines](ch06-graphs/pattern-primer.md)
@@ -84,6 +91,9 @@
   - [6.5 Cheapest Flights With K Stops](ch06-graphs/cheapest-flights-with-k-stops.md)
   - [6.6 Min Cost To Connect All Points](ch06-graphs/min-cost-to-connect-all-points.md)
   - [6.7 Strongly Connected Components](ch06-graphs/strongly-connected-components.md)
+  - [6.8 Alien Dictionary](ch06-graphs/alien-dictionary.md)
+  - [6.9 Redundant Connection](ch06-graphs/redundant-connection.md)
+  - [6.10 Flood Fill](ch06-graphs/flood-fill.md)
 
 - [7. Heaps & Priority Queues](ch07-heaps/index.md)
   - [7.0 Pattern Primer: The Lazy Sorted Structure](ch07-heaps/pattern-primer.md)
@@ -104,6 +114,7 @@
   - [8.5 Largest Rectangle In Histogram](ch08-stacks/largest-rectangle-in-histogram.md)
   - [8.6 Evaluate Reverse Polish Notation](ch08-stacks/evaluate-reverse-polish-notation.md)
   - [8.7 Remove K Digits](ch08-stacks/remove-k-digits.md)
+  - [8.8 Decode String](ch08-stacks/decode-string.md)
 
 - [9. Strings](ch09-strings/index.md)
   - [9.0 Pattern Primer: The Three Lenses](ch09-strings/pattern-primer.md)
@@ -114,6 +125,7 @@
   - [9.5 Longest Common Prefix](ch09-strings/longest-common-prefix.md)
   - [9.6 Reverse Words In A String](ch09-strings/reverse-words-in-a-string.md)
   - [9.7 Validate IP Address](ch09-strings/validate-ip-address.md)
+  - [9.8 Find The Index Of The First Occurrence (Rabin-Karp)](ch09-strings/find-the-index-of-the-first-occurrence.md)
 
 - [10. Hash Tables & Sets](ch10-hash-tables/index.md)
   - [10.0 Pattern Primer: O(1) Lookup, Three Moves](ch10-hash-tables/pattern-primer.md)
@@ -124,6 +136,7 @@
   - [10.5 First Unique Character](ch10-hash-tables/first-unique-character.md)
   - [10.6 Design HashMap](ch10-hash-tables/design-hash-map.md)
   - [10.7 Roman To Integer](ch10-hash-tables/roman-to-integer.md)
+  - [10.8 Subarray Sum Equals K](ch10-hash-tables/subarray-sum-equals-k.md)
 
 - [11. Greedy](ch11-greedy/index.md)
   - [11.0 Pattern Primer: The Local Choice, Defended](ch11-greedy/pattern-primer.md)
@@ -134,6 +147,7 @@
   - [11.5 Car Fleet](ch11-greedy/car-fleet.md)
   - [11.6 Task Scheduler](ch11-greedy/task-scheduler.md)
   - [11.7 Minimum Number Of Refueling Stops](ch11-greedy/minimum-number-of-refueling-stops.md)
+  - [11.8 Best Time To Buy And Sell Stock II](ch11-greedy/best-time-to-buy-and-sell-stock-ii.md)
 
 - [12. Backtracking](ch12-backtracking/index.md)
   - [12.0 Pattern Primer: DFS With an Undo Button](ch12-backtracking/pattern-primer.md)
@@ -144,6 +158,9 @@
   - [12.5 Palindrome Partitioning](ch12-backtracking/palindrome-partitioning.md)
   - [12.6 Restore IP Addresses](ch12-backtracking/restore-ip-addresses.md)
   - [12.7 Sudoku Solver](ch12-backtracking/sudoku-solver.md)
+  - [12.8 Combination Sum](ch12-backtracking/combination-sum.md)
+  - [12.9 Partition To K Equal Sum Subsets](ch12-backtracking/partition-to-k-equal-sum-subsets.md)
+  - [12.10 Next Permutation](ch12-backtracking/next-permutation.md)
 
 - [13. Tries](ch13-tries/index.md)
   - [13.0 Pattern Primer: The Prefix Structure](ch13-tries/pattern-primer.md)
@@ -164,6 +181,7 @@
   - [14.5 H-Index](ch14-sorting/h-index.md)
   - [14.6 Russian Doll Envelopes](ch14-sorting/russian-doll-envelopes.md)
   - [14.7 Top K Frequent Elements (QuickSelect)](ch14-sorting/top-k-frequent-elements-quickselect.md)
+  - [14.8 Sort Colors](ch14-sorting/sort-colors.md)
 
 - [15. Sliding Window](ch15-sliding-window/index.md)
   - [15.0 Pattern Primer: The Moving Window](ch15-sliding-window/pattern-primer.md)
@@ -174,6 +192,7 @@
   - [15.5 Minimum Size Subarray Sum](ch15-sliding-window/minimum-size-subarray-sum.md)
   - [15.6 Sliding Window Maximum](ch15-sliding-window/sliding-window-maximum.md)
   - [15.7 Max Consecutive Ones III](ch15-sliding-window/max-consecutive-ones-iii.md)
+  - [15.8 Permutation In String](ch15-sliding-window/permutation-in-string.md)
 
 - [16. Bit Manipulation](ch16-bit-manipulation/index.md)
   - [16.0 Pattern Primer: The Bit Identities](ch16-bit-manipulation/pattern-primer.md)
@@ -194,6 +213,8 @@
   - [17.5 Shortest Path Visiting All Nodes](ch17-advanced-graphs/shortest-path-visiting-all-nodes.md)
   - [17.6 Reorder Routes To City Zero](ch17-advanced-graphs/reorder-routes-to-make-all-paths-lead-to-city-zero.md)
   - [17.7 Evaluate Division](ch17-advanced-graphs/evaluate-division.md)
+  - [17.8 Bellman-Ford](ch17-advanced-graphs/bellman-ford.md)
+  - [17.9 Reconstruct Itinerary](ch17-advanced-graphs/reconstruct-itinerary.md)
 
 - [18. Design & Caches](ch18-design-caches/index.md)
   - [18.0 Pattern Primer: Composing Structures](ch18-design-caches/pattern-primer.md)

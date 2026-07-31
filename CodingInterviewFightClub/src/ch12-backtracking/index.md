@@ -18,6 +18,9 @@
 | 12.6 | Restore IP Addresses | segment-length pruning | $O(1)$ (fixed shape) | [→](restore-ip-addresses.md) |
 | 12.7 | Sudoku Solver | cell-by-cell with validity | $O(9^{81})$ bound | [→](sudoku-solver.md) |
 
+| 12.8 | Combination Sum | include/exclude with repetition | $O(2^t)$ | [→](combination-sum.md) |
+| 12.9 | Partition To K Equal Sum Subsets | subset-building backtracking | $O(k 2^n)$ | [→](partition-to-k-equal-sum-subsets.md) |
+| 12.10 | Next Permutation | Narayana-Pandita | $O(n)$ | [→](next-permutation.md) |
 ## The rest of the backtracking/ directories
 
 `src/main/kotlin/backtracking/` also holds: N-Queens II and N-Queens Optimized, Sudoku Solver (set-based variant), Partition To K Equal Sum Subsets, Path With Maximum Gold, Strobogrammatic Number II, Expression Add Operators (and optimized). `array/Combinatorics/` adds Combinations, Subsets II (with duplicates), Permutations II (duplicates, backtracking + Narayana-Pandita), Next Permutation and its follow-ups. `string/backtracking/` adds Word Break II and Word Square.

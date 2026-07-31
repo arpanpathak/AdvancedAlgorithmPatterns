@@ -18,6 +18,7 @@
 | 10.6 | Design HashMap | open addressing | $O(1)$ amortized | [→](design-hash-map.md) |
 | 10.7 | Roman To Integer | right-to-left accumulation | $O(n)$ | [→](roman-to-integer.md) |
 
+| 10.8 | Subarray Sum Equals K | prefix sums + frequency map | $O(n)$ | [→](subarray-sum-equals-k.md) |
 ## The rest of the hashtable/ directories
 
 `src/main/kotlin/hashtable/` adds: Integer To Roman, H-Index, Intersection Of Two Arrays, Maximum Frequency Stack, Design A Number Container System, Design File System, Count Number Of Bad Pairs, Word Break variants. `src/main/kotlin/array/hashtable/` adds: First Missing Positive, Degree Of An Array, Valid Sudoku variants, Set Mismatch, Rank Transform Of An Array, Unique Number Of Occurrences, Integer To English Words, Equal Row And Column Pairs, and more. The LRU/LFU cache designs live in `src/main/kotlin/cache/` and are the "map + structure" capstone of this chapter's design problems.

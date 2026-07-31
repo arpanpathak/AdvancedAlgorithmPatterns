@@ -18,6 +18,7 @@
 | 15.6 | Sliding Window Maximum | monotonic deque | $O(n)$ | [→](sliding-window-maximum.md) |
 | 15.7 | Max Consecutive Ones III | flip-budget window | $O(n)$ | [→](max-consecutive-ones-iii.md) |
 
+| 15.8 | Permutation In String | fixed-size anagram window | $O(n)$ | [→](permutation-in-string.md) |
 ## The rest of the sliding_window/ directory
 
 `src/main/kotlin/sliding_window/` also holds: Maximum Erasure Value, Maximum Sum Of Distinct Subarrays With Length K, Longest Continuous Subarray With Absolute Difference ≤ Limit, Longest Subarrays Of Ones After Deleting One Element, Minimum Swaps To Group All Ones Together, Partition Labels, and Programmer String. The repo's `string/sliding_window/` subfolder carries the string-flavored variants.

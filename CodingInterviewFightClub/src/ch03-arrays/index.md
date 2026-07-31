@@ -18,6 +18,9 @@
 | 3.6 | Rotate Image | transpose + reverse | $O(n^2)$ | [→](rotate-image.md) |
 | 3.7 | Spiral Matrix | boundary peeling | $O(mn)$ | [→](spiral-matrix.md) |
 
+| 3.8 | Trapping Rain Water | two pointers + running maxima | $O(n)$ | [→](trapping-rain-water.md) |
+| 3.9 | Container With Most Water | two pointers, move the shorter | $O(n)$ | [→](container-with-most-water.md) |
+| 3.10 | Product Of Array Except Self | prefix/suffix products | $O(n)$ | [→](product-of-array-except-self.md) |
 ## The rest of the array/ directory
 
 `src/main/kotlin/array/` holds 100+ more problems. The full index lives in the repository; every subdirectory is a pattern family:
@@ -26,7 +29,7 @@
 - `hashtable/` — First Missing Positive, Longest Consecutive Sequence, Valid Sudoku, Degree of an Array…
 - `dp/` — House Robber, Kadane, Coin Change, Maximal Square, Stone Game… (see [Chapter 2](../ch02-dynamic-programming/index.md))
 - `greedy/` — Split Array Largest Sum, Minimum Number of Taps…
-- `prefixsum/`, `sweepline/`, `sorting/`, `random/`, `backtracking/` (see [Chapter 11](../ch11-backtracking/index.md))
+- `prefixsum/`, `sweepline/`, `sorting/`, `random/`, `backtracking/` (see [Chapter 11](../ch12-backtracking/index.md))
 - top-level matrix files — Spiral Matrix, Diagonal Traverse, Set Matrix Zeroes, Toeplitz, Transpose…
 
 New pages are added to this chapter as they're written — the tree grows from the "Problems at a glance" table.

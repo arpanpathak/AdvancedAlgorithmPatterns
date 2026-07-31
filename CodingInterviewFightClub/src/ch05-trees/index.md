@@ -17,6 +17,9 @@
 | 5.5 | Serialize And Deserialize Binary Tree | pre-order + sentinels | $O(n)$ | [→](serialize-and-deserialize-binary-tree.md) |
 | 5.6 | Binary Tree Inorder Traversal (Iterative) | explicit stack | $O(n)$ | [→](binary-tree-inorder-traversal-iterative.md) |
 
+| 5.7 | Construct Tree From Preorder And Inorder | index map + range recursion | $O(n)$ | [→](construct-binary-tree-from-preorder-and-inorder.md) |
+| 5.8 | Binary Tree Right Side View | DFS first-per-level | $O(n)$ | [→](binary-tree-right-side-view.md) |
+| 5.9 | Path Sum III | prefix sums on a tree | $O(n)$ | [→](path-sum-iii.md) |
 ## The rest of the tree/ directory
 
 `src/main/kotlin/tree/` is a forest: `bst/` (Recover BST, BST Iterator, Inorder Successor, Delete Node, Unique BSTs, My Calendar…), `bfs/` (Level Order II, Right Side View, Largest Value Per Row, Completeness, Averages…), `segment/` (Segment Tree, Dynamic Segment Tree, Iterative Segment Tree…), `fenwick/` (Fenwick Tree, Range Sum Query 2D Mutable…), `mst/` (Prim's & Kruskal's on points), `interval/`, plus standalone classics (Diameter, Path Sum II/III, Zigzag, Vertical Order, Boundary, Symmetric, Construct from Pre+In / In+Post, Populate Next Right, All Nodes Distance K, Serialize N-ary, Maximum Product of Split, Count Good Nodes, etc.).
