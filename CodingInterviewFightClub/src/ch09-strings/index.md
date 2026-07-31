@@ -34,6 +34,8 @@
 | 9.21 | String Compression | in-place run-length | $O(n)$ | [→](string-compression.md) |
 | 9.22 | Custom Sort String | rank-map sort | $O(n log n)$ | [→](custom-sort-string.md) |
 | 9.23 | Rank Teams By Votes | position-frequency sort | $O(vn)$ | [→](rank-teams-by-votes.md) |
+| 9.24 | Valid Palindrome II | skip-one palindrome check | $O(n)$ | [→](valid-palindrome-ii.md) |
+| 9.25 | String Compression III | 9-capped run-length | $O(n)$ | [→](string-compression-iii.md) |
 ## The rest of the string/ directory
 
 `src/main/kotlin/string/` is huge: more counting/pattern problems (Detect Capital, Isomorphic variants, IsSubsequence, Count Words With A Given Prefix), parsing & validation (Valid Number, Validate IP Address (better implementation), Excel Sheet To Column Number, Count And Say, Goat Latin, String Compression), DP-heavy classics in `dynamic_programming/` (Edit Distance, Regular Expression Matching, Interleaving String, Palindrome Partitioning II, Longest Palindromic Subsequence), `sliding_window/` (Longest Substring Without Repeating Characters and friends), `pattern_matching/`, and `backtracking/` (Generate Parentheses, Word Break II, Word Square).

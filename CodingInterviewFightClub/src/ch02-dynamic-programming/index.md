@@ -40,6 +40,11 @@
 | 2.27 | Min Taps To Water Garden | interval covering greedy | $O(n)$ | [→](minimum-number-of-taps.md) |
 | 2.28 | Shortest Common Supersequence | LCS + backtrace | $O(mn)$ | [→](shortest-common-supersequence.md) |
 | 2.29 | Min Cost Climbing Stairs | two-step DP | $O(n)$ | [→](min-cost-climbing-stairs.md) |
+| 2.30 | Coin Change II | unbounded-knapsack count | $O(ca)$ | [→](coin-change-ii.md) |
+| 2.31 | Unique Paths | grid DP / combinatorics | $O(mn)$ | [→](unique-paths.md) |
+| 2.32 | Unique Paths II | obstacle-zeroed DP | $O(mn)$ | [→](unique-paths-ii.md) |
+| 2.33 | Palindrome Partitioning II | palindrome table + min cuts | $O(n^2)$ | [→](palindrome-partitioning-ii.md) |
+| 2.34 | Valid Palindrome III | LPS DP | $O(n^2)$ | [→](valid-palindrome-iii.md) |
 ## Reading order
 
 2.2 and 2.3 first — they're the *ur-examples* of the state-shape `dp[i][j]`. Then 2.1 (same table, different recurrence), then the knapsack family (2.4–2.6) which is the most frequently re-appearing pattern in real interviews, then the interval DPs (2.10, 2.11), then the gyms (2.8, 2.9, 2.13). End with 2.12 which is the *anti-DP* — it proves you know when **not** to reach for a DP table.

@@ -24,6 +24,12 @@
 | 12.11 | Permutations II | per-frame seen-set dedupe | $O(n! n)$ | [→](permutations-ii.md) |
 | 12.12 | Combinations | start-index backtracking | $O(C(n,k))$ | [→](combinations.md) |
 | 12.13 | Combination Sum III | k + sum gates with pruning | $O(C(9,k))$ | [→](combination-sum-iii.md) |
+| 12.12 | Subsets II | sorted skip-duplicates | $O(2^n)$ | [→](subsets-ii.md) |
+| 12.13 | N-Queens II | count-only backtracking | $O(n!)$ | [→](n-queens-ii.md) |
+| 12.14 | Word Search II | trie-pruned DFS | $O(mn4^L)$ | [→](word-search-ii.md) |
+| 12.15 | Word Break II | memoized sentence enumeration | $O(2^n)$ | [→](word-break-ii.md) |
+| 12.16 | Next Greater Element III | next-permutation digits | $O(log n)$ | [→](next-greater-element-iii.md) |
+| 12.17 | Strobogrammatic Number II | mirrored digit pairing | $O(5^{n/2})$ | [→](strobogrammatic-number-ii.md) |
 ## The rest of the backtracking/ directories
 
 `src/main/kotlin/backtracking/` also holds: N-Queens II and N-Queens Optimized, Sudoku Solver (set-based variant), Partition To K Equal Sum Subsets, Path With Maximum Gold, Strobogrammatic Number II, Expression Add Operators (and optimized). `array/Combinatorics/` adds Combinations, Subsets II (with duplicates), Permutations II (duplicates, backtracking + Narayana-Pandita), Next Permutation and its follow-ups. `string/backtracking/` adds Word Break II and Word Square.

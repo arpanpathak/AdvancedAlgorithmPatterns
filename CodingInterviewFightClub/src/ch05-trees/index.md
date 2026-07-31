@@ -35,6 +35,10 @@
 | 5.22 | Leaf-Similar Trees | leaf-sequence compare | $O(n)$ | [→](leaf-similar-trees.md) |
 | 5.24 | Inorder Successor In BST | successor-memory walk | $O(h)$ | [→](inorder-successor.md) |
 | 5.25 | House Robber III | two-state tree DP | $O(n)$ | [→](house-robber-iii.md) |
+| 5.26 | Level Order Traversal II | BFS fence + reverse | $O(n)$ | [→](binary-tree-level-order-traversal-ii.md) |
+| 5.27 | Unique Binary Search Trees | Catalan DP | $O(n^2)$ | [→](unique-binary-search-trees.md) |
+| 5.28 | Unique Binary Search Trees II | Cartesian tree generation | $O(C_n)$ | [→](unique-binary-search-trees-ii.md) |
+| 5.29 | Lowest Common Ancestor III | parent-pointer climb | $O(d_p+d_q)$ | [→](lowest-common-ancestor-iii.md) |
 ## The rest of the tree/ directory
 
 `src/main/kotlin/tree/` is a forest: `bst/` (Recover BST, BST Iterator, Inorder Successor, Delete Node, Unique BSTs, My Calendar…), `bfs/` (Level Order II, Right Side View, Largest Value Per Row, Completeness, Averages…), `segment/` (Segment Tree, Dynamic Segment Tree, Iterative Segment Tree…), `fenwick/` (Fenwick Tree, Range Sum Query 2D Mutable…), `mst/` (Prim's & Kruskal's on points), `interval/`, plus standalone classics (Diameter, Path Sum II/III, Zigzag, Vertical Order, Boundary, Symmetric, Construct from Pre+In / In+Post, Populate Next Right, All Nodes Distance K, Serialize N-ary, Maximum Product of Split, Count Good Nodes, etc.).

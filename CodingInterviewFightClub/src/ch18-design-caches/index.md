@@ -30,6 +30,7 @@
 | 18.18 | Range Sum Query 2D Immutable | 2-D prefix sums | $O(1)$ query | [→](range-sum-query-2d-immutable.md) |
 | 18.19 | Convert BST To DLL | inorder threading | $O(n)$ | [→](convert-bst-to-sorted-doubly-linked-list.md) |
 | 18.20 | Design TicTacToe | signed line counters | $O(1)$ | [→](design-tic-tac-toe.md) |
+| 18.21 | My Calendar II | lazy segment tree | $O(log U)$ | [→](my-calendar-ii.md) |
 ## The rest of the design-related directories
 
 `cache/` holds many LRU/LFU flavors (`LRUCacheLinkedList.kt`, `LRUCacheBetter.kt`, the `LruCacheNobodyDoesItBetter.kt` family, `LFUCacheGigaCHAD.kt`, ...) — this chapter documents the canonical structures. `design/` adds `SelfDoubtSimulation.kt`; `stack/` holds the nested-list iterator and increment-stack; `probability/` holds the O(1) random-access set.

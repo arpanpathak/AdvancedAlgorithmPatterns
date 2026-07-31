@@ -30,6 +30,7 @@
   - [1.17 Search In Rotated Sorted Array](ch01-binary-search/search-in-rotated-sorted-array.md)
   - [1.19 Sqrt(x)](ch01-binary-search/sqrt-x.md)
   - [1.20 Split Array Largest Sum](ch01-binary-search/split-array-largest-sum.md)
+  - [1.21 Search A 2D Matrix II](ch01-binary-search/search-a-2d-matrix-ii.md)
   - [1.18 Search Insert Position](ch01-binary-search/search-insert-position.md)
   - [1.19 Single Element In A Sorted Array](ch01-binary-search/single-element-in-a-sorted-array.md)
   - [1.20 Valley Element](ch01-binary-search/valley-element.md)
@@ -66,6 +67,11 @@
   - [2.27 Minimum Number Of Taps To Water The Garden](ch02-dynamic-programming/minimum-number-of-taps.md)
   - [2.28 Shortest Common Supersequence](ch02-dynamic-programming/shortest-common-supersequence.md)
   - [2.29 Min Cost Climbing Stairs](ch02-dynamic-programming/min-cost-climbing-stairs.md)
+  - [2.30 Coin Change II](ch02-dynamic-programming/coin-change-ii.md)
+  - [2.31 Unique Paths](ch02-dynamic-programming/unique-paths.md)
+  - [2.32 Unique Paths II](ch02-dynamic-programming/unique-paths-ii.md)
+  - [2.33 Palindrome Partitioning II](ch02-dynamic-programming/palindrome-partitioning-ii.md)
+  - [2.34 Valid Palindrome III](ch02-dynamic-programming/valid-palindrome-iii.md)
 
 - [3. Arrays, Two Pointers & Matrices](ch03-arrays/index.md)
   - [3.0 Pattern Primer: Two Pointers & The Sorted-Array Dance](ch03-arrays/pattern-primer.md)
@@ -101,6 +107,9 @@
   - [3.30 Rectangle Area](ch03-arrays/rectangle-area.md)
   - [3.31 Rectangle Overlap](ch03-arrays/rectangle-overlap.md)
   - [3.32 Zero Array Transformation](ch03-arrays/zero-array-transformation.md)
+  - [3.33 Rectangle Area II](ch03-arrays/rectangle-area-ii.md)
+  - [3.34 Spiral Matrix II](ch03-arrays/spiral-matrix-ii.md)
+  - [3.35 Remove Duplicates II](ch03-arrays/remove-duplicates-from-sorted-array-ii.md)
   - [2.12 Closest Subsequence Sum](ch02-dynamic-programming/closest-subsequence-sum.md)
 
 - [4. Linked Lists](ch04-linked-lists/index.md)
@@ -149,6 +158,10 @@
   - [5.23 Construct Quad Tree](ch05-trees/construct-quad-tree.md)
   - [5.24 Inorder Successor In BST](ch05-trees/inorder-successor.md)
   - [5.25 House Robber III](ch05-trees/house-robber-iii.md)
+  - [5.26 Binary Tree Level Order Traversal II](ch05-trees/binary-tree-level-order-traversal-ii.md)
+  - [5.27 Unique Binary Search Trees](ch05-trees/unique-binary-search-trees.md)
+  - [5.28 Unique Binary Search Trees II](ch05-trees/unique-binary-search-trees-ii.md)
+  - [5.29 Lowest Common Ancestor III](ch05-trees/lowest-common-ancestor-iii.md)
 
 - [6. Graphs](ch06-graphs/index.md)
   - [6.0 Pattern Primer: The Seven Engines](ch06-graphs/pattern-primer.md)
@@ -178,6 +191,7 @@
   - [6.24 Parallel Courses II](ch06-graphs/parallel-courses-ii.md)
   - [6.25 Sliding Puzzle](ch06-graphs/sliding-puzzle.md)
   - [6.26 Shortest Bridge](ch06-graphs/shortest-bridge.md)
+  - [6.27 The Maze III](ch06-graphs/the-maze-iii.md)
 
 - [7. Heaps & Priority Queues](ch07-heaps/index.md)
   - [7.0 Pattern Primer: The Lazy Sorted Structure](ch07-heaps/pattern-primer.md)
@@ -245,6 +259,8 @@
   - [9.21 String Compression](ch09-strings/string-compression.md)
   - [9.22 Custom Sort String](ch09-strings/custom-sort-string.md)
   - [9.23 Rank Teams By Votes](ch09-strings/rank-teams-by-votes.md)
+  - [9.24 Valid Palindrome II](ch09-strings/valid-palindrome-ii.md)
+  - [9.25 String Compression III](ch09-strings/string-compression-iii.md)
 
 - [10. Hash Tables & Sets](ch10-hash-tables/index.md)
   - [10.0 Pattern Primer: O(1) Lookup, Three Moves](ch10-hash-tables/pattern-primer.md)
@@ -303,6 +319,8 @@
   - [11.23 Count Collisions On A Road](ch11-greedy/count-collisions-on-a-road.md)
   - [11.24 Partition Labels](ch11-greedy/partition-labels.md)
   - [11.25 Break A Palindrome](ch11-greedy/break-a-palindrome.md)
+  - [11.26 Max Chunks To Make Sorted II](ch11-greedy/max-chunks-to-make-sorted-ii.md)
+  - [11.27 Maximum Value Of An Ordered Triplet II](ch11-greedy/maximum-value-of-an-ordered-triplet-ii.md)
 
 - [12. Backtracking](ch12-backtracking/index.md)
   - [12.0 Pattern Primer: DFS With an Undo Button](ch12-backtracking/pattern-primer.md)
@@ -317,6 +335,12 @@
   - [12.9 Partition To K Equal Sum Subsets](ch12-backtracking/partition-to-k-equal-sum-subsets.md)
   - [12.10 Next Permutation](ch12-backtracking/next-permutation.md)
   - [12.11 Permutations II](ch12-backtracking/permutations-ii.md)
+  - [12.12 Subsets II](ch12-backtracking/subsets-ii.md)
+  - [12.13 N-Queens II](ch12-backtracking/n-queens-ii.md)
+  - [12.14 Word Search II](ch12-backtracking/word-search-ii.md)
+  - [12.15 Word Break II](ch12-backtracking/word-break-ii.md)
+  - [12.16 Next Greater Element III](ch12-backtracking/next-greater-element-iii.md)
+  - [12.17 Strobogrammatic Number II](ch12-backtracking/strobogrammatic-number-ii.md)
   - [12.12 Combinations](ch12-backtracking/combinations.md)
   - [12.13 Combination Sum III](ch12-backtracking/combination-sum-iii.md)
 
@@ -412,6 +436,7 @@
   - [18.18 Range Sum Query 2D Immutable](ch18-design-caches/range-sum-query-2d-immutable.md)
   - [18.19 Convert BST To Sorted Doubly Linked List](ch18-design-caches/convert-bst-to-sorted-doubly-linked-list.md)
   - [18.20 Design TicTacToe](ch18-design-caches/design-tic-tac-toe.md)
+  - [18.21 My Calendar II](ch18-design-caches/my-calendar-ii.md)
 
 ## Appendix
 

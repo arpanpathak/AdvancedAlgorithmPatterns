@@ -43,6 +43,9 @@
 | 3.30 | Rectangle Area | inclusion-exclusion | $O(1)$ | [→](rectangle-area.md) |
 | 3.31 | Rectangle Overlap | axis-separation | $O(1)$ | [→](rectangle-overlap.md) |
 | 3.32 | Zero Array Transformation | difference array | $O(n+q)$ | [→](zero-array-transformation.md) |
+| 3.33 | Rectangle Area II | coordinate compression sweep | $O(r^2 log r)$ | [→](rectangle-area-ii.md) |
+| 3.34 | Spiral Matrix II | boundary-filling walk | $O(n^2)$ | [→](spiral-matrix-ii.md) |
+| 3.35 | Remove Duplicates II | write pointer + run counter | $O(n)$ | [→](remove-duplicates-from-sorted-array-ii.md) |
 ## The rest of the array/ directory
 
 `src/main/kotlin/array/` holds 100+ more problems. The full index lives in the repository; every subdirectory is a pattern family:
