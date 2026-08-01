@@ -34,6 +34,12 @@
 | 11.26 | Max Chunks To Make Sorted II | prefix-max/suffix-min | $O(n)$ | [→](max-chunks-to-make-sorted-ii.md) |
 | 11.27 | Maximum Value Of An Ordered Triplet II | running max/diff | $O(n)$ | [→](maximum-value-of-an-ordered-triplet-ii.md) |
 | 11.28 | Reschedule Meetings For Max Free Time | gap window sum | $O(n)$ | [→](reschedule-meetings-for-maximum-free-time.md) |
+| 11.29 | Maximum Swap | last-index greedy | $O(d)$ | [→](maximum-swap.md) |
+| 11.30 | Min Swaps To Make String Balanced | imbalance count | $O(n)$ | [→](minimum-number-of-swaps-to-make-the-string-balanced.md) |
+| 11.31 | Minimum Time To Make Rope Colorful | run-max pruning | $O(n)$ | [→](minimum-time-to-make-rope-colorful.md) |
+| 11.32 | Minimum Deletions To Make String Balanced | running b-count | $O(n)$ | [→](minimum-deletions-to-make-string-balanced.md) |
+| 11.33 | Minimum Replacement To Sort The Array | right-to-left split | $O(n)$ | [→](minimum-replacement-to-sort-the-array.md) |
+| 11.34 | Latest Time To Catch A Bus | greedy fitting | $O(b+p)$ | [→](latest-time-to-catch-a-bus.md) |
 ## The rest of the greedy/ directory
 
 `src/main/kotlin/greedy/` also holds: Destroying Asteroids (greedy by size), Jump Game variants, Maximum Profit Assigning Work (sorted pointers), Minimum Time To Make Rope Colorful (keep the max per run), Minimum Deletions To Make String Balanced, Minimum Replacement To Sort The Array, Reschedule Meetings For Maximum Free Time, Maximum Value Of An Ordered Triplet II, Max Chunks To Make Sorted II, MInimum Cost Homecoming Of A Robot, and Task Scheduler neighbors. The interval-family problems connect to `src/main/kotlin/interval/` and the scheduling problems to [7.5](../ch07-heaps/ipo.md)/[7.6](../ch07-heaps/meeting-rooms-iii.md) from the heap chapter.

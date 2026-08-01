@@ -37,6 +37,13 @@
 | 6.25 | Sliding Puzzle | board-state BFS | $O(6!)$ | [→](sliding-puzzle.md) |
 | 6.26 | Shortest Bridge | DFS + multi-source BFS | $O(n^2)$ | [→](shortest-bridge.md) |
 | 6.27 | The Maze III | Dijkstra with lexicographic paths | $O(mn log mn)$ | [→](the-maze-iii.md) |
+| 6.28 | Optimize Water Distribution | MST + virtual node | $O((n+e)log n)$ | [→](optimize-water-distribution.md) |
+| 6.29 | Cracking The Safe | de Bruijn / Hierholzer | $O(k^n)$ | [→](cracking-the-safe.md) |
+| 6.30 | Shortest Distance From All Buildings | multi-source BFS | $O(BRC)$ | [→](shortest-distance-from-all-buildings.md) |
+| 6.31 | Shortest Path With Obstacles Elimination | BFS over (r,c,k) | $O(RCk)$ | [→](shortest-path-in-grid-with-obstacles-elimination.md) |
+| 6.32 | Maximum Path Quality | budgeted DFS | $O(2^T)$ | [→](maximum-path-quality-of-a-graph.md) |
+| 6.33 | Path With Maximum Probability | max-Dijkstra | $O(e log n)$ | [→](path-with-maximum-probability.md) |
+| 6.34 | Longest Increasing Path In A Matrix | memoized grid DFS | $O(mn)$ | [→](longest-increasing-path-in-a-matrix.md) |
 ## The rest of the graph/ directory
 
 `src/main/kotlin/graph/` is enormous: `topological_sort/` (Course Schedule I/II, Parallel Courses), `scc/` (Kosaraju), `mst/` (Kruskal & Prim on points), `flow_network/` (Edmonds-Karp max flow), `tsp/` (Travelling Salesman via Held-Karp), `euler/` (Cracking The Safe), `articulation_point/`, `cycle/`, `components/`, `dag/`, `dp/`, `greedy/`, plus standalone classics — Word Ladder II, Clone Graph, Bipartite (BFS/DFS variants), Bus Routes, Evaluate Division, Reorder Routes, Minimum Genetic Mutations, Maximum Path Quality, N-Coloring, Chromatic Number, Graph Diameter, House Robber III, and more.

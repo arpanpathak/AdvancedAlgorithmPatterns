@@ -31,7 +31,7 @@
 | 1.19 | Single Element In A Sorted Array | parity-based search | $O(\log n)$ | [→](single-element-in-a-sorted-array.md) |
 | 1.20 | Valley Element | monotone slope descent (mirror) | $O(\log n)$ | [→](valley-element.md) |
 | 1.21 | Apartment Hunting | binary search + nearest neighbor | $O(BR \log K)$ | [→](apartment-hunting.md) |
-| 1.22 | Closest Subsequence Sum | meet-in-the-middle + binary search | $O(2^{n/2} \log 2^{n/2})$ | [→](closest-subsequence-sum.md) |
+| 1.22 | Closest Subsequence Sum | meet-in-the-middle + binary search | $O(2^{n/2} \log 2^{n/2})$ | [→](../ch12-backtracking/closest-subsequence-sum.md) |
 
 ## Reading order
 

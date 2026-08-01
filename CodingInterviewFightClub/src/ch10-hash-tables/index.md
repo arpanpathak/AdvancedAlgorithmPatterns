@@ -39,6 +39,9 @@
 | 10.27 | Snapshot Array | per-index history logs | $O(log C)$ | [→](snapshot-array.md) |
 | 10.28 | Find Unique Binary String | Cantor diagonal | $O(n)$ | [→](find-unique-binary-string.md) |
 | 10.29 | Intersection Of Two Arrays | set intersection | $O(n+m)$ | [→](intersection-of-two-arrays.md) |
+| 10.30 | First Letter To Appear Twice | bitmask detect | $O(n)$ | [→](first-letter-to-appear-twice.md) |
+| 10.31 | Design Number Container System | dual maps | $O(log n)$ | [→](design-number-container-system.md) |
+| 10.32 | Design File System | path map | $O(L)$ | [→](design-file-system.md) |
 ## The rest of the hashtable/ directories
 
 `src/main/kotlin/hashtable/` adds: Integer To Roman, H-Index, Intersection Of Two Arrays, Maximum Frequency Stack, Design A Number Container System, Design File System, Count Number Of Bad Pairs, Word Break variants. `src/main/kotlin/array/hashtable/` adds: First Missing Positive, Degree Of An Array, Valid Sudoku variants, Set Mismatch, Rank Transform Of An Array, Unique Number Of Occurrences, Integer To English Words, Equal Row And Column Pairs, and more. The LRU/LFU cache designs live in `src/main/kotlin/cache/` and are the "map + structure" capstone of this chapter's design problems.

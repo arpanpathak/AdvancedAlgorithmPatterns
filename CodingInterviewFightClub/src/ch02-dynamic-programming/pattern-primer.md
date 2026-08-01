@@ -70,4 +70,4 @@ Every page in this chapter shows at least steps 1–2, most show 3–4, and seve
 
 ## When NOT to use DP
 
-If the subproblems don't overlap, or the state space is astronomically large (e.g. Closest Subsequence Sum in [1.22](../ch01-binary-search/closest-subsequence-sum.md)), DP is wrong tool. Meeting-in-the-middle, greedy, or divide-and-conquer take its place. Knowing the boundary is a senior signal.
+If the subproblems don't overlap, or the state space is astronomically large (e.g. Closest Subsequence Sum in [1.22](../ch01-binary-search/../ch12-backtracking/closest-subsequence-sum.md)), DP is wrong tool. Meeting-in-the-middle, greedy, or divide-and-conquer take its place. Knowing the boundary is a senior signal.

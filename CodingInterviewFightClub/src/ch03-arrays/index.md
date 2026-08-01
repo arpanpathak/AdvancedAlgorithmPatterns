@@ -46,6 +46,21 @@
 | 3.33 | Rectangle Area II | coordinate compression sweep | $O(r^2 log r)$ | [→](rectangle-area-ii.md) |
 | 3.34 | Spiral Matrix II | boundary-filling walk | $O(n^2)$ | [→](spiral-matrix-ii.md) |
 | 3.35 | Remove Duplicates II | write pointer + run counter | $O(n)$ | [→](remove-duplicates-from-sorted-array-ii.md) |
+| 3.36 | Remove Element | write-pointer filter | $O(n)$ | [→](remove-element.md) |
+| 3.37 | 4Sum | k-sum recursion | $O(n^3)$ | [→](4-sum.md) |
+| 3.38 | Three Sum Closest | two-pointer closest | $O(n^2)$ | [→](three-sum-closest.md) |
+| 3.39 | Sign Of The Product | sign counting | $O(n)$ | [→](sign-of-the-product-of-an-array.md) |
+| 3.41 | Longest Mountain In Array | peak expansion | $O(n)$ | [→](longest-mountain-in-array.md) |
+| 3.42 | Check If Array Is Sorted And Rotated | descent count | $O(n)$ | [→](check-if-array-is-sorted-and-rotated.md) |
+| 3.43 | Degree Of An Array | first/count/last maps | $O(n)$ | [→](degree-of-an-array.md) |
+| 3.44 | Find Difference Of Two Arrays | set subtraction | $O(n+m)$ | [→](find-difference-of-two-arrays.md) |
+| 3.45 | Number Of Good Pairs | running-frequency sum | $O(n)$ | [→](number-of-good-pairs.md) |
+| 3.46 | Unique Number Of Occurrences | frequency-set | $O(n)$ | [→](unique-number-of-occurrences.md) |
+| 3.47 | Divide Array Into Equal Pairs | even-frequency test | $O(n)$ | [→](divide-array-into-equal-pairs.md) |
+| 3.48 | Maximum Distance In Arrays | running extremes | $O(k)$ | [→](maximum-distance-in-arrays.md) |
+| 3.49 | K Items With Maximum Sum | greedy pick order | $O(1)$ | [→](k-items-with-maximum-sum.md) |
+| 3.50 | Minimum Operations To Move All Balls | two-pass cost | $O(n)$ | [→](minimum-operations-to-move-all-balls.md) |
+| 3.51 | Maximum Population Year | difference sweep | $O(1)$ | [→](maximum-population-year.md) |
 ## The rest of the array/ directory
 
 `src/main/kotlin/array/` holds 100+ more problems. The full index lives in the repository; every subdirectory is a pattern family:

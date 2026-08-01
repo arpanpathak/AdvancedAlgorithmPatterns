@@ -21,7 +21,7 @@
 | 2.9 | Super Egg Drop | `dp[k][m]` = floors coverable with k eggs, m moves | $O(k \log f)$ | [→](super-egg-drop.md) |
 | 2.10 | Minimum Cost To Cut A Stick | interval DP: `dp[i][j]` over sorted cut points | $O(n^3)$ | [→](minimum-cost-to-cut-a-stick.md) |
 | 2.11 | Minimum Cost To Merge Stones | interval DP with K-way grouping | $O(n^3)$ | [→](minimum-cost-to-merge-stones.md) |
-| 2.12 | Closest Subsequence Sum | meet-in-the-middle (see [1.22](../ch01-binary-search/closest-subsequence-sum.md)) | $O(2^{n/2} \log 2^{n/2})$ | [→](../ch01-binary-search/closest-subsequence-sum.md) |
+| 2.12 | Closest Subsequence Sum | meet-in-the-middle (see [1.22](../ch01-binary-search/../ch12-backtracking/closest-subsequence-sum.md)) | $O(2^{n/2} \log 2^{n/2})$ | [→](../ch01-binary-search/../ch12-backtracking/closest-subsequence-sum.md) |
 | 2.13 | Maximum Profit In Job Scheduling | sort + `dp[i]` = max profit up to job i | $O(n \log n)$ | [→](maximum-profit-in-job-scheduling.md) |
 
 | 2.14 | Count Ways To Pick K Coins Divisible By M | memoized (idx, k, rem) | $O(nkm)$ | [→](count-ways-to-pick-k-coins-divisible-by-m.md) |
@@ -46,6 +46,13 @@
 | 2.33 | Palindrome Partitioning II | palindrome table + min cuts | $O(n^2)$ | [→](palindrome-partitioning-ii.md) |
 | 2.34 | Valid Palindrome III | LPS DP | $O(n^2)$ | [→](valid-palindrome-iii.md) |
 | 2.35 | Longest Palindromic Subsequence | LPS memo / LCS(s, rev) | $O(n^2)$ | [→](longest-palindromic-subsequence.md) |
+| 2.36 | Stone Game | relative-score range DP | $O(n^2)$ | [→](stone-game.md) |
+| 2.37 | Minimum Path Sum | grid min DP | $O(mn)$ | [→](minimum-path-sum.md) |
+| 2.38 | Continuous Subarray Sum | prefix-mod repetition | $O(n)$ | [→](continuous-subarray-sum.md) |
+| 2.39 | Number Of Zero-Filled Subarrays | run counting | $O(n)$ | [→](number-of-zero-filled-subarrays.md) |
+| 2.40 | Subarray Product Less Than K | sliding product | $O(n)$ | [→](subarray-product-less-than-k.md) |
+| 2.41 | String Chain | sorted-length DP | $O(nL^2)$ | [→](string-chain.md) |
+| 2.42 | Partition Array Into Two Arrays | meet-in-the-middle | $O(2^{n/2}log)$ | [→](partition-array-into-two-arrays.md) |
 ## Reading order
 
 2.2 and 2.3 first — they're the *ur-examples* of the state-shape `dp[i][j]`. Then 2.1 (same table, different recurrence), then the knapsack family (2.4–2.6) which is the most frequently re-appearing pattern in real interviews, then the interval DPs (2.10, 2.11), then the gyms (2.8, 2.9, 2.13). End with 2.12 which is the *anti-DP* — it proves you know when **not** to reach for a DP table.

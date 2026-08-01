@@ -33,6 +33,12 @@
 | 8.20 | One Three Two Pattern | decreasing stack + third | $O(n)$ | [→](one-three-two-pattern.md) |
 | 8.21 | Maximal Rectangle | histogram stack per row | $O(mn)$ | [→](maximal-rectangle.md) |
 | 8.22 | Check If Parentheses String Valid | balance-range sweep | $O(n)$ | [→](check-if-a-parentheses-string-can-be-valid.md) |
+| 8.23 | Simplify Path | token-stack | $O(n)$ | [→](simplify-path.md) |
+| 8.24 | Remove Stars From String | stack erasure | $O(n)$ | [→](remove-stars-from-string.md) |
+| 8.25 | Sum Of Subarray Minimums | monotonic contributions | $O(n)$ | [→](sum-of-subarray-minimums.md) |
+| 8.26 | Sum Of Subarray Ranges | max-sum minus min-sum | $O(n)$ | [→](sum-of-subarray-ranges.md) |
+| 8.27 | Buildings With An Ocean View | right-to-left max | $O(n)$ | [→](buildings-with-an-ocean-view.md) |
+| 8.28 | Minimum Operations To Convert All Elements To Zero | monotonic difference | $O(n)$ | [→](minimum-operations-to-convert-all-elements-to-zero.md) |
 ## The rest of the stack/ directory
 
 `src/main/kotlin/stack/` is deep: more monotonic-stack classics (Next Greater Element I, Sum Of Subarray Minimums/Ranges, Online Stock Span, Buildings With An Ocean View, Number Of Visible People In A Queue), string-stack hybrids (Minimum Remove To Make Valid Parentheses, Remove Duplicate Letters, Smallest Subsequence Of Distinct Characters, Remove Stars From String, Longest Valid Parentheses), and design puzzles (MinStack variants, Flatten Nested List Iterator, Design A Stack With Increment Operations, Exclusive Time Of Functions). The repo also has `queues/` with FIFO implementations used by the BFS pages in earlier chapters.

@@ -36,6 +36,19 @@
 | 9.23 | Rank Teams By Votes | position-frequency sort | $O(vn)$ | [→](rank-teams-by-votes.md) |
 | 9.24 | Valid Palindrome II | skip-one palindrome check | $O(n)$ | [→](valid-palindrome-ii.md) |
 | 9.25 | String Compression III | 9-capped run-length | $O(n)$ | [→](string-compression-iii.md) |
+| 9.26 | Happy Number | digit-square cycle | $O(log n)$ | [→](happy-number.md) |
+| 9.27 | Multiply Strings | digit-by-digit | $O(nm)$ | [→](multiply-strings.md) |
+| 9.28 | Add Binary | carry walk | $O(n)$ | [→](add-binary.md) |
+| 9.29 | Palindrome Number | reverse-half compare | $O(log x)$ | [→](palindrome-number.md) |
+| 9.30 | GCD Of Strings | string division | $O(n+m)$ | [→](greatest-common-divisor-of-strings.md) |
+| 9.31 | Valid Number | state-machine scan | $O(n)$ | [→](valid-number.md) |
+| 9.32 | Valid Word Abbreviation | two-pointer expansion | $O(n)$ | [→](valid-word-abbreviation.md) |
+| 9.33 | Shortest Way To Form String | greedy scans | $O(mn)$ | [→](shortest-way-to-form-string.md) |
+| 9.34 | Reverse Vowels | two-pointer swap | $O(n)$ | [→](reverse-vowels-of-a-string.md) |
+| 9.35 | Excel Sheet Column Number | base-26 decode | $O(n)$ | [→](excel-sheet-column-number.md) |
+| 9.36 | Maximum Value After Insertion | position scan | $O(n)$ | [→](maximum-value-after-insertion.md) |
+| 9.37 | Nested List Weighted Sum | depth DFS | $O(n)$ | [→](nested-list-weighted-sum.md) |
+| 9.38 | Unique Substring With Equal Digit Frequency | prefix-frequency | $O(n^3)$ | [→](unique-substring-with-equal-digit-frequency.md) |
 ## The rest of the string/ directory
 
 `src/main/kotlin/string/` is huge: more counting/pattern problems (Detect Capital, Isomorphic variants, IsSubsequence, Count Words With A Given Prefix), parsing & validation (Valid Number, Validate IP Address (better implementation), Excel Sheet To Column Number, Count And Say, Goat Latin, String Compression), DP-heavy classics in `dynamic_programming/` (Edit Distance, Regular Expression Matching, Interleaving String, Palindrome Partitioning II, Longest Palindromic Subsequence), `sliding_window/` (Longest Substring Without Repeating Characters and friends), `pattern_matching/`, and `backtracking/` (Generate Parentheses, Word Break II, Word Square).

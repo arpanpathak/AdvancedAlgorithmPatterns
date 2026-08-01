@@ -40,6 +40,11 @@
 | 5.28 | Unique Binary Search Trees II | Cartesian tree generation | $O(C_n)$ | [→](unique-binary-search-trees-ii.md) |
 | 5.29 | Lowest Common Ancestor III | parent-pointer climb | $O(d_p+d_q)$ | [→](lowest-common-ancestor-iii.md) |
 | 5.30 | Step-By-Step Directions | LCA + path strings | $O(n)$ | [→](step-by-step-directions.md) |
+| 5.31 | Balanced Binary Tree | height check early exit | $O(n)$ | [→](balanced-binary-tree.md) |
+| 5.32 | Count Nodes Equal To Average | subtree pair | $O(n)$ | [→](count-nodes-equal-to-average.md) |
+| 5.33 | Minimum Time To Collect All Apples | post-order cost DFS | $O(n)$ | [→](minimum-time-to-collect-all-apples.md) |
+| 5.34 | BST To Greater Sum Tree | reverse inorder | $O(n)$ | [→](binary-search-tree-to-greater-sum-tree.md) |
+| 5.35 | Path Sum | target subtraction | $O(n)$ | [→](path-sum.md) |
 ## The rest of the tree/ directory
 
 `src/main/kotlin/tree/` is a forest: `bst/` (Recover BST, BST Iterator, Inorder Successor, Delete Node, Unique BSTs, My Calendar…), `bfs/` (Level Order II, Right Side View, Largest Value Per Row, Completeness, Averages…), `segment/` (Segment Tree, Dynamic Segment Tree, Iterative Segment Tree…), `fenwick/` (Fenwick Tree, Range Sum Query 2D Mutable…), `mst/` (Prim's & Kruskal's on points), `interval/`, plus standalone classics (Diameter, Path Sum II/III, Zigzag, Vertical Order, Boundary, Symmetric, Construct from Pre+In / In+Post, Populate Next Right, All Nodes Distance K, Serialize N-ary, Maximum Product of Split, Count Good Nodes, etc.).

@@ -212,4 +212,4 @@ $$
 - **[2.6](partition-equal-subset-sum.md)** — 0/1 knapsack with values == weights, asking "can we hit exactly sum/2?" (boolean DP).
 - **Target Sum / Coin Change II** (`src/main/kotlin/array/dp/`) — counting versions of the same capacity state.
 - **Interview follow-up:** "Can you reconstruct which items were taken?" Keep a *choice* table `take[i][c]` (or backtrack through the 2D table): at `dp[i][c]`, if `dp[i][c] != dp[i-1][c]`, item `i` was taken. $O(n)$ reconstruction after the table.
-- **Interview follow-up:** "What if capacity is huge (10^9)?" $O(nW)$ dies; you'd switch to meet-in-the-middle over items ($O(2^{n/2})$) — exactly the tool from [1.22](../ch01-binary-search/closest-subsequence-sum.md). Naming the failure mode of DP = senior signal.
+- **Interview follow-up:** "What if capacity is huge (10^9)?" $O(nW)$ dies; you'd switch to meet-in-the-middle over items ($O(2^{n/2})$) — exactly the tool from [1.22](../ch01-binary-search/../ch12-backtracking/closest-subsequence-sum.md). Naming the failure mode of DP = senior signal.

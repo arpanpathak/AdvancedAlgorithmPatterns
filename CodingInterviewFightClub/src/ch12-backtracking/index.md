@@ -30,6 +30,8 @@
 | 12.15 | Word Break II | memoized sentence enumeration | $O(2^n)$ | [→](word-break-ii.md) |
 | 12.16 | Next Greater Element III | next-permutation digits | $O(log n)$ | [→](next-greater-element-iii.md) |
 | 12.17 | Strobogrammatic Number II | mirrored digit pairing | $O(5^{n/2})$ | [→](strobogrammatic-number-ii.md) |
+| 12.19 | Closest Subsequence Sum | meet-in-the-middle | $O(2^{n/2}log)$ | [→](closest-subsequence-sum.md) |
+| 12.20 | Max Length Of Concatenated String | bitmask backtracking | $O(2^n)$ | [→](maximum-length-of-concatenated-string.md) |
 ## The rest of the backtracking/ directories
 
 `src/main/kotlin/backtracking/` also holds: N-Queens II and N-Queens Optimized, Sudoku Solver (set-based variant), Partition To K Equal Sum Subsets, Path With Maximum Gold, Strobogrammatic Number II, Expression Add Operators (and optimized). `array/Combinatorics/` adds Combinations, Subsets II (with duplicates), Permutations II (duplicates, backtracking + Narayana-Pandita), Next Permutation and its follow-ups. `string/backtracking/` adds Word Break II and Word Square.

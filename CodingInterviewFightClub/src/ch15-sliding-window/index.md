@@ -23,6 +23,7 @@
 | 15.10 | Longest Subarray Of 1s After Deleting One | zero-count window | $O(n)$ | [→](longest-subarray-of-ones-after-deleting-one.md) |
 | 15.11 | Find All Anagrams | fixed-window frequency | $O(n)$ | [→](find-all-anagrams.md) |
 | 15.12 | Max Vowels In Substring | fixed-window counter | $O(n)$ | [→](maximum-number-of-vowels-in-a-substring.md) |
+| 15.13 | Minimum Window Subsequence | forward-backward sweep | $O(nm)$ | [→](minimum-window-subsequence.md) |
 ## The rest of the sliding_window/ directory
 
 `src/main/kotlin/sliding_window/` also holds: Maximum Erasure Value, Maximum Sum Of Distinct Subarrays With Length K, Longest Continuous Subarray With Absolute Difference ≤ Limit, Longest Subarrays Of Ones After Deleting One Element, Minimum Swaps To Group All Ones Together, Partition Labels, and Programmer String. The repo's `string/sliding_window/` subfolder carries the string-flavored variants.

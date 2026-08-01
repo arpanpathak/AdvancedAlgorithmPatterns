@@ -22,6 +22,7 @@
 | 16.9 | Divide Two Integers | binary long division | $O(log^2)$ | [→](divide-two-integers.md) |
 | 16.10 | Steps To Reduce Binary Number | carry-aware bit scan | $O(L)$ | [→](number-of-steps-to-reduce-a-number-in-binary.md) |
 | 16.13 | Power Of Two | single-bit test | $O(1)$ | [→](power-of-two.md) |
+| 16.14 | Longest Nice Subarray | sliding OR window | $O(n)$ | [→](longest-nice-subarray.md) |
 ## The rest of the bitset/ directory
 
 `src/main/kotlin/bitset/` also holds: First Letter To Appear Twice, Longest Nice Subarray, Number Of Steps To Reduce A Number In Binary Representation To One, and the `string/` folder's binary-string variants. The XOR-family ideas recur in the `hash-table/` and `string/` folders.
