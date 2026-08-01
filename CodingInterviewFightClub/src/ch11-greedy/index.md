@@ -33,6 +33,7 @@
 | 11.25 | Break A Palindrome | first-non-a flip | $O(n)$ | [→](break-a-palindrome.md) |
 | 11.26 | Max Chunks To Make Sorted II | prefix-max/suffix-min | $O(n)$ | [→](max-chunks-to-make-sorted-ii.md) |
 | 11.27 | Maximum Value Of An Ordered Triplet II | running max/diff | $O(n)$ | [→](maximum-value-of-an-ordered-triplet-ii.md) |
+| 11.28 | Reschedule Meetings For Max Free Time | gap window sum | $O(n)$ | [→](reschedule-meetings-for-maximum-free-time.md) |
 ## The rest of the greedy/ directory
 
 `src/main/kotlin/greedy/` also holds: Destroying Asteroids (greedy by size), Jump Game variants, Maximum Profit Assigning Work (sorted pointers), Minimum Time To Make Rope Colorful (keep the max per run), Minimum Deletions To Make String Balanced, Minimum Replacement To Sort The Array, Reschedule Meetings For Maximum Free Time, Maximum Value Of An Ordered Triplet II, Max Chunks To Make Sorted II, MInimum Cost Homecoming Of A Robot, and Task Scheduler neighbors. The interval-family problems connect to `src/main/kotlin/interval/` and the scheduling problems to [7.5](../ch07-heaps/ipo.md)/[7.6](../ch07-heaps/meeting-rooms-iii.md) from the heap chapter.

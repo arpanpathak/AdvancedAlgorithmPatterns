@@ -1,0 +1,170 @@
+# 4.17 Intersection Of Two Linked Lists
+
+> **Source**: [`src/main/kotlin/linkedlist/IntersectionOfTwoLinkedList.kt`](https://github.com/arpanpathak/AdvancedAlgorithmPatterns/blob/main/src/main/kotlin/linkedlist/IntersectionOfTwoLinkedList.kt)
+> **Pattern**: two-pointer length equalization · **Core page**
+
+## The Problem
+
+The node where two singly linked lists **intersect** (by reference), or null.
+
+- Constraints: n, m ≤ 3×10⁴; no cycles.
+
+## Examples
+
+```
+Input:  listA = [4,1,8,4,5], listB = [5,6,1,8,4,5]
+Output: the node 8 (intersection)
+```
+
+## Intuition — the pointers walk both lists; the switch equalizes the tail
+
+`pA` walks A then B; `pB` walks B then A — both traverse the same total length, so they **meet at the intersection** (or both null):
+
+```kotlin
+var pA = headA
+var pB = headB
+
+while (pA != pB) {
+    pA = if (pA == null) headB else pA.next
+    pB = if (pB == null) headA else pB.next
+}
+return pA
+```
+
+**Why the switch?** After the switch both pointers have walked `len(A) + len(B)`-ish total steps — the difference in head-to-intersection lengths is absorbed, so they synchronize exactly at the intersection. The [5.29](../ch05-trees/lowest-common-ancestor-iii.md) two-pointer meet, on lists.
+
+## Approach 1 — Hash set of A's nodes (O(n) space)
+
+Store A's nodes, walk B for the first hit: correct, heavier.
+
+## Approach 2 — Two-pointer switch (the repo's version, optimal)
+
+```kotlin
+class IntersectionOfTwoLinkedList {
+    /**
+     * @param headA first list
+     * @param headB second list
+     * @return      intersection node or null
+     */
+    fun getIntersectionNode(headA: ListNode?, headB: ListNode?): ListNode? {
+        if (headA == null || headB == null) return null
+
+        var pA = headA
+        var pB = headB
+
+        while (pA != pB) {
+            pA = if (pA == null) headB else pA.next
+            pB = if (pB == null) headA else pB.next
+        }
+        return pA
+    }
+}
+```
+
+```java
+public class IntersectionOfTwoLinkedLists {
+    /**
+     * @param headA first list
+     * @param headB second list
+     * @return      intersection node or null
+     */
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        if (headA == null || headB == null) return null;
+
+        ListNode a = headA, b = headB;
+        while (a != b) {
+            a = a == null ? headB : a.next;
+            b = b == null ? headA : b.next;
+        }
+        return a;
+    }
+}
+```
+
+```cpp
+class IntersectionOfTwoLinkedLists {
+public:
+    /**
+     * @param headA first list
+     * @param headB second list
+     * @return      intersection node or null
+     */
+    ListNode* getIntersectionNode(ListNode* headA, ListNode* headB) {
+        if (!headA || !headB) return nullptr;
+
+        ListNode* a = headA;
+        ListNode* b = headB;
+
+        while (a != b) {
+            a = a ? a->next : headB;
+            b = b ? b->next : headA;
+        }
+        return a;
+    }
+};
+```
+
+```python
+def get_intersection_node(headA: Optional["ListNode"], headB: Optional["ListNode"]) -> Optional["ListNode"]:
+    """
+    @param headA: first list
+    @param headB: second list
+    @return:      intersection node or null
+    """
+    if not headA or not headB:
+        return None
+
+    a, b = headA, headB
+    while a is not b:
+        a = headB if a is None else a.next
+        b = headA if b is None else b.next
+
+    return a
+```
+
+```rust
+impl Solution {
+    /// @param head_a first list
+    /// @param head_b second list
+    /// @return       intersection node or null
+    pub fn get_intersection_node(head_a: Option<Box<ListNode>>, head_b: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+        let (mut a, mut b) = (head_a.clone(), head_b.clone());
+
+        while a.as_ref().map(|n| Rc::as_ptr(n)) != b.as_ref().map(|n| Rc::as_ptr(n)) {
+            a = match a { Some(_) => a.unwrap().next, None => head_b.clone() };
+            b = match b { Some(_) => b.unwrap().next, None => head_a.clone() };
+        }
+        a
+    }
+}
+```
+
+## Dry run
+
+**Input:** A = [4,1,8,4,5], B = [5,6,1,8,4,5]; intersection at 8.
+
+```
+a walks: 4,1,8...  b walks: 5,6,1,8...
+a: 4-1-8-4-5-null->B:5-6-1-8   (7 steps to the 8)
+b: 5-6-1-8-4-5-null->A:4-1-8   (7 steps to the 8)
+They arrive at the 8-node simultaneously → return it ✓
+```
+
+## Complexity
+
+**Time.** O(n + m):
+
+$$
+T(n, m) = O(n + m)
+$$
+
+**Space.** Pointers:
+
+$$
+S(n, m) = O(1)
+$$
+
+## Variants & follow-ups
+
+- **Lowest Common Ancestor III** ([5.29](../ch05-trees/lowest-common-ancestor-iii.md)) — the identical walk-and-switch on parent pointers.
+- **Interview follow-up:** "Why do the pointers necessarily meet?" Each pointer's total walk is `len(A) + len(B)` steps — after that both are null (no intersection) or they coincide earlier at the shared tail. The switch equalizes the differing head distances.

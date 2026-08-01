@@ -72,6 +72,7 @@
   - [2.32 Unique Paths II](ch02-dynamic-programming/unique-paths-ii.md)
   - [2.33 Palindrome Partitioning II](ch02-dynamic-programming/palindrome-partitioning-ii.md)
   - [2.34 Valid Palindrome III](ch02-dynamic-programming/valid-palindrome-iii.md)
+  - [2.35 Longest Palindromic Subsequence](ch02-dynamic-programming/longest-palindromic-subsequence.md)
 
 - [3. Arrays, Two Pointers & Matrices](ch03-arrays/index.md)
   - [3.0 Pattern Primer: Two Pointers & The Sorted-Array Dance](ch03-arrays/pattern-primer.md)
@@ -130,6 +131,8 @@
   - [4.14 Maximum Twin Sum Of A Linked List](ch04-linked-lists/maximum-twin-sum.md)
   - [4.15 Odd Even Linked List](ch04-linked-lists/odd-even-linked-list.md)
   - [4.16 Rotate List](ch04-linked-lists/rotate-list.md)
+  - [4.17 Intersection Of Two Linked Lists](ch04-linked-lists/intersection-of-two-linked-lists.md)
+  - [4.18 Delete Middle Node Of A Linked List](ch04-linked-lists/delete-middle-node-of-linked-list.md)
 
 - [5. Trees](ch05-trees/index.md)
   - [5.0 Pattern Primer: The Recursive Data Structure](ch05-trees/pattern-primer.md)
@@ -162,6 +165,7 @@
   - [5.27 Unique Binary Search Trees](ch05-trees/unique-binary-search-trees.md)
   - [5.28 Unique Binary Search Trees II](ch05-trees/unique-binary-search-trees-ii.md)
   - [5.29 Lowest Common Ancestor III](ch05-trees/lowest-common-ancestor-iii.md)
+  - [5.30 Step-By-Step Directions](ch05-trees/step-by-step-directions.md)
 
 - [6. Graphs](ch06-graphs/index.md)
   - [6.0 Pattern Primer: The Seven Engines](ch06-graphs/pattern-primer.md)
@@ -291,6 +295,8 @@
   - [10.25 Set Mismatch](ch10-hash-tables/set-mismatch.md)
   - [10.26 Detect Squares](ch10-hash-tables/detect-squares.md)
   - [10.27 Snapshot Array](ch10-hash-tables/snapshot-array.md)
+  - [10.28 Find Unique Binary String](ch10-hash-tables/find-unique-binary-string.md)
+  - [10.29 Intersection Of Two Arrays](ch10-hash-tables/intersection-of-two-arrays.md)
 
 - [11. Greedy](ch11-greedy/index.md)
   - [11.0 Pattern Primer: The Local Choice, Defended](ch11-greedy/pattern-primer.md)
@@ -321,6 +327,7 @@
   - [11.25 Break A Palindrome](ch11-greedy/break-a-palindrome.md)
   - [11.26 Max Chunks To Make Sorted II](ch11-greedy/max-chunks-to-make-sorted-ii.md)
   - [11.27 Maximum Value Of An Ordered Triplet II](ch11-greedy/maximum-value-of-an-ordered-triplet-ii.md)
+  - [11.28 Reschedule Meetings For Maximum Free Time](ch11-greedy/reschedule-meetings-for-maximum-free-time.md)
 
 - [12. Backtracking](ch12-backtracking/index.md)
   - [12.0 Pattern Primer: DFS With an Undo Button](ch12-backtracking/pattern-primer.md)
@@ -394,6 +401,7 @@
   - [16.8 Pow(x, n)](ch16-bit-manipulation/pow-x-n.md)
   - [16.9 Divide Two Integers](ch16-bit-manipulation/divide-two-integers.md)
   - [16.10 Number Of Steps To Reduce A Number In Binary](ch16-bit-manipulation/number-of-steps-to-reduce-a-number-in-binary.md)
+  - [16.13 Power Of Two](ch16-bit-manipulation/power-of-two.md)
 
 - [17. Advanced Graphs](ch17-advanced-graphs/index.md)
   - [17.0 Pattern Primer: Flow, Matching, MST, and State-Space BFS](ch17-advanced-graphs/pattern-primer.md)
@@ -437,6 +445,9 @@
   - [18.19 Convert BST To Sorted Doubly Linked List](ch18-design-caches/convert-bst-to-sorted-doubly-linked-list.md)
   - [18.20 Design TicTacToe](ch18-design-caches/design-tic-tac-toe.md)
   - [18.21 My Calendar II](ch18-design-caches/my-calendar-ii.md)
+  - [18.22 Linked List Random Node](ch18-design-caches/linked-list-random-node.md)
+  - [18.23 Random Pick Index](ch18-design-caches/random-pick-index.md)
+  - [18.24 Random Pick With Weight](ch18-design-caches/random-pick-with-weight.md)
 
 ## Appendix
 
