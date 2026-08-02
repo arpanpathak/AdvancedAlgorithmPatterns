@@ -474,9 +474,9 @@ Legend: **→** covered by a full page · **variant of** an alternative/duplicat
 | `LinkedListCycle.kt` | **→ linked list cycle** |
 | `LinkedListCycle_II.kt` | **→ linked list cycle** |
 | `MaximumTwinSumOfALinkedList.kt` | variant of **binary tree maximum path sum** |
-| `MergeKSortedList.kt` | variant of **flatten nested list iterator** |
-| `MergeKSortedListHeap.kt` | variant of **flatten nested list iterator** |
-| `MergeKSortedListIterative.kt` | variant of **binary tree inorder traversal (iterative)** |
+| `MergeKSortedList.kt` | **→ merge k sorted lists** (divide & conquer, top-down) |
+| `MergeKSortedListHeap.kt` | **→ merge k sorted lists** (heap merge) |
+| `MergeKSortedListIterative.kt` | **→ merge k sorted lists** (divide & conquer, bottom-up) |
 | `MergeTwoSortedLIst.kt` | **→ merge two sorted lists** |
 | `MiddleNode.kt` | **→ remove nth node from end** |
 | `OddEvenLinkedList.kt` | **→ linked list cycle** |
