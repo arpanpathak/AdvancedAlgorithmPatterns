@@ -124,6 +124,26 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+var (currentAltitude, highestAltitude) = Pair(0, 0)
+for (i in 0 until gain.size) {
+    currentAltitude += gain[i]
+    highestAltitude = maxOf(currentAltitude, highestAltitude)
+}
+return highestAltitude
+```
+
+Picture a biker with an altimeter. There's no need to record every reading — two numbers are enough: **where am I now**, and **what's the highest I've ever been**.
+
+- **`currentAltitude` is the running total.** It starts at 0 (the biker's starting point) and each segment's gain adds on top: after `[-5,1,5,0,-7]` it goes 0 → −5 → −4 → 1 → 1 → −6. This is the classic *prefix sum* — the altitude after segment `i` is `gain[0] + gain[1] + … + gain[i]`.
+- **`highestAltitude` is the best-so-far tracker.** After each update, `maxOf(current, highest)` asks "is where I am now higher than anywhere I've been?" If yes, the record updates; if not, it stays. This "running max" pattern is the same engine as Kadane's for maximum subarray — keep the running aggregate, and separately track the best aggregate seen.
+- **Why initialize `highestAltitude = 0`?** The starting point *is* a reached altitude, and it's the baseline: if the biker only ever descends (like `[-4,-3,-2,-1,4,3,2]`), the highest point is still the start — 0 — never a negative dip. Initializing to 0 bakes that fact in.
+- **Why not a prefix array?** Storing every altitude to `max()` at the end is correct but wastes O(n) space; the two scalars carry the same information, since the max can be updated incrementally.
+
+Trace `[-5,1,5,0,-7]`: altitudes are `0, -5, -4, 1, 1, -6`; the max along the way is `1` → return `1` ✓.
+
 ## Dry run
 
 **Input:** `gain = [-5,1,5,0,-7]`.

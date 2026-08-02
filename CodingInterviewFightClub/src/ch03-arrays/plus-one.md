@@ -136,6 +136,28 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+for (i in digits.lastIndex downTo 0) {
+    if (digits[i] < 9) {
+        digits[i]++
+        return digits
+    }
+    digits[i] = 0
+}
+return intArrayOf(1) + digits
+```
+
+Adding 1 to a number written as digits is exactly like doing it on paper: start at the **rightmost** digit and work left, carrying a `1` only when a digit rolls over from 9.
+
+- **The loop walks right-to-left (`lastIndex downTo 0`).** The units place is where the +1 begins; if it carries, the tens place absorbs it, and so on. There's no way to add "one" to the left side first — the carry always flows from right to left.
+- **`if (digits[i] < 9)` is the "carry dies here" check.** A digit below 9 can absorb the +1 without overflowing: `3` becomes `4`, the carry is spent, and the job is *done* — the early `return` hands back the mutated array. This is why the typical case is O(1): most numbers don't end in a run of 9s.
+- **`digits[i] = 0` is the carry propagation.** When the digit *is* 9, `9 + 1 = 10` — write 0 in this place and pass the carry to the next digit left. The loop then examines that next digit, repeating the decision.
+- **The final `intArrayOf(1) + digits` handles the all-9s case.** If the loop runs off the left end (e.g. `[9,9,9]` → all became 0), the carry still needs somewhere to go — a brand-new leading `1`. Prepending it gives `[1,0,0,0]`. This is the only case where the array grows, which is why the space complexity has that O(n) worst case.
+
+Trace `[9,9,9]`: index 2: 9→0, index 1: 9→0, index 0: 9→0, loop ends → prepend 1 → `[1,0,0,0]` ✓. Trace `[1,2,3]`: index 2: 3<9 → 4, return `[1,2,4]` ✓ — one step, no carry at all.
+
 ## Dry run
 
 **Input:** `digits = [9,9,9]`.

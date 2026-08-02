@@ -132,6 +132,25 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+val dp = IntArray(n + 1).apply { this[0] = 1; this[1] = 1 }
+for (nodes in 2..n) {
+    for (root in 1..nodes) {
+        dp[nodes] += dp[root - 1] * dp[nodes - root]
+    }
+}
+return dp[n]
+```
+
+The key question: when you build a BST from `nodes` sorted values (1…`nodes`), **every value is a candidate root**. Fix one root `r`, and the structure is forced: all `r-1` smaller values must live in the left subtree (they're all less than `r`, and BST order requires them left), and all `nodes - r` larger values live in the right subtree.
+
+- **`dp[0] = 1` and `dp[1] = 1` are the trivial bases.** An empty tree (0 nodes) is one valid structure; a single-node tree is one valid structure. Everything else is built from these.
+- **The inner loop sums over every possible root.** `dp[root - 1]` counts the BSTs you can make from the left-side values; `dp[nodes - root]` counts those from the right-side values. For a *fixed* root, any left structure combines with any right structure — so the count for that root is the **product**. Summing over all roots gives `dp[nodes]`.
+- **Why does `dp[2]` come out as 2?** Root 1: left is empty (`dp[0]=1`), right has one value (`dp[1]=1`) → 1·1 = 1 tree. Root 2: mirror → 1. Total 2 — a chain with 1 at top or a chain with 2 at top. Correct.
+- **`dp[3]` = 5 by the same sum:** root 1 → `dp[0]·dp[2] = 2`, root 2 → `dp[1]·dp[1] = 1`, root 3 → `dp[2]·dp[0] = 2`; total 5. This recurrence `C(n) = Σ C(i)·C(n-1-i)` *is* the Catalan number sequence — the same numbers count balanced parentheses and polygon triangulations, which is why interviewers love asking it.
+
 ## Dry run
 
 **Input:** `n = 3`.

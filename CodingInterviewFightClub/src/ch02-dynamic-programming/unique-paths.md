@@ -137,6 +137,27 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+val dp = Array(m) { IntArray(n) { 1 } }
+for (row in 1 until m) {
+    for (col in 1 until n) {
+        dp[row][col] = dp[row - 1][col] + dp[row][col - 1]
+    }
+}
+return dp[m - 1][n - 1]
+```
+
+The robot can only move right or down, which means **every cell is reached from exactly two places**: the cell above it (coming down) or the cell to its left (coming right). So the number of paths to a cell is the sum of the paths to its two ancestors.
+
+- **`Array(m) { IntArray(n) { 1 } }` seeds the top row and left column with 1.** There's exactly one way to reach any cell on the top edge (all rights) and one way for the left edge (all downs). Pre-filling every cell with 1 is a convenient way to write those boundary values without a separate loop — the interior cells get overwritten anyway.
+- **The nested loops skip row 0 and column 0** — the boundaries are already correct; only interior cells need computing.
+- **`dp[row][col] = dp[row-1][col] + dp[row][col-1]` is the whole recurrence.** Walking the grid row by row, left to right, guarantees both ancestors are already computed when we need them (top comes from the previous row, left from the same row's previous cell). This fill order — also called *bottom-up* DP — is why the loops are shaped the way they are.
+- **The 1-D rolling-row variant is the space optimization.** Since the recurrence only needs the *current row* (left neighbor) and the *previous row* (top neighbor), one array suffices: `dp[c] += dp[c-1]` means "new value = old top (`dp[c]`) + new left (`dp[c-1]`)". Same math, O(n) instead of O(mn).
+
+Trace `m = 3, n = 3`: `[1,1,1]` → row 1: `[1,2,3]` → row 2: `[1,3,6]` → answer 6 ✓.
+
 ## Dry run
 
 **Input:** `m = 3, n = 3`.

@@ -120,6 +120,29 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+val rows = matrix.size
+val cols = matrix[0].size
+val transposed = Array(cols) { IntArray(rows) }
+for (i in matrix.indices) {
+    for (j in matrix[i].indices) {
+        transposed[j][i] = matrix[i][j]
+    }
+}
+return transposed
+```
+
+Transposition is the "turn the grid on its side" operation: rows become columns, columns become rows. The trick is that **the output's dimensions are swapped** — a 2×3 input becomes a 3×2 output — so we can't just shuffle in place; we allocate a new grid first.
+
+- **`Array(cols) { IntArray(rows) }` allocates the swapped-shape output.** Note the order: the number of output *rows* equals the input's number of *columns* (`cols`), and each output row has `rows` slots. Getting this backwards is the classic off-by-one trap.
+- **The nested loops visit every input cell `(i, j)`.** `i` is the input row, `j` the input column.
+- **`transposed[j][i] = matrix[i][j]` is the one-line heart of the algorithm.** It writes each value into the *mirrored* position: the thing that was at row `i`, column `j` lands at row `j`, column `i`. No computation, no transformation of values — transposition is purely a *relocation* of the same numbers.
+- **Why not in-place?** In-place transposition swaps `matrix[i][j]` with `matrix[j][i]` — but that only works for square matrices, where the two indices stay inside the same grid. For a 2×3 input, `matrix[0][2]` has no `matrix[2][0]` to swap with (row 2 doesn't exist). The output buffer sidesteps the problem entirely.
+
+Trace `[[1,2,3],[4,5,6]]`: `(0,0)→(0,0)=1`, `(0,1)→(1,0)=2`, `(0,2)→(2,0)=3`, `(1,0)→(0,1)=4`, `(1,1)→(1,1)=5`, `(1,2)→(2,1)=6` → `[[1,4],[2,5],[3,6]]` ✓.
+
 ## Dry run
 
 **Input:** `[[1,2,3],[4,5,6]]`.

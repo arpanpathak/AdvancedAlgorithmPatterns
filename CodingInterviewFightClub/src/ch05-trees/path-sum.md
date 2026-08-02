@@ -125,6 +125,28 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+fun hasPathSum(root: TreeNode?, targetSum: Int): Boolean {
+    return when {
+        root == null -> false
+        root.left == null && root.right == null && targetSum == root.`val` -> true
+        else -> hasPathSum(root.left, targetSum - root.`val`) ||
+                hasPathSum(root.right, targetSum - root.`val`)
+    }
+}
+```
+
+The neat trick here is **working backward**: instead of carrying a running sum down and comparing to the target at the leaf, we *subtract* values as we descend and ask "did the target shrink to exactly zero at this node?" — well, to exactly the node's value.
+
+- **`root == null -> false` is the dead-end case.** An empty subtree can't contain a root-to-leaf path. This also handles the "tree is empty" input. (Note: it does *not* mean "empty path with sum 0 counts" — leaves, not nulls, are the goal.)
+- **The leaf test is the heart: `root.left == null && root.right == null && targetSum == root.val`.** Only when both children are missing do we have a complete root-to-leaf path. And the check is a *single equality* — thanks to the subtract-as-you-go design, `targetSum` at this point already means "the remaining sum this leaf must supply". If it equals the leaf's value, the path totals the original target.
+- **The else branch descends with the budget reduced.** `targetSum - root.val` is "what the rest of the path still needs to add". The `||` means "either the left subtree contains such a continuation, or the right one does" — a path exists if *any* branch finds one, and the recursion explores both.
+- **Why subtract and not accumulate?** If we carried `soFar` down, the leaf test would need `soFar + root.val == targetSum` — two pieces of state threaded through every call. Subtracting folds that state into the single `targetSum` parameter, which is why the leaf case is one comparison.
+
+Trace `targetSum = 22` on the example: `5` → remaining 17 → `4` → remaining 13 → `11` → remaining 2 → `7`: leaf, `2 != 7` no; backtrack → `2`: leaf, `2 == 2` ✓ → `true`. The recursion found the path `5 → 4 → 11 → 2` by subtracting exactly along it.
+
 ## Dry run
 
 **Input:** the example; `targetSum = 22`.

@@ -139,6 +139,27 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+val result = mutableListOf<Int>()
+for (i in heights.indices.reversed()) {
+    if (result.isEmpty() || heights[i] > heights[result.last()]) {
+        result.add(i)
+    }
+}
+return result.reversed().toIntArray()
+```
+
+Stand on the **rightmost** building: it always has an ocean view (nothing to its right). Walk leftward from there, and a building has a view **iff it's taller than every building already seen** — because those are the buildings between it and the ocean.
+
+- **`heights.indices.reversed()` walks right to left.** The ocean is on the right, so we judge buildings from the ocean side inward — each building's view depends only on what's *already* been judged (everything to its right).
+- **`result.last()` is a clever running-max trick.** `result` collects the indices of view-having buildings *in decreasing index order*. Its last element is the *leftmost* view-having building so far — which is the *tallest* building to the right (any taller building to the right would itself have a view and be in the list... more precisely, the leftmost one with a view is the max of the right side). Comparing `heights[i] > heights[result.last()]` is therefore "am I taller than everything to my right?" — the exact view condition.
+- **`result.add(i)` records a view-building; the empty check lets the rightmost building in** (`result.isEmpty()` → add unconditionally, since nothing blocks it).
+- **`result.reversed()` fixes the order.** The loop produced indices from right to left (`[3,2,0]`); the answer must be ascending (`[0,2,3]`), so one reversal at the end.
+
+Trace `[4,2,3,1]`: `i=3` (1) → add 3; `i=2` (3) > 1 → add 2; `i=1` (2) not > 3 → skip; `i=0` (4) > 3 → add 0. `[3,2,0]` reversed → `[0,2,3]` ✓.
+
 ## Dry run
 
 **Input:** `heights = [4,2,3,1]`.

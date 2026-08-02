@@ -107,6 +107,24 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+fun maxDepth(root: TreeNode?): Int {
+    if (root == null) return 0
+    return 1 + maxOf(maxDepth(root.left), maxDepth(root.right))
+}
+```
+
+Follow one node and the whole tree follows:
+
+- **`if (root == null) return 0` is the ground floor.** A non-existent subtree has depth 0 — it contributes no nodes. This is the base case that stops the recursion: every leaf's children are null, so every leaf computes `1 + max(0, 0) = 1`.
+- **`maxDepth(root.left)` and `maxDepth(root.right)` ask the children first.** We can't know how deep this node is until we know how deep its children are. The recursion dives all the way down to the leaves, then bubbles answers back up — this bottom-up order is what "post-order" means.
+- **`maxOf(...)` picks the deeper child.** The longest path through this node goes through whichever child is taller. If one child is null (depth 0) and the other is depth 7, the node's depth is `1 + 7` — the null side never drags it down.
+- **The `+1` counts this node itself.** Every level of recursion adds one for the node currently being visited, so a chain of `k` nodes reports depth exactly `k`.
+
+Unroll it for the example: `maxDepth(9)` = 1 (leaf). `maxDepth(15)` = 1, `maxDepth(7)` = 1, so `maxDepth(20)` = `1 + max(1,1)` = 2. Then `maxDepth(3)` = `1 + max(1, 2)` = 3 ✓. Each line of code does exactly one thing, and the whole algorithm is the recursive definition of depth written literally.
+
 ## Dry run
 
 **Input:** the tree above. Trace the recursion (each line = one frame):

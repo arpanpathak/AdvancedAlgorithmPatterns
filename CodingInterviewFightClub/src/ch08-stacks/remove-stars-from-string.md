@@ -126,6 +126,26 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+val stack = mutableListOf<Char>()
+for (ch in s) {
+    if (ch == '*' && stack.isNotEmpty()) stack.removeLast()
+    else if (ch != '*') stack.add(ch)
+}
+return stack.joinToString("")
+```
+
+A star erases "the nearest non-star to its left" — and "nearest left" is exactly what a **stack** gives you: the most recently pushed character sits on top, so erasing the nearest left character is just a `pop`.
+
+- **`stack.add(ch)` pushes every ordinary character.** The stack grows left to right, so its top is always the most recently *surviving* character — precisely "the nearest non-star to the left" of any future position.
+- **`stack.removeLast()` is the erasure.** On a `'*'`, the character it cancels is the current top of the stack: the nearest surviving character to the left. Popping it is O(1). The `stack.isNotEmpty()` guard prevents popping an empty stack (e.g. a leading `'*'` — a star with nothing to erase just does nothing).
+- **Why a stack and not a plain scan?** The erasure can be *non-adjacent* — in `"le**t"`, the second `'*'` erases the `'e'` that's two positions left, after the first star already erased `'t'`. An in-place scan would need to track "which characters are still alive" — the stack *is* that tracking, in the natural order.
+- **The final `joinToString("")` rebuilds the string from the survivors.** The stack's contents, in order, are exactly the answer — no reversal needed since we only ever push and pop at the end.
+
+Trace `"leet**cod*e"`: push `l,e,e,t` → `*` pops `t` → `*` pops `e` → push `c,o,d` → `*` pops `d` → push `e`. Stack: `l,e,c,o,e` → `"lecoe"` ✓.
+
 ## Dry run
 
 **Input:** `s = "leet**cod*e"`.

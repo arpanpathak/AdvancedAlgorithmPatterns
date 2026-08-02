@@ -118,6 +118,25 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+for (r in 1 until m) {
+    for (c in 1 until n) {
+        if (matrix[r][c] != matrix[r - 1][c - 1]) return false
+    }
+}
+return true
+```
+
+A Toeplitz matrix is one where every top-left → bottom-right diagonal is a single constant. Instead of walking each diagonal separately (there are `m + n - 1` of them, each with its own bookkeeping), notice what a diagonal *is*: a chain of cells where each step moves down-right by one.
+
+- **Loops start at row 1 and column 1, not 0.** The first row and first column have no top-left neighbor, so there's nothing to check there — every other cell `(r, c)` does have a predecessor `(r-1, c-1)` up and to the left.
+- **The comparison `matrix[r][c] != matrix[r-1][c-1]` checks one link of the chain.** It asks "did this cell stay the same as the one before it on its diagonal?" If a single link is broken, the diagonal is inconsistent → the matrix fails immediately.
+- **Why is one link per cell enough?** Equality is transitive: if cell A equals its predecessor B, and B equals its predecessor C, then A equals C — and by induction every cell on the diagonal equals its origin. The diagonal's uniformity is entirely determined by its adjacent-pair checks, so covering all interior cells covers all diagonals.
+
+Trace the example matrix: `(1,1)=1 == (0,0)=1` ✓, `(1,2)=2 == (0,1)=2` ✓, `(1,3)=3 == (0,2)=3` ✓, `(2,1)=5 == (1,0)=5` ✓, `(2,2)=1 == (1,1)=1` ✓, `(2,3)=2 == (1,2)=2` ✓ — every diagonal holds → `true` ✓.
+
 ## Dry run
 
 **Input:** `[[1,2,3,4],[5,1,2,3],[9,5,1,2]]`.

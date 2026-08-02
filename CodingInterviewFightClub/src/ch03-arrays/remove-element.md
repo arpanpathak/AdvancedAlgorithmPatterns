@@ -116,6 +116,27 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+var i = 0
+for (j in nums.indices) {
+    if (nums[j] != `val`) {
+        nums[i++] = nums[j]
+    }
+}
+return i
+```
+
+The trick is the **two-role pointer**: `j` reads the whole array (it's the "scanner"), while `i` marks where the next *kept* element should be written (it's the "writer"). They start together but `i` only moves when we keep something, so the kept elements compact to the front.
+
+- **`j` is the read pointer — it visits every index exactly once.** Each element is examined exactly once and classified: keep it (≠ val) or drop it (= val).
+- **`i` is the write pointer — it advances only on kept elements.** When `nums[j] != val`, we copy that value to position `i` and advance. When `nums[j] == val`, `i` stays put — the next kept element will overwrite this slot.
+- **Why is overwriting safe?** `i` never exceeds `j` (the writer can't get ahead of the reader), so writing to `nums[i]` can only touch positions the scanner has *already passed*. We never clobber an unread element — the "in-place" guarantee holds without any auxiliary array.
+- **The returned `i` is the new length.** Since the first `i` positions hold all kept elements in their original relative order, `i` is exactly the number of survivors — and the problem only requires the prefix to be correct, which it is.
+
+Trace `nums = [3,2,2,3], val = 3`: `j=0` (3): drop, `i=0`; `j=1` (2): keep → `nums[0]=2`, `i=1`; `j=2` (2): keep → `nums[1]=2`, `i=2`; `j=3` (3): drop. Return `2` — and `nums = [2,2,...]` ✓.
+
 ## Dry run
 
 **Input:** `nums = [3,2,2,3], val = 3`.

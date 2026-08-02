@@ -139,6 +139,27 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+var pA = headA
+var pB = headB
+while (pA != pB) {
+    pA = if (pA == null) headB else pA.next
+    pB = if (pB == null) headA else pB.next
+}
+return pA
+```
+
+The problem: the two lists have different lengths *before* the shared tail, so starting both at their heads means they'd never arrive at the intersection together. The fix is beautifully simple — **make each pointer walk the entire other list**.
+
+- **`pA` walks A, then B; `pB` walks B, then A.** When `pA` falls off the end of A (null), it teleports to B's head; when `pB` falls off B, it teleports to A's head. After the switch, both pointers have walked `len(A) + len(B)`-worth of nodes in total — but crucially, their *remaining* distance to the intersection is now identical.
+- **Why do they synchronize?** Let `c` be the shared tail length, `a` = A's unique prefix, `b` = B's unique prefix. Pointer A reaches the intersection after `a + c` steps on its first lap; if it misses (it does when `a ≠ b`), it needs `b + c` more on the second lap — total `a + b + 2c` steps... actually the elegant way to see it: after `a + c + b` steps, A is at the intersection (it walked A's full `a + c`, then B's prefix `b`). Similarly B is at the intersection after `b + c + a` steps — the same number. Both pointers arrive at the first common node **simultaneously**.
+- **If there's no intersection, they both reach null together** — after `len(A) + len(B)` steps both pointers are null, the loop exits with `pA == pB == null`, and we return null. One code path handles both cases.
+- **The null-guards at the start** (`headA == null || headB == null`) short-circuit the degenerate inputs, though the loop would also terminate correctly on them.
+
+Trace `A = [4,1,8,4,5], B = [5,6,1,8,4,5]`: A walks `4,1,8…` while B walks `5,6,1,8…` — A's pointer hits `8` after 7 steps (its 4,1 then B's 5,6,1), B hits `8` after 7 steps (5,6,1 then A's 4,1) — they meet at node `8` ✓.
+
 ## Dry run
 
 **Input:** A = [4,1,8,4,5], B = [5,6,1,8,4,5]; intersection at 8.

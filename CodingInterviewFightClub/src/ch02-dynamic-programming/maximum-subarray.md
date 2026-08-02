@@ -136,6 +136,27 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+val dp = IntArray(2)
+dp[0] = nums[0]
+dp[1] = nums[0]
+for (i in 1 until nums.size) {
+    dp[0] = maxOf(nums[i], dp[0] + nums[i])   // carry or restart
+    dp[1] = maxOf(dp[1], dp[0])               // update the global best
+}
+return dp[1]
+```
+
+The two-slot array holds two very different things, and keeping them straight is the whole trick:
+
+- **`dp[0]` = best subarray sum *ending exactly at the current index*.** This is the "carry or restart" decision: either extend the previous best-ending subarray (`dp[0] + nums[i]`) or abandon it and start fresh at `nums[i]` alone. The `max` picks whichever is larger. Why is restart ever right? If the carried sum is negative, adding it to `nums[i]` only drags the total down — a negative prefix can never help a later subarray, so it's discarded. (That's also why all-negative arrays work: every step restarts, and the answer is the least-negative element, never 0.)
+- **`dp[1]` = best subarray sum *anywhere up to the current index*.** This is the global champion: the max of every `dp[0]` seen so far. It only ever increases — it's a running maximum over the local answers.
+- **Why one pass is enough:** any maximum subarray must *end* somewhere; its value was, at that moment, a `dp[0]` candidate. So scanning all endings and keeping the max over them captures every possible subarray — no window enumeration needed. That's the optimal-substructure property: the global answer is the max of the local definitions.
+
+Trace `[-2,1,-3,4,-1,2,1,-5,4]`: endings go -2, 1, -2, 4, 3, 5, 6, 1, 5 — the global best climbs 1 → 4 → 5 → 6 and stays 6 through the trailing `-5,4`. Answer 6 ✓ (the subarray `[4,-1,2,1]`).
+
 ## Dry run
 
 **Input:** `nums = [-2,1,-3,4,-1,2,1,-5,4]`.

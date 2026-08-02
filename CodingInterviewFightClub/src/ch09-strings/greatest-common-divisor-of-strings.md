@@ -126,6 +126,22 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+fun gcdOfStrings(str1: String, str2: String): String {
+    if (str1 + str2 != str2 + str1) return ""
+    fun gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
+    return str1.substring(0, gcd(str1.length, str2.length))
+}
+```
+
+- **The concatenation test is the existence check.** If some string `X` divides both, then `str1` is `X` repeated `a` times and `str2` is `X` repeated `b` times. Concatenating in either order gives `X` repeated `a + b` times — so `str1 + str2` must equal `str2 + str1`. Conversely, if they differ (`"LEET" + "CODE" = "LEETCODE"` vs `"CODE" + "LEET" = "CODELEET"`), no common divisor exists and the answer is the empty string. This one equality test replaces an entire search.
+- **The numeric `gcd` on lengths is the "how big is the divisor" step.** If a common divisor exists, its length must divide both lengths — and the *largest* such length is `gcd(len1, len2)`. Think of it as the string version of the number gcd: `"ABABAB"` (length 6) and `"ABAB"` (length 4) share `"AB"` (length 2 = gcd(6,4)). The recursion `gcd(b, a % b)` is Euclid's algorithm — the `%` shrinks the pair toward the answer, and `b == 0` terminates it.
+- **`substring(0, g)` slices the prefix.** Because both strings are repetitions of the same unit, the first `g` characters of `str1` *are* that unit. We never even need to look at `str2` for the slicing — the lengths and the equality test did all the work.
+
+Trace `str1 = "ABABAB", str2 = "ABAB"`: concatenations both give `"ABABABABAB"` ✓ → `gcd(6, 4) = 2` → `str1[0..2] = "AB"` ✓.
+
 ## Dry run
 
 **Input:** `str1 = "ABABAB", str2 = "ABAB"`.

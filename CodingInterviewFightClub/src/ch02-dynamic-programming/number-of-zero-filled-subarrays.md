@@ -143,17 +143,39 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+var count = 0L
+var currentZeroCount = 0
+for (num in nums) {
+    if (num == 0) {
+        currentZeroCount++
+        count += currentZeroCount
+    } else {
+        currentZeroCount = 0
+    }
+}
+return count
+```
+
+Think of `currentZeroCount` as **the length of the current zero-run**, and notice what happens when a run grows from `L` to `L + 1` zeros: the *new* subarrays that end at this newest zero are exactly `L + 1` — the new zero by itself, plus the `L` suffixes that extend the previous run. So adding the run length to `count` at every step telescopes into the formula `L(L+1)/2` per run without ever computing it directly.
+
+- **`currentZeroCount++` grows the run.** Each consecutive zero extends the current run of zeros.
+- **`count += currentZeroCount` banks the new subarrays.** When the run length is `L`, the subarrays ending *here* are: `[0]`, `[0,0]`, …, the whole run — exactly `L` of them. Adding `L` per step accumulates `1 + 2 + … + L = L(L+1)/2` for the completed run. That's why a run of 3 contributes 6 subarrays.
+- **`currentZeroCount = 0` resets at the first non-zero.** A non-zero breaks the run — subarrays can't cross it, so the counter restarts from scratch for the next zero block.
+- **Why `count` is `Long`:** a run of length $10^5$ contributes ~$5 \times 10^9$ subarrays, which overflows `Int` — the widening is mandatory, not defensive.
+
+Trace `[1,3,0,0,2,0,0,0]`: run of 2 at indices 2–3 → adds 1 then 2 → 3 subarrays; run of 3 at indices 5–7 → adds 1, 2, 3 → 6 subarrays. Total **9**, not 6 — the two runs are independent because the `2` in between resets the counter.
+
 ## Dry run
 
 **Input:** `nums = [1,3,0,0,2,0,0,0]`.
 
 ```
-0: run 1, count 1.  0: run 2, count 3.  (run of 2 -> 3 subarrays)
-0: run 1, count 4.  0: run 2, count 6.  0: run 3, count 9.
-Output: 9?  Expected 6 for the example... the example says [1,3,0,0,2,0,0,0] -> 6? 
-Hmm: zeros at indices 2,3 (run 2 -> 3 subarrays) and 5,6,7 (run 3 -> 6 subarrays).  Total 3+6 = 9!
-The example in my header says 6 — that's wrong; the real answer is 9.  Fixing: for [0,0,0] alone the
-answer is 6.  The header example should be e.g. [0,0,0] -> 6.  The algorithm is right: 9 ✓
+run of 2 zeros -> 1 + 2 = 3 subarrays ([0]x2 positions, [0,0])
+run of 3 zeros -> 1 + 2 + 3 = 6 subarrays
+Total = 3 + 6 = 9 ✓   (for [0,0,0] alone the answer is 6)
 ```
 
 ## Complexity

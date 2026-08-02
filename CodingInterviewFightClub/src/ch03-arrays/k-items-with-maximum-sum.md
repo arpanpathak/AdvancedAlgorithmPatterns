@@ -113,6 +113,24 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+return when {
+    k <= numOnes -> k
+    k <= numOnes + numZeros -> numOnes
+    else -> numOnes - (k - numOnes - numZeros)
+}
+```
+
+The three cases are just "where does the k-th pick land?" Since `1 > 0 > -1`, the optimal strategy is always the same: **grab every 1 first, then every 0, and only touch the -1s if forced**. Each branch computes the sum for a different landing zone.
+
+- **Case 1: `k <= numOnes` — we never leave the 1s.** All `k` picks are 1s, so the sum is exactly `k` (pick `k` of them). E.g. `k=2, numOnes=3` → `2`.
+- **Case 2: `k <= numOnes + numZeros` — we've used all 1s and are now taking 0s.** The sum stops growing at `numOnes` because 0s add nothing. E.g. `numOnes=3, numZeros=2, k=4` → pick three 1s and one 0 → sum `3`.
+- **Case 3: everything else — we must dip into the -1s.** We already have `numOnes` points from the 1s. `k - numOnes - numZeros` counts how many -1s we're forced to take, and each costs exactly 1 point, so the sum is `numOnes - (number of -1s taken)`. E.g. `numOnes=3, numZeros=2, k=6` → `3 - (6-3-2) = 3 - 1 = 2`.
+
+The `when` ordering matters: each branch is checked in order, and the conditions are mutually exclusive ranges (`[0, numOnes]`, `(numOnes, numOnes+numZeros]`, beyond) — so exactly one branch fires, and the sum it returns is the greedy optimum. Any other pick order would swap a 1 (or 0) for a strictly smaller value, which can only lower the total.
+
 ## Dry run
 
 **Input:** `numOnes=3, numZeros=2, numNegOnes=1, k=4`.

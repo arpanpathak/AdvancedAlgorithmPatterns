@@ -116,6 +116,25 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+var number = n
+var count = 0
+while (number > 0) {
+    number = number and (number - 1)   // clear the lowest set bit
+    count++
+}
+return count
+```
+
+- **`number` is a working copy** — we don't want to destroy the caller's `n`, so we mutate a local.
+- **The loop condition `number > 0` is the whole efficiency story.** Each iteration *removes exactly one set bit*, so the loop runs once per set bit — never a fixed 32 times. If the number is sparse (say `1000₂`), the loop runs once and stops.
+- **`number and (number - 1)` is the surgical strike.** Subtracting 1 turns the lowest set bit into 0 (borrowing through the zeros below it); AND-ing with the original keeps everything above that bit intact and zeroes out the flipped region. Net effect: exactly one set bit disappears, nothing else moves. `1011₂ & 1010₂ = 1010₂` — the low 1 is gone, the upper `10` is untouched.
+- **`count++` records the removal.** Since every removal corresponds to one set bit that used to be there, `count` at the end *is* the popcount. The loop count equals the answer — that's the elegant part worth saying out loud in an interview.
+
+Trace `n = 11 = 1011₂`: remove low bit → `1010₂` (count 1) → `1000₂` (count 2) → `0000₂` (count 3) → loop exits. Three iterations, three set bits, done — the two zero bits were never even looked at.
+
 ## Dry run
 
 **Input:** `n = 11` (binary `1011`).

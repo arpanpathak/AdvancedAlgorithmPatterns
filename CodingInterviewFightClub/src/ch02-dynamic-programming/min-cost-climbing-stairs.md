@@ -136,6 +136,26 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+val dp = IntArray(cost.size)
+dp[0] = cost[0]
+dp[1] = cost[1]
+for (i in 2 until cost.size) {
+    dp[i] = cost[i] + minOf(dp[i - 1], dp[i - 2])
+}
+return minOf(dp[cost.size - 1], dp[cost.size - 2])
+```
+
+Stand on step `i` and ask: "what's the cheapest way I could have gotten here?" You arrived either from step `i-1` (one step) or step `i-2` (two steps) — so the answer is this step's cost **plus the cheaper of those two arrival costs**.
+
+- **`dp[0] = cost[0]` and `dp[1] = cost[1]` are the hand-placed bases.** The problem lets you *start* on step 0 or step 1 for free (no cost to begin), so the cheapest way to "be on" step 0 is just paying `cost[0]`, and likewise step 1. Steps 0 and 1 can't be reached by stepping onto them, so they can't use the recurrence.
+- **`dp[i] = cost[i] + min(dp[i-1], dp[i-2])` is the two-step lookback.** Each step looks only two steps behind — a *linear* recurrence with constant history, which is why this whole problem needs O(1) memory (the rolling `prev2/prev1` variant) even though the code above uses a full array.
+- **`return min(dp[n-1], dp[n-2])` is the "past the top" finish.** The top of the stairs is *beyond* the last step. From step `n-1` you can finish with a 1-step; from step `n-2` with a 2-step. Whichever arrival is cheaper is the answer — you never pay for a step past the end.
+
+Trace `[10,15,20]`: `dp[0]=10, dp[1]=15`; `dp[2] = 20 + min(15,10) = 30`; answer `min(dp[2], dp[1]) = min(30,15) = 15` ✓ — start on step 1 (pay 15) and take the 2-step over the top.
+
 ## Dry run
 
 **Input:** `cost = [10,15,20]`.

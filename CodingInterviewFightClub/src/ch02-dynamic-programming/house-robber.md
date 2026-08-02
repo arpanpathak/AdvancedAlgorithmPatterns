@@ -128,6 +128,28 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+var include = 0       // best ending with robbing the current house
+var exclude = 0       // best ending with skipping it
+for (num in nums) {
+    val temp = include
+    include = num + exclude          // rob this house: must have skipped the last
+    exclude = maxOf(temp, exclude)   // skip this house: keep the better of the two
+}
+return maxOf(include, exclude)
+```
+
+Two variables act as a tiny state machine, and the order of the three lines is the entire logic. Walk through one house at a time:
+
+- **`include` means "the best total where the last house was robbed".** To rob house `i`, house `i-1` must NOT have been robbed — so the new `include` is `num + exclude` (this house's money plus the best total *ending with a skip* before it). We never add to the old `include`, because robbing two adjacent houses is illegal.
+- **`exclude` means "the best total where the last house was skipped".** Skipping house `i` lets us keep whichever was better before: `maxOf(temp, exclude)` — `temp` is the old `include` (we *could* have robbed the previous house and now skip this one), `exclude` is the old skip. Taking the max is the DP's "best so far".
+- **`temp` preserves the old `include`** because the next line overwrites it. Without the save, `exclude` would compare against the *new* include — double-counting this house. This is the classic rolling-variable shuffle: three values, two slots, one temp.
+- **After the loop, the answer is `max(include, exclude)`** — the best ending with a rob vs. the best ending with a skip; the better of the two is the global optimum.
+
+Trace `[2,7,9,3,1]`: after house 2 (value 2): include 2, exclude 0. House 7: include `7+0=7`, exclude `max(2,0)=2`. House 9: include `9+2=11`, exclude `max(7,2)=7`. House 3: include `3+7=10`, exclude 11. House 1: include `1+11=12`, exclude 11. Answer `max(12,11)=12` ✓ — houses 0, 2, 4.
+
 ## Dry run
 
 **Input:** `nums = [2,7,9,3,1]`.

@@ -128,6 +128,28 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+var i = 0
+var j = 0
+while (i < s.length && j < t.length) {
+    if (s[i] == t[j]) { i++; j++ }
+    else j++
+}
+return i == s.length
+```
+
+Think of it as two people walking down two lines of text: `i` points at the next character of `s` we still need to find, `j` sweeps through `t` once, left to right.
+
+- **`j` is the hunter — it never goes backward.** It visits every character of `t` exactly once. The whole outer loop is really just `t`'s traversal; `i` only moves as a side effect.
+- **`i` advances only on a match.** When `s[i] == t[j]`, we've found the next needed character in order, so `i` moves to the *next* needed character. The `j++` in the same branch means "this character of `t` is consumed" — it can't be reused for a later character of `s`, which is exactly what "subsequence" requires (order matters, no reuse).
+- **On a mismatch, `j` alone advances** — we skip the irrelevant character of `t` and keep hunting.
+- **The loop ends when either pointer runs out.** If `i` reached `s.length`, every character of `s` was found in order → `true`. If `j` ran out first, `t` ended while we were still missing characters → `i != s.length` → `false`.
+- **Why greedy is safe:** matching `s[i]` to the *earliest* occurrence in `t` can never hurt. Any later occurrence would only leave fewer characters for the rest of `s` — so "take the first match" is provably optimal (a classic exchange argument).
+
+Trace `s = "abc", t = "ahbgdc"`: `'a'` found at `t[0]`, `'b'` at `t[2]`, `'c'` at `t[5]` — three matches in order, `i = 3` → `true` ✓.
+
 ## Dry run
 
 **Input:** `s = "abc", t = "ahbgdc"`.

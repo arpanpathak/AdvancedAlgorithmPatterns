@@ -116,6 +116,22 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+var result = 0
+for (num in nums) {
+    result = result or num
+}
+return result shl (nums.size - 1)
+```
+
+- **The `for` loop builds the "union of all bits" with OR.** For each element, `result or num` turns on every bit that appears in *any* element. Bits that never appear in any number can never be set in any subset's XOR, so they contribute nothing — ORing them all is the cheap way to ask "which bit positions matter at all?"
+- **`shl (nums.size - 1)` multiplies by $2^{n-1}$ — for every bit at once.** Suppose bit `i` made it into `result`. It contributes `2^i × 2^(n-1) = 2^(i + n - 1)` to the total, because exactly half of the $2^n$ subsets have that bit set in their XOR. Shifting `result` left by `n-1` places adds exactly `n-1` zeros after every set bit — which is precisely multiplying each bit's contribution by $2^{n-1}$. One shift handles all bits simultaneously.
+- **Why exactly half of the subsets?** Pick one element `e` that carries bit `i`, and pair every subset `S` with `S ∪ {e}`. XORing `e` into a subset flips bit `i`, so exactly one member of each pair has the bit set. The pairs partition all $2^n$ subsets → $2^n / 2 = 2^{n-1}$.
+
+With `nums = [1, 3]` (bits 0 and 1): `result = 3`, `n-1 = 1`, answer `3 << 1 = 6` — matching the enumeration `0 + 1 + 3 + 2 = 6`. Two bits, two contributions of $2^{1} \cdot 2^{0}$ and $2^{1} \cdot 2^{1}$, and the shift did both at once.
+
 ## Dry run
 
 **Input:** `nums = [1,3]` (binary 01, 11), `n = 2`.

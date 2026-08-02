@@ -18,6 +18,8 @@ Input:  "FlaG"  -> false.
 
 ## Intuition — count capitals; three allowed shapes
 
+Human languages agree on three "correct" capitalization patterns: **ALL CAPS** (USA), **all lower** (leetcode), and **Title Case** (Google, where only the first letter is capital). Any other shape — "FlaG", "flaG", "gOOgle" — is wrong. So instead of writing three separate scans, we can count the capitals once and then test whether the count matches one of the three allowed shapes:
+
 ```kotlin
 var capitals = 0
 for (char in word) if (char.isUpperCase()) capitals++
@@ -26,6 +28,31 @@ return capitals == word.length ||          // ALL caps
        capitals == 0 ||                    // all lower
        (capitals == 1 && word[0].isUpperCase())   // Title case
 ```
+
+The third condition needs the extra `word[0].isUpperCase()` check because "count equals 1" alone would also accept `"aBc"` — the single capital must be the *first* character to count as Title Case.
+
+## Reading the code — what's actually happening
+
+```kotlin
+fun detectCapitalUse(word: String): Boolean {
+    var capitals = 0
+    for (char in word) {
+        if (char.isUpperCase()) capitals++
+    }
+    return capitals == word.length ||
+            capitals == 0 ||
+            (capitals == 1 && word[0].isUpperCase())
+}
+```
+
+- **The `for` loop is a one-pass census.** It walks the word left to right and tallies every capital letter into `capitals`. No early exit, no position tracking — just a total. For `"Google"` the tally is 1; for `"FlaG"` it's 2; for `"USA"` it's 3.
+- **The three-way return is a shape test on the total.** The beautiful thing about this approach is that the count *completely determines* whether the word is valid — except for one ambiguity, which is why the third clause is more careful than the others:
+  - `capitals == word.length` — every letter is a capital → `"USA"` ✓
+  - `capitals == 0` — no capitals at all → `"leetcode"` ✓
+  - `capitals == 1 && word[0].isUpperCase()` — exactly one capital AND it's the first letter → `"Google"` ✓. The `word[0]` check is what rejects `"aBc"` (one capital, but not first) and `"FlaG"` (two capitals — fails the first two tests too).
+- **Why not check characters one by one?** A sequential "first letter decides the mode, then check the rest" scan is also correct, but it has more moving parts (a `mode` variable, boundary conditions). The count-then-test version is shorter, and the three shapes are literally written in the code — easier to explain, easier to verify.
+
+For `"FlaG"`: tally = 2 → `2 == 4`? no → `2 == 0`? no → `2 == 1`? no → `false` ✓.
 
 ## Approach 1 — Count-then-test (the repo's version, optimal)
 

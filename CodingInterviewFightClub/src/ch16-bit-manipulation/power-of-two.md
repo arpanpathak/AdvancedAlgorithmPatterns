@@ -87,6 +87,24 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+Let's slow the one-liner down and watch what each piece does:
+
+```kotlin
+return n > 0 && (n and (n - 1)) == 0
+```
+
+1. **`n - 1` — borrow through the zeros.** Think of subtraction as \"find the lowest set bit, turn it off, and turn every zero below it on.\" For `n = 16 = 10000₂`, subtracting 1 borrows all the way across the four trailing zeros: `10000₂ - 1 = 01111₂`. For `n = 5 = 101₂`, it's `100₂` — the lowest set bit (bit 0) flips to 0 and nothing below it exists to flip.
+
+2. **`n and (n - 1)` — keep the top, drop the lowest set bit.** AND keeps only bits that are 1 in *both* operands. The bits above the lowest set bit of `n` are untouched (they're 1 in `n` and still 1 in `n-1`). The lowest set bit itself is 0 in `n-1`, so it vanishes. For `16 & 15 = 10000₂ & 01111₂ = 0` — *everything* disappeared, because 16 had exactly one set bit.
+
+3. **`== 0` — the single-bit test.** The AND result is zero exactly when `n` had only one set bit to begin with. That's the entire definition of a power of two (plus the special case `n = 1 = 2⁰`).
+
+4. **`n > 0` — the guard.** Without it, `n = 0` would pass (`0 & -1 = 0`) and negative numbers would too (`-2147483648 & 2147483647 = 0`). Powers of two are positive by definition, so the guard is not a formality — it's what makes the predicate correct.
+
+The whole trick collapses to one idea: **a power of two is a number with exactly one set bit, and `n & (n-1)` is the surgical way to ask \"was there only one?\"**
+
 ## Dry run
 
 **Input:** `n = 16`.

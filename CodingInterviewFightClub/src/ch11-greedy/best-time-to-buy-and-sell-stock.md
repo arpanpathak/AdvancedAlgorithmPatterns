@@ -132,6 +132,25 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+var (maxProfit, minElement) = (0 to prices[0])
+for (i in 1..prices.lastIndex) {
+    maxProfit = maxOf(maxProfit, prices[i] - minElement)
+    minElement = minOf(minElement, prices[i])
+}
+return maxProfit
+```
+
+The constraint that makes this easy is **the buy must come before the sell**. As we walk the days left to right, every price we pass is a potential *sell* day — and the best possible buy for that sell day is simply the cheapest price we've already seen. So two running values are all the memory we need:
+
+- **`minElement` is the best buy so far.** Updated with `minOf(minElement, prices[i])`, it always holds the lowest price among days `0..i`. The order of the two updates matters: we compute the profit *first*, because selling on day `i` can only use buys from days `< i` — including `prices[i]` itself as a buy would create a zero-profit "same-day" transaction that can never beat the max anyway.
+- **`maxProfit = maxOf(maxProfit, prices[i] - minElement)` scores today as a sell day.** `prices[i] - minElement` is "if I sell today, buying at the cheapest earlier day, what do I make?" The running max keeps the best of all sell days. If today's price is below the min (a new low), the delta is negative and `maxOf` keeps the old profit — which is also why `maxProfit` starts at 0: the problem allows *not* trading (profit 0) rather than a loss.
+- **The single pass is complete because every (buy, sell) pair is covered.** Any optimal pair (buy at `b`, sell at `s`) is considered implicitly: on day `s`, `minElement` is at most `prices[b]` (it's the *minimum* over days `≤ s`), so the computed delta is at least `prices[s] - prices[b]`. The answer is never worse than the true optimum.
+
+Trace `[7,1,5,3,6,4]`: day 1 → min 1; day 2 → profit `5-1 = 4`; day 4 → profit `6-1 = 5` (the max); day 5 → `4-1 = 3` (no improvement). Answer 5 ✓.
+
 ## Dry run
 
 **Input:** `prices = [7,1,5,3,6,4]`.

@@ -139,6 +139,28 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+var minTime = 0
+for (i in 1 until neededTime.size) {
+    if (colors[i] == colors[i - 1]) {
+        minTime += minOf(neededTime[i], neededTime[i - 1])
+        neededTime[i] = maxOf(neededTime[i], neededTime[i - 1])
+    }
+}
+return minTime
+```
+
+Imagine a string of balloons where a "run" is a group of the same color sitting together. The rule says adjacent balloons must differ — so within each run, **all but one balloon must go**. The question is *which one to keep*, and the answer is obvious: keep the most expensive one to remove, delete the rest. That's the whole problem.
+
+- **`colors[i] == colors[i - 1]` detects that we're inside a run.** Consecutive same-colored balloons are the conflict; different colors are already fine and skipped.
+- **`minTime += minOf(neededTime[i], neededTime[i - 1])` removes the cheaper of the two.** Two same-colored neighbors can't both stay — removing the cheaper one is locally optimal, and since runs are processed left to right, this greedily peels off every non-survivor.
+- **`neededTime[i] = maxOf(...)` carries the survivor forward.** After deleting one of the pair, the *other* one is still there — and it might conflict with the *next* balloon if the run continues. By writing the max (the survivor's cost) into `neededTime[i]`, the next iteration compares against the run's champion so far, not a balloon that's already been removed. This is the "running best" trick: one array slot is repurposed as the run's memory.
+- **Why is this optimal?** In a run of `k` balloons, exactly `k - 1` must be deleted, and the cheapest possible choice is to keep the single most expensive one — the greedy removes every balloon except the max of the run, paying `sum - max`, which is the minimum possible.
+
+Trace `colors = "abaac", neededTime = [1,2,3,4,5]`: only the run `a,a` at indices 2–3 conflicts → pay `min(4,3)=3`, keep cost 4 → total 3 ✓.
+
 ## Dry run
 
 **Input:** `colors = "abaac", neededTime = [1,2,3,4,5]`.

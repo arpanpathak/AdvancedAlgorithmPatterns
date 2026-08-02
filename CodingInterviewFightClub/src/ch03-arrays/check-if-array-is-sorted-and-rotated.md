@@ -114,6 +114,27 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+var count = 0
+val n = nums.size
+for (i in 0 until n) {
+    if (nums[i] > nums[(i + 1) % n]) {
+        count++
+    }
+}
+return count <= 1
+```
+
+Picture the array wrapped into a circle — `nums[n-1]` sits right next to `nums[0]`. A sorted-rotated array read around that circle is *almost* perfectly increasing, except at exactly one place: the pivot, where the big values end and the small ones begin.
+
+- **`nums[i] > nums[i+1]` detects a "descent" — a drop in the circle.** In a sorted-rotated array, the only drop happens at the pivot (`5 > 1` in `[3,4,5,1,2]`). Everywhere else the values climb or stay equal.
+- **`(i + 1) % n` closes the circle.** For `i = n-1`, the "next" element is `nums[0]`, not an out-of-bounds index. This wrap is what makes a *fully sorted* array (pivot at position 0, e.g. `[1,2,3,4]`) count as valid: `4 > 1`? No — zero descents, `count = 0`.
+- **`count <= 1` is the shape test.** Zero descents = already sorted (rotated by a full lap). One descent = sorted with a genuine pivot. Two or more descents means the circular order is broken in multiple places — like `[2,1,3,4]` (`2>1` at index 0, then `4>2` across the wrap) — and no single rotation can fix it. Duplicates are handled automatically since `>` (strict) ignores equal neighbors.
+
+Trace `[3,4,5,1,2]`: `3>4` no, `4>5` no, `5>1` **yes** (count 1), `1>2` no, `2>3` (wrap) no → `count=1` → `true` ✓.
+
 ## Dry run
 
 **Input:** `nums = [3,4,5,1,2]`.

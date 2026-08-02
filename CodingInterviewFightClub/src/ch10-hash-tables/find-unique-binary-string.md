@@ -116,6 +116,25 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+val n = nums.size
+val sb = StringBuilder()
+for (i in 0 until n) {
+    sb.append(if (nums[i][i] == '0') '1' else '0')
+}
+return sb.toString()
+```
+
+This is **Cantor's diagonal argument** from set theory, smuggled into a LeetCode problem. The setup: there are `n` given strings, each of length `n` — imagine them stacked as rows of a grid. We're going to read down the *diagonal* of that grid (position 0 of row 0, position 1 of row 1, …) and then **flip every character we read**.
+
+- **`nums[i][i]` walks the diagonal.** The `i`-th row, `i`-th column — a different character from every string. Each given string contributes exactly one character to the diagonal.
+- **The flip (`'0'` → `'1'`, `'1'` → `'0'`) is the guarantee.** Our result disagrees with `nums[0]` at position 0, disagrees with `nums[1]` at position 1, and in general **disagrees with `nums[k]` at position `k`** — because position `k` of the result is the *flip* of `nums[k][k]`. A string that differs from every given string at one specific position cannot be equal to any of them.
+- **Why does this feel like cheating?** There are $2^n$ possible strings and only `n` are forbidden — almost all strings are valid answers. The diagonal version doesn't search for one; it *constructs* one in O(n) time with a guarantee. The brute-force alternative (enumerate $2^n$ candidates, check membership) is correct but needlessly exponential.
+
+Trace `nums = ["01","10"]`: `i=0`: `nums[0][0]='0'` → flip → `'1'`; `i=1`: `nums[1][1]='0'` → flip → `'1'` → result `"11"` ✓, which is indeed absent from the input.
+
 ## Dry run
 
 **Input:** `nums = ["01","10"]`.

@@ -123,6 +123,29 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+var num = n
+var result = 0
+for (i in 0 until 32) {
+    val bit = num and 1
+    result = (result shl 1) or bit
+    num = num ushr 1
+}
+return result
+```
+
+Picture two registers: `num` is the "input stack" being drained from the bottom, and `result` is the "output stack" being built from the top. Each of the 32 trips through the loop does three jobs:
+
+1. **`num and 1` — peek at the bottom card.** AND with `1` masks off everything except the lowest bit, so `bit` is 0 or 1 depending on what's currently at the bottom of the input stack.
+2. **`result = (result shl 1) or bit` — make room, then place the card.** Shifting `result` left pushes whatever we've built so far up one position (leaving a 0 in the lowest slot), and OR-ing `bit` drops the new card into that slot. The order matters: shift *first*, then OR — if you OR'd first, the new bit would overwrite the old lowest bit instead of being appended below it.
+3. **`num = num ushr 1` — discard the used card.** The unsigned right shift slides the input stack down by one, so the *next* lowest bit moves into position 0 for the next iteration.
+
+After 32 trips, the card that started at `num`'s bit 0 has been placed at position 0 and then shifted up 31 more times → it lands at bit 31. The card that started at bit 31 is read last and never shifted → it lands at bit 0. Every bit has moved to its mirrored position, which is exactly what "reverse the bits" means.
+
+**Why `ushr` instead of `shr`?** Java/Kotlin `int` is signed — `>>` would copy the sign bit into the top (flooding 1s into a negative number's bit string), corrupting the reversal. `>>>`/`ushr` always fills 0s, treating the int purely as a bit sequence.
+
 ## Dry run
 
 **Input:** `n = 4` (binary `...000100` in 32 bits).

@@ -130,6 +130,27 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+var slow = head
+var fast = head
+while (fast?.next != null) {
+    slow = slow?.next
+    fast = fast.next?.next
+}
+return slow
+```
+
+Imagine two runners on a track: `slow` jogs one node per lap, `fast` sprints two. They start together at the head. By the time `fast` crosses the finish line (end of the list), `slow` has covered exactly half the distance — so `slow` is parked on the middle node. No counting, no second pass.
+
+- **`slow = slow?.next` advances one node** — the "distance halved" half of the pair.
+- **`fast = fast.next?.next` advances two nodes** — the "measuring stick" half. Because `fast` moves twice as fast, every step it takes is proof that `slow` is still in the first half.
+- **The loop condition `fast?.next != null` decides *which* middle for even lengths.** When the list has an even number of nodes, `fast` eventually stands on the *last* node and its `.next` is null — the loop runs once more, pushing `slow` one extra step to the second middle (the problem's required answer). The Kotlin safe-call `fast?.next` also handles a null `fast` from a two-node list gracefully.
+- **Why not count-then-walk?** That's two full traversals. The two-pointer version is one pass, O(1) extra space, and it doubles as the skeleton for cycle detection ([4.2](linked-list-cycle.md)) — same pointers, different stop rule.
+
+Trace `[1,2,3,4,5]`: `fast` goes 1→3→5, `slow` goes 1→2→3; `fast.next` is null → stop → return 3 ✓. Trace `[1,2,3,4,5,6]`: `fast` goes 1→3→5→null, `slow` goes 1→2→3→4 → return 4 ✓ (the second middle).
+
 ## Dry run
 
 **Input:** `head = [1,2,3,4,5]` (odd).

@@ -126,6 +126,28 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+var i = s.length - 1
+var len = 0
+while (i >= 0 && s[i] == ' ') i--     // skip trailing spaces
+while (i >= 0 && s[i] != ' ') {
+    len++
+    i--
+}
+return len
+```
+
+Walk the string **backward** — the last word is at the end, so we start there and stop as soon as we're done. No splitting, no list allocation.
+
+- **`i` starts at the last character** (`s.length - 1`), and the first `while` scoots it leftward over any trailing spaces. For `"   fly me   to   the moon  "` it skips two spaces and lands on `'n'`. The `i >= 0` guard keeps us from running off the front of the string (e.g., input of all spaces).
+- **The second `while` counts non-space characters** — that's the word itself. `len` increments for each letter, `i` marches left, and the loop dies the moment it hits a space (the word's left boundary) or the start of the string.
+- **The `i >= 0` in the second loop matters** for inputs like `"moon"` — no leading space exists, so without the guard we'd read `s[-1]` and crash.
+- **Why not split?** `s.split(" ").filter{...}.last()` allocates a list of every word just to throw away all but one. The backward scan touches only the trailing spaces and the last word — O(len of last word + trailing spaces), never the whole string's worth of tokens.
+
+For `"   fly me   to   the moon  "`: skip 2 spaces → count `m,o,o,n` = 4 → hit the space before `moon` → return `4` ✓.
+
 ## Dry run
 
 **Input:** `s = "   fly me   to   the moon  "`.

@@ -142,6 +142,33 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+var minCount = 0
+val stack = mutableListOf<Char>()
+s.forEach { ch ->
+    when (ch) {
+        '(' -> stack.add(ch)
+        ')' -> if (stack.isNotEmpty() && stack.last() == '(') {
+            stack.removeLast()
+        } else {
+            minCount++
+        }
+    }
+}
+return minCount + stack.size
+```
+
+Read the string left to right and classify every character as one of three things: an **open** that's waiting for its match, a **close** that finds its match, or a **stray** close that has nothing to match. Each unmatched open needs one inserted `')'`, and each stray close needs one inserted `'('` — so the answer is simply the sum of the two leftover counts.
+
+- **`'(' -> stack.add(ch)`** — an open parenthesis goes on the stack, marking "I still need a close." The stack's depth is the number of currently unmatched opens.
+- **`')'` with a matching open on top (`stack.last() == '('`) → `removeLast()`** — the close cancels the most recent open. Using a stack (rather than a bare counter) is what makes this a proper *match* test — `"(]"`-style mismatches would be caught here in the general version.
+- **`')'` with an empty stack or non-`'('` top → `minCount++`** — a *stray* close: no open is waiting for it, so it can never be matched by anything to its left. It needs its own inserted `'('`; we count it and move on.
+- **`minCount + stack.size` is the grand total.** `stack.size` = opens still waiting for a close (each needs one inserted `')'`); `minCount` = stray closes (each needs one inserted `'('`). Every insertion fixes exactly one deficit, so the sum is both necessary and sufficient — the minimum number of insertions.
+
+Trace `"())"`: `'('` → stack `[ ( ]`; `')'` → matches, stack `[ ]`; `')'` → stack empty → `minCount = 1`. Answer `1 + 0 = 1` ✓. Trace `"((("`: stack grows to 3, no strays → answer `0 + 3 = 3` ✓.
+
 ## Dry run
 
 **Input:** `s = "())"`.

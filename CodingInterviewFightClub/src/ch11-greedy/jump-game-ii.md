@@ -142,6 +142,29 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+var (jumps, currentEnd, farthest) = listOf(0, 0, 0)
+for (i in 0 until nums.lastIndex) {
+    farthest = maxOf(farthest, i + nums[i])
+    if (i >= currentEnd) {
+        jumps++
+        currentEnd = farthest
+    }
+}
+return jumps
+```
+
+Three variables encode the BFS "levels" of reachability: `currentEnd` is the right edge of the region reachable with `jumps` jumps so far, and `farthest` is where the *next* jump could take us.
+
+- **`farthest = maxOf(farthest, i + nums[i])` records the best reach from this index.** From position `i` we can jump to anywhere up to `i + nums[i]`; `farthest` is the maximum over every position examined *within the current level*. It's the frontier of "one more jump from somewhere I can already stand."
+- **`i >= currentEnd` is the level-complete trigger.** When the walk reaches `currentEnd`, every index in the current level has contributed its reach, and `farthest` now describes the entire next level. Stepping past the boundary therefore *forces* a jump: `jumps++` (we used one more), and `currentEnd = farthest` (the next level's boundary becomes the new fence). The `>=` (vs `==`) is harmless safety — `i` can't actually overshoot since `farthest >= i` always.
+- **Why loop only to `nums.lastIndex` (exclusive)?** The final index is the destination — it doesn't need to extend the frontier, and counting a jump triggered *at* the last index would overcount. The layer that contains `n-1` is the answer.
+- **Why is this minimal?** Each layer-expansion is the *smallest* number of extra jumps that can reach strictly farther: you cannot reach layer `k+1` without at least one jump from layer `k`, and the greedy's `farthest` is the maximum possible next layer. So the number of expansions equals the minimum jump count — the BFS distance, computed with three scalars.
+
+Trace `[2,3,1,1,4]`: at `i=0` (level end 0) farthest becomes 2 → jump 1, fence 2. At `i=2` (fence) farthest is 4 → jump 2, fence 4. `i=3` is inside, loop ends. Answer 2 ✓.
+
 ## Dry run
 
 **Input:** `nums = [2,3,1,1,4]`.

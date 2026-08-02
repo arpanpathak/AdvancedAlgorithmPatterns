@@ -193,6 +193,7 @@
   - [5.33 Minimum Time To Collect All Apples](ch05-trees/minimum-time-to-collect-all-apples.md)
   - [5.34 Binary Search Tree To Greater Sum Tree](ch05-trees/binary-search-tree-to-greater-sum-tree.md)
   - [5.35 Path Sum](ch05-trees/path-sum.md)
+  - [5.36 Serialize And Deserialize N-ary Tree](ch05-trees/serialize-and-deserialize-n-ary-tree.md)
 
 - [6. Graphs](ch06-graphs/index.md)
   - [6.0 Pattern Primer: The Seven Engines](ch06-graphs/pattern-primer.md)
@@ -230,6 +231,7 @@
   - [6.32 Maximum Path Quality Of A Graph](ch06-graphs/maximum-path-quality-of-a-graph.md)
   - [6.33 Path With Maximum Probability](ch06-graphs/path-with-maximum-probability.md)
   - [6.34 Longest Increasing Path In A Matrix](ch06-graphs/longest-increasing-path-in-a-matrix.md)
+  - [6.35 Dynamic Connectivity](ch06-graphs/dynamic-connectivity.md)
 
 - [7. Heaps & Priority Queues](ch07-heaps/index.md)
   - [7.0 Pattern Primer: The Lazy Sorted Structure](ch07-heaps/pattern-primer.md)
@@ -318,6 +320,7 @@
   - [9.36 Maximum Value After Insertion](ch09-strings/maximum-value-after-insertion.md)
   - [9.37 Nested List Weighted Sum](ch09-strings/nested-list-weighted-sum.md)
   - [9.38 Unique Substring With Equal Digit Frequency](ch09-strings/unique-substring-with-equal-digit-frequency.md)
+  - [9.39 Apply Substitutions](ch09-strings/apply-substitutions.md)
 
 - [10. Hash Tables & Sets](ch10-hash-tables/index.md)
   - [10.0 Pattern Primer: O(1) Lookup, Three Moves](ch10-hash-tables/pattern-primer.md)
@@ -437,6 +440,7 @@
   - [14.8 Segment Tree & Fenwick](ch14-sorting/segment-tree-and-fenwick.md)
   - [14.9 Count Of Smaller Numbers After Self](ch14-sorting/count-of-smaller-numbers-after-self.md)
   - [14.8 Sort Colors](ch14-sorting/sort-colors.md)
+  - [14.10 KD-Tree](ch14-sorting/kd-tree.md)
 
 - [15. Sliding Window](ch15-sliding-window/index.md)
   - [15.0 Pattern Primer: The Moving Window](ch15-sliding-window/pattern-primer.md)
@@ -489,6 +493,7 @@
   - [17.16 The Great Town Split](ch17-advanced-graphs/the-great-town-split.md)
   - [17.17 Floyd-Warshall](ch17-advanced-graphs/floyd-warshall.md)
   - [17.18 Maximum Vacation Days](ch17-advanced-graphs/maximum-vacation-days.md)
+  - [17.19 How Many Rectangles Overlap](ch17-advanced-graphs/how-many-rectangles-overlap.md)
 
 - [18. Design & Caches](ch18-design-caches/index.md)
   - [18.0 Pattern Primer: Composing Structures](ch18-design-caches/pattern-primer.md)
@@ -515,6 +520,7 @@
   - [18.22 Linked List Random Node](ch18-design-caches/linked-list-random-node.md)
   - [18.23 Random Pick Index](ch18-design-caches/random-pick-index.md)
   - [18.24 Random Pick With Weight](ch18-design-caches/random-pick-with-weight.md)
+  - [18.25 Streamer Leaderboard](ch18-design-caches/streamer-leaderboard.md)
 
 ## Appendix
 

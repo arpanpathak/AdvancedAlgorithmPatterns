@@ -133,6 +133,28 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+val first = nums1.toMutableSet()
+val intersectionSet = mutableSetOf<Int>()
+for (num in nums2) {
+    if (first.contains(num)) {
+        intersectionSet.add(num)
+    }
+}
+return intersectionSet.toIntArray()
+```
+
+The strategy has three deliberate moves — **set the first, filter the second, dedupe the hits**:
+
+- **`nums1.toMutableSet()` builds the lookup table.** We want to answer "is this value in `nums1`?" for every element of `nums2` — sets give O(1) membership. Converting `nums1` also kills its duplicates (`[1,2,2,1]` → `{1,2}`), so we never double-count a value that appears twice in the first array.
+- **The loop filters `nums2` through that table.** For each element, `first.contains(num)` is the yes/no test. We don't need to touch `nums1` again — every answer is a lookup.
+- **`intersectionSet.add(num)` is the dedup.** `nums2` itself may repeat values (like `[2,2]`), and the problem wants *distinct* common values. A set is idempotent — adding `2` twice stores it once. Using a set here instead of a list is what guarantees the distinct output for free.
+- **The two-set shape is O(n + m)** — build once, then one linear scan with O(1) checks. The sort-based alternative (Approach 2) is O(n log n + m log m) but uses no extra space; the set version trades memory for speed, which is the right call for interview-scale inputs.
+
+Trace `nums1 = [1,2,2,1], nums2 = [2,2]`: `first = {1,2}`; loop: `2` in first → add; second `2` → already in the result set → skipped. Output `[2]` ✓.
+
 ## Dry run
 
 **Input:** `nums1 = [1,2,2,1], nums2 = [2,2]`.

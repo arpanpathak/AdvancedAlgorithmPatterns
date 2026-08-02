@@ -109,6 +109,23 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+var xorSum = 0
+nums.forEach { xorSum = xorSum xor it }
+return xorSum
+```
+
+Follow the single variable through the array:
+
+- **`xorSum` starts at 0.** Zero is the perfect neutral element: XORing it with anything leaves that thing unchanged (`0 ⊕ x = x`), so the first element just lands in the accumulator untouched.
+- **Each element gets XORed in.** The magic is what XOR does to *pairs*: `x ⊕ x = 0`. So the moment a number meets its twin, both vanish from the accumulator — not by being "removed" (there's no removal, no bookkeeping), but by algebraically cancelling out.
+- **Order is irrelevant.** XOR is commutative and associative, so `4 ⊕ 1 ⊕ 2 ⊕ 1 ⊕ 2` is the same as `4 ⊕ (1 ⊕ 1) ⊕ (2 ⊕ 2) = 4 ⊕ 0 ⊕ 0 = 4`. The singletons that appear an odd number of times are exactly the ones that survive; everything else self-destructs.
+- **One variable holds the entire answer.** That's the deep point behind the "constant space" requirement — the accumulator *is* the state, and it converges to the singleton the same way no matter how the pairs are scattered.
+
+If it helps, think of XOR as "addition without carrying": adding 1 + 1 normally gives 2, but XOR gives 0 — two identical copies wipe each other out. The loop is just letting every pair cancel in place until only the unpaired element is left standing.
+
 ## Dry run
 
 **Input:** `nums = [4,1,2,1,2]`.

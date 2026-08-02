@@ -121,6 +121,29 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+var negativeCount = 0
+nums.forEach {
+    if (it == 0) return 0
+    if (it < 0) negativeCount++
+}
+return when {
+    negativeCount % 2 == 0 -> 1
+    else -> -1
+}
+```
+
+Why can we know the sign without multiplying? Because multiplication's sign obeys two dead-simple rules: **a zero anywhere makes the whole product 0**, and **each negative flips the sign**. Positive numbers are invisible to the sign, so the product's sign is determined entirely by *how many* negatives there are.
+
+- **`if (it == 0) return 0` is the zero trapdoor.** The moment we see a zero, the product is zero regardless of everything else — no need to look further, return immediately. (In Kotlin, `return` inside `forEach` exits the whole function, which is exactly what we want.)
+- **`if (it < 0) negativeCount++` tallies the sign-flippers.** Positives are skipped — they can't change the outcome. Each negative multiplies the running sign by −1.
+- **The parity test decides the sign.** An *even* count of negatives (0, 2, 4, …) means the flips pair up and cancel → positive → `1`. An *odd* count leaves one flip unpaired → negative → `-1`. That's the `% 2 == 0` check: it asks "do the negatives cancel out?"
+- **Why not just multiply?** The product can overflow a 32-bit int with a handful of large values. The parity approach needs no arithmetic at all — two counters' worth of state instead of a giant number.
+
+Trace `[-1,-2,-3,-4,3,2,1]`: four negatives, zero zeros → `4 % 2 == 0` → `1` ✓. The actual product is `144` — positive, as predicted.
+
 ## Dry run
 
 **Input:** `[-1,-2,-3,-4,3,2,1]`.

@@ -107,6 +107,24 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+val xOverlap = aX1 < bX2 && bX1 < aX2
+val yOverlap = aY1 < bY2 && bY1 < aY2
+return xOverlap && yOverlap
+```
+
+Decompose the problem: two rectangles overlap in the plane **iff their shadows overlap on the x-axis AND their shadows overlap on the y-axis**. Each shadow is just a 1-D interval, and 1-D interval overlap has a famously simple test.
+
+- **`aX1 < bX2` — A doesn't start *past* B's right edge.** If A's left edge were at or beyond B's right edge (`aX1 >= bX2`), A would be entirely to the right of B — no x-overlap.
+- **`bX1 < aX2` — B doesn't start *past* A's right edge.** Symmetric: if B's left edge is at or beyond A's right edge, B is entirely to the right of A.
+- **Both must hold → the intervals interleave.** If neither rectangle is entirely on one side of the other, their x-intervals must overlap with positive length. Same logic on the y-axis for vertical overlap.
+- **The strict `<` is the "positive area" rule.** When `aX2 == bX1` (B's left edge exactly touches A's right edge), the x-overlap would be zero-width — the strict comparison correctly rejects it as "no overlap". Same for touching corners. The problem explicitly defines overlap as *positive area*, so equality never counts.
+- **Why not compute the intersection rectangle?** The clamp-based twin ([3.30](rectangle-area.md)) computes `ox = min(aX2,bX2) - max(aX1,bX1)` and checks `ox > 0 && oy > 0`. This version skips the arithmetic and tests the separation conditions directly — same answer, four comparisons instead of six operations. De Morgan's law is the bridge: "overlap ⟺ NOT (A left of B OR B left of A OR A below B OR B below A)".
+
+Trace `rec1 = [0,0,1,1], rec2 = [1,0,2,1]`: `0 < 2` ✓ but `1 < 1` ✗ → x-overlap false → overall `false` — the rectangles only touch along the line `x=1`, which has zero area.
+
 ## Dry run
 
 **Input:** `rec1 = [0,0,2,2], rec2 = [1,1,3,3]`.

@@ -130,6 +130,28 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+var bits = 0
+for (ch in s) {
+    val bit = 1 shl (ch - 'a')
+    if (bits and bit != 0) return ch
+    bits = bits or bit
+}
+return ' '
+```
+
+The insight: there are only 26 lowercase letters, and an `Int` has 32 bits — so we can encode "have I seen this letter?" as **one bit per letter** and check membership with a single AND. No hash map, no allocation.
+
+- **`ch - 'a'` maps each letter to a slot 0–25.** `'a'` → 0, `'b'` → 1, …, `'z'` → 25.
+- **`1 shl (ch - 'a')` builds that letter's "identity card"** — an integer with exactly one bit set, at the letter's slot. For `'c'` that's `1 << 2 = 4` (`...000100`).
+- **`bits and bit != 0` is the "seen before?" test.** `bits` has bit `k` set iff that letter has appeared earlier in the scan. If `bits` already contains our letter's bit, the AND is non-zero → *second* occurrence → return immediately. This is the first-repeated detection.
+- **`bits = bits or bit` records the sighting.** If the letter is new, OR-ing its bit into `bits` marks it as seen for future characters. Duplicates leave `bits` unchanged (the bit was already there) — that's fine, because the very first duplicate triggers the early return.
+- **Why a bitmask and not a set?** A `HashSet<Char>` does the same job, but the mask is a single `Int`: O(1) membership via one CPU instruction, zero heap allocation, and it shows fluency with bit-level tricks (see [ch16](../ch16-bit-manipulation/pattern-primer.md)).
+
+Trace `"abccbaacz"`: `a` → bit 0 set; `b` → bit 1 set; `c` → bit 2 set; next `c` → `bits and bit2 != 0` → return `'c'` ✓.
+
 ## Dry run
 
 **Input:** `s = "abccbaacz"`.

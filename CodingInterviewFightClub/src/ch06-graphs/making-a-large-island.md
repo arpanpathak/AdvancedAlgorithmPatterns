@@ -332,4 +332,5 @@ $$
 
 - **Max Area Of Island** ([6.17](max-area-of-island.md)) — the sink version (no IDs needed).
 - **Number Of Islands** — the counting sibling.
+- **The repo's second implementation** (`grid/MakingALargeIsland_AnotherApproach.kt`) — same ID-stamping idea, but it recomputes island sizes with a second DFS pass instead of storing them in a map; the map version above is the cleaner O(1)-lookup form. Worth comparing when you want to see two spellings of the same two-pass strategy.
 - **Interview follow-up:** "Why stamp IDs instead of a visited set?" The test pass needs each island's *size by identity* — a boolean visited set can't look up "which island is here?". The numeric ID is both the visited mark and the map key; the `> 1` check in the test pass reads it directly.

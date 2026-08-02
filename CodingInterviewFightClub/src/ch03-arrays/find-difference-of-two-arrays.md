@@ -123,6 +123,23 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+val set1 = nums1.toSet()
+val set2 = nums2.toSet()
+return listOf(set1.subtract(set2).toList(), set2.subtract(set1).toList())
+```
+
+The problem asks for two lists: values **only** in `nums1`, and values **only** in `nums2`. That's literally set difference, in both directions — and the `Set` data structure was built for exactly this.
+
+- **`nums1.toSet()` and `nums2.toSet()` dedupe first.** The problem wants *distinct* values (e.g. `[1,1,2]` should contribute `1` once, not twice). Converting to sets collapses duplicates before any comparison happens — that's why we can't just scan the raw arrays.
+- **`set1.subtract(set2)` keeps what's in `set1` but not in `set2`** — the "only in nums1" answer. Set subtraction is O(1) per element, so the whole operation is linear in the set sizes.
+- **`set2.subtract(set1)` is the mirror image** — "only in nums2". Notice the asymmetry of the problem (there's no requirement that the answers be disjoint from *each other* beyond the obvious), and the two subtractions are independent.
+- **Why is the set approach better than scanning?** A naive double loop would be O(n·m) and would need extra bookkeeping for duplicates. Sets turn both concerns into O(1) lookups and automatic dedup — O(n + m) total.
+
+Trace `nums1 = [1,2,3], nums2 = [2,4,6]`: `set1 − set2 = {1,3}`, `set2 − set1 = {4,6}` → `[[1,3],[4,6]]` ✓.
+
 ## Dry run
 
 **Input:** `nums1 = [1,2,3], nums2 = [2,4,6]`.

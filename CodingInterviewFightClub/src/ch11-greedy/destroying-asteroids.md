@@ -141,6 +141,27 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+var currentMass = mass.toLong()
+asteroids.sort()
+for (asteroidMass in asteroids) {
+    if (asteroidMass > currentMass) return false
+    currentMass += asteroidMass
+}
+return true
+```
+
+Think of it as Pac-Man: your ship can only eat what's smaller than or equal to it, and every meal makes it bigger. The question is whether an eating order exists that clears the whole belt — and the answer is to **always eat the smallest thing in sight**.
+
+- **`asteroids.sort()` is the greedy in one call.** Eating ascending guarantees that at every step we face the *easiest possible* asteroid. Why is this safe? Exchange argument: if *any* ordering works, the ascending ordering works too — because after `k` steps, ascending order has consumed the `k` smallest asteroids, so its mass is at least as large as any other order's mass at that point. A bigger mass can only make the next asteroid easier to eat. So ascending is the "most permissive" order.
+- **`asteroidMass > currentMass` is the stuck test.** If even the smallest remaining asteroid is too big, no order can help — every other asteroid is even bigger, and mass never decreases. Fail immediately.
+- **`currentMass += asteroidMass` is the growth rule.** Successfully eating an asteroid adds its full mass to ours. Since mass only grows, the check `asteroidMass > currentMass` is a *monotone* condition — once we pass an asteroid, the threshold for the next one is only higher.
+- **Why `toLong()`?** The running total can reach `10⁵ × 10⁵ = 10¹⁰`, which overflows a 32-bit `Int`. Widening once at the start keeps every subsequent `+=` safe.
+
+Trace `mass = 10, [3,9,19,5,21]`: sorted `[3,5,9,19,21]`; mass goes 10 → 13 → 18 → 27 → 46 → 67; every asteroid was ≤ current mass → `true` ✓.
+
 ## Dry run
 
 **Input:** `mass = 10`, `asteroids = [3,9,19,5,21]`.

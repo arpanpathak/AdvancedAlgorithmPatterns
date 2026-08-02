@@ -129,6 +129,26 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+val mergedString = StringBuilder()
+for (i in 0 until maxOf(word1.length, word2.length)) {
+    if (i < word1.length) mergedString.append(word1[i])
+    if (i < word2.length) mergedString.append(word2[i])
+}
+return mergedString.toString()
+```
+
+Imagine shuffling two decks of cards into one, alternating one card from each. The loop counter `i` is the "round number":
+
+- **`maxOf(word1.length, word2.length)` sets the number of rounds** — the longer deck decides. We keep dealing until *both* decks are empty.
+- **`if (i < word1.length)` guards the first deck.** On every round we *try* to deal from `word1`, but only if it still has a card at position `i`. Once `word1` is exhausted (`i` past its length), the guard silently skips it for the rest of the rounds — no separate "append the remainder" step needed.
+- **The second `if` does the same for `word2`.** Because the two guards are independent `if`s (not `if/else`), a round can append *both* cards (both decks alive), *one* (one deck exhausted), or — on the first round of a hypothetical empty input — *neither*. That independence is the entire trick: the tail of the longer string is appended naturally, one card per remaining round.
+- **`StringBuilder` avoids O(n²) string copying.** Each `+` on a `String` allocates a fresh copy; the builder appends in place and materializes once at the end.
+
+Trace `word1 = "ab", word2 = "pqrs"`: round 0 → `a`, `p`; round 1 → `b`, `q`; round 2 → word1 has no index 2, so just `r`; round 3 → just `s`. Result `"apbqrs"` ✓ — the tail `"rs"` appeared with no separate append.
+
 ## Dry run
 
 **Input:** `word1 = "ab", word2 = "pqrs"`.

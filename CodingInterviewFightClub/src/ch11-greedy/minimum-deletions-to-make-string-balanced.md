@@ -135,6 +135,30 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+var deletions = 0
+var bCount = 0
+for (ch in s) {
+    if (ch == 'b') {
+        bCount++
+    } else {
+        deletions = minOf(deletions + 1, bCount)
+    }
+}
+return deletions
+```
+
+The goal: after deletions, no `'a'` may appear after any `'b'` — the string must look like `bbb...aaa...`. Reading left to right, the moment we see an `'a'` *after* some `'b'`, a violation exists and something must be deleted. Two counters capture everything:
+
+- **`bCount` counts the `b`s seen so far.** Every `'b'` in the prefix is a potential "bad influence": if an `'a'` shows up later, each of those `b`s is a *reason* the string is unbalanced — the `'a'` after them violates the order.
+- **On an `'a'`, we face a two-way choice.** Either delete *this* `'a'` (cost 1 more deletion, `deletions + 1`), or delete *every `b` seen so far* (cost `bCount`), making this `'a'` legal. `minOf(deletions + 1, bCount)` picks the cheaper option *for this prefix*.
+- **Why does the min compose into a global optimum?** This is a classic DP-in-disguise: `deletions` always holds the minimum deletions to balance the prefix *ending at the current character*. When the next `'a'` arrives, the only new decision is whether to kill it or kill the `b`s before it — and since the prefix was already optimally fixed, taking the min extends the optimum. No backtracking needed.
+- **Why not count `'a'`s after `b`s?** A simpler-looking "count violations" scan would need to know *which* side to delete from — deleting a `b` vs deleting an `'a'` have different costs depending on context. The min-of-two trick collapses that choice into one number.
+
+Trace `"aababbab"`: `a,a` fine (no b's yet) → `b` (b=1) → `a`: min(1,1)=1 (delete this a or the first b) → `b,b` (b=3) → `a`: min(2,3)=2 → `b` (b=4). Answer 2 ✓.
+
 ## Dry run
 
 **Input:** `s = "aababbab"`.

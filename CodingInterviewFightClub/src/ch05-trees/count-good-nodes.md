@@ -151,6 +151,26 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+private fun dfs(node: TreeNode?, maxSoFar: Int): Int {
+    node ?: return 0
+    val newMax = maxOf(maxSoFar, node.`val`)
+    val good = if (node.`val` >= maxSoFar) 1 else 0
+    return good + dfs(node.left, newMax) + dfs(node.right, newMax)
+}
+```
+
+Think of `maxSoFar` as **the path's running record** — the largest value encountered between the root and where we are right now. Every node's "goodness" is decided by one comparison against that record.
+
+- **`node ?: return 0` handles the void.** A null child contributes no nodes and no goodness — return 0 and let the parent add it up.
+- **`newMax = maxOf(maxSoFar, node.val)` updates the record for the children.** If this node sets a new high, the record must reflect it for everything below — a deeper node is compared against *this* maximum, not the stale one. This is why the two recursive calls pass `newMax`, not the original `maxSoFar`.
+- **`good = if (node.val >= maxSoFar) 1 else 0` judges this node against the OLD record.** Note the timing: we compare before updating. A node is good iff it's at least as large as every value that came before it on the path — the record *from the ancestors*, not including itself. (Including itself would make every node trivially good, since `val >= val`.) The `>=` means ties count as good.
+- **`good + dfs(left) + dfs(right)` composes the answer.** This node's verdict plus whatever the two subtrees report. Every node is visited exactly once and contributes exactly 1 or 0 — the sum is the total count of good nodes.
+
+Trace `[3,1,4,3,null,1,5]`: root `3` (good, record 3) → left `1` (1 < 3, bad, record stays 3) → its child `3` (3 ≥ 3, good) → right `4` (good, record 4) → `1` (bad) → `5` (5 ≥ 4, good). Total: 3 + 4 + 3 + 5 = 4 good nodes ✓.
+
 ## Dry run
 
 **Input:** `root = [3,1,4,3,null,1,5]`.

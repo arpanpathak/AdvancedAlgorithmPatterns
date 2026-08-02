@@ -126,6 +126,23 @@ impl Solution {
 }
 ```
 
+## Reading the code — what's actually happening
+
+```kotlin
+var msb = 0
+while (1 shl msb <= n) {
+    msb++
+}
+return (1 shl msb) - 1
+```
+
+- **`msb` counts bit positions, starting at 0.** Each loop iteration asks "is `2^msb` still ≤ `n`?" — i.e., "does `n` still reach this high?" The loop keeps climbing while the answer is yes.
+- **The loop exits one *above* `n`'s top bit.** For `n = 5 = 101₂`: `1 ≤ 5` (msb=1), `2 ≤ 5` (msb=2), `4 ≤ 5` (msb=3), `8 ≤ 5`? No — stop. `msb = 3`, meaning `n` occupies at most bits 0..2 and `2³ = 8` is the first power of two strictly above `n`.
+- **`(1 shl msb) - 1` turns "one past the top" into "all ones up to the top".** `1 << 3 = 1000₂`; subtracting 1 borrows through the three zeros → `0111₂ = 7`. That's the all-set number with exactly as many bits as `n` needs. And it's *minimal*: the all-set number with one fewer bit, `2² - 1 = 3`, failed the loop condition (`4 ≤ 5` was true, so the loop kept going past it) — meaning `3 < n`. Nothing smaller than `7` can be both ≥ `5` and all-set.
+- **The edge case `n <= 1` → `1`** short-circuits the trivial input; the loop would also terminate correctly there, but the guard makes the intent explicit.
+
+The whole method is one idea: **"find the bit-length of `n`, then return the number made of that many 1s."** The loop is just a hand-rolled way of measuring bit-length.
+
 ## Dry run
 
 **Input:** `n = 5` (binary 101).
