@@ -2,6 +2,8 @@
 
 [Foreword](foreword.md)
 
+[The Multi-Lingual Disciplinary Constitution](coding-standards.md)
+
 [Introduction](intro/introduction.md)
 
 - [How To Read This Book](intro/how-to-read.md)
